@@ -22,7 +22,6 @@
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
 
-            // Replace 'YOUR_WEBHOOK_URL' with your actual webhook URL
             const webhookUrl = 'https://hook.eu2.make.com/8y5vjvn52zfiit0slufyca2yclyaqgne';
 
             fetch(webhookUrl, {
@@ -32,14 +31,19 @@
                 },
                 body: JSON.stringify(data),
             })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
             .then(result => {
                 console.log('Success:', result);
                 alert('Form submitted successfully!');
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert('There was an error submitting the form.');
+                alert(`There was an error submitting the form: ${error.message}`);
             });
         });
     </script>
