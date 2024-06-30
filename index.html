@@ -23,7 +23,6 @@
             const data = Object.fromEntries(formData);
             const webhookUrl = 'https://hook.eu2.make.com/8y5vjvn52zfiit0slufyca2yclyaqgne';
             
-            // Function to display results or errors
             function displayResult(message, isError = false) {
                 const resultDiv = document.getElementById('result');
                 resultDiv.textContent = message;
@@ -31,7 +30,6 @@
                 console.log(isError ? 'Error:' : 'Success:', message);
             }
 
-            // Try fetch first
             fetch(webhookUrl, {
                 method: 'POST',
                 headers: {
@@ -46,25 +44,15 @@
                 return response.text();
             })
             .then(result => {
-                displayResult('Form submitted successfully!');
+                if (result.trim().toLowerCase() === 'accepted') {
+                    displayResult('Form submitted successfully!');
+                } else {
+                    displayResult(`Unexpected response: ${result}`, true);
+                }
             })
             .catch(error => {
                 console.error('Fetch Error:', error);
-                displayResult(`Fetch error: ${error.message}. Trying JSONP...`, true);
-                
-                // Fallback to JSONP
-                const script = document.createElement('script');
-                const callbackName = 'jsonpCallback_' + Math.round(100000 * Math.random());
-                window[callbackName] = function(result) {
-                    delete window[callbackName];
-                    document.body.removeChild(script);
-                    displayResult('Form submitted successfully via JSONP!');
-                };
-                script.src = `${webhookUrl}?callback=${callbackName}&${new URLSearchParams(data)}`;
-                document.body.appendChild(script);
-                script.onerror = function() {
-                    displayResult('JSONP request also failed. Please check the console for more details.', true);
-                };
+                displayResult(`Error submitting form: ${error.message}`, true);
             });
         });
     </script>
