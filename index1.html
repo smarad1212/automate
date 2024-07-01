@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הרפתקה בבוגוטה: יום 3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .section {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 5px;
+            margin-top: 10px;
+        }
+        .feedback {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h1 style="text-align: center; color: #4a4a4a;">🌴 הרפתקה בבוגוטה: יום 3 🏙️</h1>
+
+<p style="text-align: center; font-weight: bold;">המשימה שלכם, אם תבחרו לקבל אותה, היא לגלות את סוד הקונדור הזהוב!</p>
+
+<div class="section">
+    <h2 style="color: #2c3e50;">📚 כישורי היום: קסמי מתמטיקה וחקר אנגלית</h2>
+
+    <h3 style="color: #e74c3c;">אתגר מתמטי 🔢</h3>
+    <p>פרופסור נומרוס זקוק לעזרתכם! כמה הרים געשיים פעילים יש בקולומביה?</p>
+    <input type="number" id="mathAnswer" placeholder="הכניסו את תשובתכם כאן">
+    <button onclick="checkMathAnswer()">בדוק תשובה</button>
+    <p id="mathFeedback" class="feedback"></p>
+
+    <h3 style="color: #e74c3c;">משימת אנגלית 🦜</h3>
+    <p>השלימו את המשפט: "Bogotá is the _______ of Colombia."</p>
+    <input type="text" id="englishAnswer" placeholder="הקלידו את תשובתכם כאן">
+    <button onclick="checkEnglishAnswer()">בדוק תשובה</button>
+    <p id="englishFeedback" class="feedback"></p>
+</div>
+
+<div class="section">
+    <h2 style="color: #2c3e50;">🌋 גלו את הרי הגעש של קולומביה</h2>
+    <p>צפו בסרטון הבא על הרי הגעש של קולומביה:</p>
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/vPGJzANn6Cs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<div class="section">
+    <h2 style="color: #2c3e50;">🛠️ יצירת הקונדור שלכם</h2>
+    <p><strong>חומרים:</strong> נייר, צבעים, מספריים</p>
+    <p><strong>שלבים:</strong></p>
+    <ol>
+        <li>ציירו קונדור גדול על הנייר</li>
+        <li>צבעו את הקונדור</li>
+        <li>גזרו את הקונדור</li>
+    </ol>
+    <p>תארו את הקונדור שיצרתם:</p>
+    <textarea placeholder="תארו את היצירה שלכם כאן"></textarea>
+</div>
+
+<script>
+function checkMathAnswer() {
+    const answer = document.getElementById('mathAnswer').value;
+    const feedback = document.getElementById('mathFeedback');
+    if (answer === '15') {
+        feedback.textContent = 'נכון מאוד! יש 15 הרי געש פעילים בקולומביה.';
+        feedback.style.color = 'green';
+    } else {
+        feedback.textContent = 'לא בדיוק, נסו שוב!';
+        feedback.style.color = 'red';
+    }
+}
+
+function checkEnglishAnswer() {
+    const answer = document.getElementById('englishAnswer').value.toLowerCase();
+    const feedback = document.getElementById('englishFeedback');
+    if (answer === 'capital') {
+        feedback.textContent = 'מצוין! בוגוטה היא אכן בירת קולומביה.';
+        feedback.style.color = 'green';
+    } else {
+        feedback.textContent = 'כמעט, נסו שוב!';
+        feedback.style.color = 'red';
+    }
+}
+</script>
+
+</body>
+</html>
