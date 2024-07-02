@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cowabunga Form!</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            background-color: #1a1a1a;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="80">🐢</text></svg>');
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #ff9800;
+            text-align: center;
+            text-shadow: 2px 2px #4CAF50;
+            font-size: 2.5em;
+        }
+        form {
+            background-color: #4CAF50;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255,152,0,0.5);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #ff9800;
+            border-radius: 10px;
+            box-sizing: border-box;
+            background-color: #e6e6e6;
+            color: #1a1a1a;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        button {
+            background-color: #ff9800;
+            color: #1a1a1a;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        button:hover {
+            background-color: #1a1a1a;
+            color: #ff9800;
+            transform: scale(1.05);
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cowabunga Form!</h1>
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone">
+        
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="18" max="120">
+        
+        <label for="occupation">Occupation:</label>
+        <input type="text" id="occupation" name="occupation">
+        
+        <label for="interests">Interests:</label>
+        <select id="interests" name="interests">
+            <option value="">Select an interest</option>
+            <option value="technology">Technology</option>
+            <option value="sports">Sports</option>
+            <option value="art">Art</option>
+            <option value="music">Music</option>
+            <option value="travel">Travel</option>
+        </select>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+        
+        <button type="submit">Cowabunga!</button>
+    </form>
+    <div id="result"></div>
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            const webhookUrl = 'https://hook.eu2.make.com/8y5vjvn52zfiit0slufyca2yclyaqgne';
+            
+            function displayResult(message, isError = false) {
+                const resultDiv = document.getElementById('result');
+                resultDiv.textContent = message;
+                resultDiv.style.color = isError ? '#ff0000' : '#00ff00';
+                resultDiv.style.backgroundColor = isError ? '#1a1a1a' : '#1a1a1a';
+                resultDiv.style.border = isError ? '2px solid #ff0000' : '2px solid #00ff00';
+                console.log(isError ? 'Error:' : 'Success:', message);
+            }
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(result => {
+                if (result.trim().toLowerCase() === 'accepted') {
+                    displayResult('Cowabunga! Form submitted successfully!');
+                } else {
+                    displayResult(`Bummer, dude! Unexpected response: ${result}`, true);
+                }
+            })
+            .catch(error => {
+                console.error('Fetch Error:', error);
+                displayResult(`Shell shock! Error submitting form: ${error.message}`, true);
+            });
+        });
+    </script>
+</body>
+</html>
