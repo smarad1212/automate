@@ -70,6 +70,12 @@
             font-weight: bold;
             font-size: 1.2em;
         }
+        .webhook-url {
+            font-size: 0.8em;
+            color: #1a1a1a;
+            margin-top: -10px;
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 <body>
@@ -103,6 +109,10 @@
         <label for="message">Message:</label>
         <textarea id="message" name="message" rows="4"></textarea>
         
+        <label for="webhook">Webhook URL:</label>
+        <input type="url" id="webhook" name="webhook" value="https://hook.eu2.make.com/rc9yw66z8e5mkxtkuj47hl22nkjb1xd9" required>
+        <p class="webhook-url">Default: https://hook.eu2.make.com/rc9yw66z8e5mkxtkuj47hl22nkjb1xd9</p>
+        
         <button type="submit">Cowabunga!</button>
     </form>
     <div id="result"></div>
@@ -111,7 +121,7 @@
             e.preventDefault();
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
-            const webhookUrl = 'https://hook.eu2.make.com/8y5vjvn52zfiit0slufyca2yclyaqgne';
+            const webhookUrl = document.getElementById('webhook').value;
             
             function displayResult(message, isError = false) {
                 const resultDiv = document.getElementById('result');
