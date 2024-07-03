@@ -11,7 +11,7 @@
             font-family: 'Roboto', sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #ffd54f, #ff9800);
+            background: linear-gradient(135deg, #4a0e4e, #81087f);
             margin: 0;
             padding: 20px;
             display: flex;
@@ -30,26 +30,28 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
+            align-items: center;
+        }
+        .logo {
+            width: 200px;
+            height: auto;
+            margin-bottom: 2rem;
         }
         h1 {
             font-family: 'Fredoka One', cursive;
             color: #ff6b6b;
             text-align: center;
             margin-bottom: 1.5rem;
-            font-size: 2.5em;
+            font-size: 2em;
         }
         .content-wrapper {
             display: flex;
             justify-content: space-between;
+            width: 100%;
         }
-        .form-container {
+        .form-container, .explanation {
             flex: 1;
-            padding-right: 2rem;
-        }
-        .explanation {
-            flex: 1;
-            padding-left: 2rem;
-            border-left: 2px solid #4ecdc4;
+            padding: 1rem;
         }
         form {
             display: flex;
@@ -64,7 +66,7 @@
         }
         label span {
             margin-right: 10px;
-            font-size: 1.5em;
+            font-size: 1.2em;
         }
         input, select {
             width: 100%;
@@ -83,7 +85,7 @@
         button {
             background-color: #ff6b6b;
             color: white;
-            padding: 0.75rem;
+            padding: 0.75rem 2rem;
             border: none;
             border-radius: 10px;
             cursor: pointer;
@@ -93,6 +95,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            margin: 2rem auto;
         }
         button:hover {
             background-color: #4ecdc4;
@@ -112,11 +115,8 @@
             opacity: 0;
             transition: all 0.5s ease;
         }
-        .emoji-background {
-            position: absolute;
-            font-size: 100px;
-            opacity: 0.1;
-            z-index: -1;
+        .explanation {
+            font-size: 0.9em;
         }
         @media (max-width: 768px) {
             .content-wrapper {
@@ -126,21 +126,15 @@
                 padding: 0;
             }
             .explanation {
-                border-left: none;
-                border-top: 2px solid #4ecdc4;
-                margin-top: 2rem;
-                padding-top: 2rem;
+                margin-top: 1rem;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <img src="/api/placeholder/200/200" alt="Kids Adventure Learning Logo" class="logo">
         <h1>Let's Have Fun! 🎉</h1>
-        <div class="emoji-background" style="top: -20px; left: -20px;">☀️</div>
-        <div class="emoji-background" style="top: 50%; right: -20px;">🌊</div>
-        <div class="emoji-background" style="bottom: -20px; left: 50%;">🏄</div>
-        <div class="emoji-background" style="top: 30%; left: -20px;">🚲</div>
         <div class="content-wrapper">
             <div class="form-container">
                 <form id="kidsForm">
@@ -150,7 +144,7 @@
                     <label for="age"><span>🎂</span> Your Age</label>
                     <input type="number" id="age" name="age" min="5" max="18" required placeholder="How old are you?">
                     
-                    <label for="phone"><span>📞</span> Parent's Phone Number</label>
+                    <label for="phone"><span>📞</span> Parent's Phone</label>
                     <input type="tel" id="phone" name="phone" required placeholder="Parent's contact number">
                     
                     <label for="language"><span>🗣️</span> Your Language</label>
@@ -164,24 +158,14 @@
                     
                     <label for="location"><span>📍</span> Where Are You?</label>
                     <input type="text" id="location" name="location" required placeholder="Your current location">
-                    
-                    <button type="submit"><span>🚀</span> Let's Go!</button>
                 </form>
             </div>
             <div class="explanation">
                 <h2>Welcome to Kids Adventure Learning! 🌟</h2>
-                <p>Are you ready for an exciting journey of discovery and fun? 🎈</p>
-                <p>Here's what you'll get:</p>
-                <ul>
-                    <li>🧠 Daily personalized lessons</li>
-                    <li>🌍 Learn about different cultures and places</li>
-                    <li>🎨 Fun activities and projects</li>
-                    <li>🏆 Earn badges and rewards</li>
-                </ul>
-                <p>Fill out the form, and let's start your adventure! Your parents will receive updates about your progress. 📱</p>
-                <p>Get ready to explore, create, and have a blast while learning! 🚀</p>
+                <p>Get ready for daily lessons, cultural exploration, fun activities, and exciting rewards! Fill out the form and let's start your adventure! 🚀</p>
             </div>
         </div>
+        <button type="submit" form="kidsForm"><span>🚀</span> Let's Go!</button>
         <div id="result"></div>
     </div>
     <script>
