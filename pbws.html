@@ -36,6 +36,11 @@
             margin-bottom: 1.5rem;
             font-size: 2.5em;
         }
+        p {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #4a4a4a;
+        }
         form {
             display: flex;
             flex-direction: column;
@@ -108,6 +113,7 @@
 <body>
     <div class="container">
         <h1>Let's Have Fun! 🎉</h1>
+        <p>Welcome to Kids Adventure Learning! We're creating personalized, fun-filled learning experiences just for you. By submitting this form, you'll unlock a world of exciting educational adventures tailored to your interests and location!</p>
         <div class="emoji-background" style="top: -20px; left: -20px;">☀️</div>
         <div class="emoji-background" style="top: 50%; right: -20px;">🌊</div>
         <div class="emoji-background" style="bottom: -20px; left: 50%;">🏄</div>
@@ -130,6 +136,9 @@
             
             <label for="location"><span>📍</span> Where Are You?</label>
             <input type="text" id="location" name="location" required placeholder="Your current location">
+            
+            <label for="phone"><span>📞</span> Parent's Phone Number</label>
+            <input type="tel" id="phone" name="phone" required placeholder="Parent's contact number">
             
             <button type="submit"><span>🚀</span> Let's Go!</button>
         </form>
