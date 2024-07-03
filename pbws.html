@@ -11,7 +11,7 @@
             font-family: 'Roboto', sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #4a0e4e, #81087f);
+            background: linear-gradient(135deg, #ffd54f, #ff9800);
             margin: 0;
             padding: 20px;
             display: flex;
@@ -25,33 +25,16 @@
             border-radius: 20px;
             box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
             width: 100%;
-            max-width: 900px;
+            max-width: 500px;
             position: relative;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .logo {
-            width: 200px;
-            height: auto;
-            margin-bottom: 2rem;
         }
         h1 {
             font-family: 'Fredoka One', cursive;
             color: #ff6b6b;
             text-align: center;
             margin-bottom: 1.5rem;
-            font-size: 2em;
-        }
-        .content-wrapper {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-        }
-        .form-container, .explanation {
-            flex: 1;
-            padding: 1rem;
+            font-size: 2.5em;
         }
         form {
             display: flex;
@@ -66,7 +49,7 @@
         }
         label span {
             margin-right: 10px;
-            font-size: 1.2em;
+            font-size: 1.5em;
         }
         input, select {
             width: 100%;
@@ -85,7 +68,7 @@
         button {
             background-color: #ff6b6b;
             color: white;
-            padding: 0.75rem 2rem;
+            padding: 0.75rem;
             border: none;
             border-radius: 10px;
             cursor: pointer;
@@ -95,7 +78,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 2rem auto;
         }
         button:hover {
             background-color: #4ecdc4;
@@ -115,61 +97,109 @@
             opacity: 0;
             transition: all 0.5s ease;
         }
-        .explanation {
-            font-size: 0.9em;
-        }
-        @media (max-width: 768px) {
-            .content-wrapper {
-                flex-direction: column;
-            }
-            .form-container, .explanation {
-                padding: 0;
-            }
-            .explanation {
-                margin-top: 1rem;
-            }
+        .emoji-background {
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.1;
+            z-index: -1;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="https://ibb.co/NWhNbgB" alt="Kids Adventure Learning Logo" class="logo">
         <h1>Let's Have Fun! 🎉</h1>
-        <div class="content-wrapper">
-            <div class="form-container">
-                <form id="kidsForm">
-                    <label for="name"><span>😊</span> Your Name</label>
-                    <input type="text" id="name" name="name" required placeholder="What should we call you?">
-                    
-                    <label for="age"><span>🎂</span> Your Age</label>
-                    <input type="number" id="age" name="age" min="5" max="18" required placeholder="How old are you?">
-                    
-                    <label for="phone"><span>📞</span> Parent's Phone</label>
-                    <input type="tel" id="phone" name="phone" required placeholder="Parent's contact number">
-                    
-                    <label for="language"><span>🗣️</span> Your Language</label>
-                    <select id="language" name="language" required>
-                        <option value="">Pick your language</option>
-                        <option value="english">English</option>
-                        <option value="hebrew">Hebrew</option>
-                        <option value="spanish">Spanish</option>
-                        <option value="french">French</option>
-                    </select>
-                    
-                    <label for="location"><span>📍</span> Where Are You?</label>
-                    <input type="text" id="location" name="location" required placeholder="Your current location">
-                </form>
-            </div>
-            <div class="explanation">
-                <h2>Welcome to Kids Adventure Learning! 🌟</h2>
-                <p>Get ready for daily lessons, cultural exploration, fun activities, and exciting rewards! Fill out the form and let's start your adventure! 🚀</p>
-            </div>
-        </div>
-        <button type="submit" form="kidsForm"><span>🚀</span> Let's Go!</button>
+        <div class="emoji-background" style="top: -20px; left: -20px;">☀️</div>
+        <div class="emoji-background" style="top: 50%; right: -20px;">🌊</div>
+        <div class="emoji-background" style="bottom: -20px; left: 50%;">🏄</div>
+        <div class="emoji-background" style="top: 30%; left: -20px;">🚲</div>
+        <form id="kidsForm">
+            <label for="name"><span>😊</span> Your Name</label>
+            <input type="text" id="name" name="name" required placeholder="What should we call you?">
+            
+            <label for="age"><span>🎂</span> Your Age</label>
+            <input type="number" id="age" name="age" min="5" max="18" required placeholder="How old are you?">
+            
+            <label for="language"><span>🗣️</span> Your Language</label>
+            <select id="language" name="language" required>
+                <option value="">Pick your language</option>
+                <option value="english">English</option>
+                <option value="hebrew">Hebrew</option>
+                <option value="spanish">Spanish</option>
+                <option value="french">French</option>
+            </select>
+            
+            <label for="location"><span>📍</span> Where Are You?</label>
+            <input type="text" id="location" name="location" required placeholder="Your current location">
+            
+            <button type="submit"><span>🚀</span> Let's Go!</button>
+        </form>
         <div id="result"></div>
     </div>
     <script>
-        // ... (keep the existing JavaScript code here)
+        document.getElementById('kidsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            console.log('Fun Times Data:', data);
+            
+            // Send data to webhook
+            fetch('https://hook.eu2.make.com/fxofup92hfiu4j47y4c1b49a294km9ok', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            .then(response => response.text())
+            .then(result => {
+                console.log('Webhook response:', result);
+                showResult(data.name);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showResult(data.name, true);
+            });
+        });
+
+        function showResult(name, isError = false) {
+            const resultDiv = document.getElementById('result');
+            if (isError) {
+                resultDiv.textContent = `Oops! Something went wrong. But don't worry, ${name}, we'll fix it!`;
+                resultDiv.style.backgroundColor = '#ff6b6b';
+            } else {
+                resultDiv.textContent = `Yay, ${name}! 🎉 Time for a super fun adventure! Let's go! 🚀`;
+                resultDiv.style.backgroundColor = '#4ecdc4';
+            }
+            resultDiv.style.opacity = '1';
+            
+            // Add floating emojis
+            const emojis = ['🌞', '🌊', '🏄', '🚲', '😄', '🎈', '🌈', '🌴'];
+            for (let i = 0; i < 20; i++) {
+                createFloatingEmoji(emojis[Math.floor(Math.random() * emojis.length)]);
+            }
+        }
+
+        function createFloatingEmoji(emoji) {
+            const emojiSpan = document.createElement('span');
+            emojiSpan.textContent = emoji;
+            emojiSpan.style.position = 'fixed';
+            emojiSpan.style.left = Math.random() * window.innerWidth + 'px';
+            emojiSpan.style.top = Math.random() * window.innerHeight + 'px';
+            emojiSpan.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            emojiSpan.style.pointerEvents = 'none';
+            document.body.appendChild(emojiSpan);
+
+            const animation = emojiSpan.animate([
+                { transform: 'translate(0, 0) rotate(0deg)', opacity: 1 },
+                { transform: `translate(${Math.random() * 100 - 50}px, ${-Math.random() * 300 - 50}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+            ], {
+                duration: Math.random() * 3000 + 3000,
+                easing: 'cubic-bezier(0, .9, .57, 1)',
+            });
+
+            animation.onfinish = () => emojiSpan.remove();
+        }
     </script>
 </body>
 </html>
