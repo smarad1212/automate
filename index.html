@@ -1,100 +1,467 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>הרפתקה בבוגוטה: יום 3</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
-            background-color: #f0f0f0;
-        }
-        .section {
-            background-color: #ffffff;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 5px;
-            margin-top: 10px;
-        }
-        .feedback {
-            font-weight: bold;
-            margin-top: 5px;
-        }
-    </style>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Lección para Shiko - Viernes</title>
+
+  <style>
+
+    / Add your inline CSS styles here /
+
+  </style>
+
 </head>
+
 <body>
 
-<h1 style="text-align: center; color: #4a4a4a;">🌴 הרפתקה בבוגוטה: יום 3 🏙️</h1>
+  <header>
 
-<p style="text-align: center; font-weight: bold;">המשימה שלכם, אם תבחרו לקבל אותה, היא לגלות את סוד הקונדור הזהוב!</p>
+    <h1>¡Bienvenido a la lección de hoy, Shiko!</h1>
 
-<div class="section">
-    <h2 style="color: #2c3e50;">📚 כישורי היום: קסמי מתמטיקה וחקר אנגלית</h2>
+    <p>¡Hoy es viernes en Madrid!</p>
 
-    <h3 style="color: #e74c3c;">אתגר מתמטי 🔢</h3>
-    <p>פרופסור נומרוס זקוק לעזרתכם! כמה הרים געשיים פעילים יש בקולומביה?</p>
-    <input type="number" id="mathAnswer" placeholder="הכניסו את תשובתכם כאן">
-    <button onclick="checkMathAnswer()">בדוק תשובה</button>
-    <p id="mathFeedback" class="feedback"></p>
+  </header>
 
-    <h3 style="color: #e74c3c;">משימת אנגלית 🦜</h3>
-    <p>השלימו את המשפט: "Bogotá is the _______ of Colombia."</p>
-    <input type="text" id="englishAnswer" placeholder="הקלידו את תשובתכם כאן">
-    <button onclick="checkEnglishAnswer()">בדוק תשובה</button>
-    <p id="englishFeedback" class="feedback"></p>
-</div>
 
-<div class="section">
-    <h2 style="color: #2c3e50;">🌋 גלו את הרי הגעש של קולומביה</h2>
-    <p>צפו בסרטון הבא על הרי הגעש של קולומביה:</p>
-    <iframe width="100%" height="315" src="https://www.youtube.com/embed/vPGJzANn6Cs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
 
-<div class="section">
-    <h2 style="color: #2c3e50;">🛠️ יצירת הקונדור שלכם</h2>
-    <p><strong>חומרים:</strong> נייר, צבעים, מספריים</p>
-    <p><strong>שלבים:</strong></p>
+  <section>
+
+    <h2>Descubriendo Madrid</h2>
+
+    <div>
+
+      <h3>Dato divertido sobre Madrid</h3>
+
+      <p>¿Sabías que el Palacio Real de Madrid es el palacio real habitado más grande de Europa? ¡Tiene más de 3,400 habitaciones!</p>
+
+    </div>
+
+    <div>
+
+      <h3>Consejo cultural</h3>
+
+      <p>En España, es cortés saludar a las personas con un beso en la mejilla. ¡Recuerda ser respetuoso y amable con los demás!</p>
+
+    </div>
+
+  </section>
+
+
+
+  <section>
+
+    <h2>Asignaturas de hoy</h2>
+
+    <ul>
+
+      <li>Matemáticas</li>
+
+      <li>Español</li>
+
+      <li>Arte</li>
+
+    </ul>
+
+  </section>
+
+
+
+  <section>
+
+    <h2>Matemáticas</h2>
+
+    <div>
+
+      <h3>Ejercicio 1: Sumas divertidas</h3>
+
+      <p>Ayuda a Shiko a resolver estas divertidas sumas:</p>
+
+      <ol>
+
+        <li>7 + 3 = <input type="number" id="math-exercise1-q1"> </li>
+
+        <li>12 - 5 = <input type="number" id="math-exercise1-q2"> </li>
+
+        <li>4 x 2 = <input type="number" id="math-exercise1-q3"> </li>
+
+      </ol>
+
+      <button onclick="checkMathExercise1()">Revisar respuestas</button>
+
+      <p id="math-exercise1-result"></p>
+
+    </div>
+
+    <div>
+
+      <h3>Ejercicio 2: Formas geométricas</h3>
+
+      <p>Observa estas formas geométricas y cuenta cuántos lados tiene cada una:</p>
+
+      <img src="https://via.placeholder.com/150x150" alt="Formas geométricas">
+
+      <ol>
+
+        <li>Triángulo: <input type="number" id="math-exercise2-q1"> </li>
+
+        <li>Cuadrado: <input type="number" id="math-exercise2-q2"> </li>
+
+        <li>Hexágono: <input type="number" id="math-exercise2-q3"> </li>
+
+      </ol>
+
+      <button onclick="checkMathExercise2()">Revisar respuestas</button>
+
+      <p id="math-exercise2-result"></p>
+
+    </div>
+
+    <div>
+
+      <h3>Actividad práctica: Creando patrones</h3>
+
+      <p>Materiales necesarios:</p>
+
+      <ul>
+
+        <li>Lápices de colores</li>
+
+        <li>Hojas de papel</li>
+
+      </ul>
+
+      <p>Instrucciones:</p>
+
+      <ol>
+
+        <li>Dibuja una línea vertical en el centro de la hoja.</li>
+
+        <li>Crea un patrón de formas y colores a ambos lados de la línea.</li>
+
+        <li>Compara tu patrón con el de un familiar o amigo.</li>
+
+      </ol>
+
+    </div>
+
+  </section>
+
+
+
+  <section>
+
+    <h2>Español</h2>
+
+    <div>
+
+      <h3>Ejercicio 1: Lectura comprensiva</h3>
+
+      <p>Lee el siguiente texto y responde a las preguntas:</p>
+
+      <p>Madrid es la capital y la ciudad más grande de España. Se encuentra en el centro del país y es famosa por sus hermosos parques, museos y monumentos históricos. La gente de Madrid es muy amable y disfruta de una vida social activa, con muchos eventos y festivales durante todo el año.</p>
+
+      <ol>
+
+        <li>¿Dónde se encuentra Madrid?</li>
+
+        <input type="text" id="spanish-exercise1-q1">
+
+        <li>¿Qué es famosa Madrid?</li>
+
+        <input type="text" id="spanish-exercise1-q2">
+
+        <li>¿Cómo es la gente de Madrid?</li>
+
+        <input type="text" id="spanish-exercise1-q3">
+
+      </ol>
+
+      <button onclick="checkSpanishExercise1()">Revisar respuestas</button>
+
+      <p id="spanish-exercise1-result"></p>
+
+    </div>
+
+    <div>
+
+      <h3>Ejercicio 2: Descripción de imágenes</h3>
+
+      <p>Observa esta imagen y describe lo que ves:</p>
+
+      <img src="https://via.placeholder.com/150x150" alt="Imagen de Madrid">
+
+      <textarea id="spanish-exercise2-description"></textarea>
+
+      <button onclick="describeSpanishImage()">Enviar descripción</button>
+
+      <p id="spanish-exercise2-result"></p>
+
+    </div>
+
+    <div>
+
+      <h3>Actividad práctica: Creando un folleto turístico</h3>
+
+      <p>Materiales necesarios:</p>
+
+      <ul>
+
+        <li>Hojas de papel</li>
+
+        <li>Lápices de colores</li>
+
+        <li>Revistas o folletos de Madrid (opcional)</li>
+
+      </ul>
+
+      <p>Instrucciones:</p>
+
+      <ol>
+
+        <li>Recopila información interesante sobre los principales lugares de interés de Madrid.</li>
+
+        <li>Diseña un folleto turístico que incluya imágenes y descripciones de los lugares.</li>
+
+        <li>Comparte tu folleto con familiares o amigos.</li>
+
+      </ol>
+
+    </div>
+
+  </section>
+
+
+
+  <section>
+
+    <h2>Arte</h2>
+
+    <div>
+
+      <h3>Ejercicio 1: Dibujo libre</h3>
+
+      <p>¡Es hora de dejar volar tu imaginación! Dibuja en una hoja tu lugar favorito de Madrid.</p>
+
+      <div id="art-exercise1-drawing"></div>
+
+      <button onclick="saveDrawing()">Guardar dibujo</button>
+
+    </div>
+
+    <div>
+
+      <h3>Ejercicio 2: Creando una escultura</h3>
+
+      <p>Materiales necesarios:</p>
+
+      <ul>
+
+        <li>Arcilla o plastilina</li>
+
+        <li>Palitos de madera (opcionalmente)</li>
+
+      </ul>
+
+      <p>Instrucciones:</p>
+
+      <ol>
+
+        <li>Crea una escultura inspirada en algún monumento o edificio icónico de Madrid.</li>
+
+        <li>Usa tus dedos y herramientas sencillas para darle forma a tu escultura.</li>
+
+        <li>Comparte tu creación con familiares o amigos.</li>
+
+      </ol>
+
+    </div>
+
+    <div>
+
+      <h3>Actividad práctica: Collage de Madrid</h3>
+
+      <p>Materiales necesarios:</p>
+
+      <ul>
+
+        <li>Revistas, folletos o recortes</li>
+
+        <li>Pegamento</li>
+
+        <li>Hojas de papel</li>
+
+      </ul>
+
+      <p>Instrucciones:</p>
+
+      <ol>
+
+        <li>Busca imágenes y recorta elementos que representen la ciudad de Madrid.</li>
+
+        <li>Crea un collage pegando los recortes en una hoja de papel.</li>
+
+        <li>Escribe una breve descripción de tu collage.</li>
+
+      </ol>
+
+    </div>
+
+  </section>
+
+
+
+  <section>
+
+    <h2>Proyecto interdisciplinario</h2>
+
+    <p>¡Vamos a crear un mapa interactivo de Madrid!</p>
+
+    <p>Pasos a seguir:</p>
+
     <ol>
-        <li>ציירו קונדור גדול על הנייר</li>
-        <li>צבעו את הקונדור</li>
-        <li>גזרו את הקונדור</li>
+
+      <li>Investiga sobre los principales lugares de interés de Madrid.</li>
+
+      <li>Dibuja un mapa básico de la ciudad.</li>
+
+      <li>Agrega etiquetas y descripciones de los lugares que has investigado.</li>
+
+      <li>Presenta tu mapa interactivo a familiares o amigos.</li>
+
     </ol>
-    <p>תארו את הקונדור שיצרתם:</p>
-    <textarea placeholder="תארו את היצירה שלכם כאן"></textarea>
-</div>
 
-<script>
-function checkMathAnswer() {
-    const answer = document.getElementById('mathAnswer').value;
-    const feedback = document.getElementById('mathFeedback');
-    if (answer === '15') {
-        feedback.textContent = 'נכון מאוד! יש 15 הרי געש פעילים בקולומביה.';
-        feedback.style.color = 'green';
-    } else {
-        feedback.textContent = 'לא בדיוק, נסו שוב!';
-        feedback.style.color = 'red';
-    }
-}
+  </section>
 
-function checkEnglishAnswer() {
-    const answer = document.getElementById('englishAnswer').value.toLowerCase();
-    const feedback = document.getElementById('englishFeedback');
-    if (answer === 'capital') {
-        feedback.textContent = 'מצוין! בוגוטה היא אכן בירת קולומביה.';
-        feedback.style.color = 'green';
-    } else {
-        feedback.textContent = 'כמעט, נסו שוב!';
-        feedback.style.color = 'red';
+
+
+  <section>
+
+    <h2>Apoyo para TDAH (para Rephael y Romi)</h2>
+
+    <p>Aquí hay dos estrategias que pueden ayudar a mantener a Shiko enfocado durante las lecciones:</p>
+
+    <ul>
+
+      <li>Tomar descansos frecuentes para estirar o beber agua.</li>
+
+      <li>Permitir que Shiko use un "spinner" o un "fidget" mientras trabaja, ya que esto puede ayudar a mantener su atención.</li>
+
+    </ul>
+
+  </section>
+
+
+
+  <section>
+
+    <h2>Consideración de seguridad</h2>
+
+    <p>Recuerda mantener a Shiko a salvo durante las actividades. Asegúrate de que tenga calzado cómodo y esté atento a cualquier riesgo en su entorno.</p>
+
+  </section>
+
+
+
+  <section>
+
+    <h2>Conexión con los objetivos de aprendizaje</h2>
+
+    <div>
+
+      <h3>Objetivo a corto plazo</h3>
+
+      <p>Esta lección ayudará a Shiko a mejorar sus habilidades de resolución de problemas y su comprensión lectora.</p>
+
+    </div>
+
+    <div>
+
+      <h3>Objetivo a largo plazo</h3>
+
+      <p>A lo largo de las lecciones, Shiko desarrollará un mayor interés y apreciación por la cultura y las tradiciones de España.</p>
+
+    </div>
+
+  </section>
+
+
+
+  <section>
+
+    <h2>Preguntas de reflexión</h2>
+
+    <ol>
+
+      <li>¿Qué fue lo que más te gustó de la lección de hoy?</li>
+
+      <li>¿Qué nueva información aprendiste sobre la ciudad de Madrid?</li>
+
+    </ol>
+
+  </section>
+
+
+
+  <section>
+
+    <h2>Portafolio digital</h2>
+
+    <p>Para la entrada de hoy, incluye tu dibujo favorito de Madrid y una breve descripción de lo que representas.</p>
+
+  </section>
+
+
+
+  <script>
+
+    // Add your JavaScript code here
+
+    function checkMathExercise1() {
+
+      // Add code to check the answers for Math Exercise 1
+
     }
-}
-</script>
+
+
+
+    function checkMathExercise2() {
+
+      // Add code to check the answers for Math Exercise 2
+
+    }
+
+
+
+    function checkSpanishExercise1() {
+
+      // Add code to check the answers for Spanish Exercise 1
+
+    }
+
+
+
+    function describeSpanishImage() {
+
+      // Add code to handle the Spanish image description
+
+    }
+
+
+
+    function saveDrawing() {
+
+      // Add code to save the drawing from the Art Exercise 1
+
+    }
+
+  </script>
 
 </body>
+
 </html>
