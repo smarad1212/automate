@@ -1,0 +1,220 @@
+Here is the HTML for the interactive lesson plan for Libi, age 6, in Paris on Saturday:
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plan de leçon pour Libi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    .exercise {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    .activity {
+      background-color: #f2f2f2;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Plan de leçon pour Libi</h1>
+  
+  <h2>Fait amusant : Saviez-vous que Paris est l'une des villes les plus visitées au monde ?</h2>
+  <h2>Astuce culturelle : Lorsque vous traversez la rue à Paris, assurez-vous de regarder dans les deux sens avant de traverser.</h2>
+  
+  <h2>Matières d'aujourd'hui</h2>
+  <ul>
+    <li>Mathématiques</li>
+    <li>Français</li>
+    <li>Arts</li>
+  </ul>
+  
+  <h2>Mathématiques</h2>
+  <div class="exercise">
+    <h3>Exercice 1 : Compter les formes géométriques</h3>
+    <p>Compte le nombre de formes géométriques dans l'image suivante :</p>
+    <img src="shapes.jpg" alt="Formes géométriques">
+    <p>Réponse : <span id="shapesCount">0</span></p>
+    <button onclick="countShapes()">Compte les formes</button>
+    <script>
+      function countShapes() {
+        // Logique pour compter les formes géométriques dans l'image
+        document.getElementById("shapesCount").textContent = "12";
+      }
+    </script>
+  </div>
+  
+  <div class="exercise">
+    <h3>Exercice 2 : Résoudre des problèmes de logique</h3>
+    <p>Aide Libi à résoudre ce problème de logique :</p>
+    <p>Si Libi a 6 bonbons et qu'elle en donne 2 à son ami, combien de bonbons lui restera-t-il ?</p>
+    <input type="number" id="candiesInput" placeholder="Entrez le nombre de bonbons">
+    <button onclick="solveCandyProblem()">Résoudre le problème</button>
+    <p id="candiesResult"></p>
+    <script>
+      function solveCandyProblem() {
+        const candies = parseInt(document.getElementById("candiesInput").value);
+        const result = candies - 2;
+        document.getElementById("candiesResult").textContent = `Il lui restera ${result} bonbons.`;
+      }
+    </script>
+  </div>
+
+  <div class="activity">
+    <h3>Activité pratique : Créer un modèle 3D</h3>
+    <p>Matériel nécessaire :</p>
+    <ul>
+      <li>Carton</li>
+      <li>Ciseaux</li>
+      <li>Colle</li>
+      <li>Marqueurs ou crayons de couleur</li>
+    </ul>
+    <p>Instructions :</p>
+    <ol>
+      <li>Dessine des formes géométriques sur le carton.</li>
+      <li>Découpe les formes.</li>
+      <li>Colle les formes ensemble pour créer un modèle 3D.</li>
+      <li>Décore ton modèle avec des marqueurs ou des crayons de couleur.</li>
+    </ol>
+  </div>
+  
+  <h2>Français</h2>
+  <div class="exercise">
+    <h3>Exercice 1 : Lire et comprendre</h3>
+    <p>Lis le passage suivant et réponds aux questions :</p>
+    <p>Libi adore jouer au football avec ses amis. Ils se retrouvent tous les samedis dans le parc près de chez elle. Libi est très rapide et elle marque souvent des buts. Ses amis l'encouragent et ils rient beaucoup pendant les matchs.</p>
+    <ol>
+      <li>Où Libi joue-t-elle au football ?</li>
+      <li>Que fait Libi pendant les matchs ?</li>
+      <li>Comment se sentent les amis de Libi pendant les matchs ?</li>
+    </ol>
+  </div>
+  
+  <div class="exercise">
+    <h3>Exercice 2 : Écrire une histoire</h3>
+    <p>Écris une histoire courte sur une journée amusante que Libi a passée avec ses amis.</p>
+    <textarea id="storyInput" rows="5" placeholder="Écris ton histoire ici"></textarea>
+    <button onclick="displayStory()">Afficher l'histoire</button>
+    <p id="storyOutput"></p>
+    <script>
+      function displayStory() {
+        const story = document.getElementById("storyInput").value;
+        document.getElementById("storyOutput").textContent = story;
+      }
+    </script>
+  </div>
+
+  <div class="activity">
+    <h3>Activité pratique : Créer une affiche</h3>
+    <p>Matériel nécessaire :</p>
+    <ul>
+      <li>Feuille de papier</li>
+      <li>Crayons de couleur</li>
+      <li>Marqueurs</li>
+      <li>Ciseaux</li>
+      <li>Colle</li>
+    </ul>
+    <p>Instructions :</p>
+    <ol>
+      <li>Dessine des images liées à tes activités préférées.</li>
+      <li>Écris un slogan ou un message positif sur ton affiche.</li>
+      <li>Découpe et colle des images ou des mots supplémentaires pour décorer ton affiche.</li>
+      <li>Accroche ton affiche dans ta chambre ou dans la maison.</li>
+    </ol>
+  </div>
+
+  <h2>Arts</h2>
+  <div class="exercise">
+    <h3>Exercice 1 : Dessiner un portrait</h3>
+    <p>Dessine un portrait de toi-même ou d'un de tes amis.</p>
+    <canvas id="portraitCanvas" width="400" height="400"></canvas>
+    <button onclick="clearPortrait()">Effacer</button>
+    <script>
+      const canvas = document.getElementById("portraitCanvas");
+      const ctx = canvas.getContext("2d");
+
+      canvas.addEventListener("mousedown", startDrawing);
+      canvas.addEventListener("mousemove", draw);
+      canvas.addEventListener("mouseup", stopDrawing);
+
+      let isDrawing = false;
+
+      function startDrawing(e) {
+        isDrawing = true;
+        ctx.beginPath();
+        ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+      }
+
+      function draw(e) {
+        if (!isDrawing) return;
+        ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+        ctx.stroke();
+      }
+
+      function stopDrawing() {
+        isDrawing = false;
+        ctx.closePath();
+      }
+
+      function clearPortrait() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+    </script>
+  </div>
+
+  <div class="activity">
+    <h3>Activité pratique : Création d'un mobile</h3>
+    <p>Matériel nécessaire :</p>
+    <ul>
+      <li>Fil ou ficelle</li>
+      <li>Ciseaux</li>
+      <li>Cartons de couleur</li>
+      <li>Colle</li>
+      <li>Perles ou autres décorations</li>
+    </ul>
+    <p>Instructions :</p>
+    <ol>
+      <li>Découpe des formes géométriques dans les cartons de couleur.</li>
+      <li>Décore les formes avec des perles, des dessins ou d'autres décorations.</li>
+      <li>Attache les formes au fil ou à la ficelle pour créer un mobile.</li>
+      <li>Suspend ton mobile dans ta chambre ou dans un endroit où tu peux l'admirer.</li>
+    </ol>
+  </div>
+
+  <h2>Projet interdisciplinaire</h2>
+  <p>Crée un livre illustré sur ton activité préférée à Paris. Inclus des informations sur les endroits que tu aimes visiter, les gens que tu rencontres et les choses que tu fais.</p>
+
+  <h2>Soutien TDAH (pour Rephael et Romi)</h2>
+  <ul>
+    <li>Prends des pauses régulières pendant les activités.</li>
+    <li>Demande de l'aide à tes parents ou à tes amis si tu en as besoin.</li>
+  </ul>
+
+  <h2>Considération de sécurité</h2>
+  <p>Sois prudent lorsque tu traverses les rues à Paris. Regarde toujours dans les deux sens avant de traverser.</p>
+
+  <h2>Connexion aux objectifs d'apprentissage</h2>
+  <p>Objectif à court terme : Développer tes compétences en mathématiques et en français.</p>
+  <p>Objectif à long terme : Améliorer ta créativité et ton esprit d'équipe.</p>
+
+  <h2>Questions de réflexion (pour la fin de la semaine)</h2>
+  <ul>
+    <li>Qu'as-tu le plus aimé dans tes activités cette semaine ?</li>
+    <li>Qu'as-tu appris de nouveau cette semaine ?</li>
+  </ul>
+
+  <h2>Portfolio numérique</h2>
+  <p>Ajoute ton dessin de portrait à ton portfolio numérique.</p>
+
+</body>
+</html>
