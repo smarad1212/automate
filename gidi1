@@ -1,0 +1,223 @@
+Here is the interactive lesson plan for Gidi, an 8-year-old in Beirut, in Hebrew:
+
+<html>
+<head>
+  <title>Lesson Plan for Gidi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f4f4f4;
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    .exercise {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .activity {
+      background-color: #f9f9f9;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>תכנית שיעור עבור גידי</h1>
+  
+  <h2>עובדה מעניינת: ביירות, לבנון</h2>
+  <p>ביירות היא בירת לבנון וגם העיר הגדולה ביותר בה. העיר ידועה בנוף הרריי הייחודי שלה ובחוף הים המדהים.</p>
+  
+  <h2>טיפ תרבותי: נימוס בלבנון</h2>
+  <p>בלבנון, חשוב לנהוג בנימוס ולכבד את המסורות והמנהגים המקומיים. למשל, כאשר נכנסים למסגד או לבית כנסת, יש להסיר את הנעליים.</p>
+  
+  <h2>היום נלמד:</h2>
+  <ul>
+    <li>מתמטיקה</li>
+    <li>עברית</li>
+    <li>חינוך פיננסי</li>
+  </ul>
+  
+  <div class="exercise">
+    <h3>מתמטיקה</h3>
+    <h4>תרגיל 1: פתרון בעיות מילוליות</h4>
+    <p>גידי יש לך 12 ח'פושים. אם תקנה עוד 5, כמה ח'פושים תהיה לך בסה"כ?</p>
+    <input type="number" id="math-exercise1-answer">
+    <button onclick="checkMathAnswer1()">בדוק את התשובה</button>
+    <p id="math-exercise1-result"></p>
+    
+    <h4>תרגיל 2: הצבה במשוואות</h4>
+    <p>אם יש לך x ח'פושים והורייך קנו לך y ח'פושים נוספים, כמה ח'פושים תהיה לך בסה"כ?</p>
+    <input type="number" id="math-exercise2-x">
+    <input type="number" id="math-exercise2-y">
+    <button onclick="calculateTotalMathShekels()">חשב את הסה"כ</button>
+    <p id="math-exercise2-result"></p>
+  </div>
+  
+  <div class="exercise">
+    <h3>עברית</h3>
+    <h4>תרגיל 1: קריאת טקסט והבנה</h4>
+    <p>קרא את הקטע הבא ואחר כך ענה על השאלות:</p>
+    <p>בארץ ישראל יש הרבה מקומות יפים לטייל בהם. אחד המקומות הפופולריים ביותר הוא הר הכרמל. ההר נמצא בצפון הארץ, בקרבת חיפה. על ההר יש יערות יפים, נחלים ומערות מרתקות לחקור.</p>
+    <ol>
+      <li>היכן נמצא הר הכרמל?</li>
+      <li>מה יש על ההר?</li>
+    </ol>
+    <button onclick="checkHebrewAnswers()">בדוק את התשובות</button>
+    <p id="hebrew-exercise1-result"></p>
+    
+    <h4>תרגיל 2: כתיבה יצירתית</h4>
+    <p>כתוב סיפור קצר על טיול משפחתי להר הכרמל.</p>
+    <textarea id="hebrew-exercise2-story"></textarea>
+    <button onclick="displayHebrewStory()">הצג את הסיפור</button>
+    <p id="hebrew-exercise2-result"></p>
+  </div>
+  
+  <div class="exercise">
+    <h3>חינוך פיננסי</h3>
+    <h4>תרגיל 1: תקציב משפחתי</h4>
+    <p>גידי, אם יש לך 100 ש"ח לחודש להוצאות, כמה כסף תוכל להקדיש לכל תחום:
+      <ul>
+        <li>מזון: </li>
+        <li>תחבורה: </li>
+        <li>בידור: </li>
+        <li>חיסכון: </li>
+      </ul>
+    </p>
+    <button onclick="calculateBudget()">חשב את התקציב</button>
+    <p id="finance-exercise1-result"></p>
+    
+    <h4>תרגיל 2: חסוך כדי לקנות מתנה</h4>
+    <p>גידי, אם אתה רוצה לקנות מתנה בעלות של 50 ש"ח, וכרגע יש לך 20 ש"ח, כמה כסף נוסף עליך לחסוך כדי להגיע ל-50 ש"ח?</p>
+    <input type="number" id="finance-exercise2-goal">
+    <input type="number" id="finance-exercise2-current">
+    <button onclick="calculateSavings()">חשב את הסכום הנדרש</button>
+    <p id="finance-exercise2-result"></p>
+  </div>
+  
+  <div class="activity">
+    <h3>פרויקט בין-תחומי: הכן מודל של הר הכרמל</h3>
+    <p>חומרים נדרשים:</p>
+    <ul>
+      <li>קרטון</li>
+      <li>צבעי גואש</li>
+      <li>לבני קטנות</li>
+      <li>דבק</li>
+    </ul>
+    <p>הנחיות:</p>
+    <ol>
+      <li>צייר את מתווה הר הכרמל על הקרטון.</li>
+      <li>צבע את הקרטון בירוק לייצג את היערות.</li>
+      <li>הדבק את הלבנים כדי ליצור מערות ונחלים.</li>
+      <li>הוסף פרטים נוספים כמו שבילים ועצים.</li>
+    </ol>
+  </div>
+  
+  <div class="activity">
+    <h3>תמיכה ב-ADHD (עבור גידי)</h3>
+    <p>1. הפסקות קצרות: בזמן הלימוד, קחו הפסקות קצרות של 5-10 דקות כדי לאפשר לגידי להתרענן.</p>
+    <p>2. שימוש בעזרים ויזואליים: השתמשו בתמונות, דיאגרמות ואובייקטים מוחשיים כדי לתמוך בלמידה.</p>
+  </div>
+  
+  <div class="activity">
+    <h3>שיקולי בטיחות</h3>
+    <p>בעת הטיול להר הכרמל, וודאו שכולכם לובשים נעליים הולמות ושאתם שותים מספיק מים. שימרו על ריחוק חברתי וזכרו להישטף בסבון לאחר מגע עם צמחייה.</p>
+  </div>
+  
+  <div class="activity">
+    <h3>קישור למטרות הלמידה</h3>
+    <h4>מטרה לטווח קצר:</h4>
+    <p>היום למדנו על משאבים טבעיים בסביבה הקרובה שלנו, כמו היערות והמערות בהר הכרמל. זה יעזור לגידי להבין טוב יותר את הסביבה הטבעית בה הוא חי.</p>
+    <h4>מטרה לטווח ארוך:</h4>
+    <p>הפרויקט הבין-תחומי של בניית מודל של הר הכרמל יעזור לגידי לשפר את מיומנויות החשיבה היצירתית והפתרון בעיות שלו, שהם חלק מהמטרות השנתיות שלו.</p>
+  </div>
+  
+  <div class="activity">
+    <h3>שאלות לתהייה (לסוף השבוע):</h3>
+    <ol>
+      <li>מה הדבר האהוב עליך ביותר מהפעילויות שעשינו היום?</li>
+      <li>אם היית יכול לבקר בהר הכרמל, מה היית רוצה לראות שם?</li>
+    </ol>
+  </div>
+  
+  <div class="activity">
+    <h3>תיק דיגיטלי</h3>
+    <p>היום הוספנו לתיק הדיגיטלי שלך את התמונה של המודל שיצרת של הר הכרמל. זה יעזור לך לזכור את הלמידה והפעילויות שעשית היום.</p>
+  </div>
+  
+  <script>
+    function checkMathAnswer1() {
+      const answer = document.getElementById("math-exercise1-answer").value;
+      if (answer == 17) {
+        document.getElementById("math-exercise1-result").textContent = "תשובה נכונה!";
+      } else {
+        document.getElementById("math-exercise1-result").textContent = "תשובה שגויה. נסה שוב.";
+      }
+    }
+    
+    function calculateTotalMathShekels() {
+      const x = parseInt(document.getElementById("math-exercise2-x").value);
+      const y = parseInt(document.getElementById("math-exercise2-y").value);
+      const total = x + y;
+      document.getElementById("math-exercise2-result").textContent = "סה"כ יהיו לך " + total + " ח'פושים.";
+    }
+    
+    function checkHebrewAnswers() {
+      const answer1 = "בצפון הארץ, בקרבת חיפה";
+      const answer2 = "יערות, נחלים ומערות";
+      
+      let result = "";
+      if (document.querySelector("#hebrew-exercise1-result li:nth-child(1)").textContent === answer1) {
+        result += "התשובה הראשונה נכונה! ";
+      } else {
+        result += "התשובה הראשונה שגויה. ";
+      }
+      
+      if (document.querySelector("#hebrew-exercise1-result li:nth-child(2)").textContent === answer2) {
+        result += "התשובה השנייה נכונה!";
+      } else {
+        result += "התשובה השנייה שגויה.";
+      }
+      
+      document.getElementById("hebrew-exercise1-result").textContent = result;
+    }
+    
+    function displayHebrewStory() {
+      const story = document.getElementById("hebrew-exercise2-story").value;
+      document.getElementById("hebrew-exercise2-result").textContent = "הנה הסיפור שלך:\n" + story;
+    }
+    
+    function calculateBudget() {
+      const totalBudget = 100;
+      const foodBudget = Math.round(totalBudget * 0.5);
+      const transportBudget = Math.round(totalBudget * 0.2);
+      const entertainmentBudget = Math.round(totalBudget * 0.2);
+      const savingsBudget = totalBudget - (foodBudget + transportBudget + entertainmentBudget);
+      
+      document.getElementById("finance-exercise1-result").textContent = `
+        מזון: ${foodBudget} ש"ח
+        תחבורה: ${transportBudget} ש"ח
+        בידור: ${entertainmentBudget} ש"ח
+        חיסכון: ${savingsBudget} ש"ח
+      `;
+    }
+    
+    function calculateSavings() {
+      const goal = parseFloat(document.getElementById("finance-exercise2-goal").value);
+      const current = parseFloat(document.getElementById("finance-exercise2-current").value);
+      const amountNeeded = goal - current;
+      
+      if (amountNeeded > 0) {
+        document.getElementById("finance-exercise2-result").textContent = `אתה צריך לחסוך עוד ${amountNeeded} ש"ח כדי להגיע ל-${goal} ש"ח.`;
+      } else {
+        document.getElementById("finance-exercise2-result").textContent = `אתה כבר הגעת ל-${goal} ש"ח!`;
+      }
+    }
+  </script>
+</body>
+</html>
