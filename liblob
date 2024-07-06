@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventure éducative à Paris - Libi</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+        body {
+            font-family: 'Varela Round', sans-serif;
+            background-color: #F0F4FF;
+            color: #2C3E50;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #3498DB;
+            text-align: center;
+        }
+        .activity {
+            background-color: #ECF0F1;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            border: 2px solid #3498DB;
+        }
+        input[type="text"], input[type="number"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #3498DB;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #3498DB;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #2980B9;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #ECF0F1;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .progress {
+            width: 0%;
+            height: 100%;
+            background-color: #3498DB;
+            border-radius: 10px;
+            transition: width 0.5s ease-in-out;
+        }
+        .timer {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🗼 Aventure éducative à Paris - Lundi 🗼</h1>
+        <h2>Bienvenue, Libi!</h2>
+
+        <div class="timer" id="timer">60:00</div>
+
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+
+        <div class="activity">
+            <h3>📚 Lecture : Les merveilles de Paris</h3>
+            <p>Lis le paragraphe suivant et réponds aux questions :</p>
+            <div style="background-color: #FFFFFF; padding: 10px; border-radius: 5px;">
+                Paris, la ville des lumières, est célèbre pour sa tour Eiffel, son délicieux street food et sa musique pop. La tour Eiffel, construite en 1889, mesure 324 mètres de haut. Dans les rues de Paris, tu peux trouver de délicieuses crêpes, des baguettes fraîches et des macarons colorés. La musique pop française, appelée "chanson française", est très populaire, tout comme les vidéos TikTok filmées devant les monuments parisiens !
+            </div>
+            <p>Questions :</p>
+            <ol>
+                <li>En quelle année a été construite la tour Eiffel ?</li>
+                <input type="number" id="reading-1" placeholder="Réponse">
+                <li>Cite deux exemples de street food parisien mentionnés dans le texte.</li>
+                <input type="text" id="reading-2" placeholder="Réponse">
+                <li>Pourquoi penses-tu que Paris est un bon endroit pour faire des vidéos TikTok ?</li>
+                <textarea id="reading-3" rows="3" placeholder="Réponse"></textarea>
+            </ol>
+            <button onclick="checkReadingAnswers()">Vérifier les réponses</button>
+            <p id="reading-feedback"></p>
+        </div>
+
+        <div class="activity">
+            <h3>🧮 Mathématiques : Planifier une journée à Paris</h3>
+            <p>Aide Libi à planifier sa journée à Paris :</p>
+            <ol>
+                <li>Si un ticket de métro coûte 2 euros et que Libi veut faire 4 trajets dans la journée, combien va-t-elle dépenser en métro ?</li>
+                <input type="number" id="math-1" placeholder="Réponse en euros">
+                <li>Libi veut acheter 3 macarons à 2 euros chacun et une crêpe à 5 euros. Combien va-t-elle dépenser en tout ?</li>
+                <input type="number" id="math-2" placeholder="Réponse en euros">
+                <li>Si Libi commence sa journée à 9h00 et qu'elle veut rentrer à 17h00, combien d'heures durera sa journée de visite ?</li>
+                <input type="number" id="math-3" placeholder="Réponse en heures">
+            </ol>
+            <button onclick="checkMathAnswers()">Vérifier les réponses</button>
+            <p id="math-feedback"></p>
+        </div>
+
+        <div class="activity">
+            <h3>🎵 Projet créatif : Crée ta chanson pop parisienne</h3>
+            <p>Imagine que tu es une star de la pop française. Écris un petit couplet de chanson sur Paris en utilisant au moins 3 mots du texte que tu as lu :</p>
+            <textarea id="song-lyrics" rows="4" placeholder="Écris tes paroles ici"></textarea>
+            <button onclick="saveSongLyrics()">Enregistrer les paroles</button>
+        </div>
+
+        <div class="activity">
+            <h3>🎥 TikTok Challenge : Monuments de Paris</h3>
+            <p>Imagine que tu fais un TikTok devant un monument parisien. Décris en quelques phrases ce que tu ferais dans ta vidéo :</p>
+            <ol>
+                <li>Quel monument choisirais-tu pour ton TikTok ?</li>
+                <input type="text" id="tiktok-1" placeholder="Réponse">
+                <li>Quelle chanson utiliserais-tu en fond sonore ?</li>
+                <input type="text" id="tiktok-2" placeholder="Réponse">
+                <li>Décris en quelques mots les mouvements de danse que tu ferais.</li>
+                <textarea id="tiktok-3" rows="2" placeholder="Réponse"></textarea>
+            </ol>
+            <button onclick="saveTikTokIdea()">Enregistrer l'idée TikTok</button>
+        </div>
+
+        <div class="activity">
+            <h3>📝 Résumé et réflexions</h3>
+            <p>Qu'as-tu appris aujourd'hui sur Paris qui t'a surpris ? Qu'aimerais-tu visiter si tu allais vraiment à Paris ?</p>
+            <textarea id="reflection" rows="4" placeholder="Partage tes pensées ici"></textarea>
+            <button onclick="saveReflection()">Enregistrer tes réflexions</button>
+        </div>
+    </div>
+
+    <script>
+        let progress = 0;
+        const totalActivities = 5;
+        let timeLeft = 3600; // 60 minutes in seconds
+
+        function updateProgress() {
+            progress++;
+            const percentage = (progress / totalActivities) * 100;
+            document.getElementById('progress').style.width = percentage + '%';
+            if (progress === totalActivities) {
+                alert('Bravo ! Tu as terminé toutes les activités ! 🎉');
+            }
+        }
+
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('timer').textContent = 
+                (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+            if (timeLeft > 0) {
+                timeLeft--;
+                setTimeout(updateTimer, 1000);
+            } else {
+                alert('Le temps est écoulé ! Résumons ce que tu as appris.');
+            }
+        }
+
+        updateTimer();
+
+        function checkReadingAnswers() {
+            const answer1 = document.getElementById('reading-1').value;
+            const answer2 = document.getElementById('reading-2').value.toLowerCase();
+            const answer3 = document.getElementById('reading-3').value;
+            const feedback = document.getElementById('reading-feedback');
+            let message = '';
+
+            if (answer1 == '1889') {
+                message += 'Question 1 : Correct ! ';
+            } else {
+                message += 'Question 1 : Pas tout à fait. Relis le texte. ';
+            }
+
+            if (answer2.includes('crêpes') && (answer2.includes('baguettes') || answer2.includes('macarons'))) {
+                message += 'Question 2 : Parfait ! ';
+            } else {
+                message += 'Question 2 : Essaie encore. Le texte mentionne plusieurs exemples. ';
+            }
+
+            if (answer3.length > 10) {
+                message += 'Question 3 : Merci pour ta réponse détaillée !';
+            } else {
+                message += 'Question 3 : Peux-tu développer un peu plus ta réponse ?';
+            }
+
+            feedback.textContent = message;
+            updateProgress();
+        }
+
+        function checkMathAnswers() {
+            const answer1 = document.getElementById('math-1').value;
+            const answer2 = document.getElementById('math-2').value;
+            const answer3 = document.getElementById('math-3').value;
+            const feedback = document.getElementById('math-feedback');
+            let message = '';
+
+            if (answer1 == '8') {
+                message += 'Question 1 : Correct ! ';
+            } else {
+                message += 'Question 1 : Pas tout à fait. Essaie encore. ';
+            }
+
+            if (answer2 == '11') {
+                message += 'Question 2 : Parfait ! ';
+            } else {
+                message += 'Question 2 : Pas tout à fait. Vérifie ton calcul. ';
+            }
+
+            if (answer3 == '8') {
+                message += 'Question 3 : Correct !';
+            } else {
+                message += 'Question 3 : Pas tout à fait. Réfléchis à la durée entre 9h00 et 17h00.';
+            }
+
+            feedback.textContent = message;
+            updateProgress();
+        }
+
+        function saveSongLyrics() {
+            const lyrics = document.getElementById('song-lyrics').value;
+            if (lyrics.length > 20) {
+                alert('Tes paroles ont été enregistrées ! Ça sonne super bien ! 🎵');
+                updateProgress();
+            } else {
+                alert('Essaie d\'écrire un peu plus de paroles. Tu peux le faire !');
+            }
+        }
+
+        function saveTikTokIdea() {
+            const idea1 = document.getElementById('tiktok-1').value;
+            const idea2 = document.getElementById('tiktok-2').value;
+            const idea3 = document.getElementById('tiktok-3').value;
+            if (idea1.length > 0 && idea2.length > 0 && idea3.length > 10) {
+                alert('Ton idée TikTok a été enregistrée ! Ça va être un carton ! 📱');
+                updateProgress();
+            } else {
+                alert('Ajoute plus de détails à ton idée TikTok. Sois créatif !');
+            }
+        }
+
+        function saveReflection() {
+            const reflection = document.getElementById('reflection').value;
+            if (reflection.length > 20) {
+                alert('Tes réflexions ont été enregistrées. Merci de partager tes pensées ! 🤔');
+                updateProgress();
+            } else {
+                alert('Essaie de réfléchir un peu plus à ce que tu as appris aujourd\'hui.');
+            }
+        }
+    </script>
+</body>
+</html>
