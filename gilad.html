@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הרפתקה לימודית במוסקבה - גלעד</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+        body {
+            font-family: 'Varela Round', sans-serif;
+            background-color: #F0F4FF;
+            color: #2C3E50;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #3498DB;
+            text-align: center;
+        }
+        .activity {
+            background-color: #ECF0F1;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            border: 2px solid #3498DB;
+        }
+        input[type="text"], input[type="number"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #3498DB;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #3498DB;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #2980B9;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #ECF0F1;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .progress {
+            width: 0%;
+            height: 100%;
+            background-color: #3498DB;
+            border-radius: 10px;
+            transition: width 0.5s ease-in-out;
+        }
+        .timer {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏙️ הרפתקה לימודית במוסקבה - יום שבת 🏙️</h1>
+        <h2>ברוך הבא, גלעד!</h2>
+
+        <div class="timer" id="timer">60:00</div>
+
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+
+        <div class="activity">
+            <h3>📚 פסקת קריאה: הטבע והשטחים הפתוחים של מוסקבה</h3>
+            <p>קרא את הפסקה הבאה ואז ענה על השאלות:</p>
+            <div style="background-color: #FFFFFF; padding: 10px; border-radius: 5px;">
+                למרות שמוסקבה היא אחת הערים הגדולות והצפופות באירופה, העיר מציעה גם שפע של שטחים פתוחים וטבע. אחד האזורים הפופולריים ביותר לטיולים ופעילויות פנאי הוא פארק גורקי, ששטחו כ-500 דונם ומשתרע לאורך נהר המוסקבה. הפארק מציע מגוון עצום של אטרקציות, כמו אגמים לשיט, מסלולי הליכה ורכיבה על אופניים, גני חיות, ומתקני משחקים. מעבר לפארק גורקי, מוסקבה מציעה גם שמורות טבע ענקיות, כמו היער המאובן ביער מהודי שנמצא בפרברי העיר. אזורים אלה מעניקים לתושבים ולמבקרים הזדמנות להימלט מהעיר הסואנת ולהנות מהטבע והנוף המרהיב.
+            </div>
+            <p>שאלות:</p>
+            <ol>
+                <li>מה הוא האזור הפופולרי ביותר בעיר מוסקבה לפעילויות פנאי?</li>
+                <input type="text" id="reading-1" placeholder="תשובה">
+                <li>מהו גודלו של פארק גורקי בדונמים?</li>
+                <input type="number" id="reading-2" placeholder="תשובה">
+                <li>איזה סוג של אטרקציות ניתן למצוא בפארק גורקי?</li>
+                <textarea id="reading-3" rows="3" placeholder="תשובה"></textarea>
+            </ol>
+            <button onclick="checkReadingAnswers()">בדוק תשובות</button>
+            <p id="reading-feedback"></p>
+        </div>
+
+        <div class="activity">
+            <h3>🧮 חשבון: תקציב טיול לפארק גורקי</h3>
+            <p>עזור לגלעד לתכנן את התקציב לטיול לפארק גורקי:</p>
+            <ol>
+                <li>אם כרטיס כניסה למבוגר עולה 5 רובל ולילד 3 רובל, כמה יעלה כרטיס כניסה למשפחה של 2 מבוגרים ו-3 ילדים?</li>
+                <input type="number" id="math-1" placeholder="תשובה ברובל">
+                <li>אם ארוחה ממוצעת במסעדה בפארק עולה 20 רובל לאדם, כמה תעלה ארוחה למשפחה של 5 נפשות?</li>
+                <input type="number" id="math-2" placeholder="תשובה ברובל">
+                <li>אם יש לך 100 רובל לבזבז על מזכרות, וכל מזכרת עולה 10 רובל, כמה מזכרות תוכל לקנות?</li>
+                <input type="number" id="math-3" placeholder="תשובה במספר מזכרות">
+            </ol>
+            <button onclick="checkMathAnswers()">בדוק תשובות</button>
+            <p id="math-feedback"></p>
+        </div>
+
+        <div class="activity">
+            <h3>🎮 בינה מלאכותית: עיצוב משחק על טיול בטבע</h3>
+            <p>דמיין שאתה מעצב משחק מחשב המבוסס על טיול בטבע. תאר את המשחק שלך:</p>
+            <ol>
+                <li>מהי מטרת המשחק?</li>
+                <textarea id="ai-1" rows="2" placeholder="תשובה"></textarea>
+                <li>תאר שני שלבים במשחק ואיך הם קשורים לטיול בטבע</li>
+                <textarea id="ai-2" rows="4" placeholder="תשובה"></textarea>
+                <li>איך תשלב בינה מלאכותית במשחק כדי להפוך אותו למעניין יותר?</li>
+                <textarea id="ai-3" rows="3" placeholder="תשובה"></textarea>
+            </ol>
+            <button onclick="saveAIGameDesign()">שמור עיצוב משחק</button>
+        </div>
+
+        <div class="activity">
+            <h3>🎨 פרויקט יצירתי: ציור דיגיטלי של פארק גורקי</h3>
+            <p>השתמש בכלי ציור דיגיטלי פשוט (כמו Paint או אפליקציה בטלפון) כדי ליצור ציור של נוף מפארק גורקי. כלול לפחות שלושה אלמנטים שלמדת עליהם היום. תאר את הציור שלך:</p>
+            <textarea id="art-description" rows="4" placeholder="תאר את הציור שלך כאן"></textarea>
+            <button onclick="saveArtDescription()">שמור תיאור</button>
+        </div>
+
+        <div class="activity">
+            <h3>🎲 משחק זיכרון: משחק שחמט במוסקבה</h3>
+            <p>בואו נשחק משחק זיכרון בהשראת משחק השחמט, שהוא אחד מהתחביבים האהובים של גלעד!</p>
+            <button onclick="startMemoryGame()">התחל משחק זיכרון</button>
+            <div id="memory-game-board" style="display: none;">
+                <h4>זכור את המיקום של הכלים!</h4>
+                <div id="memory-game-squares"></div>
+                <button onclick="checkMemoryGameAnswers()">בדוק תשובות</button>
+                <p id="memory-game-feedback"></p>
+            </div>
+        </div>
+
+        <div class="activity">
+            <h3>📝 סיכום ומחשבות</h3>
+            <p>מה למדת היום על מוסקבה שהפתיע אותך? איך זה משנה את הדרך שבה אתה חושב על פעילויות בטבע?</p>
+            <textarea id="reflection" rows="4" placeholder="שתף את המחשבות שלך כאן"></textarea>
+            <button onclick="saveReflection()">שמור מחשבות</button>
+        </div>
+    </div>
+
+    <script>
+        let progress = 0;
+        const totalActivities = 6;
+        let timeLeft = 3600; // 60 minutes in seconds
+
+        function updateProgress() {
+            progress++;
+            const percentage = (progress / totalActivities) * 100;
+            document.getElementById('progress').style.width = percentage + '%';
+            if (progress === totalActivities) {
+                alert('כל הכבוד! סיימת את כל הפעילויות! 🎉');
+            }
+        }
+
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('timer').textContent = 
+                (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+            if (timeLeft > 0) {
+                timeLeft--;
+                setTimeout(updateTimer, 1000);
+            } else {
+                alert('הזמן נגמר! בוא נסכם את מה שהספקת ללמוד.');
+            }
+        }
+
+        updateTimer();
+
+        function checkReadingAnswers() {
+            const answer1 = document.getElementById('reading-1').value.toLowerCase();
+            const answer2 = document.getElementById('reading-2').value;
+            const answer3 = document.getElementById('reading-3').value;
+            const feedback = document.getElementById('reading-feedback');
+            let message = '';
+
+            if (answer1.includes('פארק') && answer1.includes('גורקי')) {
+                message += 'שאלה 1: נכון! ';
+            } else {
+                message += 'שאלה 1: לא מדויק. קרא שוב את הפסקה. ';
+            }
+
+            if (answer2 == '500') {
+                message += 'שאלה 2: נכון! ';
+            } else {
+                message += 'שאלה 2: לא מדויק. חפש בפסקה מידע על גודל הפארק. ';
+            }
+
+            if (answer3.includes('אגמים') && answer3.includes('אופניים') && answer3.includes('משחקים')) {
+                message += 'שאלה 3: נכון! תשובה מפורטת.';
+            } else {
+                message += 'שאלה 3: נסה להרחיב את תשובתך ולכלול יותר פרטים מהפסקה.';
+            }
+
+            feedback.textContent = message;
+            updateProgress();
+        }
+
+        function checkMathAnswers() {
+            const answer1 = document.getElementById('math-1').value;
+            const answer2 = document.getElementById('math-2').value;
+            const answer3 = document.getElementById('math-3').value;
+            const feedback = document.getElementById('math-feedback');
+            let message = '';
+
+            if (answer1 == '21') {
+                message += 'שאלה 1: נכון! ';
+            } else {
+                message += 'שאלה 1: לא מדויק. נסה שוב. ';
+            }
+
+            if (answer2 == '100') {
+                message += 'שאלה 2: נכון! ';
+            } else {
+                message += 'שאלה 2: לא מדויק. נסה שוב. ';
+            }
+
+            if (answer3 == '10') {
+                message += 'שאלה 3: נכון!';
+            } else {
+                message += 'שאלה 3: לא מדויק. נסה שוב.';
+            }
+
+            feedback.textContent = message;
+            updateProgress();
+        }
+
+        function saveAIGameDesign() {
+            const design1 = document.getElementById('ai-1').value;
+            const design2 = document.getElementById('ai-2').value;
+            const design3 = document.getElementById('ai-3').value;
+            if (design1.length > 10 && design2.length > 20 && design3.length > 10) {
+                alert('עיצוב המשחק נשמר בהצלחה! רעיונות מעולים! 🎮');
+                updateProgress();
+            } else {
+                alert('אנא הוסף פרטים נוספים לכל חלק
