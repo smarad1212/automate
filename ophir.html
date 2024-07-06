@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הרפתקה לימודית בצפון איטליה - אופיר</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+        body {
+            font-family: 'Varela Round', sans-serif;
+            background-color: #F0F4FF;
+            color: #2C3E50;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #3498DB;
+            text-align: center;
+        }
+        .activity {
+            background-color: #ECF0F1;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            border: 2px solid #3498DB;
+        }
+        input[type="text"], input[type="number"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #3498DB;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #3498DB;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #2980B9;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #ECF0F1;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .progress {
+            width: 0%;
+            height: 100%;
+            background-color: #3498DB;
+            border-radius: 10px;
+            transition: width 0.5s ease-in-out;
+        }
+        .timer {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏰 הרפתקה לימודית בצפון איטליה - יום ראשון 🏰</h1>
+        <h2>ברוך הבא, אופיר!</h2>
+
+        <div class="timer" id="timer">60:00</div>
+
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+
+        <div class="activity">
+            <h3>📚 פסקת קריאה: ערי צפון איטליה</h3>
+            <p>קרא את הפסקה הבאה ואז ענה על השאלות:</p>
+            <div style="background-color: #FFFFFF; padding: 10px; border-radius: 5px;">
+                צפון איטליה ידוע בערים היפות והמעניינות שלו. מילאנו היא העיר הגדולה ביותר באזור, והיא ידועה כבירת האופנה של איטליה. בוונציה, עיר התעלות המפורסמת, אנשים משתמשים בסירות במקום במכוניות. בעיר ורונה התרחש הסיפור המפורסם של רומיאו ויוליה. טורינו היא עיר שידועה בתעשיית הרכב שלה ובשוקולד המשובח. בולוניה מפורסמת באוניברסיטה העתיקה שלה ובאוכל הטעים, במיוחד הפסטה. כל עיר בצפון איטליה מציעה חוויות ייחודיות למבקרים בה.
+            </div>
+            <p>שאלות:</p>
+            <ol>
+                <li>איזו עיר ידועה כבירת האופנה של איטליה?</li>
+                <input type="text" id="reading-1" placeholder="תשובה">
+                <li>באיזו עיר משתמשים בסירות במקום במכוניות?</li>
+                <input type="text" id="reading-2" placeholder="תשובה">
+                <li>ציין שתי עובדות מעניינות על ערים אחרות שהוזכרו בקטע</li>
+                <textarea id="reading-3" rows="3" placeholder="תשובה"></textarea>
+            </ol>
+            <button onclick="checkReadingAnswers()">בדוק תשובות</button>
+            <p id="reading-feedback"></p>
+        </div>
+
+        <div class="activity">
+            <h3>🧮 חשבון: תכנון טיול בצפון איטליה</h3>
+            <p>עזור לאופיר לתכנן טיול בצפון איטליה:</p>
+            <ol>
+                <li>אם כרטיס רכבת בין שתי ערים עולה 25 אירו, כמה יעלה לבקר ב-4 ערים שונות?</li>
+                <input type="number" id="math-1" placeholder="תשובה באירו">
+                <li>אם ארוחה במסעדה עולה 20 אירו לאדם, כמה יעלו 3 ארוחות למשפחה של 4 אנשים?</li>
+                <input type="number" id="math-2" placeholder="תשובה באירו">
+            </ol>
+            <button onclick="checkMathAnswers()">בדוק תשובות</button>
+            <p id="math-feedback"></p>
+        </div>
+
+        <div class="activity">
+            <h3>🎮 בינה מלאכותית: עיצוב משחק Roblox בהשראת צפון איטליה</h3>
+            <p>דמיין שאתה מעצב משחק Roblox המבוסס על צפון איטליה. תאר את המשחק שלך:</p>
+            <ol>
+                <li>מה תהיה המטרה הראשית של המשחק?</li>
+                <textarea id="ai-1" rows="2" placeholder="תשובה"></textarea>
+                <li>תאר שני אתגרים או שלבים במשחק שקשורים לערים בצפון איטליה</li>
+                <textarea id="ai-2" rows="3" placeholder="תשובה"></textarea>
+            </ol>
+            <button onclick="saveAIGameDesign()">שמור עיצוב משחק</button>
+        </div>
+
+        <div class="activity">
+            <h3>📝 סיכום ומחשבות</h3>
+            <p>מה למדת היום על צפון איטליה שהפתיע אותך? איזו עיר היית הכי רוצה לבקר בה ולמה?</p>
+            <textarea id="reflection" rows="3" placeholder="שתף את המחשבות שלך כאן"></textarea>
+            <button onclick="saveReflection()">שמור מחשבות</button>
+        </div>
+    </div>
+
+    <script>
+        let progress = 0;
+        const totalActivities = 4;
+        let timeLeft = 3600; // 60 minutes in seconds
+
+        function updateProgress() {
+            progress++;
+            const percentage = (progress / totalActivities) * 100;
+            document.getElementById('progress').style.width = percentage + '%';
+            if (progress === totalActivities) {
+                alert('כל הכבוד! סיימת את כל הפעילויות! 🎉');
+            }
+        }
+
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('timer').textContent = 
+                (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+            if (timeLeft > 0) {
+                timeLeft--;
+                setTimeout(updateTimer, 1000);
+            } else {
+                alert('הזמן נגמר! בוא נסכם את מה שהספקת ללמוד.');
+            }
+        }
+
+        updateTimer();
+
+        function checkReadingAnswers() {
+            const answer1 = document.getElementById('reading-1').value.toLowerCase();
+            const answer2 = document.getElementById('reading-2').value.toLowerCase();
+            const answer3 = document.getElementById('reading-3').value.toLowerCase();
+            const feedback = document.getElementById('reading-feedback');
+            let message = '';
+
+            if (answer1.includes('מילאנו')) {
+                message += 'שאלה 1: נכון! ';
+            } else {
+                message += 'שאלה 1: לא מדויק. קרא שוב את הפסקה. ';
+            }
+
+            if (answer2.includes('ונציה')) {
+                message += 'שאלה 2: נכון! ';
+            } else {
+                message += 'שאלה 2: לא מדויק. חפש בפסקה את העיר עם התעלות. ';
+            }
+
+            if ((answer3.includes('ורונה') || answer3.includes('רומיאו') || answer3.includes('יוליה')) &&
+                (answer3.includes('טורינו') || answer3.includes('רכב') || answer3.includes('שוקולד') ||
+                 answer3.includes('בולוניה') || answer3.includes('אוניברסיטה') || answer3.includes('פסטה'))) {
+                message += 'שאלה 3: מצוין! זכרת עובדות על ערים שונות.';
+            } else {
+                message += 'שאלה 3: נסה לציין עובדות על שתי ערים שונות מהקטע.';
+            }
+
+            feedback.textContent = message;
+            updateProgress();
+        }
+
+        function checkMathAnswers() {
+            const answer1 = document.getElementById('math-1').value;
+            const answer2 = document.getElementById('math-2').value;
+            const feedback = document.getElementById('math-feedback');
+            let message = '';
+
+            if (answer1 == '75') {
+                message += 'שאלה 1: נכון! ';
+            } else {
+                message += 'שאלה 1: לא מדויק. חשב 25 אירו כפול 3 נסיעות. ';
+            }
+
+            if (answer2 == '240') {
+                message += 'שאלה 2: נכון!';
+            } else {
+                message += 'שאלה 2: לא מדויק. חשב 20 אירו כפול 4 אנשים כפול 3 ארוחות.';
+            }
+
+            feedback.textContent = message;
+            updateProgress();
+        }
+
+        function saveAIGameDesign() {
+            const design1 = document.getElementById('ai-1').value;
+            const design2 = document.getElementById('ai-2').value;
+            if (design1.length > 10 && design2.length > 20) {
+                alert('עיצוב המשחק נשמר בהצלחה! רעיונות מעולים! 🎮');
+                updateProgress();
+            } else {
+                alert('אנא הוסף פרטים נוספים לכל חלקי עיצוב המשחק.');
+            }
+        }
+
+        function saveReflection() {
+            const reflection = document.getElementById('reflection').value;
+            if (reflection.length > 20) {
+                alert('המחשבות שלך נשמרו בהצלחה! תודה על השיתוף! 🌟');
+                updateProgress();
+            } else {
+                alert('אנא שתף יותר מהמחשבות שלך.');
+            }
+        }
+    </script>
+</body>
+</html>
