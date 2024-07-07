@@ -1,0 +1,266 @@
+Sure, here's a personalized lesson plan for Shimi, an 8-year-old living in Salvador, Brazil, with a focus on soccer and generated in Hebrew:
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הרפתקה לימודית בסלוודור - שימי</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+        body {
+            font-family: 'Varela Round', sans-serif;
+            background-color: #F0F4FF;
+            color: #2C3E50;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #3498DB;
+            text-align: center;
+        }
+        .activity {
+            background-color: #ECF0F1;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            border: 2px solid #3498DB;
+        }
+        input[type="text"], input[type="number"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #3498DB;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #3498DB;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #2980B9;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #ECF0F1;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .progress {
+            width: 0%;
+            height: 100%;
+            background-color: #3498DB;
+            border-radius: 10px;
+            transition: width 0.5s ease-in-out;
+        }
+        .timer {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚽ הרפתקה לימודית בסלוודור - יום ראשון ⚽</h1>
+        <h2>ברוך הבא, שימי!</h2>
+
+        <div class="timer" id="timer">60:00</div>
+
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+
+        <div class="activity">
+            <h3>📚 פסקת קריאה: כדורגל בברזיל</h3>
+            <p>קרא את הפסקה הבאה ואז ענה על השאלות:</p>
+            <div style="background-color: #FFFFFF; padding: 10px; border-radius: 5px;">
+                כדורגל הוא הספורט הלאומי של ברזיל והוא חלק בלתי נפרד מהתרבות והזהות של המדינה. המשחק נחשב לאהוב ביותר על ידי הילדים והמבוגרים כאחד. ברחבי סלוודור וערי ברזיל האחרות, תמצא מגרשי כדורגל במרכזי הערים, במוסדות חינוך ובפארקים ציבוריים. מאות אלפי ילדים משתתפים בליגות המקומיות ומפתחים את מיומנויות הכדורגל שלהם מגיל צעיר. ברזיל גאה בהיסטוריה המפוארת שלה בענף זה, עם חמש אליפויות עולם וכוכבים בינלאומיים רבים שצמחו מבין שורותיה.
+            </div>
+            <p>שאלות:</p>
+            <ol>
+                <li>מדוע כדורגל נחשב לספורט הלאומי של ברזיל?</li>
+                <input type="text" id="reading-1" placeholder="תשובה">
+                <li>איפה במיוחד אפשר למצוא מגרשי כדורגל בברזיל?</li>
+                <input type="text" id="reading-2" placeholder="תשובה">
+                <li>כמה אליפויות עולם זכתה ברזיל בכדורגל?</li>
+                <input type="number" id="reading-3" placeholder="תשובה">
+            </ol>
+            <button onclick="checkReadingAnswers()">בדוק תשובות</button>
+            <p id="reading-feedback"></p>
+        </div>
+
+        <div class="activity">
+            <h3>🧮 חשבון: אספקת ציוד לקבוצת הכדורגל</h3>
+            <p>עזור לשימי לחשב את כמות הציוד הנדרשת לקבוצת הכדורגל שלו:</p>
+            <ol>
+                <li>אם כל כדור עולה 25 ₪ ויש צורך ב-12 כדורים, כמה יעלה זה בסך הכל?</li>
+                <input type="number" id="math-1" placeholder="תשובה ב-₪">
+                <li>אם כל חולצה עולה 50 ₪ והקבוצה מונה 15 שחקנים, כמה יעלה להצטייד בחולצות?</li>
+                <input type="number" id="math-2" placeholder="תשובה ב-₪">
+                <li>אם כל זוג מגני ברכיים עולה 30 ₪ וכל שחקן זקוק לזוג אחד, כמה יעלה להצטייד במגני ברכיים לכל הקבוצה?</li>
+                <input type="number" id="math-3" placeholder="תשובה ב-₪">
+            </ol>
+            <button onclick="checkMathAnswers()">בדוק תשובות</button>
+            <p id="math-feedback"></p>
+        </div>
+
+        <div class="activity">
+            <h3>🎮 בינה מלאכותית: עיצוב משחק כדורגל</h3>
+            <p>דמיין שאתה מעצב משחק מחשב על כדורגל. תאר את המשחק שלך:</p>
+            <ol>
+                <li>מהי מטרת המשחק?</li>
+                <textarea id="ai-1" rows="2" placeholder="תשובה"></textarea>
+                <li>תאר שני שלבים במשחק ואיך הם מדמים את חוויית המשחק האמיתית</li>
+                <textarea id="ai-2" rows="4" placeholder="תשובה"></textarea>
+                <li>איך תשלב בינה מלאכותית במשחק כדי להפוך אותו למעניין יותר?</li>
+                <textarea id="ai-3" rows="3" placeholder="תשובה"></textarea>
+            </ol>
+            <button onclick="saveAIGameDesign()">שמור עיצוב משחק</button>
+        </div>
+
+        <div class="activity">
+            <h3>🎨 פרויקט יצירתי: ציור דיגיטלי של שחקן כדורגל</h3>
+            <p>השתמש בכלי ציור דיגיטלי פשוט (כמו Paint או אפליקציה בטלפון) כדי ליצור ציור של שחקן כדורגל בפעולה. תאר את הציור שלך:</p>
+            <textarea id="art-description" rows="4" placeholder="תאר את הציור שלך כאן"></textarea>
+            <button onclick="saveArtDescription()">שמור תיאור</button>
+        </div>
+
+        <div class="activity">
+            <h3>📝 סיכום ומחשבות</h3>
+            <p>מה למדת היום על כדורגל בברזיל שהפתיע אותך? איך זה משפיע על הרצון שלך להתאמן בכדורגל?</p>
+            <textarea id="reflection" rows="4" placeholder="שתף את המחשבות שלך כאן"></textarea>
+            <button onclick="saveReflection()">שמור מחשבות</button>
+        </div>
+    </div>
+
+    <script>
+        let progress = 0;
+        const totalActivities = 5;
+        let timeLeft = 3600; // 60 minutes in seconds
+
+        function updateProgress() {
+            progress++;
+            const percentage = (progress / totalActivities) * 100;
+            document.getElementById('progress').style.width = percentage + '%';
+            if (progress === totalActivities) {
+                alert('כל הכבוד! סיימת את כל הפעילויות! 🎉');
+            }
+        }
+
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('timer').textContent = 
+                (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+            if (timeLeft > 0) {
+                timeLeft--;
+                setTimeout(updateTimer, 1000);
+            } else {
+                alert('הזמן נגמר! בוא נסכם את מה שהספקת ללמוד.');
+            }
+        }
+
+        updateTimer();
+
+        function checkReadingAnswers() {
+            const answer1 = document.getElementById('reading-1').value.toLowerCase();
+            const answer2 = document.getElementById('reading-2').value.toLowerCase();
+            const answer3 = document.getElementById('reading-3').value;
+            const feedback = document.getElementById('reading-feedback');
+            let message = '';
+
+            if (answer1.includes('חלק בלתי נפרד') && answer1.includes('תרבות') && answer1.includes('זהות')) {
+                message += 'שאלה 1: נכון! ';
+            } else {
+                message += 'שאלה 1: לא מדויק. נסה להתמקד בתשובה על מדוע כדורגל נחשב לספורט הלאומי. ';
+            }
+
+            if (answer2.includes('מרכזי') && answer2.includes('מוסדות חינוך') && answer2.includes('פארקים')) {
+                message += 'שאלה 2: נכון! ';
+            } else {
+                message += 'שאלה 2: לא מדויק. חפש מידע נוסף על מקומות שבהם ניתן למצוא מגרשי כדורגל. ';
+            }
+
+            if (answer3 == '5') {
+                message += 'שאלה 3: נכון!';
+            } else {
+                message += 'שאלה 3: לא מדויק. בדוק שוב את הפסקה להשיב על מספר אליפויות העולם של ברזיל.';
+            }
+
+            feedback.textContent = message;
+            updateProgress();
+        }
+
+        function checkMathAnswers() {
+            const answer1 = document.getElementById('math-1').value;
+            const answer2 = document.getElementById('math-2').value;
+            const answer3 = document.getElementById('math-3').value;
+            const feedback = document.getElementById('math-feedback');
+            let message = '';
+
+            if (answer1 == '300') {
+                message += 'שאלה 1: נכון! ';
+            } else {
+                message += 'שאלה 1: לא מדויק. נסה שוב. ';
+            }
+
+            if (answer2 == '750') {
+                message += 'שאלה 2: נכון! ';
+            } else {
+                message += 'שאלה 2: לא מדויק. נסה שוב. ';
+            }
+
+            if (answer3 == '450') {
+                message += 'שאלה 3: נכון!';
+            } else {
+                message += 'שאלה 3: לא מדויק. נסה שוב.';
+            }
+
+            feedback.textContent = message;
+            updateProgress();
+        }
+
+        function saveAIGameDesign() {
+            const design1 = document.getElementById('ai-1').value;
+            const design2 = document.getElementById('ai-2').value;
+            const design3 = document.getElementById('ai-3').value;
+            if (design1.length > 10 && design2.length > 20 && design3.length > 10) {
+                alert('עיצוב המשחק נשמר בהצלחה! רעיונות מעולים! 🎮');
+                updateProgress();
+            } else {
+                alert('אנא הוסף פרטים נוספים לכל חלקי עיצוב המשחק.');
+            }
+        }
+
+        function saveArtDescription() {
+            const description = document.getElementById('art-description').value;
+            if (description.length > 20) {
+                alert('תיאור הציור נשמר בהצלחה! נשמע מדהים! 🎨');
+                updateProgress();
+            } else {
+                alert('אנא תאר את הציור בצורה מפורטת יותר.');
+            }
+        }
+
+        function saveReflection() {
+            const reflection = document.getElementById('reflection').value;
+            if (reflection.length > 20) {
+                alert('המחשבות נשמרו בהצלחה! תודה על ההשתתפות! 👏');
+                updateProgress();
+            } else {
+                alert('אנא שתף מחשבות מעמי
