@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>הרפתקה בקו פנגן - רפאל</title>
+    <title>הרפתקה לימודית בפוקט - רפאל</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
         body {
@@ -74,7 +74,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>🏝️ הרפתקה בקו פנגן - יום שני 🏝️</h1>
+        <h1>🏝️ הרפתקה לימודית בפוקט - רפאל 🏝️</h1>
         <h2>ברוך הבא, רפאל!</h2>
 
         <div class="timer" id="timer">60:00</div>
@@ -84,33 +84,33 @@
         </div>
 
         <div class="activity">
-            <h3>📚 קריאה: כדורגל בתאילנד</h3>
-            <p>קרא את הקטע הבא על כדורגל בתאילנד ואז ענה על השאלות:</p>
+            <h3>📚 קריאה: פוקט והחופים שלה</h3>
+            <p>קרא את הקטע הבא וענה על השאלות:</p>
             <div style="background-color: #FFFFFF; padding: 10px; border-radius: 5px;">
-                כדורגל הוא ספורט פופולרי מאוד בתאילנד, כולל באי קו פנגן. רבים מהילדים המקומיים משחקים כדורגל על החוף, נהנים מהחול הרך מתחת לרגליהם והנוף היפהפה של הים. בתאילנד, הכדורגל נקרא "ฟุตบอล" (פוטבול). נבחרת תאילנד הלאומית, המכונה "הפילים המלחמתיים", מתחרה ברמה האסיאתית ואף השתתפה באליפות אסיה. אחד השחקנים המפורסמים ביותר של תאילנד הוא צ'נאטיפ סונגקראסין, המכונה "מסי של תאילנד" בגלל סגנון המשחק הדומה לכוכב הארגנטינאי.
+                פוקט הוא אי גדול בתאילנד, מפורסם בזכות החופים היפים שלו. אחד החופים המפורסמים ביותר נקרא "חוף פאטונג". בחוף הזה אפשר לעשות הרבה דברים כיפיים, כמו לשחות בים הכחול, לבנות ארמונות חול, או לשחק כדור עף חופים. יש גם אפשרות לרכוב על אופנוע ים או לנסות גלישת רוח. בערב, החוף מתמלא באנשים שבאים לראות את השקיעה היפה. לאורך החוף יש הרבה מסעדות שמגישות אוכל תאילנדי טעים, כמו פאד תאי ומרק תום יאם.
             </div>
             <p>שאלות:</p>
             <ol>
-                <li>איך אומרים "כדורגל" בתאית?</li>
+                <li>מה שם החוף המפורסם שהוזכר בקטע?</li>
                 <input type="text" id="reading-1" placeholder="תשובה">
-                <li>מה הכינוי של נבחרת תאילנד הלאומית?</li>
+                <li>ציין שתי פעילויות שאפשר לעשות בחוף הזה:</li>
                 <input type="text" id="reading-2" placeholder="תשובה">
-                <li>מי נחשב ל"מסי של תאילנד" ומדוע?</li>
-                <input type="text" id="reading-3" placeholder="תשובה">
+                <li>אם היית בחוף הזה, מה היית רוצה לעשות? למה?</li>
+                <textarea id="reading-3" rows="3" placeholder="תשובה"></textarea>
             </ol>
             <button onclick="checkReadingAnswers()">בדוק תשובות</button>
             <p id="reading-feedback"></p>
         </div>
 
         <div class="activity">
-            <h3>🧮 מתמטיקה: סטטיסטיקה של כדורגל</h3>
-            <p>בוא נתרגל מתמטיקה תוך כדי ניתוח סטטיסטיקות של משחק כדורגל דמיוני:</p>
+            <h3>🧮 חשבון: משחק Fortnite בפוקט</h3>
+            <p>בוא נפתור כמה בעיות חשבון הקשורות ל-Fortnite:</p>
             <ol>
-                <li>אם במשחק היו 24 בעיטות לשער, ו-25% מהן הגיעו ליעד, כמה בעיטות הגיעו לשער?</li>
+                <li>אם כל משחק Fortnite נמשך 20 דקות, כמה משחקים תוכל לשחק ב-2 שעות?</li>
                 <input type="number" id="math-1" placeholder="תשובה">
-                <li>אם הקבוצה המנצחת הבקיעה 3 שערים והקבוצה המפסידה הבקיעה 1, מה היה הפרש השערים?</li>
+                <li>אם יש לך 500 V-Bucks, וכל דמות חדשה עולה 150 V-Bucks, כמה דמויות תוכל לקנות?</li>
                 <input type="number" id="math-2" placeholder="תשובה">
-                <li>אם משחק כדורגל נמשך 90 דקות, וכל מחצית שווה באורכה, כמה דקות נמשכת כל מחצית?</li>
+                <li>אם אתה משחק Fortnite עם 3 חברים, וכל אחד מנצח 2 משחקים, כמה ניצחונות יש לכם ביחד?</li>
                 <input type="number" id="math-3" placeholder="תשובה">
             </ol>
             <button onclick="checkMathAnswers()">בדוק תשובות</button>
@@ -118,41 +118,36 @@
         </div>
 
         <div class="activity">
-            <h3>🇬🇧 אנגלית: מילים מעולם הכדורגל</h3>
-            <p>בוא נלמד כמה מילים באנגלית הקשורות לכדורגל. התאם את המילה העברית למילה האנגלית המתאימה:</p>
+            <h3>🎨 יצירה: עיצוב דמות Brawl Stars תאילנדית</h3>
+            <p>תאר דמות חדשה ל-Brawl Stars בהשראת תאילנד:</p>
             <ol>
-                <li>שער - </li>
-                <input type="text" id="english-1" placeholder="באנגלית">
-                <li>כדור - </li>
-                <input type="text" id="english-2" placeholder="באנגלית">
-                <li>שחקן - </li>
-                <input type="text" id="english-3" placeholder="באנגלית">
-                <li>מגרש - </li>
-                <input type="text" id="english-4" placeholder="באנגלית">
-                <li>שופט - </li>
-                <input type="text" id="english-5" placeholder="באנגלית">
+                <li>מה השם של הדמות החדשה?</li>
+                <input type="text" id="brawler-1" placeholder="שם הדמות">
+                <li>מה הכוח המיוחד של הדמות?</li>
+                <input type="text" id="brawler-2" placeholder="הכוח המיוחד">
+                <li>תאר איך הדמות נראית:</li>
+                <textarea id="brawler-3" rows="3" placeholder="תיאור הדמות"></textarea>
             </ol>
-            <button onclick="checkEnglishAnswers()">בדוק תשובות</button>
-            <p id="english-feedback"></p>
+            <button onclick="saveBrawlerDesign()">שמור עיצוב דמות</button>
         </div>
 
         <div class="activity">
-            <h3>🎮 פרויקט יצירתי: עיצוב דמות למשחק</h3>
-            <p>דמיין שאתה מעצב דמות חדשה למשחק Brawl Stars או Fortnite בהשראת כדורגל תאילנדי. תאר את הדמות:</p>
+            <h3>🖍️ מלאכת יד: יצירת מזכרת מפוקט</h3>
+            <p>תאר מזכרת שהיית רוצה ליצור מהחופים של פוקט:</p>
             <ol>
-                <li>מה יהיה השם של הדמות?</li>
-                <textarea id="character-1" rows="1" placeholder="תשובה"></textarea>
-                <li>איך הדמות תיראה? תאר את הלבוש והמראה שלה.</li>
-                <textarea id="character-2" rows="3" placeholder="תשובה"></textarea>
-                <li>מה יהיה הכוח המיוחד של הדמות? איך הוא קשור לכדורגל?</li>
-                <textarea id="character-3" rows="3" placeholder="תשובה"></textarea>
+                <li>מה סוג המזכרת? (למשל: תמונת קולאז', צדף מקושט)</li>
+                <input type="text" id="craft-1" placeholder="סוג המזכרת">
+                <li>אילו חומרים תשתמש ביצירה?</li>
+                <input type="text" id="craft-2" placeholder="חומרים">
+                <li>תאר את שלבי היצירה:</li>
+                <textarea id="craft-3" rows="3" placeholder="שלבי היצירה"></textarea>
             </ol>
-            <button onclick="saveCharacterDesign()">שמור עיצוב דמות</button>
+            <button onclick="saveCraftDescription()">שמור תיאור היצירה</button>
         </div>
 
         <div class="activity">
             <h3>📝 סיכום ומחשבות</h3>
-            <p>מה למדת היום על כדורגל בתאילנד? איך זה דומה או שונה מהכדורגל שאתה מכיר?</p>
+            <p>מה למדת היום על פוקט? איך היית משלב את מה שלמדת במשחק Fortnite או Brawl Stars?</p>
             <textarea id="reflection" rows="4" placeholder="שתף את המחשבות שלך כאן"></textarea>
             <button onclick="saveReflection()">שמור מחשבות</button>
         </div>
@@ -190,26 +185,26 @@
         function checkReadingAnswers() {
             const answer1 = document.getElementById('reading-1').value.toLowerCase();
             const answer2 = document.getElementById('reading-2').value.toLowerCase();
-            const answer3 = document.getElementById('reading-3').value.toLowerCase();
+            const answer3 = document.getElementById('reading-3').value;
             const feedback = document.getElementById('reading-feedback');
             let message = '';
 
-            if (answer1.includes('פוטבול')) {
+            if (answer1.includes('פאטונג')) {
                 message += 'שאלה 1: נכון! ';
             } else {
-                message += 'שאלה 1: לא מדויק. קרא שוב את הפסקה. ';
+                message += 'שאלה 1: לא מדויק. קרא שוב את הקטע. ';
             }
 
-            if (answer2.includes('הפילים המלחמתיים')) {
+            if (answer2.includes('לשחות') || answer2.includes('לבנות ארמונות חול') || answer2.includes('לשחק כדור עף') || answer2.includes('אופנוע ים') || answer2.includes('גלישת רוח')) {
                 message += 'שאלה 2: נכון! ';
             } else {
-                message += 'שאלה 2: לא מדויק. חפש בפסקה מידע על הכינוי של הנבחרת. ';
+                message += 'שאלה 2: לא מדויק. יש כמה אפשרויות בקטע. ';
             }
 
-            if (answer3.includes('צ\'נאטיפ סונגקראסין') && answer3.includes('סגנון משחק')) {
-                message += 'שאלה 3: נכון!';
+            if (answer3.length > 10) {
+                message += 'שאלה 3: תודה על התשובה המפורטת!';
             } else {
-                message += 'שאלה 3: לא מדויק. קרא שוב על השחקן המפורסם ומדוע הוא מכונה כך.';
+                message += 'שאלה 3: נסה להרחיב את תשובתך.';
             }
 
             feedback.textContent = message;
@@ -226,47 +221,58 @@
             if (answer1 == '6') {
                 message += 'שאלה 1: נכון! ';
             } else {
-                message += 'שאלה 1: לא מדויק. חשב 25% מ-24. ';
+                message += 'שאלה 1: לא מדויק. נסה שוב. ';
             }
 
-            if (answer2 == '2') {
+            if (answer2 == '3') {
                 message += 'שאלה 2: נכון! ';
             } else {
-                message += 'שאלה 2: לא מדויק. חשב את ההפרש בין 3 ל-1. ';
+                message += 'שאלה 2: לא מדויק. נסה שוב. ';
             }
 
-            if (answer3 == '45') {
+            if (answer3 == '8') {
                 message += 'שאלה 3: נכון!';
             } else {
-                message += 'שאלה 3: לא מדויק. חלק 90 דקות לשתיים.';
+                message += 'שאלה 3: לא מדויק. נסה שוב.';
             }
 
             feedback.textContent = message;
             updateProgress();
         }
 
-        function checkEnglishAnswers() {
-            const answer1 = document.getElementById('english-1').value.toLowerCase();
-            const answer2 = document.getElementById('english-2').value.toLowerCase();
-            const answer3 = document.getElementById('english-3').value.toLowerCase();
-            const answer4 = document.getElementById('english-4').value.toLowerCase();
-            const answer5 = document.getElementById('english-5').value.toLowerCase();
-            const feedback = document.getElementById('english-feedback');
-            let message = '';
-
-            if (answer1 === 'goal') {
-                message += 'שער: נכון! ';
+        function saveBrawlerDesign() {
+            const name = document.getElementById('brawler-1').value;
+            const power = document.getElementById('brawler-2').value;
+            const description = document.getElementById('brawler-3').value;
+            if (name.length > 0 && power.length > 0 && description.length > 10) {
+                alert('עיצוב הדמות נשמר בהצלחה! איזו דמות מגניבה! 🎮');
+                updateProgress();
             } else {
-                message += 'שער: לא נכון. התשובה הנכונה היא "goal". ';
+                alert('אנא מלא את כל הפרטים של הדמות.');
             }
+        }
 
-            if (answer2 === 'ball') {
-                message += 'כדור: נכון! ';
+        function saveCraftDescription() {
+            const type = document.getElementById('craft-1').value;
+            const materials = document.getElementById('craft-2').value;
+            const steps = document.getElementById('craft-3').value;
+            if (type.length > 0 && materials.length > 0 && steps.length > 10) {
+                alert('תיאור היצירה נשמר בהצלחה! איזה רעיון יצירתי! 🖍️');
+                updateProgress();
             } else {
-                message += 'כדור: לא נכון. התשובה הנכונה היא "ball". ';
+                alert('אנא מלא את כל הפרטים של היצירה.');
             }
+        }
 
-            if (answer3 === 'player') {
-                message += 'שחקן: נכון! ';
+        function saveReflection() {
+            const reflection = document.getElementById('reflection').value;
+            if (reflection.length > 20) {
+                alert('המחשבות שלך נשמרו בהצלחה! תודה על השיתוף! 💭');
+                updateProgress();
             } else {
-                message += 'שחקן: לא נכון. התשובה ה
+                alert('אנא שתף את המחשבות שלך בצורה מפורטת יותר.');
+            }
+        }
+    </script>
+</body>
+</html>
