@@ -1,183 +1,260 @@
-<button onclick="togglePreview()">הצג/הסתר תצוגה מקדימה</button>
-    <div id="preview"></div>
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הרפתקה לימודית בפוקט - רומי</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+        body {
+            font-family: 'Varela Round', sans-serif;
+            background-color: #F0F4FF;
+            color: #2C3E50;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #3498DB;
+            text-align: center;
+        }
+        .activity {
+            background-color: #ECF0F1;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            border: 2px solid #3498DB;
+        }
+        input[type="text"], input[type="number"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #3498DB;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #3498DB;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #2980B9;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #ECF0F1;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .progress {
+            width: 0%;
+            height: 100%;
+            background-color: #3498DB;
+            border-radius: 10px;
+            transition: width 0.5s ease-in-out;
+        }
+        .timer {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏝️ הרפתקה לימודית בפוקט - יום ראשון 🏝️</h1>
+        <h2>ברוכה הבאה, רומי!</h2>
 
-    <div class="timer" id="timer">60:00</div>
+        <div class="timer" id="timer">60:00</div>
 
-    <div class="progress-bar">
-        <div class="progress" id="progress"></div>
-    </div>
-
-    <div class="activity">
-        <h3>📚 פסקת קריאה: חופי פוקט</h3>
-        <p>קראי את הפסקה הבאה ואז עני על השאלות:</p>
-        <div style="background-color: #FFFFFF; padding: 10px; border-radius: 5px;">
-            פוקט, האי הגדול ביותר בתאילנד, ידוע בזכות חופיו המרהיבים. אחד החופים המפורסמים ביותר הוא חוף פאטונג, שמושך תיירים רבים בזכות החול הלבן והמים הצלולים שלו. לעומתו, חוף קאטה מציע אווירה רגועה יותר ומושלם לגלישת גלים. בצפון האי נמצא חוף סורין, שידוע בזכות השקיעות המדהימות שלו. למרות יופיים של החופים, חשוב לזכור לשמור על הסביבה: להימנע מהשארת אשפה, לא לקחת צדפים או אלמוגים, ולהשתמש בקרם הגנה שאינו פוגע בשוניות האלמוגים.
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
         </div>
-        <p>שאלות:</p>
-        <ol>
-            <li>מהם שמות שלושת החופים המוזכרים בקטע?</li>
-            <input type="text" id="reading-1" placeholder="תשובה">
-            <li>איזה חוף מתאים במיוחד לגולשים?</li>
-            <input type="text" id="reading-2" placeholder="תשובה">
-            <li>אילו שתי המלצות ניתנות לשמירה על הסביבה בחופים?</li>
-            <textarea id="reading-3" rows="3" placeholder="תשובה"></textarea>
-        </ol>
-        <button onclick="checkReadingAnswers()">בדוק תשובות</button>
-        <p id="reading-feedback"></p>
+
+        <div class="activity">
+            <h3>📚 פסקת קריאה: פוקט והמטבח התאילנדי</h3>
+            <p>קראי את הפסקה הבאה ואז עני על השאלות:</p>
+            <div style="background-color: #FFFFFF; padding: 10px; border-radius: 5px;">
+                פוקט, האי הגדול ביותר בתאילנד, ידוע לא רק בחופיו המרהיבים אלא גם במטבח העשיר והטעים שלו. המטבח של פוקט מושפע מהמטבח התאילנדי המסורתי, אך יש לו גם טעמים ייחודיים משלו. אחד המאכלים המפורסמים של האי הוא "מי גורנג", מנת אורז מטוגן עם תוספות שונות כמו ירקות, ביצה וחלבון לבחירה. מנה אהובה נוספת היא "תום יאם גונג", מרק חמוץ-חריף עם שרימפס, עשבי תיבול ופטריות. המטבח של פוקט משלב טעמים חריפים, מתוקים, חמוצים ומלוחים ביחד, ומשתמש בהרבה תבלינים טריים כמו למון גראס, עלי קפיר ליים וג'ינג'ר.
+            </div>
+            <p>שאלות:</p>
+            <ol>
+                <li>מהו שמו של מאכל האורז המטוגן המפורסם בפוקט?</li>
+                <input type="text" id="reading-1" placeholder="תשובה">
+                <li>אילו טעמים משלב המטבח של פוקט?</li>
+                <input type="text" id="reading-2" placeholder="תשובה">
+                <li>איך לדעתך המיקום של פוקט כאי משפיע על המטבח שלו?</li>
+                <textarea id="reading-3" rows="3" placeholder="תשובה"></textarea>
+            </ol>
+            <button onclick="checkReadingAnswers()">בדוק תשובות</button>
+            <p id="reading-feedback"></p>
+        </div>
+
+        <div class="activity">
+            <h3>🧮 חשבון: תכנון ארוחה תאילנדית</h3>
+            <p>עזרי לרומי לתכנן ארוחה תאילנדית:</p>
+            <ol>
+                <li>אם מנת פאד תאי עולה 120 באט, מנת תום יאם עולה 150 באט, ומשקה קוקוס עולה 50 באט, כמה תעלה ארוחה ל-4 אנשים אם כל אחד מזמין מנה עיקרית ומשקה?</li>
+                <input type="number" id="math-1" placeholder="תשובה בבאט">
+                <li>אם 1 דולר אמריקאי שווה ל-35 באט, כמה דולרים תעלה הארוחה הזו?</li>
+                <input type="number" id="math-2" placeholder="תשובה בדולרים">
+                <li>אם רומי רוצה להכין 3 מנות מי גורנג בבית, והיא צריכה 2 כוסות אורז לכל מנה, כמה כוסות אורז היא צריכה בסך הכל?</li>
+                <input type="number" id="math-3" placeholder="תשובה במספר כוסות">
+            </ol>
+            <button onclick="checkMathAnswers()">בדוק תשובות</button>
+            <p id="math-feedback"></p>
+        </div>
+
+        <div class="activity">
+            <h3>🎨 פרויקט אמנות: ציור דיגיטלי של מאכל תאילנדי</h3>
+            <p>השתמשי בכלי ציור דיגיטלי פשוט (כמו Paint או אפליקציה בטלפון) כדי ליצור ציור של מאכל תאילנדי שלמדת עליו. נסי לכלול לפחות 3 מרכיבים שונים במנה. תארי את הציור שלך:</p>
+            <textarea id="art-description" rows="4" placeholder="תארי את הציור שלך כאן"></textarea>
+            <button onclick="saveArtDescription()">שמור תיאור</button>
+        </div>
+
+        <div class="activity">
+            <h3>🎵 שירה: יצירת שיר על פוקט</h3>
+            <p>צרי שיר קצר (4 שורות) על החוויה שלך בפוקט. נסי לשלב מילים הקשורות לאוכל, לים ולתרבות המקומית:</p>
+            <textarea id="song-lyrics" rows="4" placeholder="כתבי את השיר שלך כאן"></textarea>
+            <button onclick="saveSongLyrics()">שמור שיר</button>
+        </div>
+
+        <div class="activity">
+            <h3>📝 סיכום ומחשבות</h3>
+            <p>מה למדת היום על המטבח של פוקט שהפתיע אותך? איך זה משנה את הדרך שבה את חושבת על אוכל ותרבות?</p>
+            <textarea id="reflection" rows="4" placeholder="שתפי את המחשבות שלך כאן"></textarea>
+            <button onclick="saveReflection()">שמור מחשבות</button>
+        </div>
     </div>
 
-    <div class="activity">
-        <h3>🧮 חשבון: תכנון טיול בחופי פוקט</h3>
-        <p>עזרי לרומי לתכנן את הטיול שלה בחופי פוקט:</p>
-        <ol>
-            <li>אם רומי רוצה לבקר בכל שלושת החופים שהוזכרו, וכל ביקור אורך 2 שעות, כמה שעות בסך הכל תבלה בחופים?</li>
-            <input type="number" id="math-1" placeholder="תשובה בשעות">
-            <li>אם שכירת כיסא חוף עולה 100 באט ליום, ורומי רוצה לשכור כיסא ל-5 ימים, כמה באט היא תשלם בסך הכל?</li>
-            <input type="number" id="math-2" placeholder="תשובה בבאט">
-            <li>אם בקבוק קרם הגנה ידידותי לאלמוגים עולה 250 באט, וקרם הגנה רגיל עולה 150 באט, כמה יותר עולה הקרם הידידותי לאלמוגים?</li>
-            <input type="number" id="math-3" placeholder="תשובה בבאט">
-        </ol>
-        <button onclick="checkMathAnswers()">בדוק תשובות</button>
-        <p id="math-feedback"></p>
-    </div>
+    <script>
+        let progress = 0;
+        const totalActivities = 5;
+        let timeLeft = 3600; // 60 minutes in seconds
 
-    <div class="activity">
-        <h3>🎨 ציור ובישול: יצירת מנה מעוצבת בהשראת חופי פוקט</h3>
-        <p>תארי מנה שתיצרי בהשראת חופי פוקט. חשבי על צבעים, טקסטורות ומרכיבים שמזכירים את החוף. תארי את המנה ואיך היא נראית בצלחת.</p>
-        <textarea id="food-art" rows="4" placeholder="תארי את המנה המעוצבת כאן"></textarea>
-        <button onclick="saveFoodArt()">שמור רעיון</button>
-        <p id="food-art-feedback"></p>
-    </div>
-
-    <div class="activity">
-        <h3>🎥 יצירת תוכן: רעיון לסרטון TikTok על בטיחות בחוף</h3>
-        <p>תארי רעיון לסרטון TikTok קצר (15 שניות) שמציג טיפים לבטיחות והתנהגות נכונה בחוף. השתמשי במידע שלמדת היום.</p>
-        <textarea id="tiktok-idea" rows="4" placeholder="תארי את רעיון הסרטון כאן"></textarea>
-        <button onclick="saveTikTokIdea()">שמור רעיון</button>
-        <p id="tiktok-feedback"></p>
-    </div>
-
-    <div class="activity">
-        <h3>📝 סיכום ומחשבות</h3>
-        <p>מה למדת היום על חופי פוקט שהפתיע אותך? איך זה משנה את הדרך שבה את חושבת על שמירה על הסביבה בחופים?</p>
-        <textarea id="reflection" rows="4" placeholder="שתפי את המחשבות שלך כאן"></textarea>
-        <button onclick="saveReflection()">שמור מחשבות</button>
-        <p id="reflection-feedback"></p>
-    </div>
-</div>
-
-<script>
-    let progress = 0;
-    const totalActivities = 5;
-    let timeLeft = 3600; // 60 minutes in seconds
-
-    function updateProgress() {
-        progress++;
-        const percentage = (progress / totalActivities) * 100;
-        document.getElementById('progress').style.width = percentage + '%';
-        if (progress === totalActivities) {
-            alert('כל הכבוד! סיימת את כל הפעילויות! 🎉');
-        }
-    }
-
-    function updateTimer() {
-        const minutes = Math.floor(timeLeft / 60);
-        const seconds = timeLeft % 60;
-        document.getElementById('timer').textContent = 
-            (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-        if (timeLeft > 0) {
-            timeLeft--;
-            setTimeout(updateTimer, 1000);
-        } else {
-            alert('הזמן נגמר! בואי נסכם את מה שהספקת ללמוד.');
-        }
-    }
-
-    updateTimer();
-
-    function checkReadingAnswers() {
-        const answer1 = document.getElementById('reading-1').value.toLowerCase();
-        const answer2 = document.getElementById('reading-2').value.toLowerCase();
-        const answer3 = document.getElementById('reading-3').value.toLowerCase();
-        const feedback = document.getElementById('reading-feedback');
-        let message = '';
-
-        if (answer1.includes('פאטונג') && answer1.includes('קאטה') && answer1.includes('סורין')) {
-            message += 'שאלה 1: נכון! ';
-        } else {
-            message += 'שאלה 1: לא מדויק. קראי שוב את הפסקה. ';
+        function updateProgress() {
+            progress++;
+            const percentage = (progress / totalActivities) * 100;
+            document.getElementById('progress').style.width = percentage + '%';
+            if (progress === totalActivities) {
+                alert('כל הכבוד! סיימת את כל הפעילויות! 🎉');
+            }
         }
 
-        if (answer2.includes('קאטה')) {
-            message += 'שאלה 2: נכון! ';
-        } else {
-            message += 'שאלה 2: לא מדויק. חפשי בפסקה מידע על גלישת גלים. ';
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('timer').textContent = 
+                (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+            if (timeLeft > 0) {
+                timeLeft--;
+                setTimeout(updateTimer, 1000);
+            } else {
+                alert('הזמן נגמר! בואי נסכם את מה שהספקת ללמוד.');
+            }
         }
 
-        if ((answer3.includes('אשפה') || answer3.includes('זבל')) && 
-            (answer3.includes('צדפים') || answer3.includes('אלמוגים') || answer3.includes('קרם הגנה'))) {
-            message += 'שאלה 3: נכון! חשוב לשמור על הסביבה בחופים.';
-        } else {
-            message += 'שאלה 3: לא מדויק. קראי שוב את המשפט האחרון בפסקה.';
-        }
+        updateTimer();
 
-        feedback.textContent = message;
-        updateProgress();
-    }
+        function checkReadingAnswers() {
+            const answer1 = document.getElementById('reading-1').value.toLowerCase();
+            const answer2 = document.getElementById('reading-2').value.toLowerCase();
+            const answer3 = document.getElementById('reading-3').value;
+            const feedback = document.getElementById('reading-feedback');
+            let message = '';
 
-    function checkMathAnswers() {
-        const answer1 = document.getElementById('math-1').value;
-        const answer2 = document.getElementById('math-2').value;
-        const answer3 = document.getElementById('math-3').value;
-        const feedback = document.getElementById('math-feedback');
-        let message = '';
+            if (answer1.includes('מי גורנג')) {
+                message += 'שאלה 1: נכון! ';
+            } else {
+                message += 'שאלה 1: לא מדויק. קראי שוב את הפסקה. ';
+            }
 
-        if (answer1 == '6') {
-            message += 'שאלה 1: נכון! ';
-        } else {
-            message += 'שאלה 1: לא מדויק. נסי שוב. ';
-        }
+            if (answer2.includes('חריפים') && answer2.includes('מתוקים') && answer2.includes('חמוצים') && answer2.includes('מלוחים')) {
+                message += 'שאלה 2: נכון! ';
+            } else {
+                message += 'שאלה 2: לא מדויק. חפשי בפסקה את כל הטעמים המוזכרים. ';
+            }
 
-        if (answer2 == '500') {
-            message += 'שאלה 2: נכון! ';
-        } else {
-            message += 'שאלה 2: לא מדויק. נסי שוב. ';
-        }
+            if (answer3.length > 10) {
+                message += 'שאלה 3: תודה על התשובה המפורטת!';
+            } else {
+                message += 'שאלה 3: נסי להרחיב את תשובתך.';
+            }
 
-        if (answer3 == '100') {
-            message += 'שאלה 3: נכון!';
-        } else {
-            message += 'שאלה 3: לא מדויק. נסי שוב.';
-        }
-
-        feedback.textContent = message;
-        updateProgress();
-    }
-
-    function saveFoodArt() {
-        const idea = document.getElementById('food-art').value;
-        const feedback = document.getElementById('food-art-feedback');
-        if (idea.length > 30) {
-            feedback.textContent = 'רעיון נהדר! המנה שלך נשמעת מדהימה ויצירתית. 🍽️🎨';
+            feedback.textContent = message;
             updateProgress();
-        } else {
-            feedback.textContent = 'נסי להרחיב את התיאור שלך. חשבי על צבעים, צורות ומרקמים שמזכירים את החוף.';
         }
-    }
 
-    function saveTikTokIdea() {
-        const idea = document.getElementById('tiktok-idea').value;
-        const feedback = document.getElementById('tiktok-feedback');
-        if (idea.length > 30 && (idea.includes('בטיחות') || idea.includes('שמירה על הסביבה'))) {
-            feedback.textContent = 'רעיון נהדר! הסרטון שלך יעזור לאנשים לשמור על הבטיחות והסביבה בחוף. 🏖️📱';
+        function checkMathAnswers() {
+            const answer1 = document.getElementById('math-1').value;
+            const answer2 = document.getElementById('math-2').value;
+            const answer3 = document.getElementById('math-3').value;
+            const feedback = document.getElementById('math-feedback');
+            let message = '';
+
+            if (answer1 == '680') {
+                message += 'שאלה 1: נכון! ';
+            } else {
+                message += 'שאלה 1: לא מדויק. נסי שוב. ';
+            }
+
+            if (answer2 == '19.43' || answer2 == '19' || answer2 == '20') {
+                message += 'שאלה 2: נכון! ';
+            } else {
+                message += 'שאלה 2: לא מדויק. נסי שוב. ';
+            }
+
+            if (answer3 == '6') {
+                message += 'שאלה 3: נכון!';
+            } else {
+                message += 'שאלה 3: לא מדויק. נסי שוב.';
+            }
+
+            feedback.textContent = message;
             updateProgress();
-        } else {
-            feedback.textContent = 'נסי להרחיב את הרעיון שלך ולכלול טיפים ספציפיים לבטיחות או שמירה על הסביבה בחוף.';
         }
-    }
 
-    function saveReflection() {
-        const reflection = document.getElementById('reflection').value;
-        const feedback = document.getElementById('reflection-feedback');
-        if (reflection.length > 40) {
-            feedback.textContent = '
+        function saveArtDescription() {
+            const description = document.getElementById('art-description').value;
+            if (description.length > 20) {
+                alert('תיאור הציור נשמר בהצלחה! נשמע מדהים! 🎨');
+                updateProgress();
+            } else {
+                alert('אנא תארי את הציור בצורה מפורטת יותר.');
+            }
+        }
+
+        function saveSongLyrics() {
+            const lyrics = document.getElementById('song-lyrics').value;
+            if (lyrics.length > 20) {
+                alert('השיר נשמר בהצלחה! איזה יופי של מילים! 🎵');
+                updateProgress();
+            } else {
+                alert('אנא כתבי שיר ארוך יותר. נסי להגיע ל-4 שורות.');
+            }
+        }
+
+        function saveReflection() {
+            const reflection = document.getElementById('reflection').value;
+            if (reflection.length > 20) {
+                alert('המחשבות שלך נשמרו בהצלחה! תודה על השיתוף! 💭');
+                updateProgress();
+            } else {
+                alert('אנא שתפי את המחשבות שלך בצורה מפורטת יותר.');
+            }
+        }
+    </script>
+</body>
+</html>
