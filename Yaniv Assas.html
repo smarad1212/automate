@@ -1,0 +1,254 @@
+Here is a detailed lesson plan for Yaniv Assas, a 12-year-old student in Japan, with a focus on his interest in art. The lesson is designed to be taught in Hebrew and is for a Monday session.
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חקר אמנות יפנית - יניב אסס</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+        body {
+            font-family: 'Varela Round', sans-serif;
+            background-color: #F0F4FF;
+            color: #2C3E50;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #3498DB;
+            text-align: center;
+        }
+        .activity {
+            background-color: #ECF0F1;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            border: 2px solid #3498DB;
+        }
+        input[type="text"], input[type="number"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #3498DB;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #3498DB;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #2980B9;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #ECF0F1;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .progress {
+            width: 0%;
+            height: 100%;
+            background-color: #3498DB;
+            border-radius: 10px;
+            transition: width 0.5s ease-in-out;
+        }
+        .timer {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🗾 חקר אמנות יפנית - יום שני 🗾</h1>
+        <h2>ברוך הבא, יניב!</h2>
+
+        <div class="timer" id="timer">60:00</div>
+
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+
+        <div class="activity">
+            <h3>📚 קריאה: אמנות יפנית מסורתית</h3>
+            <p>קרא את הפסקה הבאה על אמנות יפנית מסורתית ואז ענה על השאלות:</p>
+            <div style="background-color: #FFFFFF; padding: 10px; border-radius: 5px;">
+                אמנות יפנית מסורתית משמרת את המורשת התרבותית של יפן במשך מאות שנים. אחד הסגנונות המפורסמים ביותר הוא אמנות הצבעים על עץ, הידועה בשם "וודבלוק". בשיטה זו, האמן חורת דמויות ותבניות על לוחות עץ ואז צובע אותם בצבעי מים עדינים. התוצאה היא יצירות אמנות מרהיבות המשלבות את הטקסטורה הטבעית של העץ עם הצבעים העדינים. אמנות הסרטי נייר, הידועה בשם "וארשי", היא עוד סגנון מסורתי המשתמש בנייר יפני מיוחד המקופל ומעוצב לדמויות ותבניות יפהפיות. אמנות זו משמרת את המינימליזם והאסתטיקה הייחודית של יפן.
+            </div>
+            <p>שאלות:</p>
+            <ol>
+                <li>מהו סגנון האמנות המסורתית היפנית המפורסם ביותר?</li>
+                <input type="text" id="reading-1" placeholder="תשובה">
+                <li>באיזה חומר עיקרי משתמשים באמנות הסרטי נייר?</li>
+                <input type="text" id="reading-2" placeholder="תשובה">
+                <li>מה מייחד את האסתטיקה של האמנות המסורתית היפנית?</li>
+                <textarea id="reading-3" rows="3" placeholder="תשובה"></textarea>
+            </ol>
+            <button onclick="checkReadingAnswers()">בדוק תשובות</button>
+            <p id="reading-feedback"></p>
+        </div>
+
+        <div class="activity">
+            <h3>🎨 פרויקט אמנות: יצירת עבודת אמנות יפנית מסורתית</h3>
+            <p>עכשיו נעבור לחלק היצירתי! השתמש בחומרים שונים כדי ליצור עבודת אמנות המשלבת סגנונות מסורתיים יפניים, כמו וודבלוק או וארשי. תוכל לעצב דמות, תבנית או נוף. תאר את היצירה שלך:</p>
+            <textarea id="art-description" rows="4" placeholder="תאר את העבודה האמנותית שלך כאן"></textarea>
+            <button onclick="saveArtDescription()">שמור תיאור</button>
+        </div>
+
+        <div class="activity">
+            <h3>🧠 בינה מלאכותית: הרחבת יצירה אמנותית</h3>
+            <p>דמיין שיש לך כלי בינה מלאכותית שיכול להרחיב ולהעשיר את היצירה האמנותית שלך. ספר לנו כיצד היית משתמש בבינה מלאכותית כדי להפוך את העבודה שלך למורכבת ומעניינת יותר:</p>
+            <textarea id="ai-1" rows="4" placeholder="תאר כיצד היית משתמש בבינה מלאכותית"></textarea>
+            <button onclick="saveAIDescription()">שמור תיאור</button>
+        </div>
+
+        <div class="activity">
+            <h3>💰 חינוך פיננסי: מכירת יצירות אמנות</h3>
+            <p>כעת נעסוק בפן העסקי של האמנות. נניח שאתה רוצה למכור את היצירה האמנותית שיצרת בפרויקט הקודם. ענה על השאלות הבאות:</p>
+            <ol>
+                <li>באיזה מחיר תמכור את היצירה שלך?</li>
+                <input type="number" id="finance-1" placeholder="מחיר ביוזן">
+                <li>מהן שלוש דרכים שתשתמש בהן כדי לפרסם ולשווק את היצירה?</li>
+                <textarea id="finance-2" rows="3" placeholder="תשובה"></textarea>
+                <li>מהן שתי הוצאות אפשריות שתצטרך להתחשב בהן כדי לגדל את רווחיך?</li>
+                <textarea id="finance-3" rows="2" placeholder="תשובה"></textarea>
+            </ol>
+            <button onclick="checkFinanceAnswers()">בדוק תשובות</button>
+            <p id="finance-feedback"></p>
+        </div>
+
+        <div class="activity">
+            <h3>📝 סיכום ומחשבות</h3>
+            <p>סכם מה למדת היום על האמנות המסורתית היפנית. מהם הרעיונות או הטכניקות שמעניינים אותך במיוחד?</p>
+            <textarea id="reflection" rows="4" placeholder="שתף את המחשבות שלך כאן"></textarea>
+            <button onclick="saveReflection()">שמור מחשבות</button>
+        </div>
+    </div>
+
+    <script>
+        let progress = 0;
+        const totalActivities = 5;
+        let timeLeft = 3600; // 60 minutes in seconds
+
+        function updateProgress() {
+            progress++;
+            const percentage = (progress / totalActivities) * 100;
+            document.getElementById('progress').style.width = percentage + '%';
+            if (progress === totalActivities) {
+                alert('כל הכבוד! סיימת את כל הפעילויות! 🎉');
+            }
+        }
+
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('timer').textContent = 
+                (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+            if (timeLeft > 0) {
+                timeLeft--;
+                setTimeout(updateTimer, 1000);
+            } else {
+                alert('הזמן נגמר! בוא נסכם את מה שהספקת ללמוד.');
+            }
+        }
+
+        updateTimer();
+
+        function checkReadingAnswers() {
+            const answer1 = document.getElementById('reading-1').value.toLowerCase();
+            const answer2 = document.getElementById('reading-2').value.toLowerCase();
+            const answer3 = document.getElementById('reading-3').value;
+            const feedback = document.getElementById('reading-feedback');
+            let message = '';
+
+            if (answer1.includes('וודבלוק') || answer1.includes('צבעים על עץ')) {
+                message += 'שאלה 1: נכון! ';
+            } else {
+                message += 'שאלה 1: לא מדויק. קרא שוב את הפסקה. ';
+            }
+
+            if (answer2.includes('נייר')) {
+                message += 'שאלה 2: נכון! ';
+            } else {
+                message += 'שאלה 2: לא מדויק. חפש בפסקה מידע על חומרי האמנות. ';
+            }
+
+            if (answer3.length > 10 && (answer3.includes('מינימליזם') || answer3.includes('אסתטיקה'))) {
+                message += 'שאלה 3: תשובה מצוינת!';
+            } else {
+                message += 'שאלה 3: נסה להרחיב את תשובתך בנוגע לאסתטיקה היפנית.';
+            }
+
+            feedback.textContent = message;
+            updateProgress();
+        }
+
+        function saveArtDescription() {
+            const description = document.getElementById('art-description').value;
+            if (description.length > 20) {
+                alert('תיאור היצירה האמנותית נשמר בהצלחה! נשמע מרהיב! 🎨');
+                updateProgress();
+            } else {
+                alert('אנא תאר את היצירה האמנותית שלך בצורה מפורטת יותר.');
+            }
+        }
+
+        function saveAIDescription() {
+            const aiDescription = document.getElementById('ai-1').value;
+            if (aiDescription.length > 20) {
+                alert('התיאור של השימוש בבינה מלאכותית נשמר בהצלחה! רעיונות מעניינים! 🤖');
+                updateProgress();
+            } else {
+                alert('אנא תאר בצורה מפורטת יותר כיצד היית משתמש בבינה מלאכותית לטובת העבודה האמנותית.');
+            }
+        }
+
+        function checkFinanceAnswers() {
+            const answer1 = document.getElementById('finance-1').value;
+            const answer2 = document.getElementById('finance-2').value;
+            const answer3 = document.getElementById('finance-3').value;
+            const feedback = document.getElementById('finance-feedback');
+            let message = '';
+
+            if (answer1 >= 5000 && answer1 <= 15000) {
+                message += 'שאלה 1: מחיר סביר! ';
+            } else {
+                message += 'שאלה 1: נסה להגדיר מחיר שמשקף את ערך העבודה האמנותית. ';
+            }
+
+            if (answer2.length > 15 && (answer2.includes('אינסטגרם') || answer2.includes('אתר אינטרנט') || answer2.includes('תערוכה'))) {
+                message += 'שאלה 2: פתרונות יעילים לשיווק! ';
+            } else {
+                message += 'שאלה 2: הרחב את הדרכים לשיווק והפצה של היצירה. ';
+            }
+
+            if (answer3.length > 10 && (answer3.includes('משלוח') || answer3.includes('חומרים'))) {
+                message += 'שאלה 3: מחשבה טובה על ההוצאות!';
+            } else {
+                message += 'שאלה 3: חשוב להתחשב בהוצאות נוספות מעבר למחיר המכירה.';
+            }
+
+            feedback.textContent = message;
+            updateProgress();
+        }
+
+        function saveReflection() {
+            const reflection = document.getElementById('reflection').value;
+            if (reflection.length > 20) {
+                alert('המחשבות נשמרו בה
