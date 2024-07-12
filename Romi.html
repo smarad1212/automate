@@ -1,250 +1,194 @@
-Here's a lesson plan for Romi in Phuket, Thailand, tailored to her interests and age:
+Here's a lesson plan for Romi in Hebrew, tailored to her interests and location in Phuket, Thailand. I'll create an HTML document with embedded CSS and JavaScript to make it interactive and suitable for a child with ADHD. The lesson will focus on Hebrew, English, and Math, incorporating Romi's interests in art, cooking, and travel.
 
+```html
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>הרפתקה לימודית בפוקט - רומי</title>
+    <title>שיעור לרומי בפוקט, תאילנד</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
         body {
-            font-family: 'Varela Round', sans-serif;
-            background-color: #F0F4FF;
-            color: #2C3E50;
-            line-height: 1.6;
-            padding: 20px;
-        }
-        .container {
+            font-family: Arial, sans-serif;
             max-width: 800px;
             margin: 0 auto;
-            background-color: #FFFFFF;
             padding: 20px;
-            border-radius: 20px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            background-color: #f0f8ff;
         }
-        h1, h2, h3 {
-            color: #3498DB;
-            text-align: center;
+        h1, h2 {
+            color: #4682b4;
         }
-        .activity {
-            background-color: #ECF0F1;
+        .task {
+            background-color: white;
+            border-radius: 10px;
             padding: 15px;
             margin-bottom: 20px;
-            border-radius: 15px;
-            border: 2px solid #3498DB;
+            display: none;
         }
-        input[type="text"], input[type="number"], textarea {
+        .highlight {
+            background-color: #ffff99;
+            padding: 2px;
+        }
+        #progress-bar {
             width: 100%;
-            padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #3498DB;
+            background-color: #ddd;
             border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        #progress {
+            width: 0%;
+            height: 30px;
+            background-color: #4CAF50;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 30px;
+            color: white;
         }
         button {
-            background-color: #3498DB;
+            background-color: #4CAF50;
             color: white;
             border: none;
             padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:hover {
-            background-color: #2980B9;
-        }
-        .progress-bar {
-            width: 100%;
-            height: 20px;
-            background-color: #ECF0F1;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-        .progress {
-            width: 0%;
-            height: 100%;
-            background-color: #3498DB;
-            border-radius: 10px;
-            transition: width 0.5s ease-in-out;
-        }
-        .timer {
             text-align: center;
-            font-size: 24px;
-            margin-bottom: 20px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🏝️ הרפתקה לימודית בפוקט - יום שישי 🏝️</h1>
-        <h2>ברוכה הבאה, רומי!</h2>
+    <h1>שיעור לרומי בפוקט, תאילנד</h1>
+    <div id="progress-bar">
+        <div id="progress">0%</div>
+    </div>
 
-        <div class="timer" id="timer">60:00</div>
+    <div id="task1" class="task">
+        <h2>קריאה: חוויות קולינריות בתאילנד</h2>
+        <p>קראי את הקטע הבא על האוכל התאילנדי:</p>
+        <p>
+            תאילנד ידועה <span class="highlight">במטבח</span> העשיר והטעים שלה. אחד המאכלים המפורסמים ביותר הוא <span class="highlight">פאד תאי</span>, 
+            אטריות מטוגנות עם ירקות, ביצה ובוטנים. עוד מנה אהובה היא <span class="highlight">תום יאם גונג</span>, מרק חמוץ-חריף עם שרימפס. 
+            בפוקט, אי טרופי בדרום תאילנד, תוכלי ליהנות גם ממאכלי ים טריים כמו דגים ופירות ים. 
+            הפירות הטרופיים כמו מנגו, אננס ודוריאן הם קינוח מושלם לארוחה תאילנדית.
+        </p>
+        <p>עכשיו, עני על השאלות הבאות:</p>
+        <ol>
+            <li>מהם שני המאכלים התאילנדים שהוזכרו בקטע? <input type="text"></li>
+            <li>איזה סוג מרק הוא תום יאם גונג? <input type="text"></li>
+            <li>מה מיוחד באוכל בפוקט? <input type="text"></li>
+            <li>ציני שלושה פירות טרופיים שהוזכרו: <input type="text"></li>
+        </ol>
+        <button onclick="nextTask()">הבא</button>
+    </div>
 
-        <div class="progress-bar">
-            <div class="progress" id="progress"></div>
-        </div>
+    <div id="task2" class="task">
+        <h2>אנגלית: תרגום ואוצר מילים</h2>
+        <p>תרגמי את המילים הבאות לאנגלית:</p>
+        <ol>
+            <li>מטבח: <input type="text"></li>
+            <li>אטריות: <input type="text"></li>
+            <li>מרק: <input type="text"></li>
+            <li>פירות ים: <input type="text"></li>
+            <li>טרופי: <input type="text"></li>
+        </ol>
+        <p>עכשיו, כתבי משפט באנגלית המשתמש בלפחות שלוש מהמילים שתרגמת:</p>
+        <textarea rows="3"></textarea>
+        <button onclick="nextTask()">הבא</button>
+    </div>
 
-        <div class="activity">
-            <h3>📚 פסקת קריאה: אמנות ותרבות בפוקט</h3>
-            <p>קראי את הפסקה הבאה ואז עני על השאלות:</p>
-            <div style="background-color: #FFFFFF; padding: 10px; border-radius: 5px;">
-                פוקט, אי טרופי בתאילנד, ידוע לא רק בחופיו היפים אלא גם באמנות ובתרבות העשירה שלו. האמנות המסורתית של פוקט משלבת השפעות תאילנדיות, סיניות ומלזיות. ציורי קיר מרהיבים מקשטים מקדשים עתיקים, מציגים סצנות מהמיתולוגיה הבודהיסטית. אומנות הבישול של האי מפורסמת בעולם, עם מאכלים מיוחדים כמו "מאסמן קארי" ו"תום יאם גונג". בנוסף, פוקט מפורסם באומנות הרחוב שלו, עם ציורי קיר צבעוניים המקשטים את הרחובות העתיקים של העיר פוקט. פסטיבלים רבים, כמו פסטיבל הצמחונות ופסטיבל פוקט הישן, חוגגים את התרבות העשירה של האי ומושכים מבקרים מכל העולם.
-            </div>
-            <p>שאלות:</p>
-            <ol>
-                <li>אילו השפעות תרבותיות ניתן למצוא באמנות של פוקט?</li>
-                <input type="text" id="reading-1" placeholder="תשובה">
-                <li>מהם שני המאכלים המיוחדים שהוזכרו בקטע?</li>
-                <input type="text" id="reading-2" placeholder="תשובה">
-                <li>איזה סוג אמנות מקשט את הרחובות העתיקים של העיר פוקט?</li>
-                <input type="text" id="reading-3" placeholder="תשובה">
-            </ol>
-            <button onclick="checkReadingAnswers()">בדוק תשובות</button>
-            <p id="reading-feedback"></p>
-        </div>
+    <div id="task3" class="task">
+        <h2>מתמטיקה: בעיות מילוליות בנושא אוכל</h2>
+        <p>פתרי את הבעיות הבאות:</p>
+        <ol>
+            <li>
+                במסעדה בפוקט, מנת פאד תאי עולה 120 באט, ומנת תום יאם גונג עולה 150 באט. 
+                כמה יעלה להזמין 2 מנות פאד תאי ו-3 מנות תום יאם גונג?
+                <input type="text">
+            </li>
+            <li>
+                רומי קנתה 5 מנגו במחיר 25 באט כל אחד, ו-3 אננסים במחיר 40 באט כל אחד. 
+                כמה עודף תקבל אם שילמה בשטר של 500 באט?
+                <input type="text">
+            </li>
+        </ol>
+        <button onclick="nextTask()">הבא</button>
+    </div>
 
-        <div class="activity">
-            <h3>🎨 אמנות: יצירת ציור קיר וירטואלי של פוקט</h3>
-            <p>דמייני שאת מתכננת ציור קיר גדול בפוקט. תארי את הציור שלך:</p>
-            <ol>
-                <li>מה יהיה הנושא המרכזי של הציור?</li>
-                <textarea id="art-1" rows="2" placeholder="תשובה"></textarea>
-                <li>אילו צבעים תשתמשי בהם ומדוע?</li>
-                <textarea id="art-2" rows="2" placeholder="תשובה"></textarea>
-                <li>איזה אלמנט מהתרבות התאילנדית תכללי בציור?</li>
-                <textarea id="art-3" rows="2" placeholder="תשובה"></textarea>
-            </ol>
-            <button onclick="saveArtDesign()">שמור תכנון ציור</button>
-        </div>
+    <div id="task4" class="task">
+        <h2>יצירה: ציור מנה תאילנדית</h2>
+        <p>עכשיו, בואי נשלב את אהבתך לאמנות עם הנושא של היום!</p>
+        <p>צרי ציור של מנה תאילנדית לבחירתך. זה יכול להיות פאד תאי, תום יאם גונג, או כל מנה אחרת שלמדת עליה היום.</p>
+        <p>השתמשי בצבעים עזים כדי להדגיש את הירקות והתבלינים במנה.</p>
+        <p>כשתסיימי, צלמי את הציור שלך והעלי אותו לתיקייה המשותפת שלנו.</p>
+        <button onclick="nextTask()">הבא</button>
+    </div>
 
-        <div class="activity">
-            <h3>🧮 חשבון: תכנון ארוחה תאילנדית</h3>
-            <p>בואי נתכנן ארוחה תאילנדית לחמישה אנשים:</p>
-            <ol>
-                <li>אם מנת פאד תאי עולה 120 באט, כמה יעלו 5 מנות?</li>
-                <input type="number" id="math-1" placeholder="תשובה בבאט">
-                <li>אם קערת תום יאם גונג עולה 80 באט ואורז מאודה 20 באט, כמה תעלה הזמנה של 3 קערות מרק ו-5 מנות אורז?</li>
-                <input type="number" id="math-2" placeholder="תשובה בבאט">
-                <li>אם יש לך 1000 באט לארוחה, כמה ישאר אחרי שתקני 5 מנות פאד תאי, 3 קערות תום יאם גונג ו-5 מנות אורז?</li>
-                <input type="number" id="math-3" placeholder="תשובה בבאט">
-            </ol>
-            <button onclick="checkMathAnswers()">בדוק תשובות</button>
-            <p id="math-feedback"></p>
-        </div>
-
-        <div class="activity">
-            <h3>🍳 בישול: מתכון תאילנדי מסורתי</h3>
-            <p>בואי נכין מתכון פשוט לסלט פפאיה תאילנדי (סום טאם). סדרי את שלבי ההכנה:</p>
-            <ol>
-                <li><input type="number" min="1" max="5" id="cooking-1"> ערבבי את כל המרכיבים יחד בקערה גדולה</li>
-                <li><input type="number" min="1" max="5" id="cooking-2"> חתכי פפאיה ירוקה לרצועות דקות</li>
-                <li><input type="number" min="1" max="5" id="cooking-3"> הוסיפי בוטנים קצוצים ושברי אטריות אורז מעל</li>
-                <li><input type="number" min="1" max="5" id="cooking-4"> הכיני רוטב מלימון, דגים, סוכר חום ופלפל צ'ילי</li>
-                <li><input type="number" min="1" max="5" id="cooking-5"> חתכי עגבניות שרי לרבעים ומעכי שום ופלפל חריף</li>
-            </ol>
-            <button onclick="checkCookingOrder()">בדוק סדר הכנה</button>
-            <p id="cooking-feedback"></p>
-        </div>
-
-        <div class="activity">
-            <h3>📝 סיכום ומחשבות</h3>
-            <p>מה למדת היום על פוקט והתרבות התאילנדית? איך זה משתלב עם התחביבים שלך?</p>
-            <textarea id="reflection" rows="4" placeholder="שתפי את המחשבות שלך כאן"></textarea>
-            <button onclick="saveReflection()">שמור מחשבות</button>
-        </div>
+    <div id="task5" class="task">
+        <h2>סיכום ורפלקציה</h2>
+        <p>בואי נסכם את מה שלמדנו היום:</p>
+        <ol>
+            <li>מה היה הדבר החדש המעניין ביותר שלמדת על האוכל התאילנדי? <textarea rows="2"></textarea></li>
+            <li>איזו מילה חדשה באנגלית את חושבת שתזכרי? <input type="text"></li>
+            <li>האם נהנית מפתרון הבעיות המתמטיות? מדוע? <textarea rows="2"></textarea></li>
+            <li>מה היה האתגר הגדול ביותר עבורך בשיעור היום? <textarea rows="2"></textarea></li>
+        </ol>
+        <button onclick="finishLesson()">סיים שיעור</button>
     </div>
 
     <script>
-        let progress = 0;
-        const totalActivities = 5;
-        let timeLeft = 3600; // 60 minutes in seconds
+        let currentTask = 1;
+        const totalTasks = 5;
 
-        function updateProgress() {
-            progress++;
-            const percentage = (progress / totalActivities) * 100;
-            document.getElementById('progress').style.width = percentage + '%';
-            if (progress === totalActivities) {
-                alert('כל הכבוד! סיימת את כל הפעילויות! 🎉');
+        function showTask(taskNumber) {
+            for (let i = 1; i <= totalTasks; i++) {
+                document.getElementById(`task${i}`).style.display = 'none';
             }
-        }
-
-        function updateTimer() {
-            const minutes = Math.floor(timeLeft / 60);
-            const seconds = timeLeft % 60;
-            document.getElementById('timer').textContent = 
-                (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-            if (timeLeft > 0) {
-                timeLeft--;
-                setTimeout(updateTimer, 1000);
-            } else {
-                alert('הזמן נגמר! בואי נסכם את מה שהספקת ללמוד.');
-            }
-        }
-
-        updateTimer();
-
-        function checkReadingAnswers() {
-            const answer1 = document.getElementById('reading-1').value.toLowerCase();
-            const answer2 = document.getElementById('reading-2').value.toLowerCase();
-            const answer3 = document.getElementById('reading-3').value.toLowerCase();
-            const feedback = document.getElementById('reading-feedback');
-            let message = '';
-
-            if (answer1.includes('תאילנדיות') && answer1.includes('סיניות') && answer1.includes('מלזיות')) {
-                message += 'שאלה 1: נכון מאוד! ';
-            } else {
-                message += 'שאלה 1: לא מדויק. נסי לקרוא שוב ולמצוא את שלוש ההשפעות. ';
-            }
-
-            if (answer2.includes('מאסמן קארי') && answer2.includes('תום יאם גונג')) {
-                message += 'שאלה 2: נכון! ';
-            } else {
-                message += 'שאלה 2: לא מדויק. חפשי את שמות המאכלים בפסקה. ';
-            }
-
-            if (answer3.includes('ציורי קיר') || answer3.includes('אומנות רחוב')) {
-                message += 'שאלה 3: נכון מאוד!';
-            } else {
-                message += 'שאלה 3: לא מדויק. קראי שוב על האמנות ברחובות פוקט.';
-            }
-
-            feedback.textContent = message;
+            document.getElementById(`task${taskNumber}`).style.display = 'block';
             updateProgress();
         }
 
-        function saveArtDesign() {
-            const design1 = document.getElementById('art-1').value;
-            const design2 = document.getElementById('art-2').value;
-            const design3 = document.getElementById('art-3').value;
-            if (design1.length > 5 && design2.length > 5 && design3.length > 5) {
-                alert('תכנון הציור נשמר בהצלחה! רעיונות מעולים! 🎨');
-                updateProgress();
-            } else {
-                alert('אנא הוסיפי פרטים נוספים לכל חלקי תכנון הציור.');
+        function nextTask() {
+            currentTask++;
+            if (currentTask <= totalTasks) {
+                showTask(currentTask);
             }
         }
 
-        function checkMathAnswers() {
-            const answer1 = document.getElementById('math-1').value;
-            const answer2 = document.getElementById('math-2').value;
-            const answer3 = document.getElementById('math-3').value;
-            const feedback = document.getElementById('math-feedback');
-            let message = '';
+        function updateProgress() {
+            const progressPercentage = ((currentTask - 1) / totalTasks) * 100;
+            document.getElementById('progress').style.width = progressPercentage + '%';
+            document.getElementById('progress').innerText = Math.round(progressPercentage) + '%';
+        }
 
-            if (answer1 == '600') {
-                message += 'שאלה 1: נכון! ';
-            } else {
-                message += 'שאלה 1: לא מדויק. נסי שוב. ';
-            }
+        function finishLesson() {
+            alert('כל הכבוד! סיימת את השיעור!');
+        }
 
-            if (answer2 == '340') {
-                message += 'שאלה 2: נכון! ';
-            } else {
-                message += 'שאלה 2: לא מדויק. בדקי את החישוב שלך. ';
-            }
+        showTask(1);
+    </script>
+</body>
+</html>
+```
 
-            if (answer3 == '60') {
-                message += 'שאלה 3: נכון!';
-            } else {
-                message += 'שאלה 3: לא מדויק. חשבי שוב על כל
+This lesson plan for Romi includes:
+
+1. A reading passage about Thai cuisine, connecting to her interest in cooking and eating, as well as her current location in Phuket.
+2. An English vocabulary exercise related to the reading passage.
+3. Math word problems involving Thai food and currency.
+4. An art activity where she can draw a Thai dish.
+5. A summary and reflection section.
+
+The lesson is structured to be engaging for a child with ADHD, with short, varied activities and clear instructions. The interactive elements and progress bar help maintain focus and provide immediate feedback. The content is tailored to Romi's interests and location, making it relevant and engaging for her.
+
+This HTML file can be saved and opened in a web browser, providing an interactive lesson experience. The JavaScript functions handle task progression and update the progress bar accordingly.
