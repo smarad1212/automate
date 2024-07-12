@@ -1,0 +1,233 @@
+Certainly! I'll create a new lesson for Rani, taking into account his previous lesson and ensuring variety in the content. Here's a new lesson plan for Friday in Phuket, Thailand:
+
+```html
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>שיעור לראני בפוקט, תאילנד</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f8ff;
+        }
+        h1, h2 {
+            color: #0066cc;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #e0e0e0;
+            padding: 3px;
+            border-radius: 3px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+        }
+        .progress {
+            width: 0;
+            height: 20px;
+            background-color: #4CAF50;
+            border-radius: 3px;
+            transition: 0.5s;
+        }
+        .task {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h1>שיעור לראני בפוקט, תאילנד</h1>
+    <div class="progress-bar">
+        <div class="progress" id="progress"></div>
+    </div>
+    <div id="timer">זמן שנותר: 60:00</div>
+
+    <div id="task1" class="task">
+        <h2>קריאה: כדורגל בתאילנד</h2>
+        <p>תאילנד היא מדינה שאוהבת מאוד <span class="highlight">כדורגל</span>. נבחרת הכדורגל של תאילנד ידועה בכינוי "הפילים המלחמתיים". בפוקט, יש הרבה <span class="highlight">מגרשי כדורגל</span> ומועדונים קטנים. הכדורגלן התאילנדי המפורסם ביותר הוא <span class="highlight">טירסיל דנגדה</span>, שהיה הקפטן של הנבחרת במשך שנים רבות.</p>
+        <p>שאלה: מה הכינוי של נבחרת תאילנד בכדורגל?</p>
+        <input type="text" id="answer1">
+        <button onclick="checkAnswer(1)">בדוק תשובה</button>
+    </div>
+
+    <div id="task2" class="task" style="display:none;">
+        <h2>מתמטיקה: חיבור וחיסור עם כדורים</h2>
+        <p>במגרש הכדורגל יש 15 כדורים. הגיעו עוד 7 שחקנים והביאו איתם עוד כדורים.</p>
+        <p>1. כמה כדורים יש עכשיו במגרש אם כל שחקן הביא 2 כדורים?</p>
+        <input type="number" id="math1">
+        <p>2. אם 5 כדורים התפנצ'רו, כמה כדורים תקינים נשארו?</p>
+        <input type="number" id="math2">
+        <button onclick="checkMath()">בדוק תשובות</button>
+    </div>
+
+    <div id="task3" class="task" style="display:none;">
+        <h2>אנגלית: ספורט ומשחקים</h2>
+        <p>התאם את המילים באנגלית למילים בעברית:</p>
+        <ol>
+            <li>Soccer - <input type="text" id="eng1"></li>
+            <li>Basketball - <input type="text" id="eng2"></li>
+            <li>Video game - <input type="text" id="eng3"></li>
+            <li>Cartoon - <input type="text" id="eng4"></li>
+        </ol>
+        <button onclick="checkEnglish()">בדוק תשובות</button>
+    </div>
+
+    <div id="task4" class="task" style="display:none;">
+        <h2>חינוך פיננסי: חיסכון לקניית משחק</h2>
+        <p>ראני רוצה לקנות משחק וידאו חדש שעולה 60 דולר. הוא מקבל 5 דולר דמי כיס בשבוע.</p>
+        <p>1. כמה שבועות יקח לראני לחסוך את כל הסכום אם הוא שומר את כל דמי הכיס?</p>
+        <input type="number" id="finance1">
+        <p>2. אם ראני מחליט לשמור רק חצי מדמי הכיס כל שבוע, כמה שבועות יקח לו לחסוך?</p>
+        <input type="number" id="finance2">
+        <button onclick="checkFinance()">בדוק תשובות</button>
+    </div>
+
+    <div id="summary" class="task" style="display:none;">
+        <h2>סיכום ורפלקציה</h2>
+        <p>היום למדנו על כדורגל בתאילנד, תרגלנו חיבור וחיסור, למדנו מילים באנגלית הקשורות לספורט ומשחקים, ותרגלנו חישובי חיסכון.</p>
+        <p>מה למדת היום שהיה חדש עבורך?</p>
+        <textarea id="reflection" rows="4" cols="50"></textarea>
+        <button onclick="finishLesson()">סיים שיעור</button>
+    </div>
+
+    <script>
+        let currentTask = 1;
+        const totalTasks = 5;
+
+        function updateProgress() {
+            const progress = (currentTask - 1) / totalTasks * 100;
+            document.getElementById('progress').style.width = progress + '%';
+        }
+
+        function showNextTask() {
+            document.getElementById('task' + currentTask).style.display = 'none';
+            currentTask++;
+            if (currentTask <= totalTasks) {
+                document.getElementById('task' + currentTask).style.display = 'block';
+            } else {
+                document.getElementById('summary').style.display = 'block';
+            }
+            updateProgress();
+        }
+
+        function checkAnswer(questionNumber) {
+            const answer = document.getElementById('answer' + questionNumber).value.trim().toLowerCase();
+            if (answer === 'הפילים המלחמתיים') {
+                alert('נכון מאוד!');
+                showNextTask();
+            } else {
+                alert('לא מדויק. נסה שוב!');
+            }
+        }
+
+        function checkMath() {
+            const answer1 = document.getElementById('math1').value;
+            const answer2 = document.getElementById('math2').value;
+            if (answer1 === '29' && answer2 === '24') {
+                alert('נכון מאוד!');
+                showNextTask();
+            } else {
+                alert('לא מדויק. בדוק את החישובים שלך ונסה שוב!');
+            }
+        }
+
+        function checkEnglish() {
+            const answers = ['כדורגל', 'כדורסל', 'משחק וידאו', 'סרט מצויר'];
+            const userAnswers = [
+                document.getElementById('eng1').value,
+                document.getElementById('eng2').value,
+                document.getElementById('eng3').value,
+                document.getElementById('eng4').value
+            ];
+            
+            if (userAnswers.every((answer, index) => answer === answers[index])) {
+                alert('מצוין! כל התשובות נכונות.');
+                showNextTask();
+            } else {
+                alert('יש טעויות. בדוק את התשובות ונסה שוב.');
+            }
+        }
+
+        function checkFinance() {
+            const answer1 = document.getElementById('finance1').value;
+            const answer2 = document.getElementById('finance2').value;
+            if (answer1 === '12' && answer2 === '24') {
+                alert('נכון מאוד! אתה מבין היטב את עקרונות החיסכון.');
+                showNextTask();
+            } else {
+                alert('לא מדויק. חשוב שוב על החישובים ונסה שנית.');
+            }
+        }
+
+        function finishLesson() {
+            alert('כל הכבוד! סיימת את השיעור. תודה על ההשתתפות והמחשבה.');
+        }
+
+        // טיימר
+        let timeLeft = 60 * 60; // 60 דקות
+        const timerElement = document.getElementById('timer');
+
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            timerElement.innerHTML = `זמן שנותר: ${minutes}:${seconds}`;
+            if (timeLeft === 0) {
+                alert('הזמן נגמר!');
+            } else {
+                timeLeft--;
+                setTimeout(updateTimer, 1000);
+            }
+        }
+
+        updateTimer();
+        updateProgress();
+    </script>
+</body>
+</html>
+```
+
+This lesson for Rani takes into account his location in Phuket, Thailand, his age (7), and his interests in soccer, sports, cartoons, gaming, and TV. The lesson is structured as follows:
+
+1. Reading: A passage about soccer in Thailand, connecting to Rani's interest in soccer and his current location.
+2. Math: Addition and subtraction problems using soccer balls as a theme.
+3. English: Matching English words to Hebrew translations, focusing on sports and games.
+4. Financial Education: A problem about saving money to buy a video game, incorporating his interest in gaming.
+
+The lesson is designed to be engaging and interactive, with varied activities to maintain focus. It includes elements suitable for children with ADHD, such as short activities, immediate feedback, and clear goals. The HTML structure allows for step-by-step presentation of tasks and includes a progress bar and timer to help with time management.
+
+This lesson differs from the previous one by:
+1. Focusing on different subjects (Math, English, and Financial Education instead of Hebrew and AI).
+2. Using a different theme (soccer in Thailand) for the reading passage.
+3. Incorporating new types of activities (word matching in English, savings calculation in Financial Education).
+4. Relating content to Rani's current location in Phuket, Thailand.
+
+These changes ensure variety in Rani's weekly schedule and prevent repetition of content or activities.
