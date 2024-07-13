@@ -10,10 +10,10 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #ffe5e5;
+            background-color: #e6f3ff;
         }
         h1, h2 {
-            color: #ff6b6b;
+            color: #4a86e8;
         }
         .task {
             background-color: white;
@@ -24,7 +24,7 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         .highlight {
-            background-color: #ffd3b6;
+            background-color: #c9daf8;
             padding: 2px;
         }
         #progress-bar {
@@ -36,14 +36,14 @@
         #progress {
             width: 0%;
             height: 30px;
-            background-color: #ff9ff3;
+            background-color: #4a86e8;
             border-radius: 5px;
             text-align: center;
             line-height: 30px;
             color: white;
         }
         button {
-            background-color: #ff9ff3;
+            background-color: #4a86e8;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -57,14 +57,14 @@
             transition: background-color 0.3s;
         }
         button:hover {
-            background-color: #ff6b6b;
+            background-color: #3a76d8;
         }
         input[type="text"], textarea {
             width: 100%;
             padding: 10px;
             margin: 5px 0;
             box-sizing: border-box;
-            border: 2px solid #ffd3b6;
+            border: 2px solid #c9daf8;
             border-radius: 4px;
         }
         #timer {
@@ -72,67 +72,66 @@
             font-weight: bold;
             text-align: center;
             margin-bottom: 20px;
-            color: #ff6b6b;
+            color: #4a86e8;
         }
     </style>
 </head>
 <body>
-    <h1>שיעור יום שבת לרומי בפוקט, תאילנד 🏝️🍳</h1>
+    <h1>שיעור יום שבת לרומי בפוקט, תאילנד 🏝️🎨</h1>
     <div id="progress-bar">
         <div id="progress">0%</div>
     </div>
     <div id="timer">40:00</div>
 
     <div id="task1" class="task">
-        <h2>קריאה: המטבח התאילנדי 🍜</h2>
-        <p>קראי את הקטע הבא על המטבח התאילנדי:</p>
+        <h2>קריאה: אמנות תאילנדית 🖼️</h2>
+        <p>קראי את הקטע הבא על האמנות התאילנדית:</p>
         <p>
-            המטבח התאילנדי ידוע בטעמיו העזים והמגוונים. הוא משלב <span class="highlight">חמוץ, מתוק, מלוח ופיקנטי</span> בצורה מושלמת. 
-            מנות פופולריות כוללות <span class="highlight">פאד תאי</span> (אטריות מטוגנות), <span class="highlight">תום יאם</span> (מרק חמוץ-פיקנטי), 
-            ו<span class="highlight">סום טאם</span> (סלט פפאיה ירוקה). התבלינים הנפוצים כוללים <span class="highlight">למון גראס, עלי קפיר ליים, וצ'ילי</span>.
-            בפוקט, תוכלי ליהנות גם ממאכלי ים טריים ומגוון פירות טרופיים.
+            האמנות התאילנדית מתאפיינת ב<span class="highlight">צבעוניות עזה</span> ו<span class="highlight">פרטים מדוקדקים</span>. היא מושפעת מ<span class="highlight">בודהיזם</span> ומסורות מקומיות. 
+            אמנות מסורתית כוללת <span class="highlight">ציורי קיר במקדשים</span>, <span class="highlight">פיסול בודהה</span>, ו<span class="highlight">אמנות טקסטיל</span>. 
+            אמנים מודרניים משלבים טכניקות מסורתיות עם סגנונות עכשוויים. <span class="highlight">צבעי מים</span> הם טכניקה פופולרית, במיוחד לציור נופים טרופיים ופרחים.
         </p>
         <p>עכשיו, עני על השאלות הבאות:</p>
         <ol>
-            <li>מהם ארבעת הטעמים העיקריים במטבח התאילנדי? <input type="text"></li>
-            <li>ציני שתי מנות פופולריות במטבח התאילנדי: <input type="text"></li>
-            <li>מהם שלושה תבלינים נפוצים במטבח התאילנדי? <input type="text"></li>
-            <li>איזו מנה תאילנדית היית רוצה להכין? למה? <input type="text"></li>
+            <li>מהם שני מאפיינים של האמנות התאילנדית? <input type="text"></li>
+            <li>ציני שתי צורות של אמנות מסורתית תאילנדית: <input type="text"></li>
+            <li>איזו טכניקת ציור פופולרית באמנות התאילנדית? <input type="text"></li>
+            <li>איך היית משלבת אלמנטים מהאמנות התאילנדית בציור שלך? <input type="text"></li>
         </ol>
         <button onclick="nextTask()">הבא</button>
     </div>
 
     <div id="task2" class="task">
-        <h2>אנגלית: מתכון תאילנדי 🥘</h2>
-        <p>הנה מתכון פשוט לסלט פפאיה (סום טאם) באנגלית. תרגמי את המילים המודגשות לעברית:</p>
+        <h2>אנגלית: תיאור יצירת אמנות 🎨</h2>
+        <p>הנה כמה מילים באנגלית לתיאור יצירות אמנות. תרגמי אותן לעברית:</p>
         <ol>
-            <li><span class="highlight">Ingredients</span>: <input type="text"></li>
-            <li>1 <span class="highlight">green papaya</span>, shredded: <input type="text"></li>
-            <li>2 <span class="highlight">tomatoes</span>, sliced: <input type="text"></li>
-            <li>2 <span class="highlight">cloves of garlic</span>: <input type="text"></li>
-            <li>2 <span class="highlight">tablespoons</span> of fish sauce: <input type="text"></li>
-            <li>2 <span class="highlight">tablespoons</span> of lime juice: <input type="text"></li>
-            <li>1 <span class="highlight">tablespoon</span> of palm sugar: <input type="text"></li>
+            <li><span class="highlight">Colorful</span>: <input type="text"></li>
+            <li><span class="highlight">Detailed</span>: <input type="text"></li>
+            <li><span class="highlight">Vibrant</span>: <input type="text"></li>
+            <li><span class="highlight">Intricate</span>: <input type="text"></li>
+            <li><span class="highlight">Spiritual</span>: <input type="text"></li>
+            <li><span class="highlight">Traditional</span>: <input type="text"></li>
+            <li><span class="highlight">Modern</span>: <input type="text"></li>
         </ol>
-        <p>כתבי משפט באנגלית המתאר איך להכין את הסלט:</p>
+        <p>כתבי משפט באנגלית המתאר יצירת אמנות תאילנדית:</p>
         <textarea rows="2"></textarea>
         <button onclick="nextTask()">הבא</button>
     </div>
 
     <div id="task3" class="task">
-        <h2>מתמטיקה: תכנון ארוחה 🧮</h2>
-        <p>בואי נתכנן ארוחה תאילנדית ונחשב את העלויות:</p>
+        <h2>מתמטיקה: תכנון תערוכת אמנות 📐</h2>
+        <p>בואי נתכנן תערוכת אמנות ונחשב את השטח הדרוש:</p>
         <ol>
             <li>
-                אם 1 ק"ג פפאיה עולה 30 באט, וצריך 500 גרם לסלט אחד, כמה יעלה להכין 3 סלטי פפאיה?
+                אם כל ציור זקוק לשטח קיר של 2 מטרים רוחב ו-1.5 מטרים גובה, מה השטח הכולל הדרוש ל-6 ציורים?
                 <input type="text">
             </li>
             <li>
-                אם שקית של 100 גרם למון גראס עולה 20 באט, כמה תעלה כמות של 25 גרם?
+                אם אורך החדר הוא 10 מטרים ורוחבו 8 מטרים, מה שטח הרצפה הכולל של החדר?
                 <input type="text">
             </li>
             <li>
-                אם צריך 3 כפות רוטב דגים למנה, וכל בקבוק מכיל 12 כפות, כמה מנות אפשר להכין מ-2 בקבוקים?
+                אם כל מבקר זקוק ל-2 מ"ר שטח רצפה, כמה מבקרים יכולים להיות בחדר בו-זמנית?
                 <input type="text">
             </li>
         </ol>
@@ -140,16 +139,16 @@
     </div>
 
     <div id="task4" class="task">
-        <h2>יצירה: עיצוב תפריט 🎨🍽️</h2>
-        <p>בואי נעצב תפריט לארוחה תאילנדית:</p>
+        <h2>יצירה: ציור בהשראה תאילנדית 🖌️</h2>
+        <p>בואי ניצור ציור בהשראת האמנות התאילנדית:</p>
         <ol>
-            <li>על דף נייר, צרי מסגרת מעוטרת בסגנון תאילנדי (למשל, עם פרחי לוטוס או עלי דקל).</li>
-            <li>בתוך המסגרת, כתבי כותרת "תפריט תאילנדי" בכתב יפה.</li>
-            <li>הוסיפי לפחות 3 מנות שלמדנו עליהן, כולל תיאור קצר של כל מנה.</li>
-            <li>קשטי את התפריט בציורים קטנים של מרכיבים תאילנדיים (למשל, פלפל צ'ילי, פפאיה, למון גראס).</li>
-            <li>הוסיפי צבע לעיצוב שלך בעזרת צבעי מים או צבעים אחרים שיש לך.</li>
+            <li>בחרי נושא מהטבע התאילנדי (למשל, פרח הלוטוס, פיל, חוף ים טרופי).</li>
+            <li>השתמשי בצבעים עזים ומרהיבים, כמו כחול, ירוק, אדום וזהב.</li>
+            <li>הוסיפי פרטים קטנים ומדוקדקים לציור שלך.</li>
+            <li>נסי לשלב אלמנט מסורתי תאילנדי, כמו דוגמת מנדלה או קווים מעוקלים.</li>
+            <li>הוסיפי מסגרת מעוטרת לציור בסגנון תאילנדי.</li>
         </ol>
-        <p>כשתסיימי, צלמי את התפריט שלך והעלי אותו לתיקייה המשותפת שלנו.</p>
+        <p>כשתסיימי, צלמי את הציור שלך והעלי אותו לתיקייה המשותפת שלנו.</p>
         <button onclick="nextTask()">הבא</button>
     </div>
 
@@ -157,10 +156,10 @@
         <h2>סיכום ורפלקציה 🤔</h2>
         <p>בואי נסכם את מה שלמדנו היום:</p>
         <ol>
-            <li>מה למדת חדש על המטבח התאילנדי? <textarea rows="2"></textarea></li>
-            <li>איזו מנה תאילנדית הכי מעניינת אותך ולמה? <textarea rows="2"></textarea></li>
-            <li>איך הרגשת בזמן עיצוב התפריט? האם היה לך קל או מאתגר? <textarea rows="2"></textarea></li>
-            <li>איך את חושבת שאוכל יכול לעזור לנו להבין תרבויות אחרות? <textarea rows="2"></textarea></li>
+            <li>מה למדת חדש על האמנות התאילנדית? <textarea rows="2"></textarea></li>
+            <li>איזה אלמנט מהאמנות התאילנדית הכי מעניין אותך ולמה? <textarea rows="2"></textarea></li>
+            <li>איך הרגשת בזמן יצירת הציור בהשראה תאילנדית? האם היה לך קל או מאתגר? <textarea rows="2"></textarea></li>
+            <li>איך את חושבת שאמנות יכולה לעזור לנו להבין תרבויות אחרות? <textarea rows="2"></textarea></li>
         </ol>
         <button onclick="finishLesson()">סיים שיעור</button>
     </div>
