@@ -1,11 +1,8 @@
-Here's a new lesson plan for Rani, taking into account his previous lesson and ensuring variety in the content. This lesson is designed for Saturday in Phuket, Thailand:
-
-```html
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>שיעור לראני בפוקט, תאילנד - יום שבת</title>
     <style>
         body {
@@ -60,6 +57,8 @@ Here's a new lesson plan for Rani, taking into account his previous lesson and e
             padding: 8px;
             margin: 5px 0;
             box-sizing: border-box;
+            font-size: 16px;
+            touch-action: manipulation;
         }
     </style>
 </head>
@@ -68,52 +67,49 @@ Here's a new lesson plan for Rani, taking into account his previous lesson and e
     <div class="progress-bar">
         <div class="progress" id="progress"></div>
     </div>
-    <div id="timer">זמן שנותר: 60:00</div>
+    <div id="timer">זמן שנותר: 40:00</div>
 
     <div id="task1" class="task">
-        <h2>קריאה: חיות ים בפוקט</h2>
-        <p>פוקט מוקפת ב<span class="highlight">ים האנדמן</span>, שהוא חלק מהאוקיינוס ההודי. באזור זה חיים בעלי חיים ימיים רבים ומעניינים. אחד מהם הוא <span class="highlight">כריש הלוויתן</span>, הדג הגדול ביותר בעולם! למרות גודלו, הוא ניזון מפלנקטון קטן. עוד חיה מעניינת היא <span class="highlight">צב הים הירוק</span>, שמגיע לחופי פוקט כדי להטיל ביצים.</p>
-        <p>שאלה: איזה דג גדול חי בים ליד פוקט?</p>
+        <h2>קריאה: ספורט ימי בפוקט 🏄‍♂️🏊‍♂️</h2>
+        <p>פוקט היא אי מדהים בתאילנד, מוקף ב<span class="highlight">ים האנדמן</span>. האי ידוע בחופיו היפים ובספורט הימי המגוון שניתן לעסוק בו. אחד הספורטים הפופולריים ביותר הוא <span class="highlight">גלישת גלים</span>. הגולשים רוכבים על הגלים באמצעות גלשן. ספורט ימי נוסף הוא <span class="highlight">צלילה</span>, בו אנשים שוחים מתחת למים כדי לראות דגים ושוניות אלמוגים יפות.</p>
+        <p>שאלה: איזה ספורט ימי מוזכר בקטע שבו רוכבים על גלים?</p>
         <input type="text" id="answer1">
         <button onclick="checkAnswer(1)">בדוק תשובה</button>
     </div>
 
     <div id="task2" class="task" style="display:none;">
-        <h2>עברית: משחק מילים</h2>
-        <p>מצא את המילים הקשורות לים בתוך המשפטים הבאים:</p>
+        <h2>אנגלית: ספורט ומשחקים 🏀🎮</h2>
+        <p>התאם בין המילה באנגלית לתרגום שלה בעברית:</p>
         <ol>
-            <li>אבא קנה לי <input type="text" id="heb1"> חדש לשחייה בים.</li>
-            <li>ראיתי <input type="text" id="heb2"> גדולים שוחים במים.</li>
-            <li>בערב הלכנו לאכול במסעדת <input type="text" id="heb3"> טעימים.</li>
-            <li>אספנו <input type="text" id="heb4"> יפות על החוף.</li>
+            <li>Soccer ⚽️: <input type="text" id="eng1"></li>
+            <li>Basketball 🏀: <input type="text" id="eng2"></li>
+            <li>Video game 🎮: <input type="text" id="eng3"></li>
+            <li>Swimming 🏊‍♂️: <input type="text" id="eng4"></li>
         </ol>
-        <button onclick="checkHebrew()">בדוק תשובות</button>
+        <button onclick="checkEnglish()">בדוק תשובות</button>
     </div>
 
     <div id="task3" class="task" style="display:none;">
-        <h2>מתמטיקה: בעיות מילוליות</h2>
-        <p>1. במשחק כדורגל בחוף, קבוצה א' הבקיעה 3 שערים וקבוצה ב' הבקיעה 5 שערים. כמה שערים הובקעו בסך הכל?</p>
+        <h2>מתמטיקה: ניקוד במשחקים 🧮</h2>
+        <p>1. במשחק כדורגל, ראני הבקיע 2 שערים וחברו הבקיע 3 שערים. כמה שערים הם הבקיעו יחד?</p>
         <input type="number" id="math1">
-        <p>2. ראני אסף 12 צדפים. הוא נתן 4 לאחותו ומצא עוד 7. כמה צדפים יש לו עכשיו?</p>
+        <p>2. במשחק מחשב, ראני צבר 15 נקודות בסיבוב הראשון ו-8 נקודות בסיבוב השני. כמה נקודות יש לו בסך הכל?</p>
         <input type="number" id="math2">
         <button onclick="checkMath()">בדוק תשובות</button>
     </div>
 
     <div id="task4" class="task" style="display:none;">
-        <h2>בינה מלאכותית: זיהוי תמונות</h2>
-        <p>נניח שאתה מתכנת מערכת בינה מלאכותית לזיהוי חיות ים. איזה מידע תצטרך ללמד את המערכת כדי לזהות:</p>
-        <ol>
-            <li>צב ים: <input type="text" id="ai1"></li>
-            <li>דולפין: <input type="text" id="ai2"></li>
-            <li>כריש: <input type="text" id="ai3"></li>
-        </ol>
-        <button onclick="checkAI()">בדוק תשובות</button>
+        <h2>חינוך פיננסי: חסכון לצעצועים 💰</h2>
+        <p>ראני רוצה לחסוך כסף לקניית משחק מחשב חדש שעולה 100 בהט (מטבע תאילנדי). הוא מקבל 10 בהט דמי כיס כל שבוע.</p>
+        <p>כמה שבועות יצטרך ראני לחסוך את כל דמי הכיס שלו כדי לקנות את המשחק?</p>
+        <input type="number" id="finance">
+        <button onclick="checkFinance()">בדוק תשובה</button>
     </div>
 
     <div id="summary" class="task" style="display:none;">
-        <h2>סיכום ורפלקציה</h2>
-        <p>היום למדנו על חיות ים בפוקט, תרגלנו מילים בעברית הקשורות לים, פתרנו בעיות מתמטיות, וחשבנו על בינה מלאכותית לזיהוי חיות ים.</p>
-        <p>מה היה החלק המעניין ביותר בשיעור עבורך?</p>
+        <h2>סיכום ורפלקציה 🤔</h2>
+        <p>היום למדנו על ספורט ימי בפוקט, תרגלנו מילים באנגלית הקשורות לספורט ומשחקים, פתרנו בעיות מתמטיות הקשורות למשחקים, וחשבנו על חיסכון לצעצועים.</p>
+        <p>איזה חלק בשיעור הכי אהבת ולמה?</p>
         <textarea id="reflection" rows="4" cols="50"></textarea>
         <button onclick="finishLesson()">סיים שיעור</button>
     </div>
@@ -140,64 +136,57 @@ Here's a new lesson plan for Rani, taking into account his previous lesson and e
 
         function checkAnswer(questionNumber) {
             const answer = document.getElementById('answer' + questionNumber).value.trim().toLowerCase();
-            if (answer === 'כריש הלוויתן' || answer === 'כריש לוויתן') {
-                alert('נכון מאוד!');
+            if (answer === 'גלישת גלים' || answer === 'גלישה') {
+                alert('נכון מאוד! 🎉');
                 showNextTask();
             } else {
-                alert('לא מדויק. נסה שוב!');
+                alert('לא מדויק. נסה שוב! 🤔');
             }
         }
 
-        function checkHebrew() {
-            const answers = ['בגד ים', 'דגים', 'פירות ים', 'צדפים'];
+        function checkEnglish() {
+            const answers = ['כדורגל', 'כדורסל', 'משחק וידאו', 'שחייה'];
             const userAnswers = [
-                document.getElementById('heb1').value,
-                document.getElementById('heb2').value,
-                document.getElementById('heb3').value,
-                document.getElementById('heb4').value
+                document.getElementById('eng1').value,
+                document.getElementById('eng2').value,
+                document.getElementById('eng3').value,
+                document.getElementById('eng4').value
             ];
             
             if (userAnswers.every((answer, index) => answer === answers[index])) {
-                alert('מצוין! כל התשובות נכונות.');
+                alert('מצוין! כל התשובות נכונות. 🎉');
                 showNextTask();
             } else {
-                alert('יש טעויות. בדוק את התשובות ונסה שוב.');
+                alert('יש טעויות. בדוק את התשובות ונסה שוב. 🤔');
             }
         }
 
         function checkMath() {
             const answer1 = document.getElementById('math1').value;
             const answer2 = document.getElementById('math2').value;
-            if (answer1 === '8' && answer2 === '15') {
-                alert('נכון מאוד!');
+            if (answer1 === '5' && answer2 === '23') {
+                alert('נכון מאוד! 🎉');
                 showNextTask();
             } else {
-                alert('לא מדויק. בדוק את החישובים שלך ונסה שוב!');
+                alert('לא מדויק. בדוק את החישובים שלך ונסה שוב! 🤔');
             }
         }
 
-        function checkAI() {
-            const answers = ['צורת שריון', 'סנפיר גב', 'סנפיר משולש'];
-            const userAnswers = [
-                document.getElementById('ai1').value,
-                document.getElementById('ai2').value,
-                document.getElementById('ai3').value
-            ];
-            
-            if (userAnswers.every((answer, index) => answer.includes(answers[index]))) {
-                alert('תשובות מצוינות! אתה מבין היטב את עקרונות זיהוי התמונות.');
+        function checkFinance() {
+            const answer = document.getElementById('finance').value;
+            if (answer === '10') {
+                alert('נכון מאוד! אתה מבין היטב את עקרונות החיסכון. 🎉');
                 showNextTask();
             } else {
-                alert('חשוב שוב על המאפיינים הייחודיים של כל חיה ונסה שנית.');
+                alert('לא מדויק. חשוב שוב כמה שבועות יידרשו לחסוך 100 בהט אם חוסכים 10 בהט בשבוע. 🤔');
             }
         }
 
         function finishLesson() {
-            alert('כל הכבוד! סיימת את השיעור. תודה על ההשתתפות והמחשבה.');
+            alert('כל הכבוד! סיימת את השיעור. תודה על ההשתתפות והמחשבה. 🎉');
         }
 
-        // טיימר
-        let timeLeft = 60 * 60; // 60 דקות
+        let timeLeft = 40 * 60;
         const timerElement = document.getElementById('timer');
 
         function updateTimer() {
@@ -206,7 +195,7 @@ Here's a new lesson plan for Rani, taking into account his previous lesson and e
             seconds = seconds < 10 ? '0' + seconds : seconds;
             timerElement.innerHTML = `זמן שנותר: ${minutes}:${seconds}`;
             if (timeLeft === 0) {
-                alert('הזמן נגמר!');
+                alert('הזמן נגמר! ⏰');
             } else {
                 timeLeft--;
                 setTimeout(updateTimer, 1000);
@@ -218,21 +207,3 @@ Here's a new lesson plan for Rani, taking into account his previous lesson and e
     </script>
 </body>
 </html>
-```
-
-This lesson for Rani takes into account his location in Phuket, Thailand, his age (7), and his interests in sports, cartoons, gaming, and TV. The lesson is structured as follows:
-
-1. Reading: A passage about sea animals in Phuket, connecting to Rani's current location and introducing marine life.
-2. Hebrew: A word game focusing on sea-related vocabulary.
-3. Math: Word problems with a beach and sea theme.
-4. Artificial Intelligence: An introduction to image recognition concepts using sea animals as examples.
-
-The lesson is designed to be engaging and interactive, with varied activities to maintain focus. It includes elements suitable for children with ADHD, such as short activities, immediate feedback, and clear goals. The HTML structure allows for step-by-step presentation of tasks and includes a progress bar and timer to help with time management.
-
-This lesson differs from the previous one by:
-1. Focusing on different subjects (Hebrew and AI instead of English and Financial Education).
-2. Using a different theme (sea animals in Phuket) for the reading passage.
-3. Incorporating new types of activities (word game in Hebrew, AI concept introduction).
-4. Relating content more deeply to Rani's current location in Phuket, Thailand, by focusing on marine life.
-
-These changes ensure variety in Rani's weekly schedule and prevent repetition of content or activities.
