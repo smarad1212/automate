@@ -1,216 +1,275 @@
-Here's a new lesson for Rani, taking into account the previous lesson and following the guidelines:
+I understand you'd like me to create a new lesson for Rani, taking into account the information you've provided and the previous lesson. However, I don't see the previous lesson in your message. Without that information, I'll create a new lesson based on the details you've given. Here's the lesson plan for Rani:
 
+```html
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>שיעור לראני בפוקט, תאילנד - יום שבת</title>
+    <title>שיעור לרני בפוקט, תאילנד</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
             max-width: 800px;
             margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
             padding: 20px;
-            background-color: #ffe4b5;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        h1, h2 {
-            color: #ff6347;
+        h1 {
+            color: #4a90e2;
+            text-align: center;
         }
         .progress-bar {
             width: 100%;
             background-color: #e0e0e0;
-            padding: 3px;
-            border-radius: 3px;
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+            border-radius: 5px;
+            margin-bottom: 20px;
         }
         .progress {
-            width: 0;
+            width: 0%;
             height: 20px;
-            background-color: #ff6347;
-            border-radius: 3px;
-            transition: 0.5s;
+            background-color: #4caf50;
+            border-radius: 5px;
+            transition: width 0.5s ease-in-out;
         }
         .task {
-            background-color: white;
-            border: 1px solid #ffa07a;
-            padding: 15px;
-            margin-bottom: 10px;
+            background-color: #e6f3ff;
             border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: none;
         }
         .highlight {
-            background-color: #ffff00;
-            font-weight: bold;
+            background-color: #ffffcc;
+            padding: 2px 5px;
+            border-radius: 3px;
         }
         button {
-            background-color: #ff6347;
+            background-color: #4a90e2;
             color: white;
-            padding: 10px 15px;
             border: none;
+            padding: 10px 15px;
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
         }
         button:hover {
-            background-color: #ff4500;
+            background-color: #357abd;
         }
         input[type="text"], input[type="number"] {
             width: 100%;
-            padding: 8px;
+            padding: 10px;
             margin: 5px 0;
-            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
             font-size: 16px;
-            touch-action: manipulation;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+        #timer {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .pulse {
+            animation: pulse 2s infinite;
         }
     </style>
 </head>
 <body>
-    <h1>שיעור לראני בפוקט, תאילנד - יום שבת</h1>
-    <div class="progress-bar">
-        <div class="progress" id="progress"></div>
-    </div>
-    <div id="timer">זמן שנותר: 40:00</div>
+    <div class="container">
+        <h1>שיעור לרני בפוקט, תאילנד 🌴</h1>
+        <div id="timer">40:00</div>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        
+        <div class="task" id="task1">
+            <h2>קריאה: חיות מעניינות בתאילנד 🐘🐒</h2>
+            <p>תאילנד היא בית למגוון רחב של חיות מרתקות. <span class="highlight">הפיל האסיאתי</span> הוא אחד מהסמלים של תאילנד. פילים אלו חכמים מאוד ויכולים להשתמש בחדק שלהם לאכול, לשתות ואפילו לצייר! <span class="highlight">הקוף הג'יבון</span> הוא חיה מיוחדת נוספת שחיה ביערות תאילנד. לקופים אלו זרועות ארוכות מאוד והם יכולים לנוע בין העצים במהירות מדהימה.</p>
+            <p>שאלה: איזו חיה מעניינת אותך יותר, הפיל או הקוף הג'יבון? למה?</p>
+            <input type="text" id="answer1" placeholder="כתוב את תשובתך כאן">
+            <button onclick="nextTask()">הבא</button>
+        </div>
 
-    <div id="task1" class="task">
-        <h2>קריאה: חיות ימיות בפוקט 🐠🦈</h2>
-        <p>פוקט מוקפת ב<span class="highlight">ים האנדמן</span>, שהוא בית למגוון רחב של חיות ים מרתקות. אחת החיות המפורסמות היא <span class="highlight">כריש הלוויתן</span>, הדג הגדול ביותר בעולם! למרות גודלו, הוא ניזון מפלנקטון קטנטן. חיה ימית נוספת שניתן לראות היא <span class="highlight">צב הים הירוק</span>, שמגיע לחופי האי כדי להטיל ביצים.</p>
-        <p>שאלה: איזו חיה ימית מוזכרת בקטע שהיא הדג הגדול ביותר בעולם?</p>
-        <input type="text" id="answer1">
-        <button onclick="checkAnswer(1)">בדוק תשובה</button>
-    </div>
+        <div class="task" id="task2">
+            <h2>מתמטיקה: כדורגל ומספרים ⚽️🔢</h2>
+            <p>בקבוצת הכדורגל של רני יש 11 שחקנים בהרכב. אם 3 שחקנים נפצעו ו-2 שחקנים חדשים הצטרפו, כמה שחקנים יש עכשיו בקבוצה?</p>
+            <input type="number" id="answer2" placeholder="הכנס את התשובה">
+            <button onclick="checkAnswer(2)">בדוק תשובה</button>
+            <button onclick="nextTask()">הבא</button>
+        </div>
 
-    <div id="task2" class="task" style="display:none;">
-        <h2>אנגלית: דמויות מקרטונים 📺</h2>
-        <p>התאם בין הדמות באנגלית לתרגום שלה בעברית:</p>
-        <ol>
-            <li>SpongeBob SquarePants 🧽: <input type="text" id="eng1"></li>
-            <li>Mickey Mouse 🐭: <input type="text" id="eng2"></li>
-            <li>Donald Duck 🦆: <input type="text" id="eng3"></li>
-            <li>Elsa (from Frozen) ❄️: <input type="text" id="eng4"></li>
-        </ol>
-        <button onclick="checkEnglish()">בדוק תשובות</button>
-    </div>
+        <div class="task" id="task3">
+            <h2>אנגלית: חיות באנגלית 🦁🐯</h2>
+            <p>בוא נלמד את שמות החיות באנגלית! התאם בין החיה לשמה באנגלית:</p>
+            <ol>
+                <li>פיל - <input type="text" id="animal1" placeholder="באנגלית"></li>
+                <li>קוף - <input type="text" id="animal2" placeholder="באנגלית"></li>
+                <li>נמר - <input type="text" id="animal3" placeholder="באנגלית"></li>
+            </ol>
+            <button onclick="checkAnswer(3)">בדוק תשובות</button>
+            <button onclick="nextTask()">הבא</button>
+        </div>
 
-    <div id="task3" class="task" style="display:none;">
-        <h2>מתמטיקה: זמן משחק 🕰️</h2>
-        <p>1. ראני שיחק במשחק נינטנדו במשך 45 דקות בבוקר ו-30 דקות אחר הצהריים. כמה דקות הוא שיחק בסך הכל?</p>
-        <input type="number" id="math1">
-        <p>2. אם משחק כדורגל נמשך 90 דקות, כמה משחקים שלמים יכול ראני לשחק ב-4 שעות?</p>
-        <input type="number" id="math2">
-        <button onclick="checkMath()">בדוק תשובות</button>
-    </div>
-
-    <div id="task4" class="task" style="display:none;">
-        <h2>חינוך פיננסי: תקציב לחופשה 🏖️</h2>
-        <p>משפחתו של ראני מתכננת טיול בפוקט. הם רוצים לעשות 3 פעילויות:</p>
-        <ul>
-            <li>שנורקלינג: 500 בהט</li>
-            <li>ביקור בפארק מים: 800 בהט</li>
-            <li>סיור באי: 600 בהט</li>
-        </ul>
-        <p>כמה בהט יצטרכו בסך הכל עבור כל הפעילויות?</p>
-        <input type="number" id="finance">
-        <button onclick="checkFinance()">בדוק תשובה</button>
+        <div class="task" id="task4">
+            <h2>סיכום השיעור 🎉</h2>
+            <p>כל הכבוד, רני! סיימת את השיעור. בוא נסכם מה למדנו היום:</p>
+            <ul id="summary"></ul>
+            <button onclick="finishLesson()">סיים שיעור</button>
+        </div>
     </div>
 
-    <div id="summary" class="task" style="display:none;">
-        <h2>סיכום ורפלקציה 🤔</h2>
-        <p>היום למדנו על חיות ימיות בפוקט, תרגלנו שמות של דמויות מקרטונים באנגלית, פתרנו בעיות מתמטיות הקשורות לזמן משחק, וחישבנו תקציב לפעילויות בחופשה.</p>
-        <p>איזו פעילות מהשיעור היום הכי אהבת ולמה?</p>
-        <textarea id="reflection" rows="4" cols="50"></textarea>
-        <button onclick="finishLesson()">סיים שיעור</button>
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <h2 id="popupTitle"></h2>
+        <p id="popupContent"></p>
+        <button onclick="closePopup()">סגור</button>
     </div>
 
     <script>
         let currentTask = 1;
-        const totalTasks = 5;
+        let totalTasks = 4;
+        let answers = {};
+        let startTime = new Date().getTime();
 
-        function updateProgress() {
-            const progress = (currentTask - 1) / totalTasks * 100;
-            document.getElementById('progress').style.width = progress + '%';
-        }
-
-        function showNextTask() {
-            document.getElementById('task' + currentTask).style.display = 'none';
-            currentTask++;
-            if (currentTask <= totalTasks) {
-                document.getElementById('task' + currentTask).style.display = 'block';
-            } else {
-                document.getElementById('summary').style.display = 'block';
+        function showTask(taskNum) {
+            for (let i = 1; i <= totalTasks; i++) {
+                document.getElementById(`task${i}`).style.display = i === taskNum ? 'block' : 'none';
             }
             updateProgress();
         }
 
-        function checkAnswer(questionNumber) {
-            const answer = document.getElementById('answer' + questionNumber).value.trim().toLowerCase();
-            if (answer === 'כריש הלוויתן' || answer === 'כריש לוויתן') {
-                alert('נכון מאוד! 🎉');
-                showNextTask();
+        function nextTask() {
+            answers[currentTask] = document.getElementById(`answer${currentTask}`)?.value || 'לא הושלם';
+            currentTask++;
+            if (currentTask <= totalTasks) {
+                showTask(currentTask);
             } else {
-                alert('לא מדויק. נסה שוב! 🤔');
+                showSummary();
             }
         }
 
-        function checkEnglish() {
-            const answers = ['בובספוג מכנסמרובע', 'מיקי מאוס', 'דונלד דאק', 'אלזה'];
-            const userAnswers = [
-                document.getElementById('eng1').value,
-                document.getElementById('eng2').value,
-                document.getElementById('eng3').value,
-                document.getElementById('eng4').value
-            ];
-            
-            if (userAnswers.every((answer, index) => answer === answers[index])) {
-                alert('מצוין! כל התשובות נכונות. 🎉');
-                showNextTask();
-            } else {
-                alert('יש טעויות. בדוק את התשובות ונסה שוב. 🤔');
+        function checkAnswer(taskNum) {
+            let isCorrect = false;
+            let message = '';
+
+            if (taskNum === 2) {
+                const answer = parseInt(document.getElementById('answer2').value);
+                isCorrect = answer === 10;
+                message = isCorrect ? 'כל הכבוד! התשובה נכונה.' : 'לא בדיוק. התשובה הנכונה היא 10 שחקנים.';
+            } else if (taskNum === 3) {
+                const animal1 = document.getElementById('animal1').value.toLowerCase();
+                const animal2 = document.getElementById('animal2').value.toLowerCase();
+                const animal3 = document.getElementById('animal3').value.toLowerCase();
+                isCorrect = animal1 === 'elephant' && animal2 === 'monkey' && animal3 === 'tiger';
+                message = isCorrect ? 'מצוין! כל התשובות נכונות.' : 'כמעט. התשובות הנכונות הן: elephant, monkey, tiger.';
             }
+
+            showPopup(isCorrect ? 'כל הכבוד! 🎉' : 'נסה שוב', message);
+            answers[taskNum] = isCorrect ? 'נכון' : 'לא נכון';
         }
 
-        function checkMath() {
-            const answer1 = document.getElementById('math1').value;
-            const answer2 = document.getElementById('math2').value;
-            if (answer1 === '75' && answer2 === '2') {
-                alert('נכון מאוד! 🎉');
-                showNextTask();
-            } else {
-                alert('לא מדויק. בדוק את החישובים שלך ונסה שוב! 🤔');
-            }
+        function updateProgress() {
+            const progress = (currentTask - 1) / totalTasks * 100;
+            document.getElementById('progress').style.width = `${progress}%`;
         }
 
-        function checkFinance() {
-            const answer = document.getElementById('finance').value;
-            if (answer === '1900') {
-                alert('נכון מאוד! אתה מבין היטב איך לחשב תקציב. 🎉');
-                showNextTask();
-            } else {
-                alert('לא מדויק. נסה לחבר את כל הסכומים יחד. 🤔');
+        function showPopup(title, content) {
+            document.getElementById('popupTitle').textContent = title;
+            document.getElementById('popupContent').textContent = content;
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        function showSummary() {
+            const summary = document.getElementById('summary');
+            summary.innerHTML = '';
+            for (let i = 1; i <= totalTasks - 1; i++) {
+                const li = document.createElement('li');
+                li.textContent = `משימה ${i}: ${answers[i]}`;
+                summary.appendChild(li);
             }
+            showTask(totalTasks);
         }
 
         function finishLesson() {
-            alert('כל הכבוד! סיימת את השיעור. תודה על ההשתתפות והמחשבה. 🎉');
+            const endTime = new Date().getTime();
+            const duration = Math.round((endTime - startTime) / 1000);
+            const minutes = Math.floor(duration / 60);
+            const seconds = duration % 60;
+            showPopup('סיום השיעור', `כל הכבוד, רני! סיימת את השיעור תוך ${minutes} דקות ו-${seconds} שניות.`);
         }
-
-        let timeLeft = 40 * 60;
-        const timerElement = document.getElementById('timer');
 
         function updateTimer() {
-            const minutes = Math.floor(timeLeft / 60);
-            let seconds = timeLeft % 60;
-            seconds = seconds < 10 ? '0' + seconds : seconds;
-            timerElement.innerHTML = `זמן שנותר: ${minutes}:${seconds}`;
-            if (timeLeft === 0) {
-                alert('הזמן נגמר! ⏰');
-            } else {
-                timeLeft--;
-                setTimeout(updateTimer, 1000);
-            }
+            const timerElement = document.getElementById('timer');
+            let timeLeft = 40 * 60; // 40 minutes in seconds
+
+            const timerInterval = setInterval(() => {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    timerElement.textContent = "הזמן נגמר!";
+                    timerElement.classList.add('pulse');
+                } else {
+                    timeLeft--;
+                }
+            }, 1000);
         }
 
+        showTask(1);
         updateTimer();
-        updateProgress();
     </script>
 </body>
 </html>
+```
+
+This lesson plan for Rani includes:
+
+1. A reading passage about interesting animals in Thailand, connecting to Rani's interest in animals and his current location.
+2. A math problem related to soccer, one of Rani's hobbies.
+3. An English language task about animal names, combining his interest in animals with language learning.
+4. A summary section to review what was learned.
+
+The lesson is designed to be interactive, with a progress bar, timer, and popup messages for feedback. It's tailored for a 7-year-old, with simple language and engaging topics. The content is in Hebrew as requested, with some English words in the language task.
