@@ -1,3 +1,5 @@
+Here's a new lesson for Rani, taking into account the previous lesson and following the guidelines:
+
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -10,10 +12,10 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f0f8ff;
+            background-color: #ffe4b5;
         }
         h1, h2 {
-            color: #0066cc;
+            color: #ff6347;
         }
         .progress-bar {
             width: 100%;
@@ -25,23 +27,23 @@
         .progress {
             width: 0;
             height: 20px;
-            background-color: #4CAF50;
+            background-color: #ff6347;
             border-radius: 3px;
             transition: 0.5s;
         }
         .task {
             background-color: white;
-            border: 1px solid #ddd;
+            border: 1px solid #ffa07a;
             padding: 15px;
             margin-bottom: 10px;
             border-radius: 5px;
         }
         .highlight {
-            background-color: yellow;
+            background-color: #ffff00;
             font-weight: bold;
         }
         button {
-            background-color: #4CAF50;
+            background-color: #ff6347;
             color: white;
             padding: 10px 15px;
             border: none;
@@ -50,7 +52,7 @@
             font-size: 16px;
         }
         button:hover {
-            background-color: #45a049;
+            background-color: #ff4500;
         }
         input[type="text"], input[type="number"] {
             width: 100%;
@@ -70,46 +72,51 @@
     <div id="timer">זמן שנותר: 40:00</div>
 
     <div id="task1" class="task">
-        <h2>קריאה: ספורט ימי בפוקט 🏄‍♂️🏊‍♂️</h2>
-        <p>פוקט היא אי מדהים בתאילנד, מוקף ב<span class="highlight">ים האנדמן</span>. האי ידוע בחופיו היפים ובספורט הימי המגוון שניתן לעסוק בו. אחד הספורטים הפופולריים ביותר הוא <span class="highlight">גלישת גלים</span>. הגולשים רוכבים על הגלים באמצעות גלשן. ספורט ימי נוסף הוא <span class="highlight">צלילה</span>, בו אנשים שוחים מתחת למים כדי לראות דגים ושוניות אלמוגים יפות.</p>
-        <p>שאלה: איזה ספורט ימי מוזכר בקטע שבו רוכבים על גלים?</p>
+        <h2>קריאה: חיות ימיות בפוקט 🐠🦈</h2>
+        <p>פוקט מוקפת ב<span class="highlight">ים האנדמן</span>, שהוא בית למגוון רחב של חיות ים מרתקות. אחת החיות המפורסמות היא <span class="highlight">כריש הלוויתן</span>, הדג הגדול ביותר בעולם! למרות גודלו, הוא ניזון מפלנקטון קטנטן. חיה ימית נוספת שניתן לראות היא <span class="highlight">צב הים הירוק</span>, שמגיע לחופי האי כדי להטיל ביצים.</p>
+        <p>שאלה: איזו חיה ימית מוזכרת בקטע שהיא הדג הגדול ביותר בעולם?</p>
         <input type="text" id="answer1">
         <button onclick="checkAnswer(1)">בדוק תשובה</button>
     </div>
 
     <div id="task2" class="task" style="display:none;">
-        <h2>אנגלית: ספורט ומשחקים 🏀🎮</h2>
-        <p>התאם בין המילה באנגלית לתרגום שלה בעברית:</p>
+        <h2>אנגלית: דמויות מקרטונים 📺</h2>
+        <p>התאם בין הדמות באנגלית לתרגום שלה בעברית:</p>
         <ol>
-            <li>Soccer ⚽️: <input type="text" id="eng1"></li>
-            <li>Basketball 🏀: <input type="text" id="eng2"></li>
-            <li>Video game 🎮: <input type="text" id="eng3"></li>
-            <li>Swimming 🏊‍♂️: <input type="text" id="eng4"></li>
+            <li>SpongeBob SquarePants 🧽: <input type="text" id="eng1"></li>
+            <li>Mickey Mouse 🐭: <input type="text" id="eng2"></li>
+            <li>Donald Duck 🦆: <input type="text" id="eng3"></li>
+            <li>Elsa (from Frozen) ❄️: <input type="text" id="eng4"></li>
         </ol>
         <button onclick="checkEnglish()">בדוק תשובות</button>
     </div>
 
     <div id="task3" class="task" style="display:none;">
-        <h2>מתמטיקה: ניקוד במשחקים 🧮</h2>
-        <p>1. במשחק כדורגל, ראני הבקיע 2 שערים וחברו הבקיע 3 שערים. כמה שערים הם הבקיעו יחד?</p>
+        <h2>מתמטיקה: זמן משחק 🕰️</h2>
+        <p>1. ראני שיחק במשחק נינטנדו במשך 45 דקות בבוקר ו-30 דקות אחר הצהריים. כמה דקות הוא שיחק בסך הכל?</p>
         <input type="number" id="math1">
-        <p>2. במשחק מחשב, ראני צבר 15 נקודות בסיבוב הראשון ו-8 נקודות בסיבוב השני. כמה נקודות יש לו בסך הכל?</p>
+        <p>2. אם משחק כדורגל נמשך 90 דקות, כמה משחקים שלמים יכול ראני לשחק ב-4 שעות?</p>
         <input type="number" id="math2">
         <button onclick="checkMath()">בדוק תשובות</button>
     </div>
 
     <div id="task4" class="task" style="display:none;">
-        <h2>חינוך פיננסי: חסכון לצעצועים 💰</h2>
-        <p>ראני רוצה לחסוך כסף לקניית משחק מחשב חדש שעולה 100 בהט (מטבע תאילנדי). הוא מקבל 10 בהט דמי כיס כל שבוע.</p>
-        <p>כמה שבועות יצטרך ראני לחסוך את כל דמי הכיס שלו כדי לקנות את המשחק?</p>
+        <h2>חינוך פיננסי: תקציב לחופשה 🏖️</h2>
+        <p>משפחתו של ראני מתכננת טיול בפוקט. הם רוצים לעשות 3 פעילויות:</p>
+        <ul>
+            <li>שנורקלינג: 500 בהט</li>
+            <li>ביקור בפארק מים: 800 בהט</li>
+            <li>סיור באי: 600 בהט</li>
+        </ul>
+        <p>כמה בהט יצטרכו בסך הכל עבור כל הפעילויות?</p>
         <input type="number" id="finance">
         <button onclick="checkFinance()">בדוק תשובה</button>
     </div>
 
     <div id="summary" class="task" style="display:none;">
         <h2>סיכום ורפלקציה 🤔</h2>
-        <p>היום למדנו על ספורט ימי בפוקט, תרגלנו מילים באנגלית הקשורות לספורט ומשחקים, פתרנו בעיות מתמטיות הקשורות למשחקים, וחשבנו על חיסכון לצעצועים.</p>
-        <p>איזה חלק בשיעור הכי אהבת ולמה?</p>
+        <p>היום למדנו על חיות ימיות בפוקט, תרגלנו שמות של דמויות מקרטונים באנגלית, פתרנו בעיות מתמטיות הקשורות לזמן משחק, וחישבנו תקציב לפעילויות בחופשה.</p>
+        <p>איזו פעילות מהשיעור היום הכי אהבת ולמה?</p>
         <textarea id="reflection" rows="4" cols="50"></textarea>
         <button onclick="finishLesson()">סיים שיעור</button>
     </div>
@@ -136,7 +143,7 @@
 
         function checkAnswer(questionNumber) {
             const answer = document.getElementById('answer' + questionNumber).value.trim().toLowerCase();
-            if (answer === 'גלישת גלים' || answer === 'גלישה') {
+            if (answer === 'כריש הלוויתן' || answer === 'כריש לוויתן') {
                 alert('נכון מאוד! 🎉');
                 showNextTask();
             } else {
@@ -145,7 +152,7 @@
         }
 
         function checkEnglish() {
-            const answers = ['כדורגל', 'כדורסל', 'משחק וידאו', 'שחייה'];
+            const answers = ['בובספוג מכנסמרובע', 'מיקי מאוס', 'דונלד דאק', 'אלזה'];
             const userAnswers = [
                 document.getElementById('eng1').value,
                 document.getElementById('eng2').value,
@@ -164,7 +171,7 @@
         function checkMath() {
             const answer1 = document.getElementById('math1').value;
             const answer2 = document.getElementById('math2').value;
-            if (answer1 === '5' && answer2 === '23') {
+            if (answer1 === '75' && answer2 === '2') {
                 alert('נכון מאוד! 🎉');
                 showNextTask();
             } else {
@@ -174,11 +181,11 @@
 
         function checkFinance() {
             const answer = document.getElementById('finance').value;
-            if (answer === '10') {
-                alert('נכון מאוד! אתה מבין היטב את עקרונות החיסכון. 🎉');
+            if (answer === '1900') {
+                alert('נכון מאוד! אתה מבין היטב איך לחשב תקציב. 🎉');
                 showNextTask();
             } else {
-                alert('לא מדויק. חשוב שוב כמה שבועות יידרשו לחסוך 100 בהט אם חוסכים 10 בהט בשבוע. 🤔');
+                alert('לא מדויק. נסה לחבר את כל הסכומים יחד. 🤔');
             }
         }
 
