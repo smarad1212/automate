@@ -1,6 +1,3 @@
-Thank you for providing the context of Romi's previous lesson. I'll create a new lesson that builds upon that knowledge while exploring different aspects of her interests and location. Here's a lesson plan for Romi, tailored for Saturday in Phuket, Thailand:
-
-```html
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -65,6 +62,12 @@ Thank you for providing the context of Romi's previous lesson. I'll create a new
             border: 2px solid #ccc;
             border-radius: 4px;
         }
+        #timer {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -72,73 +75,73 @@ Thank you for providing the context of Romi's previous lesson. I'll create a new
     <div id="progress-bar">
         <div id="progress">0%</div>
     </div>
+    <div id="timer">40:00</div>
 
     <div id="task1" class="task">
-        <h2>קריאה: אוכל רחוב תאילנדי 🍜</h2>
-        <p>קראי את הקטע הבא על אוכל הרחוב התאילנדי המפורסם:</p>
+        <h2>קריאה: אמנות תאילנדית מסורתית 🖼️</h2>
+        <p>קראי את הקטע הבא על האמנות התאילנדית המסורתית:</p>
         <p>
-            אוכל הרחוב בתאילנד הוא חלק <span class="highlight">בלתי נפרד מהתרבות</span> המקומית. בפוקט, תוכלי למצוא דוכנים רבים המציעים מגוון עצום של מאכלים. 
-            אחת המנות הפופולריות היא <span class="highlight">פאד תאי</span>, אטריות מטוגנות עם ירקות, ביצה וחלבון לבחירה. 
-            <span class="highlight">סום טאם</span> היא סלט פפאיה חריף ורענן, ו<span class="highlight">מאנגו עם אורז דביק</span> הוא קינוח מתוק ואהוב. 
-            רבים מהמאכלים מכילים <span class="highlight">תבלינים ועשבי תיבול טריים</span> כמו למון גראס, עלי קאפיר ליים ובזיליקום תאילנדי, המעניקים טעם ייחודי.
+            האמנות התאילנדית המסורתית היא <span class="highlight">עשירה ומגוונת</span>. אחד הסגנונות המפורסמים ביותר הוא <span class="highlight">ציורי הקיר במקדשים</span>, המתארים סצנות מהבודהיזם ומהמיתולוגיה המקומית. 
+            <span class="highlight">אמנות השעווה</span> היא טכניקה ייחודית שבה יוצרים פסלים מפורטים משעווה. 
+            <span class="highlight">ריקמה תאילנדית</span> היא אומנות עתיקה המשלבת חוטי זהב וכסף בבדים יקרים. 
+            בפוקט, תוכלי לראות גם <span class="highlight">ציורי בטיק</span>, טכניקה של צביעת בד באמצעות שעווה.
         </p>
         <p>עכשיו, עני על השאלות הבאות:</p>
         <ol>
-            <li>מדוע אוכל הרחוב חשוב בתרבות התאילנדית? <input type="text"></li>
-            <li>מהם שלושת המאכלים שהוזכרו בקטע? <input type="text"></li>
-            <li>איזה תבלינים נפוצים במטבח התאילנדי? <input type="text"></li>
-            <li>איזה מאכל היית רוצה לנסות ולמה? <input type="text"></li>
+            <li>מהם שני סגנונות אמנות תאילנדית שהוזכרו בקטע? <input type="text"></li>
+            <li>מה מיוחד באמנות השעווה התאילנדית? <input type="text"></li>
+            <li>מה מאפיין את הריקמה התאילנדית? <input type="text"></li>
+            <li>איזה סגנון אמנות תאילנדי היית רוצה לנסות וללמוד? למה? <input type="text"></li>
         </ol>
         <button onclick="nextTask()">הבא</button>
     </div>
 
     <div id="task2" class="task">
-        <h2>אנגלית: מתכון תאילנדי 🥘</h2>
-        <p>הנה מתכון פשוט ל"מאנגו עם אורז דביק". תרגמי את המילים המודגשות לאנגלית:</p>
+        <h2>מתמטיקה: תכנון תקציב לטיול באי 💰</h2>
+        <p>בואי נתכנן תקציב לטיול של יום בפוקט:</p>
         <ol>
-            <li><span class="highlight">מרכיבים</span>: <input type="text"></li>
-            <li>1 כוס <span class="highlight">אורז דביק</span>: <input type="text"></li>
-            <li>1 <span class="highlight">מאנגו</span> בשל: <input type="text"></li>
-            <li>1/2 כוס <span class="highlight">חלב קוקוס</span>: <input type="text"></li>
-            <li>2 כפות <span class="highlight">סוכר</span>: <input type="text"></li>
-            <li><span class="highlight">קצת מלח</span>: <input type="text"></li>
+            <li>
+                אם כרטיס כניסה למוזיאון אמנות עולה 200 באט, וארוחת צהריים עולה 150 באט, כמה יעלו 2 כרטיסים למוזיאון ו-3 ארוחות צהריים?
+                <input type="text">
+            </li>
+            <li>
+                יש לך 1000 באט ליום טיול. אם הוצאת 400 באט על כרטיסים למוזיאון ו-300 באט על ארוחות, כמה כסף נשאר לך לקניית מזכרות?
+                <input type="text">
+            </li>
+            <li>
+                שיעור ציור בטיק עולה 500 באט לשעה. אם יש לך 1500 באט, לכמה שעות של שיעור זה יספיק?
+                <input type="text">
+            </li>
         </ol>
-        <p>כתבי משפט באנגלית המשתמש באחת המילים שתרגמת:</p>
-        <textarea rows="2"></textarea>
         <button onclick="nextTask()">הבא</button>
     </div>
 
     <div id="task3" class="task">
-        <h2>מתמטיקה: תקציב לארוחת רחוב 💰</h2>
-        <p>פתרי את הבעיות הבאות:</p>
+        <h2>אנגלית: מילון אמנות תאילנדית 🎨</h2>
+        <p>תרגמי את המילים הבאות לאנגלית:</p>
         <ol>
-            <li>
-                אם מנת פאד תאי עולה 60 באט, וסום טאם עולה 50 באט, כמה יעלו 2 מנות פאד תאי ו-3 מנות סום טאם?
-                <input type="text">
-            </li>
-            <li>
-                יש לך 500 באט. אם קנית 3 מנות פאד תאי ו-2 מנות סום טאם, כמה כסף נשאר לך?
-                <input type="text">
-            </li>
-            <li>
-                מאנגו עם אורז דביק עולה 80 באט. אם יש לך 200 באט, לכמה מנות זה יספיק?
-                <input type="text">
-            </li>
+            <li><span class="highlight">ציור קיר</span>: <input type="text"></li>
+            <li><span class="highlight">פסל שעווה</span>: <input type="text"></li>
+            <li><span class="highlight">ריקמה</span>: <input type="text"></li>
+            <li><span class="highlight">בטיק</span>: <input type="text"></li>
+            <li><span class="highlight">מקדש</span>: <input type="text"></li>
         </ol>
+        <p>כתבי משפט באנגלית המשתמש בשתיים מהמילים שתרגמת:</p>
+        <textarea rows="2"></textarea>
         <button onclick="nextTask()">הבא</button>
     </div>
 
     <div id="task4" class="task">
-        <h2>אמנות: ציור אוכל תאילנדי 🎨</h2>
-        <p>בואי נצייר מנה תאילנדית:</p>
+        <h2>יצירה: עיצוב בטיק 🖌️</h2>
+        <p>בואי ניצור עיצוב בטיק משלך:</p>
         <ol>
-            <li>בחרי מנה תאילנדית שמעניינת אותך (למשל, פאד תאי, סום טאם, או מאנגו עם אורז דביק).</li>
-            <li>צרי סקיצה קלה של צלחת או קערה.</li>
-            <li>הוסיפי את המרכיבים העיקריים של המנה, תוך שימת דגש על הצבעים והצורות השונות.</li>
-            <li>הוסיפי פרטים כמו תבלינים, עלים, או קישוטים שמאפיינים את המנה.</li>
-            <li>צבעי את הציור שלך, נסי לשלב צבעים חיים שמאפיינים את המטבח התאילנדי.</li>
+            <li>על דף נייר, צרי צורה פשוטה כמו פרח, עלה, או דג.</li>
+            <li>עכשיו, חשבי על דפוסים חוזרים שתרצי להוסיף בתוך הצורה (כמו קווים, נקודות, או צורות גיאומטריות).</li>
+            <li>צרי את הדפוסים בתוך הצורה שלך בעזרת עיפרון.</li>
+            <li>אם יש לך צבעי מים, נסי לצבוע את העיצוב שלך בצבעים בהירים, כמו שנעשה בבטיק אמיתי.</li>
+            <li>הוסיפי פרטים נוספים או רקע לציור שלך אם תרצי.</li>
         </ol>
-        <p>כשתסיימי, צלמי את הציור שלך והעלי אותו לתיקייה המשותפת שלנו.</p>
+        <p>כשתסיימי, צלמי את העיצוב שלך והעלי אותו לתיקייה המשותפת שלנו.</p>
         <button onclick="nextTask()">הבא</button>
     </div>
 
@@ -146,10 +149,10 @@ Thank you for providing the context of Romi's previous lesson. I'll create a new
         <h2>סיכום ורפלקציה 🤔</h2>
         <p>בואי נסכם את מה שלמדנו היום:</p>
         <ol>
-            <li>מה למדת חדש על אוכל תאילנדי? <textarea rows="2"></textarea></li>
-            <li>איזו מנה תאילנדית הכי מסקרנת אותך לטעום ולמה? <textarea rows="2"></textarea></li>
-            <li>איך הרגשת בזמן ציור המנה התאילנדית? האם היה לך קל או מאתגר? <textarea rows="2"></textarea></li>
-            <li>איך את חושבת שאוכל יכול לעזור לנו להבין תרבויות אחרות? <textarea rows="2"></textarea></li>
+            <li>מה למדת חדש על אמנות תאילנדית? <textarea rows="2"></textarea></li>
+            <li>איזה סגנון אמנות תאילנדי הכי מעניין אותך ולמה? <textarea rows="2"></textarea></li>
+            <li>איך הרגשת בזמן יצירת עיצוב הבטיק שלך? האם היה לך קל או מאתגר? <textarea rows="2"></textarea></li>
+            <li>איך את חושבת שאמנות יכולה לעזור לנו להבין תרבויות אחרות? <textarea rows="2"></textarea></li>
         </ol>
         <button onclick="finishLesson()">סיים שיעור</button>
     </div>
@@ -157,6 +160,7 @@ Thank you for providing the context of Romi's previous lesson. I'll create a new
     <script>
         let currentTask = 1;
         const totalTasks = 5;
+        let timer;
 
         function showTask(taskNumber) {
             for (let i = 1; i <= totalTasks; i++) {
@@ -180,23 +184,33 @@ Thank you for providing the context of Romi's previous lesson. I'll create a new
         }
 
         function finishLesson() {
+            clearInterval(timer);
             alert('כל הכבוד! סיימת את השיעור!');
         }
 
-        showTask(1);
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            let fortyMinutes = 40 * 60,
+                display = document.querySelector('#timer');
+            startTimer(fortyMinutes, display);
+            showTask(1);
+        };
     </script>
 </body>
 </html>
-```
-
-This lesson plan for Romi is designed for Saturday in Phuket, Thailand. It focuses on Thai street food, combining her interests in cooking, eating, and art. Here's a breakdown of the activities:
-
-1. Reading: A passage about Thai street food, connecting to her interests and location.
-2. English: Translating food-related words and using them in sentences.
-3. Math: Word problems involving budgeting for street food, incorporating financial education.
-4. Art: Drawing a Thai dish, combining her interests in art, drawing, and local cuisine.
-5. Summary and reflection: Questions to help Romi think about what she learned and how she feels about the activities.
-
-The lesson maintains the interactive structure with varied, short activities suitable for a child with ADHD. It builds on the previous lessons by focusing on a different aspect of Thai culture - street food - while still incorporating elements of local life and traditions.
-
-This HTML file can be saved and opened in a web browser, providing an interactive lesson experience. The JavaScript functions handle task progression and update the progress bar accordingly.
