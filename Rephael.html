@@ -1,11 +1,11 @@
-בהתאם לבקשתך, הכנתי שיעור חדש לרפאל בפוקט, תאילנד, בהתחשב בשיעור הקודם ובתחומי העניין שלו. הנה השיעור בעברית, מוכן לשימוש ב-GitHub Pages:
+Here's a new lesson for Rephael, taking into account his previous lesson and interests. The lesson is in Hebrew and ready for use on GitHub Pages:
 
 ```html
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>שיעור לרפאל בפוקט, תאילנד - יום שבת</title>
     <style>
         body {
@@ -13,7 +13,7 @@
             line-height: 1.6;
             margin: 0;
             padding: 20px;
-            background-color: #f0f0f0;
+            background-color: #f0f8ff;
         }
         .container {
             max-width: 800px;
@@ -24,7 +24,7 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         h1, h2 {
-            color: #2c3e50;
+            color: #1e90ff;
         }
         .progress-bar {
             width: 100%;
@@ -36,20 +36,20 @@
         .progress {
             width: 0;
             height: 20px;
-            background-color: #4CAF50;
+            background-color: #32cd32;
             border-radius: 3px;
             transition: width 500ms ease-in-out;
         }
         .task {
             display: none;
-            background-color: #ecf0f1;
-            border: 1px solid #bdc3c7;
+            background-color: #f0f8ff;
+            border: 1px solid #87cefa;
             padding: 15px;
             margin-bottom: 20px;
             border-radius: 5px;
         }
         button {
-            background-color: #3498db;
+            background-color: #1e90ff;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -60,51 +60,67 @@
             margin: 4px 2px;
             cursor: pointer;
             border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #4169e1;
         }
         .highlight {
-            background-color: yellow;
+            background-color: #ffff00;
             font-weight: bold;
         }
         input[type="text"], textarea {
             width: 100%;
             padding: 8px;
             margin-bottom: 10px;
-            border: 1px solid #ddd;
+            border: 1px solid #87cefa;
             border-radius: 4px;
             box-sizing: border-box;
+            font-size: 16px;
+        }
+        input[type="text"] {
+            touch-action: manipulation;
+        }
+        #timer {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1e90ff;
+            text-align: center;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>שיעור לרפאל בפוקט, תאילנד - יום שבת</h1>
+        <div id="timer">40:00</div>
         <div class="progress-bar">
             <div class="progress" id="progress"></div>
         </div>
         <div id="lesson-content">
             <div class="task" id="task1">
-                <h2>קריאה: ספורט ימי בפוקט</h2>
-                <p>פוקט היא גן עדן לחובבי ספורט ימי. בואו נקרא על כמה פעילויות פופולריות:</p>
+                <h2>1. קריאה: מסך טלוויזיה חכם 📺</h2>
                 <p>
-                    <span class="highlight">גלישת גלים</span> היא אחת הפעילויות הפופולריות ביותר בפוקט. החופים כמו קאטה וסורין מושכים גולשים מכל העולם.
-                    <span class="highlight">צלילה</span> היא דרך נהדרת לחקור את העולם התת-ימי של פוקט. יש הרבה אתרי צלילה מדהימים סביב האי.
-                    <span class="highlight">קיאקים</span> הם דרך נהדרת לחקור את המפרצים והמערות של פוקט. זוהי פעילות מהנה ומרגיעה שמתאימה לכל הגילאים.
+                    בעולם הטכנולוגיה המתקדם שלנו, <span class="highlight">טלוויזיות חכמות</span> הפכו לחלק בלתי נפרד מהבית המודרני. טלוויזיה חכמה היא מכשיר שמשלב את יכולות הטלוויזיה המסורתית עם <span class="highlight">טכנולוגיית אינטרנט</span>. 
                 </p>
-                <p>שאלה: איזה ספורט ימי נשמע לך הכי מעניין ולמה?</p>
-                <textarea id="water-sport-answer" rows="4"></textarea>
+                <p>
+                    עם טלוויזיה חכמה, אתה יכול לא רק לצפות בערוצי טלוויזיה רגילים, אלא גם <span class="highlight">לגלוש באינטרנט</span>, להשתמש ב<span class="highlight">אפליקציות</span> כמו נטפליקס או יוטיוב, ואפילו <span class="highlight">לשחק משחקים</span>. חלק מהטלוויזיות החכמות אפילו מגיעות עם <span class="highlight">שליטה קולית</span>, כך שאתה יכול לבקש מהטלוויזיה להפעיל תוכנית מסוימת או לחפש מידע באינטרנט בלי להשתמש בשלט.
+                </p>
+                <p>שאלה: אילו יתרונות יש לטלוויזיה חכמה לעומת טלוויזיה רגילה?</p>
+                <textarea id="smart-tv-answer" rows="4"></textarea>
                 <button onclick="nextTask()">המשך</button>
             </div>
 
             <div class="task" id="task2">
-                <h2>מתמטיקה: בעיות מילוליות עם כפל</h2>
-                <p>בואו נפתור כמה בעיות מילוליות הקשורות לספורט ימי:</p>
+                <h2>2. מתמטיקה: חישובי זמן צפייה ⏱️</h2>
+                <p>בואו נתרגל חישובי זמן בהקשר של צפייה בטלוויזיה:</p>
                 <ol>
                     <li>
-                        אם שיעור גלישה עולה 500 בהט ליום, כמה יעלו 3 ימי גלישה?
-                        <input type="text" id="math-answer1">
+                        אם פרק של תוכנית אהובה על רפאל נמשך 25 דקות, כמה זמן יארכו 3 פרקים?
+                        <input type="text" id="math-answer1"> דקות
                     </li>
                     <li>
-                        אם סירת קיאקים יכולה להכיל 4 אנשים, כמה אנשים יכולים לשוט ב-6 סירות קיאקים?
+                        אם סרט מתחיל ב-18:45 ונמשך שעה וחצי, באיזו שעה הוא יסתיים?
                         <input type="text" id="math-answer2">
                     </li>
                 </ol>
@@ -114,40 +130,40 @@
             </div>
 
             <div class="task" id="task3">
-                <h2>אנגלית: ציוד ספורט ימי</h2>
-                <p>בואו נלמד כמה מילים באנגלית הקשורות לציוד ספורט ימי:</p>
+                <h2>3. אנגלית: מילים הקשורות לטכנולוגיה 🖥️</h2>
+                <p>הנה כמה מילים באנגלית הקשורות לטכנולוגיה ומסכים:</p>
                 <ul>
-                    <li><span class="highlight">Surfboard</span> - גלשן</li>
-                    <li><span class="highlight">Wetsuit</span> - חליפת צלילה</li>
-                    <li><span class="highlight">Paddle</span> - משוט</li>
-                    <li><span class="highlight">Life jacket</span> - אפוד הצלה</li>
-                    <li><span class="highlight">Snorkel</span> - שנורקל</li>
+                    <li><span class="highlight">Screen</span> - מסך</li>
+                    <li><span class="highlight">Remote control</span> - שלט רחוק</li>
+                    <li><span class="highlight">Application (App)</span> - אפליקציה</li>
+                    <li><span class="highlight">Internet</span> - אינטרנט</li>
+                    <li><span class="highlight">Streaming</span> - הזרמה</li>
                 </ul>
-                <p>עכשיו, כתוב משפט באנגלית המשתמש לפחות ב-3 מהמילים הללו:</p>
+                <p>כתוב משפט באנגלית המשתמש לפחות ב-3 מהמילים הללו:</p>
                 <textarea id="english-sentence" rows="3"></textarea>
                 <button onclick="nextTask()">המשך</button>
             </div>
 
             <div class="task" id="task4">
-                <h2>יצירה: עיצוב גלשן</h2>
-                <p>בוא נעצב גלשן משלך! תאר איך הגלשן שלך ייראה:</p>
+                <h2>4. יצירה: עיצוב שלט רחוק חכם 🎨</h2>
+                <p>דמיין שאתה מעצב שלט רחוק חכם לטלוויזיה העתידית. תאר את העיצוב שלך:</p>
                 <ol>
-                    <li>אילו צבעים תשתמש?</li>
-                    <li>האם יהיה עליו ציור או דוגמה מיוחדת?</li>
-                    <li>איזה צורה תהיה לגלשן?</li>
+                    <li>איזו צורה תהיה לשלט?</li>
+                    <li>אילו כפתורים מיוחדים יהיו בו?</li>
+                    <li>האם יהיו לו תכונות מיוחדות (למשל: שליטה קולית, מסך מגע)?</li>
                 </ol>
-                <textarea id="surfboard-design" rows="6"></textarea>
+                <textarea id="remote-design" rows="6"></textarea>
                 <button onclick="nextTask()">סיים שיעור</button>
             </div>
 
             <div class="task" id="task5">
-                <h2>סיכום ורפלקציה</h2>
+                <h2>5. סיכום ומשוב 🏁</h2>
                 <p>כל הכבוד, רפאל! סיימת את השיעור. בוא נחשוב על מה שלמדנו:</p>
                 <ol>
-                    <li>קראנו על ספורט ימי בפוקט</li>
-                    <li>פתרנו בעיות מתמטיות עם כפל</li>
-                    <li>למדנו מילים חדשות באנגלית הקשורות לציוד ספורט ימי</li>
-                    <li>עיצבנו גלשן משלנו</li>
+                    <li>קראנו על טלוויזיות חכמות</li>
+                    <li>פתרנו בעיות מתמטיות הקשורות לזמני צפייה</li>
+                    <li>למדנו מילים חדשות באנגלית הקשורות לטכנולוגיה</li>
+                    <li>עיצבנו שלט רחוק חכם</li>
                 </ol>
                 <p>איזה חלק בשיעור אהבת במיוחד? למה?</p>
                 <textarea id="reflection" rows="4"></textarea>
@@ -159,6 +175,8 @@
     <script>
         let currentTask = 1;
         const totalTasks = 5;
+        let timer;
+        let timeLeft = 40 * 60; // 40 minutes in seconds
 
         function nextTask() {
             document.getElementById(`task${currentTask}`).style.display = 'none';
@@ -179,37 +197,51 @@
             const answer2 = document.getElementById('math-answer2').value;
             let feedback = "";
 
-            if (answer1 == "1500" && answer2 == "24") {
-                feedback = "כל הכבוד! שתי התשובות נכונות.";
-            } else if (answer1 == "1500") {
-                feedback = "התשובה הראשונה נכונה, אבל התשובה השנייה לא. נסה שוב!";
-            } else if (answer2 == "24") {
-                feedback = "התשובה השנייה נכונה, אבל התשובה הראשונה לא. נסה שוב!";
+            if (answer1 == "75" && answer2 == "20:15") {
+                feedback = "כל הכבוד! שתי התשובות נכונות. 🎉";
+            } else if (answer1 == "75") {
+                feedback = "התשובה הראשונה נכונה, אבל התשובה השנייה לא. נסה שוב! 🤔";
+            } else if (answer2 == "20:15") {
+                feedback = "התשובה השנייה נכונה, אבל התשובה הראשונה לא. נסה שוב! 🤔";
             } else {
-                feedback = "שתי התשובות לא נכונות. נסה שוב!";
+                feedback = "שתי התשובות לא נכונות. נסה שוב! 💪";
             }
 
             document.getElementById('math-feedback').innerText = feedback;
         }
 
         function finishLesson() {
-            alert("כל הכבוד, רפאל! סיימת את השיעור. נתראה בשיעור הבא!");
+            clearInterval(timer);
+            alert("כל הכבוד, רפאל! סיימת את השיעור. נתראה בשיעור הבא! 🌟");
+        }
+
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('timer').innerText = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            if (timeLeft === 0) {
+                clearInterval(timer);
+                alert("הזמן נגמר! בוא נסיים את השיעור.");
+            } else {
+                timeLeft--;
+            }
         }
 
         // Start with the first task
         document.getElementById('task1').style.display = 'block';
         updateProgress();
+        timer = setInterval(updateTimer, 1000);
     </script>
 </body>
 </html>
 ```
 
-שיעור זה מתאים לרפאל, גיל 8, בפוקט, תאילנד, ביום שבת. הוא מתחשב בתחומי העניין שלו (משחקים, טכנולוגיה, ספורט, יצירה, ציור וטלוויזיה) ובנוי על השיעור הקודם תוך הימנעות מחזרה על אותם נושאים. הנה סיכום קצר של השיעור:
+This lesson is tailored for Rephael, age 8, in Phuket, Thailand, on Saturday. It takes into account his interests (gaming, tech, sports, crafts, drawing, TV) and builds upon the previous lesson while avoiding repetition. The lesson is in Hebrew and includes:
 
-1. קריאה: קטע על ספורט ימי בפוקט, המתקשר לסביבה המקומית ולעניין של רפאל בספורט.
-2. מתמטיקה: בעיות מילוליות עם כפל, הקשורות לספורט ימי.
-3. אנגלית: לימוד אוצר מילים הקשור לציוד ספורט ימי.
-4. יצירה: עיצוב גלשן אישי, המשלב את העניין של רפאל בציור ויצירה.
-5. סיכום ורפלקציה: סקירה של מה שנלמד ובקשת משוב אישי.
+1. Reading: A passage about smart TVs, connecting to Rephael's interest in technology and TV.
+2. Math: Time calculation problems related to TV viewing.
+3. English: Learning vocabulary related to technology and screens.
+4. Creative task: Designing a smart remote control, combining tech and drawing interests.
+5. Summary and reflection: Review of what was learned and asking for personal feedback.
 
-השיעור מובנה באופן שמתאים לילד עם ADHD, עם משימות קצרות ומגוונות, אלמנטים חזותיים ואינטראקטיביים, ומעברים תכופים בין פעילויות. הוא גם כולל סרגל התקדמות ומבנה שמציג משימה אחת בכל פעם, כדי לעזור בניהול הזמן והריכוז.
+The lesson is structured to suit a child with ADHD, featuring short, varied tasks, visual and interactive elements, and frequent transitions between activities. It also includes a progress bar and a timer to help with time management and focus.
