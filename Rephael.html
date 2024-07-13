@@ -1,57 +1,60 @@
-Certainly! I'll create a new lesson for Rephael, taking into account his previous lesson and interests. Here's a complete HTML document with a new lesson in Hebrew, ready for use on GitHub Pages:
+I understand. I'll create a new lesson for Rephael, taking into account the information you've provided and ensuring it's different from the previous lesson. Here's the complete HTML document for the new lesson:
 
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>שיעור לרפאל בפוקט, תאילנד - יום שבת</title>
+    <title>שיעור לרפאל בפוקט, תאילנד</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
+            background-color: #f0f8ff;
             margin: 0;
             padding: 20px;
-            background-color: #f0f8ff;
+            color: #333;
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
-            background-color: white;
-            padding: 20px;
+            background-color: #fff;
             border-radius: 10px;
+            padding: 20px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        h1, h2 {
-            color: #1e90ff;
+        h1 {
+            color: #4a4a4a;
+            text-align: center;
         }
         .progress-bar {
             width: 100%;
             background-color: #e0e0e0;
-            padding: 3px;
-            border-radius: 3px;
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+            border-radius: 5px;
+            margin-bottom: 20px;
         }
         .progress {
-            width: 0;
+            width: 0%;
             height: 20px;
-            background-color: #32cd32;
-            border-radius: 3px;
-            transition: width 500ms ease-in-out;
+            background-color: #4CAF50;
+            border-radius: 5px;
+            transition: width 0.5s ease-in-out;
         }
         .task {
-            display: none;
-            background-color: #f0f8ff;
-            border: 1px solid #87cefa;
-            padding: 15px;
-            margin-bottom: 20px;
+            background-color: #e6f3ff;
             border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: none;
+        }
+        .task h2 {
+            color: #2196F3;
+            margin-top: 0;
         }
         button {
-            background-color: #1e90ff;
+            background-color: #4CAF50;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 10px 15px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
@@ -62,130 +65,160 @@ Certainly! I'll create a new lesson for Rephael, taking into account his previou
             transition: background-color 0.3s;
         }
         button:hover {
-            background-color: #4169e1;
+            background-color: #45a049;
         }
-        .highlight {
-            background-color: #ffff00;
-            font-weight: bold;
-        }
-        input[type="text"], textarea {
+        input[type="text"], input[type="number"] {
             width: 100%;
             padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #87cefa;
-            border-radius: 4px;
+            margin: 8px 0;
             box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
             font-size: 16px;
         }
-        input[type="text"] {
-            touch-action: manipulation;
+        .highlight {
+            background-color: #ffff99;
+            padding: 2px 4px;
+            border-radius: 3px;
         }
         #timer {
             font-size: 24px;
-            font-weight: bold;
-            color: #1e90ff;
             text-align: center;
             margin-bottom: 20px;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 999;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>שיעור לרפאל בפוקט, תאילנד - יום שבת</h1>
+        <h1>שיעור לרפאל בפוקט, תאילנד 🇹🇭</h1>
         <div id="timer">40:00</div>
         <div class="progress-bar">
             <div class="progress" id="progress"></div>
         </div>
-        <div id="lesson-content">
-            <div class="task" id="task1">
-                <h2>1. קריאה: המוזיקה של אמינם 🎵</h2>
-                <p>
-                    <span class="highlight">אמינם</span>, או בשמו האמיתי מרשל מאת'רס השלישי, הוא אחד מאמני <span class="highlight">הראפ</span> המצליחים והמשפיעים ביותר בעולם. הוא נולד ב-1972 במיזורי, ארצות הברית, וגדל בדטרויט, מישיגן.
-                </p>
-                <p>
-                    אמינם התפרסם בזכות הסגנון הייחודי שלו, המשלב <span class="highlight">מילים חדות</span>, <span class="highlight">קצב מהיר</span> ו<span class="highlight">נושאים אישיים</span> בשיריו. הוא זכה בפרסים רבים, כולל פרסי גראמי, ונחשב לאחד האמנים הנמכרים ביותר בכל הזמנים.
-                </p>
-                <p>
-                    אחד השירים המפורסמים ביותר של אמינם הוא "Lose Yourself", שנכתב לסרט "8 Mile" בכיכובו. השיר זכה באוסקר לשיר המקורי הטוב ביותר בשנת 2003.
-                </p>
-                <p>שאלה: מה לדעתך הופך את המוזיקה של אמינם למיוחדת כל כך?</p>
-                <textarea id="eminem-answer" rows="4"></textarea>
-                <button onclick="nextTask()">המשך</button>
-            </div>
-
-            <div class="task" id="task2">
-                <h2>2. מתמטיקה: חישובי זמן וקצב 🧮</h2>
-                <p>בואו נתרגל חישובים הקשורים למוזיקה:</p>
-                <ol>
-                    <li>
-                        אם שיר של אמינם נמשך 4 דקות ו-30 שניות, כמה זמן יקח להאזין ל-5 שירים כאלה?
-                        <input type="text" id="math-answer1"> דקות
-                    </li>
-                    <li>
-                        אם אלבום מכיל 12 שירים וכל שיר נמשך בממוצע 3 דקות ו-45 שניות, מה האורך הכולל של האלבום בדקות?
-                        <input type="text" id="math-answer2"> דקות
-                    </li>
-                </ol>
-                <button onclick="checkMathAnswers()">בדוק תשובות</button>
-                <p id="math-feedback"></p>
-                <button onclick="nextTask()">המשך</button>
-            </div>
-
-            <div class="task" id="task3">
-                <h2>3. אנגלית: מילים הקשורות למוזיקת ראפ 🎤</h2>
-                <p>הנה כמה מילים באנגלית הקשורות לראפ ולמוזיקה:</p>
-                <ul>
-                    <li><span class="highlight">Rap</span> - ראפ</li>
-                    <li><span class="highlight">Lyrics</span> - מילות השיר</li>
-                    <li><span class="highlight">Beat</span> - קצב</li>
-                    <li><span class="highlight">Rhyme</span> - חרוז</li>
-                    <li><span class="highlight">Microphone</span> - מיקרופון</li>
-                </ul>
-                <p>כתוב משפט באנגלית המשתמש לפחות ב-3 מהמילים הללו:</p>
-                <textarea id="english-sentence" rows="3"></textarea>
-                <button onclick="nextTask()">המשך</button>
-            </div>
-
-            <div class="task" id="task4">
-                <h2>4. יצירה: עיצוב כריכה לאלבום 🎨</h2>
-                <p>דמיין שאתה מעצב כריכה לאלבום חדש של אמינם. תאר את העיצוב שלך:</p>
-                <ol>
-                    <li>איזה צבעים תשתמש?</li>
-                    <li>איזה סמלים או תמונות יופיעו על הכריכה?</li>
-                    <li>איך תעצב את השם של האלבום?</li>
-                </ol>
-                <textarea id="album-design" rows="6"></textarea>
-                <button onclick="nextTask()">סיים שיעור</button>
-            </div>
-
-            <div class="task" id="task5">
-                <h2>5. סיכום ומשוב 🏁</h2>
-                <p>כל הכבוד, רפאל! סיימת את השיעור. בוא נחשוב על מה שלמדנו:</p>
-                <ol>
-                    <li>קראנו על אמינם והמוזיקה שלו</li>
-                    <li>פתרנו בעיות מתמטיות הקשורות לזמני מוזיקה</li>
-                    <li>למדנו מילים חדשות באנגלית הקשורות לראפ</li>
-                    <li>עיצבנו כריכה לאלבום</li>
-                </ol>
-                <p>איזה חלק בשיעור אהבת במיוחד? למה?</p>
-                <textarea id="reflection" rows="4"></textarea>
-                <button onclick="finishLesson()">סיים</button>
-            </div>
+        
+        <div class="task" id="task1">
+            <h2>קריאה: חיות מעניינות בתאילנד 🐘🐒</h2>
+            <p>תאילנד היא בית למגוון רחב של חיות מרתקות. <span class="highlight">הפיל האסייתי</span> הוא אחד מהסמלים המפורסמים של תאילנד. פילים אלה חכמים מאוד ויכולים להשתמש בחדק שלהם לאכול, לשתות ואפילו לצייר! <span class="highlight">הגיבון</span> הוא קוף קטן שחי בג'ונגלים של תאילנד. הוא יכול לנוע בין העצים במהירות מדהימה. <span class="highlight">הטוקאן</span> הוא ציפור ססגונית עם מקור גדול וצבעוני, שאפשר למצוא ביערות הגשם.</p>
+            <p>שאלה: איזו חיה מעניינת אותך הכי הרבה ולמה?</p>
+            <input type="text" id="answer1">
+            <button onclick="nextTask()">הבא</button>
         </div>
+
+        <div class="task" id="task2">
+            <h2>מתמטיקה: טיול בתאילנד 🧮🚶‍♂️</h2>
+            <p>רפאל מטייל בפוקט. הוא הולך 2 ק"מ בבוקר, 3 ק"מ בצהריים, ו-1.5 ק"מ בערב.</p>
+            <p>כמה ק"מ הלך רפאל בסך הכל?</p>
+            <input type="number" id="answer2">
+            <button onclick="checkAnswer(2)">בדוק תשובה</button>
+            <button onclick="nextTask()">הבא</button>
+        </div>
+
+        <div class="task" id="task3">
+            <h2>אנגלית: משחקי וידאו 🎮</h2>
+            <p>התאם את המילים באנגלית לתרגום שלהן בעברית:</p>
+            <p>1. Fortnite - _______</p>
+            <p>2. Brawl Stars - _______</p>
+            <p>3. Nintendo - _______</p>
+            <p>4. Gaming - _______</p>
+            <input type="text" id="answer3_1" placeholder="1">
+            <input type="text" id="answer3_2" placeholder="2">
+            <input type="text" id="answer3_3" placeholder="3">
+            <input type="text" id="answer3_4" placeholder="4">
+            <button onclick="checkAnswer(3)">בדוק תשובות</button>
+            <button onclick="nextTask()">הבא</button>
+        </div>
+
+        <div class="task" id="task4">
+            <h2>חינוך פיננסי: חיסכון לקניית משחק 💰🕹️</h2>
+            <p>רפאל רוצה לקנות משחק חדש ל-Nintendo שעולה 240 באט תאילנדי. הוא חוסך 20 באט בשבוע.</p>
+            <p>כמה שבועות יקח לרפאל לחסוך מספיק כסף לקנות את המשחק?</p>
+            <input type="number" id="answer4">
+            <button onclick="checkAnswer(4)">בדוק תשובה</button>
+            <button onclick="nextTask()">הבא</button>
+        </div>
+
+        <div id="summary" style="display:none;">
+            <h2>סיכום השיעור</h2>
+            <p>כל הכבוד, רפאל! סיימת את השיעור. הנה סיכום של הביצועים שלך:</p>
+            <ul id="summaryList"></ul>
+        </div>
+    </div>
+
+    <div id="overlay"></div>
+    <div id="popup" class="popup">
+        <p id="popupMessage"></p>
+        <button onclick="closePopup()">סגור</button>
     </div>
 
     <script>
         let currentTask = 1;
-        const totalTasks = 5;
+        const totalTasks = 4;
         let timer;
-        let timeLeft = 40 * 60; // 40 minutes in seconds
+        const answers = {
+            2: 6.5,
+            3: ['פורטנייט', 'בראול סטארס', 'נינטנדו', 'משחקי מחשב'],
+            4: 12
+        };
+
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            let countdown = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    clearInterval(countdown);
+                    display.textContent = "הזמן נגמר!";
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            let fortyMinutes = 40 * 60,
+            display = document.querySelector('#timer');
+            startTimer(fortyMinutes, display);
+            showTask(currentTask);
+        };
+
+        function showTask(taskNumber) {
+            document.getElementById(`task${taskNumber}`).style.display = 'block';
+            updateProgress();
+        }
 
         function nextTask() {
             document.getElementById(`task${currentTask}`).style.display = 'none';
             currentTask++;
             if (currentTask <= totalTasks) {
-                document.getElementById(`task${currentTask}`).style.display = 'block';
-                updateProgress();
+                showTask(currentTask);
+            } else {
+                showSummary();
             }
         }
 
@@ -194,45 +227,67 @@ Certainly! I'll create a new lesson for Rephael, taking into account his previou
             document.getElementById('progress').style.width = `${progress}%`;
         }
 
-        function checkMathAnswers() {
-            const answer1 = document.getElementById('math-answer1').value;
-            const answer2 = document.getElementById('math-answer2').value;
-            let feedback = "";
+        function checkAnswer(taskNumber) {
+            let isCorrect = false;
+            let message = '';
 
-            if (answer1 == "22.5" && answer2 == "45") {
-                feedback = "כל הכבוד! שתי התשובות נכונות. 🎉";
-            } else if (answer1 == "22.5") {
-                feedback = "התשובה הראשונה נכונה, אבל התשובה השנייה לא. נסה שוב! 🤔";
-            } else if (answer2 == "45") {
-                feedback = "התשובה השנייה נכונה, אבל התשובה הראשונה לא. נסה שוב! 🤔";
-            } else {
-                feedback = "שתי התשובות לא נכונות. נסה שוב! 💪";
+            if (taskNumber === 2) {
+                const userAnswer = parseFloat(document.getElementById('answer2').value);
+                isCorrect = userAnswer === answers[2];
+                message = isCorrect ? 'כל הכבוד! התשובה נכונה.' : `התשובה לא נכונה. התשובה הנכונה היא ${answers[2]} ק"מ.`;
+            } else if (taskNumber === 3) {
+                const userAnswers = [
+                    document.getElementById('answer3_1').value,
+                    document.getElementById('answer3_2').value,
+                    document.getElementById('answer3_3').value,
+                    document.getElementById('answer3_4').value
+                ];
+                isCorrect = userAnswers.every((answer, index) => answer === answers[3][index]);
+                message = isCorrect ? 'כל הכבוד! כל התשובות נכונות.' : 'לא כל התשובות נכונות. נסה שוב.';
+            } else if (taskNumber === 4) {
+                const userAnswer = parseInt(document.getElementById('answer4').value);
+                isCorrect = userAnswer === answers[4];
+                message = isCorrect ? 'כל הכבוד! התשובה נכונה.' : `התשובה לא נכונה. התשובה הנכונה היא ${answers[4]} שבועות.`;
             }
 
-            document.getElementById('math-feedback').innerText = feedback;
+            showPopup(message);
+            updateSummary(taskNumber, isCorrect);
         }
 
-        function finishLesson() {
-            clearInterval(timer);
-            alert("כל הכבוד, רפאל! סיימת את השיעור. נתראה בשיעור הבא! 🌟");
+        function showPopup(message) {
+            document.getElementById('popupMessage').innerText = message;
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('popup').style.display = 'block';
         }
 
-        function updateTimer() {
-            const minutes = Math.floor(timeLeft / 60);
-            const seconds = timeLeft % 60;
-            document.getElementById('timer').innerText = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            if (timeLeft === 0) {
-                clearInterval(timer);
-                alert("הזמן נגמר! בוא נסיים את השיעור.");
-            } else {
-                timeLeft--;
+        function closePopup() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        let summary = {};
+
+        function updateSummary(taskNumber, isCorrect) {
+            summary[taskNumber] = isCorrect;
+        }
+
+        function showSummary() {
+            document.getElementById(`task${totalTasks}`).style.display = 'none';
+            const summaryElement = document.getElementById('summary');
+            const summaryList = document.getElementById('summaryList');
+            
+            for (let i = 1; i <= totalTasks; i++) {
+                const listItem = document.createElement('li');
+                if (i === 1) {
+                    listItem.textContent = `משימה ${i}: הושלמה (שאלה פתוחה)`;
+                } else {
+                    listItem.textContent = `משימה ${i}: ${summary[i] ? 'נכונה' : 'לא נכונה'}`;
+                }
+                summaryList.appendChild(listItem);
             }
+            
+            summaryElement.style.display = 'block';
         }
-
-        // Start with the first task
-        document.getElementById('task1').style.display = 'block';
-        updateProgress();
-        timer = setInterval(updateTimer, 1000);
     </script>
 </body>
 </html>
