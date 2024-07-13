@@ -1,51 +1,65 @@
-Here's a new lesson for Romi, taking into account the previous lesson and her interests:
+I understand you want a new lesson for Romi, taking into account her previous lesson. However, you haven't provided the details of the last lesson that was generated for her. Without this information, I can't ensure continuity or avoid repetition. 
+
+To create the most effective and personalized lesson, it would be helpful if you could provide:
+
+1. A summary of the subjects covered in the last lesson
+2. Any specific topics or skills that were focused on
+3. The types of activities that were included
+
+With this information, I can create a new lesson that builds upon her previous learning and introduces new content in a balanced way.
+
+For now, I'll create a new lesson based on the information you've provided, assuming this is a fresh start. When you have the details of the previous lesson, please share them, and I'll be happy to adjust the lesson plan accordingly.
+
+Here's the new lesson for Romi:
 
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>שיעור יום שבת לרומי בפוקט, תאילנד</title>
+    <title>שיעור לרומי בפוקט, תאילנד</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #ffe6e6;
         }
         h1, h2 {
-            color: #ff6666;
+            color: #4a4a4a;
+            text-align: center;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #e0e0e0;
+            padding: 3px;
+            border-radius: 3px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+        }
+        .progress {
+            width: 0;
+            height: 20px;
+            background-color: #4CAF50;
+            border-radius: 3px;
+            transition: 0.3s;
         }
         .task {
             background-color: white;
-            border-radius: 10px;
+            border-radius: 8px;
             padding: 15px;
             margin-bottom: 20px;
-            display: none;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         .highlight {
-            background-color: #ffcccc;
-            padding: 2px;
-        }
-        #progress-bar {
-            width: 100%;
-            background-color: #ddd;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-        #progress {
-            width: 0%;
-            height: 30px;
-            background-color: #ff6666;
-            border-radius: 5px;
-            text-align: center;
-            line-height: 30px;
-            color: white;
+            background-color: #ffff99;
+            padding: 2px 4px;
+            border-radius: 4px;
         }
         button {
-            background-color: #ff6666;
+            background-color: #4CAF50;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -55,173 +69,225 @@ Here's a new lesson for Romi, taking into account the previous lesson and her in
             font-size: 16px;
             margin: 4px 2px;
             cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #ff4d4d;
+            border-radius: 4px;
         }
         input[type="text"], textarea {
             width: 100%;
-            padding: 10px;
-            margin: 5px 0;
+            padding: 8px;
+            margin: 8px 0;
             box-sizing: border-box;
-            border: 2px solid #ffcccc;
+            border: 2px solid #ccc;
             border-radius: 4px;
             font-size: 16px;
-            touch-action: manipulation;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .popup-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 8px;
         }
         #timer {
             font-size: 24px;
-            font-weight: bold;
             text-align: center;
             margin-bottom: 20px;
-            color: #ff6666;
         }
     </style>
 </head>
 <body>
-    <h1>שיעור יום שבת לרומי בפוקט, תאילנד 🏖️🎨</h1>
-    <div id="progress-bar">
-        <div id="progress">0%</div>
-    </div>
+    <h1>שיעור לרומי בפוקט, תאילנד 🏖️</h1>
     <div id="timer">40:00</div>
-
+    <div class="progress-bar">
+        <div class="progress" id="progress"></div>
+    </div>
+    
     <div id="task1" class="task">
-        <h2>קריאה: אמנות תאילנדית 🖼️</h2>
-        <p>קראי את הקטע הבא על האמנות התאילנדית:</p>
-        <p>
-            האמנות התאילנדית מתאפיינת ב<span class="highlight">צבעוניות עזה</span> ו<span class="highlight">פרטים מדוקדקים</span>. היא מושפעת מ<span class="highlight">בודהיזם</span> ומ<span class="highlight">תרבות עתיקה</span>. 
-            סגנונות נפוצים כוללים <span class="highlight">ציורי קיר במקדשים</span>, <span class="highlight">פיסול בודהה</span>, ו<span class="highlight">אמנות מסורתית</span>. 
-            חומרים פופולריים הם <span class="highlight">זהב</span>, <span class="highlight">כסף</span>, ו<span class="highlight">אבנים יקרות</span>. האמנות התאילנדית מדגישה <span class="highlight">הרמוניה</span> ו<span class="highlight">איזון</span>.
-        </p>
-        <p>עכשיו, עני על השאלות הבאות:</p>
-        <ol>
-            <li>מהם שני מאפיינים בולטים של האמנות התאילנדית? <input type="text"></li>
-            <li>ציני שלושה סגנונות אמנות נפוצים בתאילנד: <input type="text"></li>
-            <li>אילו חומרים פופולריים באמנות התאילנדית? <input type="text"></li>
-            <li>מה מדגישה האמנות התאילנדית? <input type="text"></li>
-        </ol>
+        <h2>קריאה: אמנות בתאילנד 🎨</h2>
+        <p>תאילנד ידועה באמנות היפה שלה. אחת מצורות האמנות המפורסמות ביותר היא <span class="highlight">ציור המנדלה התאי</span>. מנדלות הן ציורים עגולים עם דוגמאות מורכבות. בתאילנד, הן משמשות לקישוט מקדשים ובתים. האמנים משתמשים בצבעים בהירים ומשלבים סמלים מסורתיים בציורים. ציור מנדלה דורש הרבה <span class="highlight">סבלנות ודיוק</span>. זו דרך נהדרת לאמנים להביע את היצירתיות שלהם ולכבד את המסורת התאילנדית.</p>
+        <textarea id="answer1" rows="4" placeholder="מה למדת על אמנות תאילנדית מהקטע?"></textarea>
         <button onclick="nextTask()">הבא</button>
     </div>
 
-    <div id="task2" class="task">
-        <h2>אנגלית: מילון אמנות 🎭</h2>
-        <p>הנה כמה מילים באנגלית הקשורות לאמנות. תרגמי אותן לעברית:</p>
-        <ol>
-            <li><span class="highlight">Painting</span>: <input type="text"></li>
-            <li><span class="highlight">Sculpture</span>: <input type="text"></li>
-            <li><span class="highlight">Colors</span>: <input type="text"></li>
-            <li><span class="highlight">Brush</span>: <input type="text"></li>
-            <li><span class="highlight">Canvas</span>: <input type="text"></li>
-            <li><span class="highlight">Masterpiece</span>: <input type="text"></li>
-            <li><span class="highlight">Artist</span>: <input type="text"></li>
-        </ol>
-        <p>כתבי משפט באנגלית המתאר יצירת אמנות תאילנדית:</p>
-        <textarea rows="2"></textarea>
+    <div id="task2" class="task" style="display:none;">
+        <h2>מתמטיקה: בישול תאילנדי 🍲</h2>
+        <p>נדמיין שאנחנו מכינים מנה תאילנדית טעימה! המתכון מיועד ל-4 אנשים, אבל אנחנו רוצים להכין אותו ל-10 אנשים.</p>
+        <p>כמויות המתכון המקורי:</p>
+        <ul>
+            <li>2 כוסות אורז</li>
+            <li>1 כף רוטב דגים</li>
+            <li>3 עלי למון גראס</li>
+            <li>200 גרם ירקות מעורבים</li>
+        </ul>
+        <p>חשבי את הכמויות החדשות:</p>
+        <input type="text" id="answer2a" placeholder="כמה כוסות אורז?">
+        <input type="text" id="answer2b" placeholder="כמה כפות רוטב דגים?">
+        <input type="text" id="answer2c" placeholder="כמה עלי למון גראס?">
+        <input type="text" id="answer2d" placeholder="כמה גרם ירקות מעורבים?">
+        <button onclick="checkAnswer2()">בדיקה</button>
         <button onclick="nextTask()">הבא</button>
     </div>
 
-    <div id="task3" class="task">
-        <h2>מתמטיקה: תכנון גלריה 📐</h2>
-        <p>בואי נתכנן גלריה לאמנות תאילנדית ונחשב את השטחים:</p>
-        <ol>
-            <li>
-                אם חדר בגלריה הוא מלבן באורך 8 מטרים ורוחב 6 מטרים, מה שטחו?
-                <input type="text">
-            </li>
-            <li>
-                אם כל תמונה תופסת שטח של 2 מ"ר על הקיר, כמה תמונות אפשר לתלות בחדר אם הקירות בגובה 3 מטרים?
-                <input type="text">
-            </li>
-            <li>
-                אם מחיר כרטיס כניסה הוא 50 בהט ו-30% מהמחיר הולך לתחזוקת הגלריה, כמה כסף נשאר מ-100 כרטיסים?
-                <input type="text">
-            </li>
-        </ol>
+    <div id="task3" class="task" style="display:none;">
+        <h2>אנגלית: חיות בתאילנד 🐘</h2>
+        <p>תאילנד היא בית למגוון רחב של חיות. התאימי את שמות החיות באנגלית לתרגום העברי:</p>
+        <div id="matchingGame">
+            <div>
+                <span>Elephant</span>
+                <input type="text" id="answer3a" placeholder="תרגום לעברית">
+            </div>
+            <div>
+                <span>Tiger</span>
+                <input type="text" id="answer3b" placeholder="תרגום לעברית">
+            </div>
+            <div>
+                <span>Monkey</span>
+                <input type="text" id="answer3c" placeholder="תרגום לעברית">
+            </div>
+            <div>
+                <span>Dolphin</span>
+                <input type="text" id="answer3d" placeholder="תרגום לעברית">
+            </div>
+        </div>
+        <button onclick="checkAnswer3()">בדיקה</button>
         <button onclick="nextTask()">הבא</button>
     </div>
 
-    <div id="task4" class="task">
-        <h2>יצירה: ציור בהשראה תאילנדית 🖌️</h2>
-        <p>בואי ניצור ציור בהשראה תאילנדית:</p>
+    <div id="task4" class="task" style="display:none;">
+        <h2>יצירה: מנדלה תאילנדית 🖌️</h2>
+        <p>עכשיו תורך ליצור מנדלה בהשראה תאילנדית!</p>
         <ol>
-            <li>בחרי נושא לציור (למשל: פיל, פרח הלוטוס, או מקדש).</li>
-            <li>השתמשי בצבעים עזים כמו זהב, אדום, וכחול.</li>
-            <li>הוסיפי פרטים קטנים ועדינים לציור.</li>
-            <li>נסי לשלב אלמנט של סימטריה או איזון בציור.</li>
-            <li>הוסיפי מסגרת מעוטרת לציור בסגנון תאילנדי.</li>
+            <li>קחי דף עגול או ציירי עיגול גדול על דף רגיל.</li>
+            <li>התחילי מהמרכז וציירי דוגמאות קטנות שמתרחבות החוצה.</li>
+            <li>השתמשי בצבעים בהירים כמו כחול, ירוק, צהוב וורוד.</li>
+            <li>נסי לשלב סמלים תאילנדיים כמו פרח הלוטוס או פיל.</li>
         </ol>
-        <p>כשתסיימי, צלמי את היצירה שלך והעלי אותה לתיקייה המשותפת שלנו.</p>
-        <button onclick="nextTask()">הבא</button>
+        <p>כשתסיימי, צלמי את היצירה שלך ושתפי אותה!</p>
+        <textarea id="answer4" rows="4" placeholder="תארי את המנדלה שיצרת. אילו צבעים וצורות בחרת?"></textarea>
+        <button onclick="nextTask()">סיום</button>
     </div>
 
-    <div id="task5" class="task">
-        <h2>סיכום ורפלקציה 🤔</h2>
-        <p>בואי נסכם את מה שלמדנו היום:</p>
-        <ol>
-            <li>מה למדת חדש על האמנות התאילנדית? <textarea rows="2"></textarea></li>
-            <li>איזה סגנון אמנות תאילנדי הכי מעניין אותך ולמה? <textarea rows="2"></textarea></li>
-            <li>איך הרגשת בזמן יצירת הציור בהשראה תאילנדית? מה היה הכי מאתגר? <textarea rows="2"></textarea></li>
-            <li>איך את חושבת שהאמנות של מדינה יכולה ללמד אותנו על התרבות שלה? <textarea rows="2"></textarea></li>
-        </ol>
-        <button onclick="finishLesson()">סיים שיעור</button>
+    <div id="summary" style="display:none;">
+        <h2>סיכום השיעור</h2>
+        <div id="summaryContent"></div>
+        <button onclick="restartLesson()">התחל מחדש</button>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <p id="popupMessage"></p>
+            <button onclick="closePopup()">סגירה</button>
+        </div>
     </div>
 
     <script>
         let currentTask = 1;
-        const totalTasks = 5;
+        const totalTasks = 4;
         let timer;
+        let seconds = 40 * 60;
 
-        function showTask(taskNumber) {
-            for (let i = 1; i <= totalTasks; i++) {
-                document.getElementById(`task${i}`).style.display = 'none';
+        function updateTimer() {
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = seconds % 60;
+            document.getElementById('timer').textContent = 
+                (minutes < 10 ? '0' : '') + minutes + ':' + (remainingSeconds < 10 ? '0' : '') + remainingSeconds;
+            if (seconds > 0) {
+                seconds--;
+                timer = setTimeout(updateTimer, 1000);
+            } else {
+                showPopup('הזמן נגמר!');
             }
-            document.getElementById(`task${taskNumber}`).style.display = 'block';
-            updateProgress();
         }
 
         function nextTask() {
+            document.getElementById(`task${currentTask}`).style.display = 'none';
             currentTask++;
             if (currentTask <= totalTasks) {
-                showTask(currentTask);
+                document.getElementById(`task${currentTask}`).style.display = 'block';
+            } else {
+                showSummary();
             }
+            updateProgress();
         }
 
         function updateProgress() {
-            const progressPercentage = ((currentTask - 1) / totalTasks) * 100;
-            document.getElementById('progress').style.width = progressPercentage + '%';
-            document.getElementById('progress').innerText = Math.round(progressPercentage) + '%';
+            const progress = ((currentTask - 1) / totalTasks) * 100;
+            document.getElementById('progress').style.width = `${progress}%`;
         }
 
-        function finishLesson() {
-            clearInterval(timer);
-            alert('כל הכבוד! סיימת את השיעור!');
+        function showPopup(message) {
+            document.getElementById('popupMessage').textContent = message;
+            document.getElementById('popup').style.display = 'block';
         }
 
-        function startTimer(duration, display) {
-            let timer = duration, minutes, seconds;
-            setInterval(function () {
-                minutes = parseInt(timer / 60, 10);
-                seconds = parseInt(timer % 60, 10);
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
 
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
+        function checkAnswer2() {
+            const correct = ['5', '2.5', '7.5', '500'];
+            const answers = [
+                document.getElementById('answer2a').value,
+                document.getElementById('answer2b').value,
+                document.getElementById('answer2c').value,
+                document.getElementById('answer2d').value
+            ];
+            const allCorrect = answers.every((answer, index) => answer === correct[index]);
+            showPopup(allCorrect ? 'כל הכבוד! כל התשובות נכונות.' : 'נסי שוב. בדקי את החישובים שלך.');
+        }
 
-                display.textContent = minutes + ":" + seconds;
+        function checkAnswer3() {
+            const correct = ['פיל', 'נמר', 'קוף', 'דולפין'];
+            const answers = [
+                document.getElementById('answer3a').value,
+                document.getElementById('answer3b').value,
+                document.getElementById('answer3c').value,
+                document.getElementById('answer3d').value
+            ];
+            const allCorrect = answers.every((answer, index) => answer === correct[index]);
+            showPopup(allCorrect ? 'מצוין! כל התרגומים נכונים.' : 'כמעט! בדקי שוב את התרגומים.');
+        }
 
-                if (--timer < 0) {
-                    timer = duration;
+        function showSummary() {
+            document.getElementById(`task${totalTasks}`).style.display = 'none';
+            document.getElementById('summary').style.display = 'block';
+            let summaryHTML = '<ul>';
+            for (let i = 1; i <= totalTasks; i++) {
+                const answer = document.getElementById(`answer${i}`).value;
+                summaryHTML += `<li>משימה ${i}: ${answer ? 'הושלמה' : 'לא הושלמה'}</li>`;
+            }
+            summaryHTML += '</ul>';
+            document.getElementById('summaryContent').innerHTML = summaryHTML;
+        }
+
+        function restartLesson() {
+            currentTask = 1;
+            for (let i = 1; i <= totalTasks; i++) {
+                document.getElementById(`task${i}`).style.display = i === 1 ? 'block' : 'none';
+                if (document.getElementById(`answer${i}`)) {
+                    document.getElementById(`answer${i}`).value = '';
                 }
-            }, 1000);
+            }
+            document.getElementById('summary').style.display = 'none';
+            updateProgress();
+            seconds = 40 * 60;
+            clearTimeout(timer);
+            updateTimer();
         }
 
-        window.onload = function () {
-            let fortyMinutes = 40 * 60,
-                display = document.querySelector('#timer');
-            startTimer(fortyMinutes, display);
-            showTask(1);
-        };
+        updateTimer();
     </script>
 </body>
 </html>
