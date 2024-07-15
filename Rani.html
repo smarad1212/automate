@@ -1,4 +1,4 @@
-I understand you'd like me to create a new lesson for Rani, taking into account the information you've provided and the previous lesson. However, I don't see the previous lesson in your message. Without that information, I'll create a new lesson based on the details you've given. Here's the lesson plan for Rani:
+I understand you'd like me to create a new lesson for Rani, taking into account the information you've provided. However, I don't see the previous lesson in your message. Without that information, I'll create a new lesson based on the details you've given. Here's the lesson plan for Rani:
 
 ```html
 <!DOCTYPE html>
@@ -23,7 +23,7 @@ I understand you'd like me to create a new lesson for Rani, taking into account 
             padding: 20px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        h1 {
+        h1, h2 {
             color: #4a90e2;
             text-align: center;
         }
@@ -99,6 +99,12 @@ I understand you'd like me to create a new lesson for Rani, taking into account 
             text-align: center;
             margin-bottom: 20px;
         }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+        }
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
@@ -118,28 +124,30 @@ I understand you'd like me to create a new lesson for Rani, taking into account 
         </div>
         
         <div class="task" id="task1">
-            <h2>קריאה: חיות מעניינות בתאילנד 🐘🐒</h2>
-            <p>תאילנד היא בית למגוון רחב של חיות מרתקות. <span class="highlight">הפיל האסיאתי</span> הוא אחד מהסמלים של תאילנד. פילים אלו חכמים מאוד ויכולים להשתמש בחדק שלהם לאכול, לשתות ואפילו לצייר! <span class="highlight">הקוף הג'יבון</span> הוא חיה מיוחדת נוספת שחיה ביערות תאילנד. לקופים אלו זרועות ארוכות מאוד והם יכולים לנוע בין העצים במהירות מדהימה.</p>
-            <p>שאלה: איזו חיה מעניינת אותך יותר, הפיל או הקוף הג'יבון? למה?</p>
+            <h2>קריאה: פוקט והפסלים המפורסמים שלה 🗿</h2>
+            <p>פוקט, האי היפהפה בתאילנד, ידוע לא רק בחופיו המדהימים אלא גם <span class="highlight">בפסלים המרשימים</span> שלו. אחד הפסלים המפורסמים ביותר הוא <span class="highlight">פסל הבודהה הגדול</span>. פסל זה ניצב בגובה של 45 מטרים על הר נקאקרד ונראה כמעט מכל מקום באי. הפסל עשוי משיש לבן ומסמל שלום והרמוניה.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Big_Buddha_Phuket_Landmark.jpg/640px-Big_Buddha_Phuket_Landmark.jpg" alt="פסל הבודהה הגדול בפוקט">
+            <p>שאלה: אם היית יכול ליצור פסל ענק בפוקט, מה הוא היה מייצג ולמה?</p>
             <input type="text" id="answer1" placeholder="כתוב את תשובתך כאן">
             <button onclick="nextTask()">הבא</button>
         </div>
 
         <div class="task" id="task2">
-            <h2>מתמטיקה: כדורגל ומספרים ⚽️🔢</h2>
-            <p>בקבוצת הכדורגל של רני יש 11 שחקנים בהרכב. אם 3 שחקנים נפצעו ו-2 שחקנים חדשים הצטרפו, כמה שחקנים יש עכשיו בקבוצה?</p>
-            <input type="number" id="answer2" placeholder="הכנס את התשובה">
+            <h2>מתמטיקה: תכנון טיול בפוקט 🏖️</h2>
+            <p>רני מתכנן טיול בפוקט. הוא רוצה לבקר ב-3 חופים שונים. בכל חוף הוא מתכנן לבלות שעתיים. הנסיעה בין כל חוף לחוף אורכת 30 דקות.</p>
+            <p>כמה זמן בסך הכל יארך הטיול של רני (כולל הנסיעות)?</p>
+            <input type="number" id="answer2" placeholder="הכנס את התשובה בדקות">
             <button onclick="checkAnswer(2)">בדוק תשובה</button>
             <button onclick="nextTask()">הבא</button>
         </div>
 
         <div class="task" id="task3">
-            <h2>אנגלית: חיות באנגלית 🦁🐯</h2>
-            <p>בוא נלמד את שמות החיות באנגלית! התאם בין החיה לשמה באנגלית:</p>
+            <h2>אנגלית: מילים הקשורות לכדורגל ⚽</h2>
+            <p>בוא נלמד כמה מילים באנגלית הקשורות לכדורגל! התאם בין המילה בעברית לתרגומה באנגלית:</p>
             <ol>
-                <li>פיל - <input type="text" id="animal1" placeholder="באנגלית"></li>
-                <li>קוף - <input type="text" id="animal2" placeholder="באנגלית"></li>
-                <li>נמר - <input type="text" id="animal3" placeholder="באנגלית"></li>
+                <li>כדור - <input type="text" id="soccer1" placeholder="באנגלית"></li>
+                <li>שער - <input type="text" id="soccer2" placeholder="באנגלית"></li>
+                <li>שחקן - <input type="text" id="soccer3" placeholder="באנגלית"></li>
             </ol>
             <button onclick="checkAnswer(3)">בדוק תשובות</button>
             <button onclick="nextTask()">הבא</button>
@@ -189,14 +197,14 @@ I understand you'd like me to create a new lesson for Rani, taking into account 
 
             if (taskNum === 2) {
                 const answer = parseInt(document.getElementById('answer2').value);
-                isCorrect = answer === 10;
-                message = isCorrect ? 'כל הכבוד! התשובה נכונה.' : 'לא בדיוק. התשובה הנכונה היא 10 שחקנים.';
+                isCorrect = answer === 450;
+                message = isCorrect ? 'כל הכבוד! התשובה נכונה.' : 'לא בדיוק. התשובה הנכונה היא 450 דקות (7.5 שעות).';
             } else if (taskNum === 3) {
-                const animal1 = document.getElementById('animal1').value.toLowerCase();
-                const animal2 = document.getElementById('animal2').value.toLowerCase();
-                const animal3 = document.getElementById('animal3').value.toLowerCase();
-                isCorrect = animal1 === 'elephant' && animal2 === 'monkey' && animal3 === 'tiger';
-                message = isCorrect ? 'מצוין! כל התשובות נכונות.' : 'כמעט. התשובות הנכונות הן: elephant, monkey, tiger.';
+                const soccer1 = document.getElementById('soccer1').value.toLowerCase();
+                const soccer2 = document.getElementById('soccer2').value.toLowerCase();
+                const soccer3 = document.getElementById('soccer3').value.toLowerCase();
+                isCorrect = soccer1 === 'ball' && soccer2 === 'goal' && soccer3 === 'player';
+                message = isCorrect ? 'מצוין! כל התשובות נכונות.' : 'כמעט. התשובות הנכונות הן: ball, goal, player.';
             }
 
             showPopup(isCorrect ? 'כל הכבוד! 🎉' : 'נסה שוב', message);
@@ -267,9 +275,9 @@ I understand you'd like me to create a new lesson for Rani, taking into account 
 
 This lesson plan for Rani includes:
 
-1. A reading passage about interesting animals in Thailand, connecting to Rani's interest in animals and his current location.
-2. A math problem related to soccer, one of Rani's hobbies.
-3. An English language task about animal names, combining his interest in animals with language learning.
+1. A reading passage about famous statues in Phuket, connecting to Rani's interest in statues and monuments and his current location.
+2. A math problem related to planning a trip in Phuket, incorporating time management skills.
+3. An English language task about soccer-related words, combining his interest in soccer with language learning.
 4. A summary section to review what was learned.
 
 The lesson is designed to be interactive, with a progress bar, timer, and popup messages for feedback. It's tailored for a 7-year-old, with simple language and engaging topics. The content is in Hebrew as requested, with some English words in the language task.
