@@ -1,16 +1,4 @@
-I understand you want a new lesson for Romi, taking into account her previous lesson. However, you haven't provided the details of the last lesson that was generated for her. Without this information, I can't ensure continuity or avoid repetition. 
-
-To create the most effective and personalized lesson, it would be helpful if you could provide:
-
-1. A summary of the subjects covered in the last lesson
-2. Any specific topics or skills that were focused on
-3. The types of activities that were included
-
-With this information, I can create a new lesson that builds upon her previous learning and introduces new content in a balanced way.
-
-For now, I'll create a new lesson based on the information you've provided, assuming this is a fresh start. When you have the details of the previous lesson, please share them, and I'll be happy to adjust the lesson plan accordingly.
-
-Here's the new lesson for Romi:
+Here's a new lesson for Romi, taking into account her interests and current location. I've created a lesson that covers different subjects from the previous one (assuming there was a previous lesson) and incorporates her interests in art, cooking, and animals. The lesson is in Hebrew, as requested.
 
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
@@ -79,6 +67,7 @@ Here's the new lesson for Romi:
             border: 2px solid #ccc;
             border-radius: 4px;
             font-size: 16px;
+            touch-action: manipulation;
         }
         .popup {
             display: none;
@@ -105,6 +94,12 @@ Here's the new lesson for Romi:
             text-align: center;
             margin-bottom: 20px;
         }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+        }
     </style>
 </head>
 <body>
@@ -115,49 +110,51 @@ Here's the new lesson for Romi:
     </div>
     
     <div id="task1" class="task">
-        <h2>קריאה: אמנות בתאילנד 🎨</h2>
-        <p>תאילנד ידועה באמנות היפה שלה. אחת מצורות האמנות המפורסמות ביותר היא <span class="highlight">ציור המנדלה התאי</span>. מנדלות הן ציורים עגולים עם דוגמאות מורכבות. בתאילנד, הן משמשות לקישוט מקדשים ובתים. האמנים משתמשים בצבעים בהירים ומשלבים סמלים מסורתיים בציורים. ציור מנדלה דורש הרבה <span class="highlight">סבלנות ודיוק</span>. זו דרך נהדרת לאמנים להביע את היצירתיות שלהם ולכבד את המסורת התאילנדית.</p>
-        <textarea id="answer1" rows="4" placeholder="מה למדת על אמנות תאילנדית מהקטע?"></textarea>
+        <h2>קריאה: אמנות הבישול התאילנדי 🍲</h2>
+        <p>הבישול התאילנדי ידוע בעולם כולו בזכות טעמיו העזים והמיוחדים. <span class="highlight">המטבח התאילנדי</span> משלב חמישה טעמים עיקריים: חמוץ, מתוק, מלוח, מר וחריף. אחת המנות המפורסמות ביותר היא <span class="highlight">הפאד תאי</span>, אטריות מוקפצות עם ירקות, ביצה וחלבון מהצומח או מהחי. בפוקט, איפה שאת נמצאת, יש גם השפעה של מאכלי ים טריים בגלל הקרבה לחוף. הבישול התאילנדי הוא לא רק אוכל, אלא גם אמנות של איזון טעמים וצבעים בצלחת.</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Phat_Thai_kung_Chang_Khien_street_stall.jpg/640px-Phat_Thai_kung_Chang_Khien_street_stall.jpg" alt="Pad Thai">
+        <textarea id="answer1" rows="4" placeholder="מה מעניין אותך במטבח התאילנדי? איזו מנה היית רוצה לטעום?"></textarea>
         <button onclick="nextTask()">הבא</button>
     </div>
 
     <div id="task2" class="task" style="display:none;">
-        <h2>מתמטיקה: בישול תאילנדי 🍲</h2>
-        <p>נדמיין שאנחנו מכינים מנה תאילנדית טעימה! המתכון מיועד ל-4 אנשים, אבל אנחנו רוצים להכין אותו ל-10 אנשים.</p>
-        <p>כמויות המתכון המקורי:</p>
+        <h2>מתמטיקה: תקציב לשוק המקומי 🛒</h2>
+        <p>נדמיין שאנחנו הולכים לשוק המקומי בפוקט לקנות מצרכים לארוחה תאילנדית. יש לנו 500 באט (מטבע תאילנדי) לבזבז.</p>
         <ul>
-            <li>2 כוסות אורז</li>
-            <li>1 כף רוטב דגים</li>
-            <li>3 עלי למון גראס</li>
-            <li>200 גרם ירקות מעורבים</li>
+            <li>1 ק"ג אורז עולה 50 באט</li>
+            <li>חבילת תבלינים עולה 30 באט</li>
+            <li>1 ק"ג ירקות מעורבים עולה 40 באט</li>
+            <li>1 ק"ג פירות טרופיים עולה 60 באט</li>
         </ul>
-        <p>חשבי את הכמויות החדשות:</p>
-        <input type="text" id="answer2a" placeholder="כמה כוסות אורז?">
-        <input type="text" id="answer2b" placeholder="כמה כפות רוטב דגים?">
-        <input type="text" id="answer2c" placeholder="כמה עלי למון גראס?">
-        <input type="text" id="answer2d" placeholder="כמה גרם ירקות מעורבים?">
+        <p>חשבי כמה מכל דבר נוכל לקנות ומה יהיה הסכום הכולל:</p>
+        <input type="text" id="answer2a" placeholder="כמה ק"ג אורז?">
+        <input type="text" id="answer2b" placeholder="כמה חבילות תבלינים?">
+        <input type="text" id="answer2c" placeholder="כמה ק"ג ירקות?">
+        <input type="text" id="answer2d" placeholder="כמה ק"ג פירות?">
+        <input type="text" id="answer2e" placeholder="מה הסכום הכולל?">
         <button onclick="checkAnswer2()">בדיקה</button>
         <button onclick="nextTask()">הבא</button>
     </div>
 
     <div id="task3" class="task" style="display:none;">
-        <h2>אנגלית: חיות בתאילנד 🐘</h2>
-        <p>תאילנד היא בית למגוון רחב של חיות. התאימי את שמות החיות באנגלית לתרגום העברי:</p>
+        <h2>אנגלית: חיות ימיות בפוקט 🐠</h2>
+        <p>פוקט מוקפת באוקיינוס ההודי ויש בה מגוון עשיר של חיים ימיים. בואי נלמד כמה שמות של חיות ימיות באנגלית:</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Coral_Reef_Scenery.jpg/640px-Coral_Reef_Scenery.jpg" alt="Coral Reef">
         <div id="matchingGame">
             <div>
-                <span>Elephant</span>
+                <span>Dolphin</span>
                 <input type="text" id="answer3a" placeholder="תרגום לעברית">
             </div>
             <div>
-                <span>Tiger</span>
+                <span>Sea Turtle</span>
                 <input type="text" id="answer3b" placeholder="תרגום לעברית">
             </div>
             <div>
-                <span>Monkey</span>
+                <span>Jellyfish</span>
                 <input type="text" id="answer3c" placeholder="תרגום לעברית">
             </div>
             <div>
-                <span>Dolphin</span>
+                <span>Coral</span>
                 <input type="text" id="answer3d" placeholder="תרגום לעברית">
             </div>
         </div>
@@ -166,16 +163,17 @@ Here's the new lesson for Romi:
     </div>
 
     <div id="task4" class="task" style="display:none;">
-        <h2>יצירה: מנדלה תאילנדית 🖌️</h2>
-        <p>עכשיו תורך ליצור מנדלה בהשראה תאילנדית!</p>
+        <h2>יצירה: ציור נוף תאילנדי 🎨</h2>
+        <p>עכשיו נשתמש בכישורי הציור שלך ליצירת נוף תאילנדי!</p>
         <ol>
-            <li>קחי דף עגול או ציירי עיגול גדול על דף רגיל.</li>
-            <li>התחילי מהמרכז וציירי דוגמאות קטנות שמתרחבות החוצה.</li>
-            <li>השתמשי בצבעים בהירים כמו כחול, ירוק, צהוב וורוד.</li>
-            <li>נסי לשלב סמלים תאילנדיים כמו פרח הלוטוס או פיל.</li>
+            <li>צרי רקע של שמיים כחולים ואוקיינוס טורקיז.</li>
+            <li>הוסיפי חוף חול לבן בתחתית הציור.</li>
+            <li>ציירי עצי דקל ירוקים לאורך החוף.</li>
+            <li>הוסיפי סירת "לונג-טייל" מסורתית על המים.</li>
+            <li>לבסוף, ציירי שקיעה כתומה-אדומה בשמיים.</li>
         </ol>
-        <p>כשתסיימי, צלמי את היצירה שלך ושתפי אותה!</p>
-        <textarea id="answer4" rows="4" placeholder="תארי את המנדלה שיצרת. אילו צבעים וצורות בחרת?"></textarea>
+        <p>כשתסיימי, תארי את הציור שלך:</p>
+        <textarea id="answer4" rows="4" placeholder="תארי את הנוף התאילנדי שציירת. אילו צבעים ואלמנטים הוספת?"></textarea>
         <button onclick="nextTask()">סיום</button>
     </div>
 
@@ -237,19 +235,20 @@ Here's the new lesson for Romi:
         }
 
         function checkAnswer2() {
-            const correct = ['5', '2.5', '7.5', '500'];
+            const correct = ['2', '5', '3', '2', '490'];
             const answers = [
                 document.getElementById('answer2a').value,
                 document.getElementById('answer2b').value,
                 document.getElementById('answer2c').value,
-                document.getElementById('answer2d').value
+                document.getElementById('answer2d').value,
+                document.getElementById('answer2e').value
             ];
             const allCorrect = answers.every((answer, index) => answer === correct[index]);
             showPopup(allCorrect ? 'כל הכבוד! כל התשובות נכונות.' : 'נסי שוב. בדקי את החישובים שלך.');
         }
 
         function checkAnswer3() {
-            const correct = ['פיל', 'נמר', 'קוף', 'דולפין'];
+            const correct = ['דולפין', 'צב ים', 'מדוזה', 'אלמוג'];
             const answers = [
                 document.getElementById('answer3a').value,
                 document.getElementById('answer3b').value,
