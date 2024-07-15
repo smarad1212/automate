@@ -1,4 +1,4 @@
-I understand. I'll create a new lesson for Rephael, taking into account the information you've provided and ensuring it's different from the previous lesson. Here's the complete HTML document for the new lesson:
+Here's a new lesson for Rephael, taking into account the previous lesson and the information you've provided:
 
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
@@ -108,6 +108,12 @@ I understand. I'll create a new lesson for Rephael, taking into account the info
             background-color: rgba(0,0,0,0.5);
             z-index: 999;
         }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+        }
     </style>
 </head>
 <body>
@@ -119,29 +125,36 @@ I understand. I'll create a new lesson for Rephael, taking into account the info
         </div>
         
         <div class="task" id="task1">
-            <h2>קריאה: חיות מעניינות בתאילנד 🐘🐒</h2>
-            <p>תאילנד היא בית למגוון רחב של חיות מרתקות. <span class="highlight">הפיל האסייתי</span> הוא אחד מהסמלים המפורסמים של תאילנד. פילים אלה חכמים מאוד ויכולים להשתמש בחדק שלהם לאכול, לשתות ואפילו לצייר! <span class="highlight">הגיבון</span> הוא קוף קטן שחי בג'ונגלים של תאילנד. הוא יכול לנוע בין העצים במהירות מדהימה. <span class="highlight">הטוקאן</span> הוא ציפור ססגונית עם מקור גדול וצבעוני, שאפשר למצוא ביערות הגשם.</p>
-            <p>שאלה: איזו חיה מעניינת אותך הכי הרבה ולמה?</p>
+            <h2>קריאה: אתרי תיירות מפורסמים בפוקט 🏖️🌴</h2>
+            <p>פוקט, האי הגדול ביותר בתאילנד, ידוע בחופיו היפהפיים ואתרי התיירות המרהיבים שלו. <span class="highlight">חוף פאטונג</span> הוא אחד החופים המפורסמים ביותר, עם חול לבן ומים צלולים. <span class="highlight">הבודהה הגדול</span> הוא פסל ענק של בודהה שניצב על גבעה ונראה מרחוק. <span class="highlight">העיר העתיקה של פוקט</span> מציגה ארכיטקטורה סינו-פורטוגזית מרהיבה ומספרת את ההיסטוריה העשירה של האי.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Phuket_overview.jpg/640px-Phuket_overview.jpg" alt="נוף של פוקט">
+            <p>שאלה: איזה אתר בפוקט הכי מעניין אותך ולמה?</p>
             <input type="text" id="answer1">
             <button onclick="nextTask()">הבא</button>
         </div>
 
         <div class="task" id="task2">
-            <h2>מתמטיקה: טיול בתאילנד 🧮🚶‍♂️</h2>
-            <p>רפאל מטייל בפוקט. הוא הולך 2 ק"מ בבוקר, 3 ק"מ בצהריים, ו-1.5 ק"מ בערב.</p>
-            <p>כמה ק"מ הלך רפאל בסך הכל?</p>
-            <input type="number" id="answer2">
+            <h2>מתמטיקה: תכנון טיול בפוקט 🧮🚌</h2>
+            <p>רפאל מתכנן טיול באוטובוס לשלושה אתרים בפוקט:</p>
+            <ul>
+                <li>מהמלון לחוף פאטונג: 45 דקות</li>
+                <li>מחוף פאטונג לבודהה הגדול: 30 דקות</li>
+                <li>מהבודהה הגדול לעיר העתיקה: 25 דקות</li>
+                <li>מהעיר העתיקה בחזרה למלון: 40 דקות</li>
+            </ul>
+            <p>כמה זמן בסך הכל יבלה רפאל באוטובוס?</p>
+            <input type="number" id="answer2" placeholder="הכנס את התשובה בדקות">
             <button onclick="checkAnswer(2)">בדוק תשובה</button>
             <button onclick="nextTask()">הבא</button>
         </div>
 
         <div class="task" id="task3">
-            <h2>אנגלית: משחקי וידאו 🎮</h2>
+            <h2>אנגלית: מילים הקשורות לים 🌊🏄‍♂️</h2>
             <p>התאם את המילים באנגלית לתרגום שלהן בעברית:</p>
-            <p>1. Fortnite - _______</p>
-            <p>2. Brawl Stars - _______</p>
-            <p>3. Nintendo - _______</p>
-            <p>4. Gaming - _______</p>
+            <p>1. Beach - \_\_\_\_\_\_\_</p>
+            <p>2. Wave - \_\_\_\_\_\_\_</p>
+            <p>3. Surfing - \_\_\_\_\_\_\_</p>
+            <p>4. Snorkel - \_\_\_\_\_\_\_</p>
             <input type="text" id="answer3_1" placeholder="1">
             <input type="text" id="answer3_2" placeholder="2">
             <input type="text" id="answer3_3" placeholder="3">
@@ -151,11 +164,10 @@ I understand. I'll create a new lesson for Rephael, taking into account the info
         </div>
 
         <div class="task" id="task4">
-            <h2>חינוך פיננסי: חיסכון לקניית משחק 💰🕹️</h2>
-            <p>רפאל רוצה לקנות משחק חדש ל-Nintendo שעולה 240 באט תאילנדי. הוא חוסך 20 באט בשבוע.</p>
-            <p>כמה שבועות יקח לרפאל לחסוך מספיק כסף לקנות את המשחק?</p>
-            <input type="number" id="answer4">
-            <button onclick="checkAnswer(4)">בדוק תשובה</button>
+            <h2>בינה מלאכותית: משחקי מחשב וטכנולוגיה 🎮🤖</h2>
+            <p>בינה מלאכותית (AI) משחקת תפקיד חשוב במשחקי מחשב מודרניים. למשל, ב-Fortnite, AI משמשת ליצירת <span class="highlight">התנהגות מציאותית</span> של דמויות שאינן שחקנים. ב-Brawl Stars, AI עוזרת ל<span class="highlight">התאים את רמת הקושי</span> למיומנות השחקן.</p>
+            <p>שאלה: כיצד לדעתך בינה מלאכותית יכולה לשפר את החוויה במשחק המחשב האהוב עליך?</p>
+            <input type="text" id="answer4">
             <button onclick="nextTask()">הבא</button>
         </div>
 
@@ -177,9 +189,8 @@ I understand. I'll create a new lesson for Rephael, taking into account the info
         const totalTasks = 4;
         let timer;
         const answers = {
-            2: 6.5,
-            3: ['פורטנייט', 'בראול סטארס', 'נינטנדו', 'משחקי מחשב'],
-            4: 12
+            2: 140,
+            3: ['חוף', 'גל', 'גלישה', 'שנורקל']
         };
 
         function startTimer(duration, display) {
@@ -232,9 +243,9 @@ I understand. I'll create a new lesson for Rephael, taking into account the info
             let message = '';
 
             if (taskNumber === 2) {
-                const userAnswer = parseFloat(document.getElementById('answer2').value);
+                const userAnswer = parseInt(document.getElementById('answer2').value);
                 isCorrect = userAnswer === answers[2];
-                message = isCorrect ? 'כל הכבוד! התשובה נכונה.' : `התשובה לא נכונה. התשובה הנכונה היא ${answers[2]} ק"מ.`;
+                message = isCorrect ? 'כל הכבוד! התשובה נכונה.' : `התשובה לא נכונה. התשובה הנכונה היא ${answers[2]} דקות.`;
             } else if (taskNumber === 3) {
                 const userAnswers = [
                     document.getElementById('answer3_1').value,
@@ -244,10 +255,6 @@ I understand. I'll create a new lesson for Rephael, taking into account the info
                 ];
                 isCorrect = userAnswers.every((answer, index) => answer === answers[3][index]);
                 message = isCorrect ? 'כל הכבוד! כל התשובות נכונות.' : 'לא כל התשובות נכונות. נסה שוב.';
-            } else if (taskNumber === 4) {
-                const userAnswer = parseInt(document.getElementById('answer4').value);
-                isCorrect = userAnswer === answers[4];
-                message = isCorrect ? 'כל הכבוד! התשובה נכונה.' : `התשובה לא נכונה. התשובה הנכונה היא ${answers[4]} שבועות.`;
             }
 
             showPopup(message);
@@ -278,7 +285,7 @@ I understand. I'll create a new lesson for Rephael, taking into account the info
             
             for (let i = 1; i <= totalTasks; i++) {
                 const listItem = document.createElement('li');
-                if (i === 1) {
+                if (i === 1 || i === 4) {
                     listItem.textContent = `משימה ${i}: הושלמה (שאלה פתוחה)`;
                 } else {
                     listItem.textContent = `משימה ${i}: ${summary[i] ? 'נכונה' : 'לא נכונה'}`;
