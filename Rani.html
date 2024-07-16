@@ -1,6 +1,5 @@
-I understand you'd like me to create a new lesson for Rani, taking into account the information you've provided. However, I don't see the previous lesson in your message. Without that information, I'll create a new lesson based on the details you've given. Here's the lesson plan for Rani:
+I understand. I'll create a new lesson for Rani, taking into account the information you've provided. Here's the new lesson plan:
 
-```html
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -71,6 +70,7 @@ I understand you'd like me to create a new lesson for Rani, taking into account 
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 16px;
+            touch-action: manipulation;
         }
         .popup {
             display: none;
@@ -124,30 +124,35 @@ I understand you'd like me to create a new lesson for Rani, taking into account 
         </div>
         
         <div class="task" id="task1">
-            <h2>קריאה: פוקט והפסלים המפורסמים שלה 🗿</h2>
-            <p>פוקט, האי היפהפה בתאילנד, ידוע לא רק בחופיו המדהימים אלא גם <span class="highlight">בפסלים המרשימים</span> שלו. אחד הפסלים המפורסמים ביותר הוא <span class="highlight">פסל הבודהה הגדול</span>. פסל זה ניצב בגובה של 45 מטרים על הר נקאקרד ונראה כמעט מכל מקום באי. הפסל עשוי משיש לבן ומסמל שלום והרמוניה.</p>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Big_Buddha_Phuket_Landmark.jpg/640px-Big_Buddha_Phuket_Landmark.jpg" alt="פסל הבודהה הגדול בפוקט">
-            <p>שאלה: אם היית יכול ליצור פסל ענק בפוקט, מה הוא היה מייצג ולמה?</p>
+            <h2>קריאה: בובספוג מטייל בפוקט 🧽🌊</h2>
+            <p><span class="highlight">בובספוג</span> החליט לצאת לחופשה בפוקט, תאילנד! הוא ארז את בגד הים שלו ויצא לדרך. כשהגיע לפוקט, הוא התפעל מהחופים היפים והמים הצלולים. בובספוג פגש דגים צבעוניים ושחה עם צבי ים. הוא אפילו ניסה לגלוש על הגלים! בערב, בובספוג הלך לשוק הלילה וטעם אוכל תאילנדי טעים. הוא חשב לעצמו: "זו החופשה הכי כיפית שהייתה לי!"</p>
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/SpongeBob_SquarePants_character.svg/640px-SpongeBob_SquarePants_character.svg.png" alt="בובספוג">
+            <p>שאלה: אם היית יכול לקחת את בובספוג למקום אחד בפוקט, לאן היית לוקח אותו ולמה?</p>
             <input type="text" id="answer1" placeholder="כתוב את תשובתך כאן">
             <button onclick="nextTask()">הבא</button>
         </div>
 
         <div class="task" id="task2">
-            <h2>מתמטיקה: תכנון טיול בפוקט 🏖️</h2>
-            <p>רני מתכנן טיול בפוקט. הוא רוצה לבקר ב-3 חופים שונים. בכל חוף הוא מתכנן לבלות שעתיים. הנסיעה בין כל חוף לחוף אורכת 30 דקות.</p>
-            <p>כמה זמן בסך הכל יארך הטיול של רני (כולל הנסיעות)?</p>
-            <input type="number" id="answer2" placeholder="הכנס את התשובה בדקות">
+            <h2>מתמטיקה: משחק כדורגל בחוף 🏖️⚽</h2>
+            <p>רני משחק כדורגל בחוף עם חברים חדשים שהכיר בפוקט. הם משחקים 3 משחקים:</p>
+            <ul>
+                <li>במשחק הראשון הם הבקיעו 5 גולים</li>
+                <li>במשחק השני הם הבקיעו 3 גולים יותר מבמשחק הראשון</li>
+                <li>במשחק השלישי הם הבקיעו 2 גולים פחות מבמשחק השני</li>
+            </ul>
+            <p>כמה גולים הבקיעו בסך הכל בכל שלושת המשחקים?</p>
+            <input type="number" id="answer2" placeholder="הכנס את מספר הגולים הכולל">
             <button onclick="checkAnswer(2)">בדוק תשובה</button>
             <button onclick="nextTask()">הבא</button>
         </div>
 
         <div class="task" id="task3">
-            <h2>אנגלית: מילים הקשורות לכדורגל ⚽</h2>
-            <p>בוא נלמד כמה מילים באנגלית הקשורות לכדורגל! התאם בין המילה בעברית לתרגומה באנגלית:</p>
+            <h2>אנגלית: חיות בפוקט 🐒🐘</h2>
+            <p>בוא נלמד את שמות החיות שרני יכול לראות בפוקט באנגלית! התאם בין החיה בעברית לשמה באנגלית:</p>
             <ol>
-                <li>כדור - <input type="text" id="soccer1" placeholder="באנגלית"></li>
-                <li>שער - <input type="text" id="soccer2" placeholder="באנגלית"></li>
-                <li>שחקן - <input type="text" id="soccer3" placeholder="באנגלית"></li>
+                <li>פיל - <input type="text" id="animal1" placeholder="באנגלית"></li>
+                <li>קוף - <input type="text" id="animal2" placeholder="באנגלית"></li>
+                <li>צב ים - <input type="text" id="animal3" placeholder="באנגלית"></li>
             </ol>
             <button onclick="checkAnswer(3)">בדוק תשובות</button>
             <button onclick="nextTask()">הבא</button>
@@ -197,14 +202,14 @@ I understand you'd like me to create a new lesson for Rani, taking into account 
 
             if (taskNum === 2) {
                 const answer = parseInt(document.getElementById('answer2').value);
-                isCorrect = answer === 450;
-                message = isCorrect ? 'כל הכבוד! התשובה נכונה.' : 'לא בדיוק. התשובה הנכונה היא 450 דקות (7.5 שעות).';
+                isCorrect = answer === 24;
+                message = isCorrect ? 'כל הכבוד! התשובה נכונה.' : 'לא בדיוק. התשובה הנכונה היא 24 גולים (5 + 8 + 11 = 24).';
             } else if (taskNum === 3) {
-                const soccer1 = document.getElementById('soccer1').value.toLowerCase();
-                const soccer2 = document.getElementById('soccer2').value.toLowerCase();
-                const soccer3 = document.getElementById('soccer3').value.toLowerCase();
-                isCorrect = soccer1 === 'ball' && soccer2 === 'goal' && soccer3 === 'player';
-                message = isCorrect ? 'מצוין! כל התשובות נכונות.' : 'כמעט. התשובות הנכונות הן: ball, goal, player.';
+                const animal1 = document.getElementById('animal1').value.toLowerCase();
+                const animal2 = document.getElementById('animal2').value.toLowerCase();
+                const animal3 = document.getElementById('animal3').value.toLowerCase();
+                isCorrect = animal1 === 'elephant' && animal2 === 'monkey' && animal3 === 'sea turtle';
+                message = isCorrect ? 'מצוין! כל התשובות נכונות.' : 'כמעט. התשובות הנכונות הן: elephant, monkey, sea turtle.';
             }
 
             showPopup(isCorrect ? 'כל הכבוד! 🎉' : 'נסה שוב', message);
@@ -271,13 +276,3 @@ I understand you'd like me to create a new lesson for Rani, taking into account 
     </script>
 </body>
 </html>
-```
-
-This lesson plan for Rani includes:
-
-1. A reading passage about famous statues in Phuket, connecting to Rani's interest in statues and monuments and his current location.
-2. A math problem related to planning a trip in Phuket, incorporating time management skills.
-3. An English language task about soccer-related words, combining his interest in soccer with language learning.
-4. A summary section to review what was learned.
-
-The lesson is designed to be interactive, with a progress bar, timer, and popup messages for feedback. It's tailored for a 7-year-old, with simple language and engaging topics. The content is in Hebrew as requested, with some English words in the language task.
