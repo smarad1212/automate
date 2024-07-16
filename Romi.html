@@ -1,4 +1,4 @@
-Here's a new lesson for Romi, taking into account her interests and current location. I've created a lesson that covers different subjects from the previous one (assuming there was a previous lesson) and incorporates her interests in art, cooking, and animals. The lesson is in Hebrew, as requested.
+Here's a new lesson for Romi, taking into account her interests and current location. This lesson covers different subjects from the previous one and incorporates her interests in Jewish Bible stories, animals, and art. The lesson is in Hebrew, as requested.
 
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
@@ -103,58 +103,55 @@ Here's a new lesson for Romi, taking into account her interests and current loca
     </style>
 </head>
 <body>
-    <h1>שיעור לרומי בפוקט, תאילנד 🏖️</h1>
+    <h1>שיעור לרומי בפוקט, תאילנד 🏝️</h1>
     <div id="timer">40:00</div>
     <div class="progress-bar">
         <div class="progress" id="progress"></div>
     </div>
     
     <div id="task1" class="task">
-        <h2>קריאה: אמנות הבישול התאילנדי 🍲</h2>
-        <p>הבישול התאילנדי ידוע בעולם כולו בזכות טעמיו העזים והמיוחדים. <span class="highlight">המטבח התאילנדי</span> משלב חמישה טעמים עיקריים: חמוץ, מתוק, מלוח, מר וחריף. אחת המנות המפורסמות ביותר היא <span class="highlight">הפאד תאי</span>, אטריות מוקפצות עם ירקות, ביצה וחלבון מהצומח או מהחי. בפוקט, איפה שאת נמצאת, יש גם השפעה של מאכלי ים טריים בגלל הקרבה לחוף. הבישול התאילנדי הוא לא רק אוכל, אלא גם אמנות של איזון טעמים וצבעים בצלחת.</p>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Phat_Thai_kung_Chang_Khien_street_stall.jpg/640px-Phat_Thai_kung_Chang_Khien_street_stall.jpg" alt="Pad Thai">
-        <textarea id="answer1" rows="4" placeholder="מה מעניין אותך במטבח התאילנדי? איזו מנה היית רוצה לטעום?"></textarea>
+        <h2>קריאה: סיפור יונה והדג הגדול 🐳</h2>
+        <p><span class="highlight">יונה הנביא</span> נשלח על ידי אלוהים להזהיר את אנשי <span class="highlight">נינווה</span>. אך יונה, שפחד מהמשימה, ברח באונייה. אלוהים שלח סערה גדולה, והמלחים הטילו את יונה לים כדי להרגיע אותה. <span class="highlight">דג גדול</span> בלע את יונה, ובבטן הדג התפלל יונה לאלוהים במשך שלושה ימים ושלוש לילות. לבסוף, הדג פלט את יונה ליבשה, ויונה הלך לנינווה למלא את שליחותו.</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Jonah_and_the_Whale.jpg/640px-Jonah_and_the_Whale.jpg" alt="Jonah and the Whale">
+        <textarea id="answer1" rows="4" placeholder="מה לדעתך הלקח המרכזי בסיפור זה? איך הוא יכול להתקשר לחיים שלנו?"></textarea>
         <button onclick="nextTask()">הבא</button>
     </div>
 
     <div id="task2" class="task" style="display:none;">
-        <h2>מתמטיקה: תקציב לשוק המקומי 🛒</h2>
-        <p>נדמיין שאנחנו הולכים לשוק המקומי בפוקט לקנות מצרכים לארוחה תאילנדית. יש לנו 500 באט (מטבע תאילנדי) לבזבז.</p>
+        <h2>מתמטיקה: חישוב זמן שחייה של לווייתנים 🐋</h2>
+        <p>לווייתנים יכולים לשהות מתחת למים לזמן ארוך, אך הם חייבים לעלות לפני המים לנשום. נחשב כמה זמן לווייתנים שונים יכולים לשהות מתחת למים:</p>
         <ul>
-            <li>1 ק"ג אורז עולה 50 באט</li>
-            <li>חבילת תבלינים עולה 30 באט</li>
-            <li>1 ק"ג ירקות מעורבים עולה 40 באט</li>
-            <li>1 ק"ג פירות טרופיים עולה 60 באט</li>
+            <li>לווייתן כחול: 20 דקות</li>
+            <li>לווייתן גדול סנפיר: 15 דקות</li>
+            <li>לווייתן קטלן (אורקה): 10 דקות</li>
         </ul>
-        <p>חשבי כמה מכל דבר נוכל לקנות ומה יהיה הסכום הכולל:</p>
-        <input type="text" id="answer2a" placeholder="כמה ק"ג אורז?">
-        <input type="text" id="answer2b" placeholder="כמה חבילות תבלינים?">
-        <input type="text" id="answer2c" placeholder="כמה ק"ג ירקות?">
-        <input type="text" id="answer2d" placeholder="כמה ק"ג פירות?">
-        <input type="text" id="answer2e" placeholder="מה הסכום הכולל?">
+        <p>אם כל לווייתן צולל 5 פעמים ביום, כמה זמן בסך הכל הוא מבלה מתחת למים?</p>
+        <input type="text" id="answer2a" placeholder="לווייתן כחול (בדקות)">
+        <input type="text" id="answer2b" placeholder="לווייתן גדול סנפיר (בדקות)">
+        <input type="text" id="answer2c" placeholder="לווייתן קטלן (בדקות)">
         <button onclick="checkAnswer2()">בדיקה</button>
         <button onclick="nextTask()">הבא</button>
     </div>
 
     <div id="task3" class="task" style="display:none;">
-        <h2>אנגלית: חיות ימיות בפוקט 🐠</h2>
-        <p>פוקט מוקפת באוקיינוס ההודי ויש בה מגוון עשיר של חיים ימיים. בואי נלמד כמה שמות של חיות ימיות באנגלית:</p>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Coral_Reef_Scenery.jpg/640px-Coral_Reef_Scenery.jpg" alt="Coral Reef">
+        <h2>אנגלית: בעלי חיים ימיים בפוקט 🐠</h2>
+        <p>פוקט מוקפת באוקיינוס ההודי ויש בה מגוון עשיר של חיים ימיים. בואי נלמד כמה שמות של בעלי חיים ימיים באנגלית:</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Chelonia_mydas_Marsa_Alam.jpg/640px-Chelonia_mydas_Marsa_Alam.jpg" alt="Sea Turtle">
         <div id="matchingGame">
             <div>
-                <span>Dolphin</span>
+                <span>Whale Shark</span>
                 <input type="text" id="answer3a" placeholder="תרגום לעברית">
             </div>
             <div>
-                <span>Sea Turtle</span>
+                <span>Manta Ray</span>
                 <input type="text" id="answer3b" placeholder="תרגום לעברית">
             </div>
             <div>
-                <span>Jellyfish</span>
+                <span>Clownfish</span>
                 <input type="text" id="answer3c" placeholder="תרגום לעברית">
             </div>
             <div>
-                <span>Coral</span>
+                <span>Seahorse</span>
                 <input type="text" id="answer3d" placeholder="תרגום לעברית">
             </div>
         </div>
@@ -163,17 +160,17 @@ Here's a new lesson for Romi, taking into account her interests and current loca
     </div>
 
     <div id="task4" class="task" style="display:none;">
-        <h2>יצירה: ציור נוף תאילנדי 🎨</h2>
-        <p>עכשיו נשתמש בכישורי הציור שלך ליצירת נוף תאילנדי!</p>
+        <h2>אמנות: ציור חיות ים בסגנון תאילנדי 🎨</h2>
+        <p>האמנות התאילנדית ידועה בצבעוניות שלה ובקווים העדינים. בואי ניצור ציור של חיית ים בסגנון תאילנדי!</p>
         <ol>
-            <li>צרי רקע של שמיים כחולים ואוקיינוס טורקיז.</li>
-            <li>הוסיפי חוף חול לבן בתחתית הציור.</li>
-            <li>ציירי עצי דקל ירוקים לאורך החוף.</li>
-            <li>הוסיפי סירת "לונג-טייל" מסורתית על המים.</li>
-            <li>לבסוף, ציירי שקיעה כתומה-אדומה בשמיים.</li>
+            <li>בחרי חיית ים שלמדנו עליה (למשל: כריש לווייתן, בט, דג ליצן או סוס ים).</li>
+            <li>צרי קווי מתאר עדינים של החיה שבחרת.</li>
+            <li>הוסיפי פרטים קטנים ועיטורים בסגנון תאילנדי (למשל: קווים מפותלים, נקודות, צורות גיאומטריות).</li>
+            <li>צבעי את הציור בצבעים בהירים ועזים, כמו כחול, טורקיז, זהב וסגול.</li>
+            <li>הוסיפי רקע של אלמוגים או צמחי ים בסגנון דומה.</li>
         </ol>
         <p>כשתסיימי, תארי את הציור שלך:</p>
-        <textarea id="answer4" rows="4" placeholder="תארי את הנוף התאילנדי שציירת. אילו צבעים ואלמנטים הוספת?"></textarea>
+        <textarea id="answer4" rows="4" placeholder="תארי את חיית הים שציירת בסגנון תאילנדי. אילו צבעים ואלמנטים הוספת?"></textarea>
         <button onclick="nextTask()">סיום</button>
     </div>
 
@@ -235,20 +232,18 @@ Here's a new lesson for Romi, taking into account her interests and current loca
         }
 
         function checkAnswer2() {
-            const correct = ['2', '5', '3', '2', '490'];
+            const correct = ['100', '75', '50'];
             const answers = [
                 document.getElementById('answer2a').value,
                 document.getElementById('answer2b').value,
-                document.getElementById('answer2c').value,
-                document.getElementById('answer2d').value,
-                document.getElementById('answer2e').value
+                document.getElementById('answer2c').value
             ];
             const allCorrect = answers.every((answer, index) => answer === correct[index]);
             showPopup(allCorrect ? 'כל הכבוד! כל התשובות נכונות.' : 'נסי שוב. בדקי את החישובים שלך.');
         }
 
         function checkAnswer3() {
-            const correct = ['דולפין', 'צב ים', 'מדוזה', 'אלמוג'];
+            const correct = ['כריש לווייתן', 'בט ענק', 'דג ליצן', 'סוס ים'];
             const answers = [
                 document.getElementById('answer3a').value,
                 document.getElementById('answer3b').value,
