@@ -124,40 +124,34 @@ Here's a new lesson plan for Rani, taking into account the previous lesson and t
         </div>
         
         <div class="task" id="task1">
-            <h2>קריאה: בעלי חיים בתאילנד 🐘</h2>
-            <p>תאילנד היא בית למגוון רחב של <span class="highlight">בעלי חיים מרתקים</span>. אחד מבעלי החיים המפורסמים ביותר הוא <span class="highlight">הפיל התאילנדי</span>, סמל לאומי של המדינה. בג'ונגלים של תאילנד ניתן למצוא גם <span class="highlight">טיגריסים</span>, אם כי הם נדירים מאוד. בים סביב פוקט שוחים <span class="highlight">דולפינים</span> ו<span class="highlight">כרישי לוויתן</span> ענקיים. בחופים ובאיים הקטנים חיים <span class="highlight">קופי מקוק</span> שובבים.</p>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Thai_Elephants.jpg/640px-Thai_Elephants.jpg" alt="פילים תאילנדיים">
-            <p>שאלה: אם היית יכול להיות בעל חיים אחד בתאילנד ליום אחד, איזה בעל חיים היית בוחר ולמה?</p>
+            <h2>קריאה: פסלים ומונומנטים בתאילנד 🗿</h2>
+            <p>תאילנד מפורסמת ב<span class="highlight">פסלים ומונומנטים מרהיבים</span>. אחד המפורסמים ביותר הוא <span class="highlight">הבודהה הגדול של פוקט</span>, פסל ענק של בודהה הניצב בראש הר בפוקט. פסל זה נראה כמעט מכל מקום באי. בבנגקוק, בירת תאילנד, ניתן למצוא את <span class="highlight">מקדש הבודהה המוזהב</span>, ובו פסל בודהה עשוי זהב טהור. במקומות רבים בתאילנד תוכלו לראות <span class="highlight">פסלי פילים</span>, המסמלים מזל טוב ושגשוג.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Phuket_buddha.jpg/640px-Phuket_buddha.jpg" alt="הבודהה הגדול של פוקט">
+            <p>שאלה: איזה פסל או מונומנט בתאילנד הכי מעניין אותך ולמה?</p>
             <input type="text" id="answer1" placeholder="כתוב את תשובתך כאן">
             <button onclick="nextTask()">הבא</button>
         </div>
 
         <div class="task" id="task2">
-            <h2>אנגלית: בעלי חיים באנגלית 🦁</h2>
-            <p>בוא נלמד את השמות של כמה בעלי חיים באנגלית:</p>
+            <h2>אנגלית: מילים הקשורות לפסלים ומונומנטים 🗽</h2>
+            <p>בוא נלמד כמה מילים באנגלית הקשורות לפסלים ומונומנטים:</p>
             <ul>
-                <li>פיל - <span class="highlight">Elephant</span></li>
-                <li>טיגריס - <span class="highlight">Tiger</span></li>
-                <li>דולפין - <span class="highlight">Dolphin</span></li>
-                <li>קוף - <span class="highlight">Monkey</span></li>
+                <li>פסל - <span class="highlight">Statue</span></li>
+                <li>מונומנט - <span class="highlight">Monument</span></li>
+                <li>זהב - <span class="highlight">Gold</span></li>
+                <li>ענק - <span class="highlight">Giant</span></li>
             </ul>
-            <p>עכשיו, נסה לכתוב את המילה "פיל" באנגלית:</p>
+            <p>עכשיו, נסה לכתוב את המילה "פסל" באנגלית:</p>
             <input type="text" id="answer2" placeholder="כתוב את המילה כאן">
             <button onclick="checkAnswer(2)">בדוק תשובה</button>
             <button onclick="nextTask()">הבא</button>
         </div>
 
         <div class="task" id="task3">
-            <h2>מתמטיקה: ספירת בעלי חיים 🐒</h2>
-            <p>רני ביקר בפארק טבע בפוקט וראה את בעלי החיים הבאים:</p>
-            <ul>
-                <li>5 פילים</li>
-                <li>8 קופים</li>
-                <li>3 תוכים</li>
-                <li>2 נמרים</li>
-            </ul>
-            <p>כמה בעלי חיים ראה רני בסך הכל?</p>
-            <input type="number" id="answer3" placeholder="הכנס את המספר הכולל">
+            <h2>מתמטיקה: גובה הפסלים 📏</h2>
+            <p>הבודהה הגדול של פוקט גבוה 45 מטרים. פסל אחר בתאילנד גבוה 32 מטרים.</p>
+            <p>מה ההפרש בגובה בין שני הפסלים?</p>
+            <input type="number" id="answer3" placeholder="הכנס את ההפרש בגובה">
             <button onclick="checkAnswer(3)">בדוק תשובה</button>
             <button onclick="nextTask()">הבא</button>
         </div>
@@ -206,12 +200,12 @@ Here's a new lesson plan for Rani, taking into account the previous lesson and t
 
             if (taskNum === 2) {
                 const answer = document.getElementById('answer2').value.toLowerCase();
-                isCorrect = answer === 'elephant';
-                message = isCorrect ? 'כל הכבוד! התשובה נכונה.' : 'לא בדיוק. התשובה הנכונה היא "Elephant".';
+                isCorrect = answer === 'statue';
+                message = isCorrect ? 'כל הכבוד! התשובה נכונה.' : 'לא בדיוק. התשובה הנכונה היא "Statue".';
             } else if (taskNum === 3) {
                 const answer = parseInt(document.getElementById('answer3').value);
-                isCorrect = answer === 18;
-                message = isCorrect ? 'מצוין! התשובה נכונה.' : 'כמעט. התשובה הנכונה היא 18 (5 + 8 + 3 + 2 = 18).';
+                isCorrect = answer === 13;
+                message = isCorrect ? 'מצוין! התשובה נכונה.' : 'כמעט. התשובה הנכונה היא 13 (45 - 32 = 13).';
             }
 
             showPopup(isCorrect ? 'כל הכבוד! 🎉' : 'נסה שוב', message);
