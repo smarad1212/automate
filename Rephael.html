@@ -5,7 +5,7 @@ Here's a new lesson for Rephael, taking into account the previous lesson and the
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>שיעור לרפאל בפוקט, תאילנד - יום חמישי</title>
+    <title>שיעור לרפאל בפוקט, תאילנד - יום שישי</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -75,6 +75,7 @@ Here's a new lesson for Rephael, taking into account the previous lesson and the
             border: 2px solid #ccc;
             border-radius: 4px;
             font-size: 16px;
+            touch-action: manipulation;
         }
         .highlight {
             background-color: #ffff99;
@@ -118,33 +119,34 @@ Here's a new lesson for Rephael, taking into account the previous lesson and the
 </head>
 <body>
     <div class="container">
-        <h1>שיעור לרפאל בפוקט, תאילנד 🇹🇭 - יום חמישי</h1>
+        <h1>שיעור לרפאל בפוקט, תאילנד 🇹🇭 - יום שישי</h1>
         <div id="timer">40:00</div>
         <div class="progress-bar">
             <div class="progress" id="progress"></div>
         </div>
         
         <div class="task" id="task1">
-            <h2>קריאה: בעלי חיים בתאילנד 🐘🐒</h2>
-            <p>תאילנד היא בית למגוון עשיר של <span class="highlight">בעלי חיים</span>. בג'ונגלים של תאילנד חיים <span class="highlight">פילים אסייתיים</span>, שנחשבים לסמל לאומי. <span class="highlight">קופי גיבון</span> מקפצים בין העצים, ו<span class="highlight">טיגריסים</span> נדירים עדיין מסתובבים באזורים מרוחקים. בים סביב פוקט ניתן למצוא <span class="highlight">כרישי לוויתן</span> ענקיים אך ידידותיים, ו<span class="highlight">צבי ים</span> שמגיעים להטיל ביצים בחופים.</p>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Surin_elephant_2.jpg/640px-Surin_elephant_2.jpg" alt="פיל אסייתי בתאילנד">
-            <p>שאלה: איזה בעל חיים מתאילנד הכי מעניין אותך ולמה?</p>
+            <h2>קריאה: מוזיקת ראפ ואמינם 🎵🎤</h2>
+            <p><span class="highlight">מוזיקת ראפ</span> היא סגנון מוזיקלי שהתפתח בשנות ה-70 בארצות הברית. אחד מהאמנים המפורסמים ביותר בתחום הוא <span class="highlight">אמינם</span>. אמינם, ששמו האמיתי הוא מרשל מאת'רס, נולד ב-1972 במישיגן. הוא ידוע בסגנון הראפ המהיר שלו ובמילים החכמות והמורכבות בשיריו. אחד השירים המפורסמים ביותר שלו הוא "Lose Yourself", שזכה בפרס האוסקר לשיר המקורי הטוב ביותר בשנת 2003.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Eminem_-_Concert_for_Valor_in_Washington%2C_D.C._Nov._11%2C_2014_%282%29_%28Cropped%29.jpg" alt="אמינם בהופעה">
+            <p>שאלה: מה לדעתך מיוחד במוזיקת ראפ? האם יש לך ראפר אהוב אחר?</p>
             <input type="text" id="answer1">
             <button onclick="nextTask()">הבא</button>
         </div>
 
         <div class="task" id="task2">
-            <h2>מתמטיקה: ניהול זמן במשחקי וידאו ⏱️🎮</h2>
-            <p>רפאל מנהל את זמן המשחק שלו בין המשחקים האהובים עליו. הנה כמה נתונים על זמן המשחק היומי שלו:</p>
+            <h2>מתמטיקה: סטטיסטיקה של משחקי וידאו 📊🎮</h2>
+            <p>רפאל אוסף נתונים על משחקי הווידאו האהובים עליו. הנה כמה נתונים על מספר השחקנים הפעילים בכל משחק:</p>
             <ul>
-                <li>Fortnite: 45 דקות</li>
-                <li>Brawl Stars: 30 דקות</li>
-                <li>Mario Kart (Nintendo): 25 דקות</li>
+                <li>Fortnite: 350 מיליון</li>
+                <li>Brawl Stars: 150 מיליון</li>
+                <li>Mario Kart (Nintendo): 50 מיליון</li>
+                <li>Minecraft: 140 מיליון</li>
             </ul>
             <ol>
-                <li>כמה זמן סך הכל רפאל משחק ביום?</li>
-                <li>אם רפאל רוצה להפחית את זמן המשחק הכולל ב-20%, כמה דקות עליו לקצץ?</li>
-                <li>אם רפאל מחליט להקדיש 40% מזמן המשחק שלו ל-Fortnite, כמה דקות הוא ישחק Fortnite?</li>
+                <li>מה סך כל השחקנים הפעילים בכל המשחקים יחד?</li>
+                <li>כמה אחוזים מסך כל השחקנים משחקים ב-Fortnite?</li>
+                <li>אם מספר השחקנים ב-Brawl Stars יגדל ב-20%, כמה שחקנים יהיו בו?</li>
             </ol>
             <input type="number" id="answer2_1" placeholder="תשובה לשאלה 1">
             <input type="number" id="answer2_2" placeholder="תשובה לשאלה 2">
@@ -154,12 +156,12 @@ Here's a new lesson for Rephael, taking into account the previous lesson and the
         </div>
 
         <div class="task" id="task3">
-            <h2>אנגלית: מילים מעולם הטכנולוגיה 🖥️📱</h2>
-            <p>הנה כמה מילים באנגלית הקשורות לטכנולוגיה. התאם את המילה באנגלית לתרגום שלה בעברית:</p>
-            <p>1. Smartphone - ___________</p>
-            <p>2. Computer - ___________</p>
-            <p>3. Internet - ___________</p>
-            <p>4. Application (App) - ___________</p>
+            <h2>אנגלית: מקומות בעולם 🌍✈️</h2>
+            <p>הנה כמה מקומות מעניינים בעולם באנגלית. התאם את השם באנגלית למיקום שלו:</p>
+            <p>1. Eiffel Tower - ____________</p>
+            <p>2. Great Wall of China - ____________</p>
+            <p>3. Statue of Liberty - ____________</p>
+            <p>4. Taj Mahal - ____________</p>
             <input type="text" id="answer3_1" placeholder="1">
             <input type="text" id="answer3_2" placeholder="2">
             <input type="text" id="answer3_3" placeholder="3">
@@ -169,17 +171,11 @@ Here's a new lesson for Rephael, taking into account the previous lesson and the
         </div>
 
         <div class="task" id="task4">
-            <h2>חינוך פיננסי: תקציב למשחקים 💰🎮</h2>
-            <p>נניח שיש לך 100 בהט (המטבע התאילנדי) לבזבז על משחקים. אתה רוצה לקנות משחק חדש ל-Nintendo Switch שעולה 60 בהט.</p>
-            <ol>
-                <li>כמה כסף יישאר לך אחרי קניית המשחק?</li>
-                <li>אם תחסוך 10 בהט בשבוע, כמה שבועות יידרשו כדי לחסוך מספיק לקנות עוד משחק שעולה 50 בהט?</li>
-                <li>אם תחליט לחסוך 20% מדמי הכיס שלך כל שבוע, וקיבלת 50 בהט דמי כיס, כמה תחסוך?</li>
-            </ol>
-            <input type="number" id="answer4_1" placeholder="תשובה לשאלה 1">
-            <input type="number" id="answer4_2" placeholder="תשובה לשאלה 2">
-            <input type="number" id="answer4_3" placeholder="תשובה לשאלה 3">
-            <button onclick="checkAnswer(4)">בדוק תשובות</button>
+            <h2>בינה מלאכותית: מבוא לAI 🤖💻</h2>
+            <p><span class="highlight">בינה מלאכותית</span> (AI) היא תחום במדעי המחשב שעוסק ביצירת מכונות חכמות שיכולות לבצע משימות הדורשות אינטליגנציה אנושית. AI משמשת במגוון תחומים, כולל <span class="highlight">משחקי וידאו</span>, <span class="highlight">רובוטיקה</span>, ו<span class="highlight">עיבוד שפה טבעית</span>.</p>
+            <p>במשחקי וידאו, AI משמשת ליצירת דמויות שאינן מופעלות על ידי שחקנים אמיתיים (NPC - Non-Player Characters). אלה יכולים להיות אויבים, בני ברית, או דמויות אחרות בעולם המשחק.</p>
+            <p>שאלה: תן דוגמה לאיך AI יכולה לשפר משחק וידאו שאתה אוהב.</p>
+            <input type="text" id="answer4">
             <button onclick="nextTask()">סיים שיעור</button>
         </div>
 
@@ -201,9 +197,8 @@ Here's a new lesson for Rephael, taking into account the previous lesson and the
         const totalTasks = 4;
         let timer;
         const answers = {
-            2: [100, 20, 40],
-            3: ['טלפון חכם', 'מחשב', 'אינטרנט', 'יישומון'],
-            4: [40, 5, 10]
+            2: [690, 51, 180],
+            3: ['פריז', 'סין', 'ניו יורק', 'הודו']
         };
 
         function startTimer(duration, display) {
@@ -255,20 +250,21 @@ Here's a new lesson for Rephael, taking into account the previous lesson and the
             let isCorrect = true;
             let message = '';
 
-            const userAnswers = [
-                parseInt(document.getElementById(`answer${taskNumber}_1`).value),
-                parseInt(document.getElementById(`answer${taskNumber}_2`).value),
-                parseInt(document.getElementById(`answer${taskNumber}_3`).value)
-            ];
-
-            if (taskNumber === 3) {
-                userAnswers[0] = document.getElementById('answer3_1').value;
-                userAnswers[1] = document.getElementById('answer3_2').value;
-                userAnswers[2] = document.getElementById('answer3_3').value;
-                userAnswers[3] = document.getElementById('answer3_4').value;
-                isCorrect = userAnswers.every((answer, index) => answer === answers[3][index]);
-            } else {
-                isCorrect = userAnswers.every((answer, index) => answer === answers[taskNumber][index]);
+            if (taskNumber === 2) {
+                const userAnswers = [
+                    parseInt(document.getElementById('answer2_1').value),
+                    parseInt(document.getElementById('answer2_2').value),
+                    parseInt(document.getElementById('answer2_3').value)
+                ];
+                isCorrect = userAnswers.every((answer, index) => answer === answers[2][index]);
+            } else if (taskNumber === 3) {
+                const userAnswers = [
+                    document.getElementById('answer3_1').value,
+                    document.getElementById('answer3_2').value,
+                    document.getElementById('answer3_3').value,
+                    document.getElementById('answer3_4').value
+                ];
+                isCorrect = userAnswers.every((answer, index) => answer.toLowerCase() === answers[3][index].toLowerCase());
             }
 
             message = isCorrect ? 'כל הכבוד! כל התשובות נכונות.' : 'לא כל התשובות נכונות. נסה שוב.';
@@ -300,6 +296,7 @@ Here's a new lesson for Rephael, taking into account the previous lesson and the
             
             for (let i = 1; i <= totalTasks; i++) {
                 const listItem = document.createElement('li');
-                if (i === 1) {
+                if (i === 1 || i === 4) {
                     listItem.textContent = `משימה ${i}: הושלמה (שאלה פתוחה)`;
-                
+                } else {
+                    listItem.textContent = `משימה ${i}: ${summary[i] ? 'הושלמה בהצ
