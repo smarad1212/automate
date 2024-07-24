@@ -82,19 +82,19 @@
             <form id="contact-form">
                 <div class="form-group">
                     <label for="name">שם מלא:</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name">
                 </div>
                 <div class="form-group">
                     <label for="company">שם החברה:</label>
-                    <input type="text" id="company" name="company" required>
+                    <input type="text" id="company" name="company">
                 </div>
                 <div class="form-group">
                     <label for="email">אימייל:</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email">
                 </div>
                 <div class="form-group">
                     <label for="phone">טלפון:</label>
-                    <input type="tel" id="phone" name="phone" required>
+                    <input type="tel" id="phone" name="phone">
                 </div>
                 <div class="form-group">
                     <label for="industry">ענף:</label>
@@ -109,7 +109,11 @@
                 </div>
                 <div class="form-group">
                     <label for="org-size">גודל הארגון:</label>
-                    <input type="number" id="org-size" name="org-size" min="1">
+                    <select id="org-size" name="org-size">
+                        <option value="0-10">0-10</option>
+                        <option value="10-30">10-30</option>
+                        <option value="30-100">30-100</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="webhook-url">Webhook URL:</label>
