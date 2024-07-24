@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אוטומטור - שירותי אוטומציה לארגונים</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+        }
+        header h1 {
+            margin: 0;
+            text-align: center;
+        }
+        .highlight {
+            color: #e8491d;
+        }
+        .form-container {
+            background: #ffffff;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .btn {
+            display: inline-block;
+            background: #e8491d;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 4px;
+        }
+        .btn:hover {
+            background: #35424a;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>ברוכים הבאים ל<span class="highlight">אוטומטור</span></h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>שירותי אוטומציה לארגונים</h2>
+        <p>אנחנו מספקים פתרונות אוטומציה מתקדמים לשיפור היעילות והפרודוקטיביות של העסק שלך.</p>
+        
+        <div class="form-container">
+            <h3>השאירו פרטים ונחזור אליכם בהקדם</h3>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">שם מלא:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">שם החברה:</label>
+                    <input type="text" id="company" name="company" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">אימייל:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">טלפון:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="industry">ענף:</label>
+                    <input type="text" id="industry" name="industry">
+                </div>
+                <div class="form-group">
+                    <label for="has-automation">האם יש לכם כבר אוטומציה?</label>
+                    <select id="has-automation" name="has-automation">
+                        <option value="yes">כן</option>
+                        <option value="no">לא</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="org-size">גודל הארגון:</label>
+                    <input type="number" id="org-size" name="org-size" min="1">
+                </div>
+                <div class="form-group">
+                    <label for="webhook-url">Webhook URL:</label>
+                    <input type="url" id="webhook-url" name="webhook-url" value="https://hook.eu2.make.com/grzxrmr5f0sql3w4s24vvxskgfmmdpn4">
+                </div>
+                <button type="submit" class="btn">שלח</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const webhookUrl = formData.get('webhook-url') || 'https://hook.eu2.make.com/grzxrmr5f0sql3w4s24vvxskgfmmdpn4';
+            
+            const data = {};
+            formData.forEach((value, key) => {
+                if (key !== 'webhook-url') {
+                    data[key] = value;
+                }
+            });
+
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                alert('תודה על פנייתך! נציג שלנו יצור איתך קשר בהקדם.');
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('אירעה שגיאה בשליחת הטופס. אנא נסה שוב מאוחר יותר.');
+            });
+        });
+    </script>
+</body>
+</html>
