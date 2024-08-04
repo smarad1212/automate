@@ -1,0 +1,293 @@
+Certainly! I'll create a new lesson for Sharin, taking into account her previous lesson and ensuring variety. Here's the complete HTML document for the new lesson:
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>שיעור לשרין בקריית גת</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 800px;
+            width: 100%;
+        }
+        h1 {
+            color: #4b0082;
+            text-align: center;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .progress {
+            width: 0%;
+            height: 100%;
+            background-color: #4caf50;
+            border-radius: 10px;
+            transition: width 0.5s ease-in-out;
+        }
+        .task {
+            background-color: #e6e6fa;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: none;
+        }
+        .task.active {
+            display: block;
+        }
+        button {
+            background-color: #4b0082;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #6a5acd;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .highlight {
+            background-color: #ffff00;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        #timer {
+            font-size: 20px;
+            font-weight: bold;
+            color: #4b0082;
+            margin-bottom: 10px;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+        .bounce {
+            animation: bounce 1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>שיעור לשרין בקריית גת 🏙️</h1>
+        <div id="timer">40:00</div>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        
+        <div id="task1" class="task active">
+            <h2>קריאה: עולם התפירה המופלא 🧵✂️</h2>
+            <p>
+                שרין היקרה, בואי נלמד על עולם התפירה המופלא! <span class="highlight">תפירה</span> היא אומנות עתיקה שמאפשרת לנו ליצור בגדים, תיקים, וכל מיני דברים יפים. כשתופרים, משתמשים ב<span class="highlight">מחט וחוט</span> כדי לחבר בדים יחד. יש המון סוגים של תפרים, כמו תפר ישר, תפר זיגזג, ועוד. 
+                
+                היום, יש גם <span class="highlight">מכונות תפירה</span> שעוזרות לנו לתפור מהר יותר. בעזרת תפירה, אפשר ליצור דברים מיוחדים כמו בובות בד, כריות מעוצבות, ואפילו לתקן בגדים ישנים. זו דרך נהדרת להיות יצירתיים ולעשות דברים בעצמנו!
+            </p>
+            <button onclick="nextTask()">למשימה הבאה</button>
+        </div>
+
+        <div id="task2" class="task">
+            <h2>עברית: מילים מעולם התפירה 📚</h2>
+            <p>בואי נלמד כמה מילים חשובות מעולם התפירה. התאימי את המילה לתמונה המתאימה:</p>
+            <img src="https://i.imgur.com/ZQ8q9Xm.png" alt="כלי תפירה" style="width: 100%; max-width: 400px;">
+            <ol>
+                <li>מ _ _ (3 אותיות)</li>
+                <li>מס _ _ _ _ _ (6 אותיות)</li>
+                <li>כ _ _ _ _ (5 אותיות)</li>
+                <li>ח _ _ (3 אותיות)</li>
+            </ol>
+            <input type="text" id="sewing1" placeholder="1. מ__">
+            <input type="text" id="sewing2" placeholder="2. מס_____">
+            <input type="text" id="sewing3" placeholder="3. כ____">
+            <input type="text" id="sewing4" placeholder="4. ח__">
+            <button onclick="checkSewingWords()">בדיקה</button>
+            <button onclick="nextTask()">למשימה הבאה</button>
+        </div>
+
+        <div id="task3" class="task">
+            <h2>חשבון: חנות הבדים 🧮</h2>
+            <p>שרין, דמייני שאת בחנות בדים בקריית גת. עזרי לבעלת החנות לחשב כמה בדים נשארו:</p>
+            <ul>
+                <li>היו בחנות 20 גלילי בד.</li>
+                <li>נמכרו 7 גלילים בבוקר.</li>
+                <li>אחר הצהריים הגיעו עוד 5 גלילים חדשים.</li>
+            </ul>
+            <p>כמה גלילי בד יש עכשיו בחנות?</p>
+            <input type="number" id="fabricCalculation">
+            <button onclick="checkFabricCalculation()">בדיקה</button>
+            <button onclick="nextTask()">למשימה הבאה</button>
+        </div>
+
+        <div id="task4" class="task">
+            <h2>יצירה: עיצוב כפתור 🎨</h2>
+            <p>בואי נעצב כפתור מיוחד! תארי איך הכפתור שלך ייראה:</p>
+            <ul>
+                <li>איזה צבע הכפתור יהיה?</li>
+                <li>איזו צורה תהיה לו? (עגול, מרובע, בצורת לב, וכו')</li>
+                <li>האם יהיה עליו ציור? אם כן, מה?</li>
+            </ul>
+            <textarea id="buttonDesign" rows="4" style="width: 100%; margin-top: 10px;"></textarea>
+            <button onclick="nextTask()">לסיום השיעור</button>
+        </div>
+
+        <div id="summary" class="task">
+            <h2>סיכום השיעור 🎉</h2>
+            <p>כל הכבוד, שרין! סיימת את השיעור. הנה מה שלמדנו היום:</p>
+            <ul id="summaryList"></ul>
+            <button onclick="restartLesson()">התחלה מחדש</button>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <h2 id="popupTitle"></h2>
+        <p id="popupContent"></p>
+        <button onclick="closePopup()">סגירה</button>
+    </div>
+
+    <script>
+        let currentTask = 1;
+        const totalTasks = 4;
+        let timer;
+        let timeLeft = 40 * 60; // 40 minutes in seconds
+
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('timer').textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            if (timeLeft > 0) {
+                timeLeft--;
+                timer = setTimeout(updateTimer, 1000);
+            } else {
+                alert("הזמן נגמר!");
+            }
+        }
+
+        function nextTask() {
+            document.getElementById(`task${currentTask}`).classList.remove('active');
+            currentTask++;
+            if (currentTask <= totalTasks) {
+                document.getElementById(`task${currentTask}`).classList.add('active');
+            } else {
+                showSummary();
+            }
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const progress = (currentTask - 1) / totalTasks * 100;
+            document.getElementById('progress').style.width = `${progress}%`;
+        }
+
+        function checkSewingWords() {
+            const answers = ['מחט', 'מספריים', 'כפתור', 'חוט'];
+            let correct = 0;
+            for (let i = 1; i <= 4; i++) {
+                const input = document.getElementById(`sewing${i}`);
+                if (input.value.trim().toLowerCase() === answers[i-1]) {
+                    correct++;
+                    input.style.backgroundColor = '#aaffaa';
+                } else {
+                    input.style.backgroundColor = '#ffaaaa';
+                }
+            }
+            showPopup('בדיקת מילים', `ענית נכון על ${correct} מתוך 4 מילים. המשיכי כך!`);
+        }
+
+        function checkFabricCalculation() {
+            const answer = document.getElementById('fabricCalculation').value;
+            if (answer === '18') {
+                showPopup('כל הכבוד!', 'חישבת נכון! יש 18 גלילי בד בחנות.');
+                document.getElementById('fabricCalculation').style.backgroundColor = '#aaffaa';
+            } else {
+                showPopup('כמעט...', 'נסי שוב. זכרי: 20 - 7 + 5 = ?');
+                document.getElementById('fabricCalculation').style.backgroundColor = '#ffaaaa';
+            }
+        }
+
+        function showSummary() {
+            const summary = document.getElementById('summary');
+            summary.classList.add('active');
+            const list = document.getElementById('summaryList');
+            list.innerHTML = `
+                <li>למדנו על עולם התפירה המופלא</li>
+                <li>תרגלנו מילים חשובות בתפירה</li>
+                <li>פתרנו בעיה מתמטית בחנות הבדים</li>
+                <li>עיצבנו כפתור מיוחד משלנו</li>
+            `;
+        }
+
+        function restartLesson() {
+            currentTask = 1;
+            document.querySelectorAll('.task').forEach(task => task.classList.remove('active'));
+            document.getElementById('task1').classList.add('active');
+            updateProgress();
+            clearTimeout(timer);
+            timeLeft = 40 * 60;
+            updateTimer();
+        }
+
+        function showPopup(title, content) {
+            document.getElementById('popupTitle').textContent = title;
+            document.getElementById('popupContent').textContent = content;
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        updateTimer();
+    </script>
+</body>
+</html>
