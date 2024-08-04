@@ -1,0 +1,257 @@
+Here's a new lesson for Req, tailored to his interests and location. This lesson is different from the previous one to maintain variety and engagement:
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>שיעור לרק בקו פנגן</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #4a4a4a;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .progress {
+            width: 0%;
+            height: 20px;
+            background-color: #4CAF50;
+            border-radius: 5px;
+            transition: width 0.5s ease-in-out;
+        }
+        .task {
+            background-color: #e9f5f9;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        .task.active {
+            display: block;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .highlight {
+            background-color: #ffff99;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        .timer {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>שיעור לרק בקו פנגן 🏝️</h1>
+        <div class="timer" id="timer">40:00</div>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        <div id="tasks">
+            <div class="task active" id="task1">
+                <h2>1. קריאה: כדורגל באי 🏝️⚽</h2>
+                <p>
+                    רק אוהב לשחק כדורגל בחוף הים של קו פנגן. החול הרך מתחת לרגליו והרוח הקלילה על פניו.
+                    הוא בועט בכדור גבוה לשמיים, והכדור נוחת ליד דקל גבוה. 
+                    חבריו מצטרפים אליו, והם משחקים יחד משחק כיף ומהנה.
+                    <span class="highlight">השמש</span> שוקעת באופק, צובעת את השמיים בצבעי כתום וורוד.
+                    זהו יום מושלם לכדורגל באי הקסום.
+                </p>
+                <img src="https://images.unsplash.com/photo-1518291344630-4857135fb581" alt="כדורגל בחוף">
+                <p>שאלה: איפה רק אוהב לשחק כדורגל?</p>
+                <input type="text" id="answer1">
+                <button onclick="checkAnswer(1)">בדוק תשובה</button>
+                <button onclick="nextTask()">המשך</button>
+            </div>
+            <div class="task" id="task2">
+                <h2>2. מתמטיקה: ספירת כדורים ⚽</h2>
+                <p>רק הביא 3 כדורי כדורגל לחוף. חברו הביא עוד 2 כדורים.</p>
+                <p>כמה כדורים יש להם ביחד?</p>
+                <input type="number" id="answer2">
+                <button onclick="checkAnswer(2)">בדוק תשובה</button>
+                <button onclick="nextTask()">המשך</button>
+            </div>
+            <div class="task" id="task3">
+                <h2>3. אוריגמי: יצירת סירה 🚢</h2>
+                <p>בואו ניצור סירת אוריגמי פשוטה!</p>
+                <img src="https://origami.me/wp-content/uploads/2016/12/easy-origami-boat-tutorial.jpg" alt="הוראות ליצירת סירת אוריגמי">
+                <p>עקוב אחר השלבים בתמונה ליצירת הסירה.</p>
+                <p>האם הצלחת ליצור את הסירה?</p>
+                <button onclick="checkAnswer(3, true)">כן</button>
+                <button onclick="checkAnswer(3, false)">לא</button>
+                <button onclick="nextTask()">המשך</button>
+            </div>
+            <div class="task" id="task4">
+                <h2>4. אנגלית: מילים בחוף 🏖️</h2>
+                <p>בואו נלמד כמה מילים באנגלית הקשורות לחוף:</p>
+                <ul>
+                    <li><span class="highlight">Beach</span> - חוף</li>
+                    <li><span class="highlight">Sand</span> - חול</li>
+                    <li><span class="highlight">Sea</span> - ים</li>
+                    <li><span class="highlight">Sun</span> - שמש</li>
+                </ul>
+                <p>איך אומרים "שמש" באנגלית?</p>
+                <input type="text" id="answer4">
+                <button onclick="checkAnswer(4)">בדוק תשובה</button>
+                <button onclick="nextTask()">סיים שיעור</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" id="popup">
+        <h2>סיכום השיעור</h2>
+        <p id="summary"></p>
+        <button onclick="closePopup()">סגור</button>
+    </div>
+
+    <script>
+        let currentTask = 1;
+        const totalTasks = 4;
+        let answers = {};
+        let startTime = new Date().getTime();
+
+        function nextTask() {
+            document.getElementById(`task${currentTask}`).classList.remove('active');
+            currentTask++;
+            if (currentTask <= totalTasks) {
+                document.getElementById(`task${currentTask}`).classList.add('active');
+            } else {
+                showSummary();
+            }
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const progress = ((currentTask - 1) / totalTasks) * 100;
+            document.getElementById('progress').style.width = `${progress}%`;
+        }
+
+        function checkAnswer(taskNum, isBoolean = false) {
+            let userAnswer;
+            if (isBoolean) {
+                userAnswer = event.target.textContent === 'כן';
+            } else {
+                userAnswer = document.getElementById(`answer${taskNum}`).value.trim().toLowerCase();
+            }
+            let correctAnswer;
+            switch(taskNum) {
+                case 1:
+                    correctAnswer = 'בחוף הים';
+                    break;
+                case 2:
+                    correctAnswer = 5;
+                    break;
+                case 3:
+                    correctAnswer = true;
+                    break;
+                case 4:
+                    correctAnswer = 'sun';
+                    break;
+            }
+            answers[taskNum] = {
+                userAnswer: userAnswer,
+                correctAnswer: correctAnswer,
+                isCorrect: userAnswer == correctAnswer
+            };
+            alert(answers[taskNum].isCorrect ? 'נכון!' : 'לא נכון. נסה שוב!');
+        }
+
+        function showSummary() {
+            let summary = '';
+            for (let i = 1; i <= totalTasks; i++) {
+                if (answers[i]) {
+                    summary += `משימה ${i}: ${answers[i].isCorrect ? 'נכון' : 'לא נכון'}<br>`;
+                    if (!answers[i].isCorrect) {
+                        summary += `התשובה הנכונה היא: ${answers[i].correctAnswer}<br>`;
+                    }
+                } else {
+                    summary += `משימה ${i}: לא הושלמה<br>`;
+                }
+            }
+            document.getElementById('summary').innerHTML = summary;
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        function updateTimer() {
+            const now = new Date().getTime();
+            const timeElapsed = Math.floor((now - startTime) / 1000);
+            const timeLeft = Math.max(0, 40 * 60 - timeElapsed);
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('timer').textContent = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            if (timeLeft > 0) {
+                setTimeout(updateTimer, 1000);
+            }
+        }
+
+        updateTimer();
+    </script>
+</body>
+</html>
