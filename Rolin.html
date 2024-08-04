@@ -1,0 +1,288 @@
+Certainly! I'll create a new lesson for Rolin, taking into account the information you've provided and ensuring it's different from the previous lesson. Here's the complete HTML document for the new lesson:
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>שיעור לרולין בטוקיו</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #4b0082;
+            text-align: center;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .progress {
+            width: 0%;
+            height: 20px;
+            background-color: #4caf50;
+            border-radius: 5px;
+            transition: width 0.5s ease-in-out;
+        }
+        .task {
+            background-color: #e6e6fa;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: none;
+        }
+        .task h2 {
+            color: #8a2be2;
+            margin-top: 0;
+        }
+        button {
+            background-color: #4b0082;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #6a5acd;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        .highlight {
+            background-color: #ffd700;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        #timer {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>שיעור לרולין בטוקיו 🗼</h1>
+        <div id="timer">40:00</div>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        
+        <div id="task1" class="task">
+            <h2>קריאה: מנגה ואופנה ביפן 📚👗</h2>
+            <p>יפן ידועה בתרבות המנגה והאנימה שלה, אבל האם ידעת שהיא גם מרכז אופנה עולמי? <span class="highlight">הרובע השיבויה</span> בטוקיו הוא אחד ממרכזי האופנה המובילים בעולם. כאן, אופנת הרחוב מתערבבת עם השפעות מנגה ואנימה ליצירת סגנון ייחודי הנקרא <span class="highlight">"האראג'וקו"</span>. צעירים רבים מגיעים לאזור זה כדי להציג את הבגדים הייחודיים והצבעוניים שלהם, שלעתים קרובות מושפעים מדמויות אהובות במנגה.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Harajuku_Fashion_Street_Snap.jpg/640px-Harajuku_Fashion_Street_Snap.jpg" alt="האראג'וקו אופנה">
+            <p>שאלה: איך לדעתך המנגה משפיעה על אופנת הרחוב ביפן?</p>
+            <input type="text" id="answer1" placeholder="הקלד את תשובתך כאן">
+            <button onclick="nextTask()">הבא</button>
+        </div>
+
+        <div id="task2" class="task">
+            <h2>מתמטיקה: חישוב מחירי בגדים 🧮</h2>
+            <p>נניח שאת מתכננת לקנות כמה פריטי לבוש בשיבויה. הנה המחירים:</p>
+            <ul>
+                <li>חולצת מנגה מעוצבת: 3000 ין</li>
+                <li>חצאית בסגנון האראג'וקו: 5500 ין</li>
+                <li>נעליים פלטפורמה: 8000 ין</li>
+            </ul>
+            <p>כמה ין תצטרכי לשלם עבור כל הפריטים יחד?</p>
+            <input type="number" id="answer2" placeholder="הקלד את התשובה כאן">
+            <button onclick="checkAnswer(2)">בדוק תשובה</button>
+            <button onclick="nextTask()">הבא</button>
+        </div>
+
+        <div id="task3" class="task">
+            <h2>אנגלית: תיאור אופנה 🗣️</h2>
+            <p>בואי נלמד כמה מילים באנגלית לתיאור בגדים ואופנה:</p>
+            <ul>
+                <li>Colorful - צבעוני</li>
+                <li>Stylish - אופנתי</li>
+                <li>Unique - ייחודי</li>
+                <li>Trendy - עדכני</li>
+            </ul>
+            <p>עכשיו, נסי לכתוב משפט באנגלית המתאר את סגנון האופנה של האראג'וקו, תוך שימוש בלפחות שתיים מהמילים הללו.</p>
+            <input type="text" id="answer3" placeholder="Type your sentence here">
+            <button onclick="nextTask()">הבא</button>
+        </div>
+
+        <div id="task4" class="task">
+            <h2>חינוך פיננסי: תקציב לקניות 💰</h2>
+            <p>נניח שיש לך 10,000 ין לקניות בשיבויה. אם קנית את החולצה והחצאית מהמשימה הקודמת, כמה כסף נשאר לך?</p>
+            <input type="number" id="answer4" placeholder="הקלד את התשובה כאן">
+            <button onclick="checkAnswer(4)">בדוק תשובה</button>
+            <button onclick="nextTask()">הבא</button>
+        </div>
+
+        <div id="summary" class="task" style="display:none;">
+            <h2>סיכום השיעור 🎉</h2>
+            <p>כל הכבוד, רולין! סיימת את השיעור. הנה סיכום של הביצועים שלך:</p>
+            <ul id="summaryList"></ul>
+            <button onclick="finishLesson()">סיים שיעור</button>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <h2 id="popupTitle"></h2>
+        <p id="popupContent"></p>
+        <button onclick="closePopup()">סגור</button>
+    </div>
+
+    <script>
+        let currentTask = 1;
+        let totalTasks = 4;
+        let answers = {};
+        let timer;
+
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            let interval = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    clearInterval(interval);
+                    display.textContent = "הזמן נגמר!";
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            let fortyMinutes = 40 * 60,
+                display = document.querySelector('#timer');
+            startTimer(fortyMinutes, display);
+            showTask(currentTask);
+        };
+
+        function showTask(taskNumber) {
+            document.querySelectorAll('.task').forEach(task => task.style.display = 'none');
+            document.getElementById(`task${taskNumber}`).style.display = 'block';
+            document.getElementById(`task${taskNumber}`).classList.add('fade-in');
+            updateProgress();
+        }
+
+        function nextTask() {
+            answers[currentTask] = document.getElementById(`answer${currentTask}`).value;
+            currentTask++;
+            if (currentTask <= totalTasks) {
+                showTask(currentTask);
+            } else {
+                showSummary();
+            }
+        }
+
+        function checkAnswer(taskNumber) {
+            let answer = document.getElementById(`answer${taskNumber}`).value;
+            let correct = false;
+            let message = '';
+
+            if (taskNumber === 2) {
+                correct = parseInt(answer) === 16500;
+                message = correct ? 'נכון מאוד! 3000 + 5500 + 8000 = 16500 ין.' : 'לא מדויק. הסכום הנכון הוא 16500 ין.';
+            } else if (taskNumber === 4) {
+                correct = parseInt(answer) === 1500;
+                message = correct ? 'נכון מאוד! נשארו לך 1500 ין.' : 'לא מדויק. הסכום הנכון שנשאר הוא 1500 ין.';
+            }
+
+            showPopup(correct ? 'כל הכבוד! 🎉' : 'כמעט...', message);
+        }
+
+        function updateProgress() {
+            let progress = (currentTask - 1) / totalTasks * 100;
+            document.getElementById('progress').style.width = `${progress}%`;
+        }
+
+        function showSummary() {
+            document.querySelectorAll('.task').forEach(task => task.style.display = 'none');
+            document.getElementById('summary').style.display = 'block';
+            
+            let summaryList = document.getElementById('summaryList');
+            for (let i = 1; i <= totalTasks; i++) {
+                let li = document.createElement('li');
+                li.textContent = `משימה ${i}: ${answers[i] ? 'הושלמה' : 'לא הושלמה'}`;
+                summaryList.appendChild(li);
+            }
+        }
+
+        function finishLesson() {
+            showPopup('סיום השיעור', 'כל הכבוד על השלמת השיעור! מקווה שנהנית ולמדת דברים חדשים על אופנה ומנגה ביפן. 🇯🇵👘📚');
+        }
+
+        function showPopup(title, content) {
+            document.getElementById('popupTitle').textContent = title;
+            document.getElementById('popupContent').textContent = content;
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
