@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monkey Muscle Game</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Set canvas size
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Game variables
+        let monkey = { x: canvas.width / 2, y: canvas.height / 2, size: 50, muscles: 1 };
+        let bananas = [];
+        let obstacles = [];
+        let score = 0;
+        let gameOver = false;
+
+        // Load images
+        const monkeyImg = new Image();
+        monkeyImg.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADeklEQVR4nO2ZW0hUQRjHf5tlWZtlWZtZm6VlZHQxK7OgC1FBdLGHeuimpHSFHoKKIKIoimh76KWXKKjMbrtJWdEVKrpHRaVS9lB0Q0t363SGL1hkz57d45puz/7hY8+emfnm/5/vzJzZHfCxmVgTeAyk+PDzGngItBsN4KNQ8xBIJ3d0Az+AhMkGEAE+AOeA+UAhUAYsAlYDR4AXVi0Y/mY8IQA3gOPAEqAn0ADcAb75uHwv8BNIGa/H5D5wEZgL5AE7gEv8nxcGfBuYMh4Aeqz2ARXAdOC0R58GcBmY5bFPARVAkRuAhE9jOA1cAWYAS4HHQDbJOB+B48BMmzE1QAWwDXjlJ0CdNbmmUMOPADOtQRcAC4FNwk8D2xzG1AHVThZyA6izjknzRIBKkWuAbkd9TOMYEPToUwMsBC7aDWAAfXZrPQ4stfpVu9Q+AiXANOCey9iS03hN32gBlFk+cZuLX7MDDzgZKgG/nUjyb4D3jt+XLH808XGMFoBF1sCLbfpsMWJOWmZ8HJ3mFKAZ6AOOAT0OAOKz1MZHgQc/V/c3KkHMcAoR+5jW2vT5AjwDPrj4RB19IgGdKgGdOkltBtAMHLRSbcyPPAPEnMLhEwlolHxDwFEvAC3APOCu2O8H8FVUa92Xu6j/zcBJ4LTIRNM36qNpqRrY62UhP+s6L6nRi2TXoB7P/VjITSb+XcDOWAIoh/fhE11oCLhtfZRrQCPwWI4PHNMbTpKlq6T/BvB8LACkXBaTXZ3k7wD9wDZRnwG2WgkuCqyx8Q9ZJeWgNYAyYCXQBbRG0oDd/CfpNFp1UI1SuXtQ7nXi0+LYd5I2q4HOeJ72SmnodPHZLsfDPQ592oA1DnI/rRJrkKnI0j6PkwVlPfRJWrdDz/ZbAwzJBNXAFg+ABqvkTrmAW+zS7hOBepGV1Eqmqe1DuQ57BPkBq5V/AY5ac/oB+CXtmZwzSnPaSWjpZJqGvNwJwO7gloC3wIEoAMqlxNabDsGlyI4j+0X9Ax+NrJTjy+UMo6xD2SZRdzAWJ/RYptOQrO9AHEDKRPVAWxYIQJe0oDWP1CSfT1vEWvExzL4AAMRviJFz3mTF9YRbwCz5tnkaZ+u7UeY45AZALXTOKhWvVidXpxmrbtXaqBMfXa7uGrQQQACm3O4AqmzmPQysdHk7p1vNlKNPEnAUcRnYV04jzMIbbSAAAAAASUVORK5CYII=';
+
+        const bananaImg = new Image();
+        bananaImg.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEkUlEQVR4nO2ZaYhWVRjHf+M4pZm2aGa2mC0upZmWRdFCTB8KghbID9GHvoQFRUSLFUREUAS1fCmKIiKyaIOiKNpJW8xskZpCM51xq3HJGUtnlL/c4Txy3/vOve+dGUf7w4P3vOec5zzPOc9znvOcC/szFRgNHA8MAwYAfYBKoEjfFUAvoH/6rOcOBY4FRgInAacDI4D+wIFAD6AIOBm4ApgGzAZeBT4A1gPbgCZgf2oBDgMuBu4H3gWqgB3ALmAv0JKyrbFtNnRbgK+Ad4DHgInAMUC3vAZQgE3qFGAR8AewV0btgToKpNk2ADXAm8CVsuuMjEz1Bm4CvtJvbRL9RHa0s+wGVgNPAGcBPQt1/gDgGuBzYA/QDFSrz+F5OO5ubg/wFfAcMDmoQo/vqU6c74w3Ak8CZ+RpQFtUJAM/Cf8vhR1NrO/AZI+4DsBt2LKlk53PSkcv9SXQq1DnPeq0yhiPkzNnazUsBNqtAKpzOOWR/xZoLNTxGKUpM78PuEv9OszoOPxALQf+jTmkUZPQKclrbxdaDnwK3A6MAHopuF4APpYD+4A7lQsclFfgMmTEOtktuECckkfoHRXgJDAJmA/sVm4ZmxWZd7QGzdDI9wJe15xYzbS1TkOBb2QsEeRgPeOgNUbZyffUZn93FfCz2p8D+nhGfow5MsYC4GbgXyVAz4RHpDtwtc7GZjHN65+hKNjrFkbsBNwt58lAMrWz9S7FRDJb+TzwB3A9cGAH5w/JwVbgjpgIbFX/CzxG+FPa7wFGa4JmaJK7/+sU23eU8GN2gBrN5vxAhD8g/kcVDJA9V8Qkdn8a5D7gRPFXavQdC6nU82uB85X4ItzPbOwZUTDdR1GHpHBtJCUuE26bMq0BpFhzhI8Lz9Qg/Q+9m0SslnXfGDN7v4g3Kmg6MukPiG/HrAo8S/yxiozs1m8D8Jz03p5X1Ga03TJQW7LnJkUcAY9o/2kzUK/ORyKR6AxUic+O4EZga8SnK2L8TZDOAQbqfb/KlKRw4QrUBZwPeQZOFI9fYjj8sPg9lLSV2x5wGp38WxE+SrwnakXP1ArcpHe7j92KyHHqNBNt5bYHzOiKwOxHuEP8Y7Xf9rn5+FGGvgUejImAbe+t1BaoVj8sMoWNwq8OJqgsfF+l8+VK3SGq9N6SBwypEm8n7TpNCJeKP1XPprKuE+V3jtbMEuBMTUBLhLcqLySB8xXxOhB2ZO4Qf534e5QgLwWGRzbnQe3t88RfL8N8AewX7yKVI52HRTNwXmD0XPGbZCBPV6yUv6FnI3ILcHGEt1KleznpwmW/0uuRkbtRm93BLZjdfaKK7FDxlhD9PU/b04rRv2JmnBXFAyqxWxUtDU2RK3WnCszCDuhBuieH84ZvVCq0JQs7YGXzZWpLs7VB8Hkp5tIg0sSCkV3rX6CYt1NipfJ/khFb/Pk6MfZ9n1cG2KXFmlOVEoKK5F8FNgpJUlHk6tQdO0pTqzxQpyRnJz+Jm9y4gumgiD6xwsRCrV2w1KhosCplQwpO/wE+Xes9pizW0gAAAABJRU5ErkJggg==';
+
+        const obstacleImg = new Image();
+        obstacleImg.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADWElEQVR4nO2ZS0hUURjHf5ppWpr2flnRg6KHWdGiwCAIoihaJG2iB0HQok0urFVCiwjaVLsIgiLaFAVFDyGJFkEUlVEvtF5kplGWaToz038u34XDdO/MnXPn3psw/uFyZ+75vv/5n+9859zvQhd+BqYAnYAPTAKOAIVEIwOB+cAc4ICSIsBdYBvwHDATgFLgNlAH/ASGAWeAQl8HGaclcoOAZUAT8Bw4pSSjUIxE6oF8RgDtQClwDugLvPUxkAXA9yTO9QQaxQU36mVg2GNgUorOYWWgFagGvtiCuAtMBEqA8QpPL+Z6OmeyCTwEpgKvgXyv1tTKhUnAYuAtUAkUAzHgI3BeW+wQMA0YDkwHvjr6mQtcAyZ7ZcaMNLAVmK7fRsT8VwOMAkbq4PgO1FklFQXM+TDLigc98c82PgQKkrQvAz4Asz2UKQO2q0MbZw8Cpqo75RvLWngnxlH1+iosDwMtQDswJ0IH+uvwWuglHAiYFBmY5+pAr06+dGK2eFhJGnzMPAx8sWxkI6bxfeA1cAEo7KQT5h7eAFQoGrPEDUx4Vqe4RLLwMMc0v6mIvbJsXGV9HghM1OFY39lhRCTQX+c1cBh4YdlYbX0eABx12CqWPBJYpQS2OtqvtfNJ0EUksFkJrHO0N1vkp6PtSKBCvDQRKHO0n2D5fP8vBMzqNQKlzg7sy54s+CAJmGcKxlEnK//rBHLEaAQOADtd/a8TqPETgeXAY929vZQkEsjRnH8JTIn92V9yGilFQWCxbmVbtKV8bRVzCi8CkEgEfoXshCnDc5LE6PwgKgKtwbYXHoH9wKxOBtCQ4QQea9C+t4oFwL0MCDxQmfXyAjN+8xtM4KJGutO6Q7+b6QRea5D+qcLB2N4MJPBOZdU/KxFMDnmdgQTMFhprDzxX1Uy8Yv4nAvZLr1i74z+xTOt2fgYQ+BK23Uz+sEa8FdgKbEkjgVqVDdcOCjBbLiYqGfN+ZU2aCNyLkr/9rHSN/t7QnLvTQKBGZfb5qPSx45
