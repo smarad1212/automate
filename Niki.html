@@ -1,0 +1,307 @@
+Certainly! I'll create a new lesson for Niki, taking into account her previous lesson and ensuring variety. Here's the complete HTML document for the new lesson:
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>שיעור לניקי בברצלונה</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 800px;
+            width: 100%;
+        }
+        h1 {
+            color: #4a4a4a;
+            text-align: center;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .progress {
+            width: 0%;
+            height: 100%;
+            background-color: #4CAF50;
+            border-radius: 10px;
+            transition: width 0.5s ease-in-out;
+        }
+        .task {
+            display: none;
+            margin-bottom: 20px;
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .highlight {
+            background-color: #FFFF00;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        #timer {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4a4a4a;
+            margin-bottom: 20px;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>שיעור לניקי בברצלונה 🇪🇸</h1>
+        <div id="timer">40:00</div>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        
+        <div id="task1" class="task">
+            <h2>1. קריאה על כלבים בברצלונה 🐕</h2>
+            <p>ברצלונה היא עיר ידידותית לכלבים! בפארקים רבים בעיר יש <span class="highlight">אזורים מיוחדים לכלבים</span> שבהם הם יכולים לרוץ ולשחק בחופשיות. ישנם גם <span class="highlight">חופי ים מיוחדים לכלבים</span> שבהם מותר להם להתרחץ. תושבי ברצלונה אוהבים מאוד את הכלבים שלהם ולוקחים אותם איתם למסעדות ולחנויות רבות.</p>
+            <img src="https://images.unsplash.com/photo-1577489374797-ad9ed2f6c83e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZG9nLEJhcmNlbG9uYXx8fHx8fDE2ODc3ODgxMDE&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" alt="כלב בברצלונה">
+            <p>שאלה: איפה יכולים כלבים לשחק בחופשיות בברצלונה?</p>
+            <input type="text" id="answer1" placeholder="הקלד את תשובתך כאן">
+            <button onclick="checkAnswer(1)">בדוק תשובה</button>
+            <button onclick="nextTask(1)">המשך</button>
+        </div>
+
+        <div id="task2" class="task">
+            <h2>2. חשבון: כמה כלבים בפארק? 🧮</h2>
+            <p>בפארק בברצלונה יש 3 קבוצות של כלבים:</p>
+            <ul>
+                <li>קבוצה 1: 5 כלבים</li>
+                <li>קבוצה 2: 4 כלבים</li>
+                <li>קבוצה 3: 6 כלבים</li>
+            </ul>
+            <p>כמה כלבים יש בסך הכל בפארק?</p>
+            <input type="number" id="answer2" placeholder="הקלד את תשובתך כאן">
+            <button onclick="checkAnswer(2)">בדוק תשובה</button>
+            <button onclick="nextTask(2)">המשך</button>
+        </div>
+
+        <div id="task3" class="task">
+            <h2>3. אנגלית: מילים הקשורות לכלבים 🐾</h2>
+            <p>בוא נלמד כמה מילים באנגלית הקשורות לכלבים:</p>
+            <ul>
+                <li>כלב = <span class="highlight">Dog</span></li>
+                <li>גור = <span class="highlight">Puppy</span></li>
+                <li>נביחה = <span class="highlight">Bark</span></li>
+                <li>רצועה = <span class="highlight">Leash</span></li>
+            </ul>
+            <p>עכשיו, תוכל לכתוב את המילה באנגלית ל"כלב"?</p>
+            <input type="text" id="answer3" placeholder="הקלד את תשובתך כאן">
+            <button onclick="checkAnswer(3)">בדוק תשובה</button>
+            <button onclick="nextTask(3)">המשך</button>
+        </div>
+
+        <div id="task4" class="task">
+            <h2>4. חינוך פיננסי: חיסכון לצרכי הכלב 💰</h2>
+            <p>נניח שאת רוצה לקנות צעצוע חדש לכלב. הצעצוע עולה 20 שקלים. יש לך כבר 12 שקלים בקופת החיסכון שלך.</p>
+            <p>כמה כסף עוד את צריכה לחסוך כדי לקנות את הצעצוע?</p>
+            <input type="number" id="answer4" placeholder="הקלד את תשובתך כאן">
+            <button onclick="checkAnswer(4)">בדוק תשובה</button>
+            <button onclick="nextTask(4)">סיים שיעור</button>
+        </div>
+
+        <div id="summary" class="task">
+            <h2>סיכום השיעור</h2>
+            <p>כל הכבוד, ניקי! סיימת את השיעור. הנה סיכום של הביצועים שלך:</p>
+            <ul id="summaryList"></ul>
+            <button onclick="resetLesson()">התחל שיעור מחדש</button>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <h2 id="popupTitle"></h2>
+        <p id="popupContent"></p>
+        <button onclick="closePopup()">סגור</button>
+    </div>
+
+    <script>
+        let currentTask = 1;
+        let totalTasks = 4;
+        let answers = {
+            1: "בפארקים",
+            2: 15,
+            3: "dog",
+            4: 8
+        };
+        let results = {};
+
+        function showTask(taskNum) {
+            for (let i = 1; i <= totalTasks; i++) {
+                document.getElementById(`task${i}`).style.display = 'none';
+            }
+            document.getElementById(`task${taskNum}`).style.display = 'block';
+            document.getElementById('summary').style.display = 'none';
+            updateProgress();
+        }
+
+        function nextTask(taskNum) {
+            if (taskNum < totalTasks) {
+                currentTask++;
+                showTask(currentTask);
+            } else {
+                showSummary();
+            }
+        }
+
+        function checkAnswer(taskNum) {
+            let userAnswer = document.getElementById(`answer${taskNum}`).value.trim().toLowerCase();
+            let correctAnswer = answers[taskNum];
+            if (typeof correctAnswer === 'string') {
+                correctAnswer = correctAnswer.toLowerCase();
+            }
+            results[taskNum] = (userAnswer == correctAnswer);
+            
+            let popupTitle = results[taskNum] ? "כל הכבוד! 🎉" : "כמעט... 😊";
+            let popupContent = results[taskNum] ? "התשובה שלך נכונה!" : `התשובה הנכונה היא: ${answers[taskNum]}`;
+            
+            showPopup(popupTitle, popupContent);
+            updateProgress();
+        }
+
+        function updateProgress() {
+            let progress = (currentTask - 1) / totalTasks * 100;
+            document.getElementById('progress').style.width = `${progress}%`;
+        }
+
+        function showSummary() {
+            document.getElementById(`task${totalTasks}`).style.display = 'none';
+            let summary = document.getElementById('summary');
+            summary.style.display = 'block';
+            let summaryList = document.getElementById('summaryList');
+            summaryList.innerHTML = '';
+            for (let i = 1; i <= totalTasks; i++) {
+                let li = document.createElement('li');
+                li.textContent = `משימה ${i}: ${results[i] ? 'נכון ✅' : 'לא נכון ❌'}`;
+                summaryList.appendChild(li);
+            }
+            updateProgress();
+        }
+
+        function resetLesson() {
+            currentTask = 1;
+            results = {};
+            for (let i = 1; i <= totalTasks; i++) {
+                document.getElementById(`answer${i}`).value = '';
+            }
+            showTask(currentTask);
+            resetTimer();
+        }
+
+        function showPopup(title, content) {
+            document.getElementById('popupTitle').textContent = title;
+            document.getElementById('popupContent').textContent = content;
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            let interval = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    clearInterval(interval);
+                    showPopup("הזמן נגמר!", "השיעור הסתיים. כל הכבוד על ההשתתפות!");
+                }
+            }, 1000);
+            return interval;
+        }
+
+        let timerInterval;
+        function resetTimer() {
+            clearInterval(timerInterval);
+            let display = document.querySelector('#timer');
+            timerInterval = startTimer(40 * 60, display);
+        }
+
+        showTask(currentTask);
+        resetTimer();
+    </script>
+</body>
+</html>
