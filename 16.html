@@ -1,0 +1,306 @@
+Certainly! I'll create a new lesson for 16, taking into account the previous lesson to ensure variety. Here's a complete HTML document with the lesson plan:
+
+```html
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>שיעור ל16 בלונדון</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #4a4a4a;
+            text-align: center;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .progress {
+            width: 0%;
+            height: 20px;
+            background-color: #4CAF50;
+            border-radius: 5px;
+            transition: width 0.5s ease-in-out;
+        }
+        .task {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        .task.active {
+            display: block;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .highlight {
+            background-color: #ffff99;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        #timer {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>שיעור ל16 בלונדון 🇬🇧</h1>
+        <div id="timer">40:00</div>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        
+        <div id="task1" class="task active">
+            <h2>1. קריאה: תעשיית יצירת התוכן בלונדון 📱</h2>
+            <p>לונדון היא אחת הערים המובילות בעולם בתחום <span class="highlight">יצירת התוכן</span>. רבים מהיוצרים המצליחים ביותר ב<span class="highlight">יוטיוב</span>, <span class="highlight">אינסטגרם</span> ו<span class="highlight">טיקטוק</span> מבססים את פעילותם בעיר זו. הסיבה לכך היא שלונדון מציעה תשתית מצוינת ליוצרי תוכן, כולל אולפני צילום מתקדמים, לוקיישנים מגוונים, וקהילה תוססת של יוצרים. בנוסף, חברות רבות המתמחות ב<span class="highlight">שיווק דיגיטלי</span> ו<span class="highlight">ניהול השפעה</span> ממוקמות בלונדון, מה שמקל על יוצרי תוכן לבנות קריירה מצליחה.</p>
+            <button onclick="nextTask()">המשך</button>
+        </div>
+
+        <div id="task2" class="task">
+            <h2>2. אנגלית: מילים חשובות בתעשיית התוכן 🎥</h2>
+            <p>התאם את המילים באנגלית למשמעותן בעברית:</p>
+            <ol>
+                <li>1. Content Creator</li>
+                <li>2. Influencer</li>
+                <li>3. Engagement</li>
+                <li>4. Viral</li>
+                <li>5. Monetization</li>
+            </ol>
+            <p>א. מעורבות</p>
+            <p>ב. יוצר תוכן</p>
+            <p>ג. ויראלי</p>
+            <p>ד. מוניטיזציה</p>
+            <p>ה. משפיען</p>
+            <textarea id="matchingAnswer" rows="5" placeholder="רשום את התשובות שלך כאן (לדוגמה: 1-ב, 2-ה, ...)"></textarea>
+            <button onclick="checkMatching()">בדוק תשובה</button>
+            <button onclick="nextTask()">המשך</button>
+        </div>
+
+        <div id="task3" class="task">
+            <h2>3. מתמטיקה: חישוב הכנסות מיצירת תוכן 💰</h2>
+            <p>נניח שאתה יוצר תוכן ביוטיוב. אתה מעלה 3 סרטונים בשבוע, וכל סרטון מקבל בממוצע 50,000 צפיות. אם ההכנסה הממוצעת ל-1000 צפיות היא 2 דולר, כמה תרוויח בחודש?</p>
+            <p>שלבים לפתרון:</p>
+            <ol>
+                <li>חשב כמה סרטונים תעלה בחודש</li>
+                <li>חשב כמה צפיות תקבל בסך הכל בחודש</li>
+                <li>חשב את ההכנסה לפי מספר הצפיות</li>
+            </ol>
+            <input type="number" id="incomeAnswer" placeholder="הכנס את התשובה בדולרים">
+            <button onclick="checkIncome()">בדוק תשובה</button>
+            <button onclick="nextTask()">המשך</button>
+        </div>
+
+        <div id="task4" class="task">
+            <h2>4. חינוך פיננסי: תמחור שירותי יצירת תוכן 📊</h2>
+            <p>כיוצר תוכן, חשוב לדעת לתמחר את השירותים שלך. הנה כמה גורמים שיש לקחת בחשבון:</p>
+            <ul>
+                <li>זמן העבודה</li>
+                <li>עלויות ציוד</li>
+                <li>מומחיות וניסיון</li>
+                <li>גודל הקהל של הלקוח</li>
+                <li>זכויות שימוש בתוכן</li>
+            </ul>
+            <p>משימה: תאר בקצרה כיצד היית מתמחר פרויקט של יצירת סרטון פרסומת קצר עבור מותג אופנה. התייחס לכל הגורמים שהוזכרו.</p>
+            <textarea id="pricingStrategy" rows="6" placeholder="כתוב את אסטרטגיית התמחור שלך כאן..."></textarea>
+            <button onclick="nextTask()">סיים שיעור</button>
+        </div>
+
+        <div id="summary" class="task">
+            <h2>סיכום השיעור 🎓</h2>
+            <p>כל הכבוד! סיימת את השיעור. הנה סיכום של הביצועים שלך:</p>
+            <ul id="summaryList"></ul>
+            <button onclick="restartLesson()">התחל שיעור מחדש</button>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <h2 id="popupTitle"></h2>
+        <p id="popupContent"></p>
+        <button onclick="closePopup()">סגור</button>
+    </div>
+
+    <script>
+        let currentTask = 1;
+        let totalTasks = 4;
+        let results = {};
+        let timer;
+
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            let countdown = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    clearInterval(countdown);
+                    display.textContent = "הזמן נגמר!";
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            let fortyMinutes = 40 * 60,
+                display = document.querySelector('#timer');
+            startTimer(fortyMinutes, display);
+        };
+
+        function updateProgress() {
+            let progress = (currentTask - 1) / totalTasks * 100;
+            document.getElementById('progress').style.width = progress + '%';
+        }
+
+        function nextTask() {
+            document.getElementById('task' + currentTask).classList.remove('active');
+            currentTask++;
+            if (currentTask <= totalTasks) {
+                document.getElementById('task' + currentTask).classList.add('active');
+                updateProgress();
+            } else {
+                showSummary();
+            }
+        }
+
+        function checkMatching() {
+            let answer = document.getElementById('matchingAnswer').value.toLowerCase();
+            let correctAnswer = "1-ב, 2-ה, 3-א, 4-ג, 5-ד";
+            let isCorrect = answer === correctAnswer.toLowerCase();
+            results['מילים באנגלית'] = isCorrect ? "נכון" : "לא נכון";
+            showPopup(isCorrect ? "כל הכבוד!" : "לא מדויק", isCorrect ? "התשובה שלך נכונה!" : "התשובה הנכונה היא: " + correctAnswer);
+        }
+
+        function checkIncome() {
+            let answer = document.getElementById('incomeAnswer').value;
+            let correctAnswer = 1200; // 3 videos * 4 weeks * 50,000 views * $2 per 1000 views
+            let isCorrect = parseInt(answer) === correctAnswer;
+            results['חישוב הכנסות'] = isCorrect ? "נכון" : "לא נכון";
+            showPopup(isCorrect ? "מצוין!" : "כמעט", isCorrect ? "חישבת נכון!" : "התשובה הנכונה היא $1200. נסה לחשב שוב!");
+        }
+
+        function showPopup(title, content) {
+            document.getElementById('popupTitle').textContent = title;
+            document.getElementById('popupContent').textContent = content;
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        function showSummary() {
+            document.getElementById('task' + totalTasks).classList.remove('active');
+            document.getElementById('summary').classList.add('active');
+            updateProgress();
+
+            let summaryList = document.getElementById('summaryList');
+            for (let task in results) {
+                let li = document.createElement('li');
+                li.textContent = `${task}: ${results[task]}`;
+                summaryList.appendChild(li);
+            }
+
+            let pricingStrategy = document.getElementById('pricingStrategy').value;
+            if (pricingStrategy) {
+                let li = document.createElement('li');
+                li.textContent = "אסטרטגיית תמחור: הוגשה";
+                summaryList.appendChild(li);
+            }
+        }
+
+        function restartLesson() {
+            currentTask = 1;
+            results = {};
+            document.getElementById('summary').classList.remove('active');
+            document.getElementById('task1').classList.add('active');
+            updateProgress();
+            document.getElementById('summaryList').innerHTML = '';
+            document.getElementById('matchingAnswer').value = '';
+            document.getElementById('incomeAnswer').value = '';
+            document.getElementById('pricingStrategy').value = '';
+        }
+
+        updateProgress();
+    </script>
+</body>
+</html>
+```
+
+This lesson is designed for 16, focusing on content creation in London. It includes activities related to English language skills, mathematics for calculating content creator income, and financial education for pricing content creation services. The lesson is interactive, engaging, and tailored to the interests and location provided.
