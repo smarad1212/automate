@@ -1,0 +1,319 @@
+Certainly! I'll create a new lesson for David Ziti based on the information you provided. Here's the complete HTML document for the lesson:
+
+```html
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>שיעור לדוד זיתי בברצלונה</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #4a4a4a;
+            text-align: center;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .progress {
+            width: 0%;
+            height: 20px;
+            background-color: #4CAF50;
+            border-radius: 5px;
+            transition: width 0.5s ease-in-out;
+        }
+        .task {
+            background-color: #e6f3ff;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: none;
+        }
+        .task h2 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .highlight {
+            background-color: #ffff99;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        #timer {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .popup-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>שיעור לדוד זיתי בברצלונה 🇪🇸</h1>
+        <div id="timer">40:00</div>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        
+        <div class="task" id="task1">
+            <h2>קריאה: סגרדה פמיליה 📚</h2>
+            <p>קרא את הקטע הבא על אחד מסמלי העיר ברצלונה:</p>
+            <p>
+            <span class="highlight">הסגרדה פמיליה</span> היא כנסייה מפורסמת בברצלונה, ספרד. היא תוכננה על ידי האדריכל המפורסם <span class="highlight">אנטוני גאודי</span>. הבנייה החלה בשנת 1882 ועדיין נמשכת עד היום! הכנסייה מתאפיינת בסגנון ייחודי המשלב אלמנטים מהטבע עם צורות גיאומטריות מורכבות. הסגרדה פמיליה היא אחד האתרים המתויירים ביותר בספרד ומושכת מיליוני מבקרים בכל שנה.
+            </p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Sagrada_Familia_2021.jpg/640px-Sagrada_Familia_2021.jpg" alt="הסגרדה פמיליה">
+            <button onclick="nextTask()">המשך</button>
+        </div>
+
+        <div class="task" id="task2">
+            <h2>מתמטיקה: חישוב שטח 🔢</h2>
+            <p>דמיין שאתה מתכנן שולחן סנוקר מלבני. אורך השולחן הוא 3.5 מטרים ורוחבו 1.75 מטרים.</p>
+            <p>מה השטח של שולחן הסנוקר במטרים רבועים?</p>
+            <input type="number" id="areaAnswer" step="0.01">
+            <button onclick="checkArea()">בדוק תשובה</button>
+            <button onclick="nextTask()">המשך</button>
+        </div>
+
+        <div class="task" id="task3">
+            <h2>אנגלית: כלי נגרות 🔨</h2>
+            <p>התאם בין כלי הנגרות באנגלית לתרגומם בעברית:</p>
+            <ol>
+                <li>Hammer - <input type="text" id="tool1"></li>
+                <li>Saw - <input type="text" id="tool2"></li>
+                <li>Screwdriver - <input type="text" id="tool3"></li>
+                <li>Chisel - <input type="text" id="tool4"></li>
+            </ol>
+            <button onclick="checkTools()">בדוק תשובות</button>
+            <button onclick="nextTask()">המשך</button>
+        </div>
+
+        <div class="task" id="task4">
+            <h2>חינוך פיננסי: תקציב לטיול 💰</h2>
+            <p>אתה מתכנן טיול בברצלונה עם המשפחה. יש לך תקציב של 1000 יורו לבילויים.</p>
+            <p>כרטיס כניסה לסגרדה פמיליה עולה 25 יורו לאדם. אתם משפחה של 4 נפשות.</p>
+            <p>כמה כסף יישאר לכם לבילויים אחרים אחרי הביקור בסגרדה פמיליה?</p>
+            <input type="number" id="budgetAnswer">
+            <button onclick="checkBudget()">בדוק תשובה</button>
+            <button onclick="nextTask()">סיים שיעור</button>
+        </div>
+    </div>
+
+    <div id="summaryPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closeSummary()">&times;</span>
+            <h2>סיכום השיעור</h2>
+            <div id="summaryContent"></div>
+        </div>
+    </div>
+
+    <script>
+        let currentTask = 1;
+        let totalTasks = 4;
+        let taskResults = {};
+        let timerInterval;
+
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            timerInterval = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    clearInterval(timerInterval);
+                    display.textContent = "הזמן נגמר!";
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            let fortyMinutes = 40 * 60,
+                display = document.querySelector('#timer');
+            startTimer(fortyMinutes, display);
+            showTask(currentTask);
+        };
+
+        function showTask(taskNumber) {
+            document.querySelectorAll('.task').forEach(task => task.style.display = 'none');
+            document.getElementById('task' + taskNumber).style.display = 'block';
+            updateProgress();
+        }
+
+        function nextTask() {
+            if (currentTask < totalTasks) {
+                currentTask++;
+                showTask(currentTask);
+            } else {
+                showSummary();
+            }
+        }
+
+        function updateProgress() {
+            let progress = (currentTask - 1) / totalTasks * 100;
+            document.getElementById('progress').style.width = progress + '%';
+        }
+
+        function checkArea() {
+            let answer = document.getElementById('areaAnswer').value;
+            let correctAnswer = 3.5 * 1.75;
+            taskResults['task2'] = {
+                question: "מה השטח של שולחן הסנוקר?",
+                userAnswer: answer,
+                correctAnswer: correctAnswer.toFixed(2),
+                correct: Math.abs(answer - correctAnswer) < 0.01
+            };
+            alert(taskResults['task2'].correct ? "נכון מאוד!" : "לא נכון. נסה שוב!");
+        }
+
+        function checkTools() {
+            let answers = {
+                tool1: "פטיש",
+                tool2: "מסור",
+                tool3: "מברג",
+                tool4: "אזמל"
+            };
+            let correct = true;
+            for (let tool in answers) {
+                let userAnswer = document.getElementById(tool).value.trim().toLowerCase();
+                if (userAnswer !== answers[tool]) {
+                    correct = false;
+                    break;
+                }
+            }
+            taskResults['task3'] = {
+                question: "התאמת כלי נגרות",
+                correct: correct
+            };
+            alert(correct ? "כל התשובות נכונות!" : "יש טעויות. בדוק שוב!");
+        }
+
+        function checkBudget() {
+            let answer = document.getElementById('budgetAnswer').value;
+            let correctAnswer = 1000 - (25 * 4);
+            taskResults['task4'] = {
+                question: "כמה כסף יישאר אחרי הביקור בסגרדה פמיליה?",
+                userAnswer: answer,
+                correctAnswer: correctAnswer,
+                correct: parseInt(answer) === correctAnswer
+            };
+            alert(taskResults['task4'].correct ? "נכון מאוד!" : "לא נכון. נסה שוב!");
+        }
+
+        function showSummary() {
+            clearInterval(timerInterval);
+            let summaryContent = "<ul>";
+            for (let task in taskResults) {
+                let result = taskResults[task];
+                summaryContent += "<li>";
+                summaryContent += result.question + ": ";
+                if (result.correct) {
+                    summaryContent += "✅ נכון";
+                } else {
+                    summaryContent += "❌ לא נכון";
+                    if (result.correctAnswer) {
+                        summaryContent += ". התשובה הנכונה: " + result.correctAnswer;
+                    }
+                }
+                summaryContent += "</li>";
+            }
+            summaryContent += "</ul>";
+            document.getElementById('summaryContent').innerHTML = summaryContent;
+            document.getElementById('summaryPopup').style.display = 'block';
+        }
+
+        function closeSummary() {
+            document.getElementById('summaryPopup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+```
+
+This HTML document contains a complete lesson plan for David Ziti, tailored to his interests and location in Barcelona. The lesson includes reading about the Sagrada Familia, a math problem related to snooker, an English exercise about carpentry tools, and a financial education task about budgeting for a trip in Barcelona. The lesson is interactive, with a timer, progress bar, and a summary at the end. It's designed to be engaging and suitable for a child with ADHD, with varied activities and visual elements.
