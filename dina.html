@@ -1,0 +1,271 @@
+Certainly! I'll create a new lesson for Dina, taking into account her location, age, hobbies, and the day of the week. I'll make sure this lesson is different from the previous one to maintain variety and engagement. Here's the complete HTML document for the new lesson:
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>שיעור לדינה בקו פנגן</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 800px;
+            width: 100%;
+        }
+        h1 {
+            color: #4b0082;
+            text-align: center;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .progress {
+            width: 0;
+            height: 20px;
+            background-color: #4caf50;
+            border-radius: 10px;
+            transition: width 0.5s ease-in-out;
+        }
+        .task {
+            background-color: #e6e6fa;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: none;
+        }
+        .highlight {
+            background-color: #ffff00;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        button {
+            background-color: #4b0082;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #6a5acd;
+        }
+        input, select {
+            font-size: 16px;
+            padding: 5px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            touch-action: manipulation;
+        }
+        #timer {
+            font-size: 20px;
+            font-weight: bold;
+            color: #4b0082;
+            margin-bottom: 10px;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>שיעור לדינה בקו פנגן 🏝️</h1>
+        <div id="timer">40:00</div>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        
+        <div id="task1" class="task">
+            <h2>קריאה: תרבות יפנית בתאילנד 🇯🇵🇹🇭</h2>
+            <p>תאילנד וקו פנגן מושפעים מאוד מהתרבות היפנית. רבים מהתיירים ביפן הם תאילנדים, ורבים מהתיירים בתאילנד הם יפנים. השפעת התרבות היפנית ניכרת במסעדות <span class="highlight">סושי</span>, חנויות <span class="highlight">מנגה</span>, ואפילו ב<span class="highlight">אונסן</span> (מעיינות חמים) שניתן למצוא באיים התאילנדיים. בקו פנגן, תוכלי למצוא מסעדות יפניות ואפילו ללמוד <span class="highlight">אוריגמי</span> בסדנאות מיוחדות!</p>
+            <p>שאלה: מה מהבאים אינו קשור לתרבות היפנית שהוזכרה בקטע?</p>
+            <select id="question1">
+                <option value="">בחרי תשובה</option>
+                <option value="sushi">סושי</option>
+                <option value="manga">מנגה</option>
+                <option value="onsen">אונסן</option>
+                <option value="golf">גולף</option>
+            </select>
+            <button onclick="checkAnswer(1)">בדיקה</button>
+        </div>
+
+        <div id="task2" class="task">
+            <h2>מתמטיקה: כדורסל וגולף ⛹️‍♀️🏌️‍♀️</h2>
+            <p>דינה משחקת כדורסל וגולף. ביום שלישי, היא שיחקה כדורסל במשך 45 דקות ואחר כך גולף במשך 30 דקות.</p>
+            <p>1. כמה דקות בסך הכל שיחקה דינה?</p>
+            <input type="number" id="math1">
+            <p>2. אם דינה רוצה לשחק בסך הכל שעתיים של ספורט, כמה דקות נשארו לה?</p>
+            <input type="number" id="math2">
+            <button onclick="checkAnswer(2)">בדיקה</button>
+        </div>
+
+        <div id="task3" class="task">
+            <h2>אנגלית: ספורט בקו פנגן 🏝️🏀</h2>
+            <p>השלימי את המשפטים באנגלית:</p>
+            <p>1. In Koh Phangan, I can play ________ on the beach.</p>
+            <input type="text" id="english1">
+            <p>2. After playing sports, I like to ______ in the sea.</p>
+            <input type="text" id="english2">
+            <p>3. The weather in Koh Phangan is usually very ______.</p>
+            <input type="text" id="english3">
+            <button onclick="checkAnswer(3)">בדיקה</button>
+        </div>
+
+        <div id="task4" class="task">
+            <h2>סיכום השיעור</h2>
+            <p>כל הכבוד, דינה! סיימת את השיעור. הנה סיכום של הביצועים שלך:</p>
+            <ul id="summary"></ul>
+            <button onclick="finishLesson()">סיום השיעור</button>
+        </div>
+
+        <button id="nextButton" onclick="nextTask()">המשימה הבאה</button>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <h2 id="popupTitle"></h2>
+        <p id="popupContent"></p>
+        <button onclick="closePopup()">סגירה</button>
+    </div>
+
+    <script>
+        let currentTask = 0;
+        const totalTasks = 3;
+        let answers = {
+            1: false,
+            2: false,
+            3: false
+        };
+
+        function nextTask() {
+            if (currentTask < totalTasks) {
+                document.getElementById(`task${currentTask + 1}`).style.display = 'none';
+                currentTask++;
+                document.getElementById(`task${currentTask + 1}`).style.display = 'block';
+                updateProgress();
+            }
+            if (currentTask === totalTasks) {
+                document.getElementById('nextButton').style.display = 'none';
+                document.getElementById('task4').style.display = 'block';
+                showSummary();
+            }
+        }
+
+        function updateProgress() {
+            const progress = (currentTask / totalTasks) * 100;
+            document.getElementById('progress').style.width = `${progress}%`;
+        }
+
+        function checkAnswer(taskNumber) {
+            switch(taskNumber) {
+                case 1:
+                    const answer1 = document.getElementById('question1').value;
+                    answers[1] = answer1 === 'golf';
+                    showPopup(answers[1] ? "כל הכבוד!" : "לא בדיוק", answers[1] ? "תשובה נכונה! גולף אינו קשור לתרבות היפנית שהוזכרה בקטע." : "נסי שוב. חשבי על הדברים שהוזכרו בקטע והקשר שלהם לתרבות היפנית.");
+                    break;
+                case 2:
+                    const math1 = parseInt(document.getElementById('math1').value);
+                    const math2 = parseInt(document.getElementById('math2').value);
+                    answers[2] = math1 === 75 && math2 === 45;
+                    showPopup(answers[2] ? "מצוין!" : "כמעט", answers[2] ? "חישבת נכון! דינה שיחקה 75 דקות בסך הכל, ונשארו לה עוד 45 דקות." : "בדקי שוב את החישובים שלך. זכרי, שעתיים הן 120 דקות.");
+                    break;
+                case 3:
+                    const english1 = document.getElementById('english1').value.toLowerCase();
+                    const english2 = document.getElementById('english2').value.toLowerCase();
+                    const english3 = document.getElementById('english3').value.toLowerCase();
+                    answers[3] = english1 === 'basketball' && english2 === 'swim' && english3 === 'hot';
+                    showPopup(answers[3] ? "נהדר!" : "כמעט שם", answers[3] ? "השלמת נכון את כל המשפטים באנגלית." : "בדקי שוב את התשובות שלך. חשבי על ספורט שאפשר לשחק על החוף, מה כיף לעשות בים, ואיך מזג האוויר בקו פנגן.");
+                    break;
+            }
+        }
+
+        function showPopup(isCorrect, message) {
+            document.getElementById('popupTitle').textContent = isCorrect ? "כל הכבוד! 🎉" : "נסי שוב 🤔";
+            document.getElementById('popupContent').textContent = message;
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        function showSummary() {
+            const summary = document.getElementById('summary');
+            summary.innerHTML = '';
+            for (let i = 1; i <= totalTasks; i++) {
+                const li = document.createElement('li');
+                li.textContent = `משימה ${i}: ${answers[i] ? 'הושלמה בהצלחה ✅' : 'טעונה שיפור ❌'}`;
+                summary.appendChild(li);
+            }
+        }
+
+        function finishLesson() {
+            showPopup(true, "כל הכבוד על השלמת השיעור, דינה! 🎊 נתראה בשיעור הבא!");
+        }
+
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            let intervalId = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    clearInterval(intervalId);
+                    display.textContent = "הזמן נגמר!";
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            let fortyMinutes = 40 * 60,
+                display = document.querySelector('#timer');
+            startTimer(fortyMinutes, display);
+            document.getElementById('task1').style.display = 'block';
+        };
+    </script>
+</body>
+</html>
