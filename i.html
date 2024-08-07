@@ -1,0 +1,281 @@
+Here's a new lesson for אני, tailored to the provided information. The HTML document is presented below:
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>שיעור לאני בפוקט</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #4a90e2;
+            text-align: center;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .progress {
+            width: 0%;
+            height: 20px;
+            background-color: #4caf50;
+            border-radius: 5px;
+            transition: width 0.5s ease-in-out;
+        }
+        .task {
+            background-color: #e6f3ff;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: none;
+        }
+        .task.active {
+            display: block;
+        }
+        button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #357abd;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .highlight {
+            background-color: #ffff99;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        #timer {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>שיעור לאני בפוקט 🌴</h1>
+        <div id="timer">זמן נותר: 40:00</div>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+
+        <div id="task1" class="task active">
+            <h2>קריאה: חופשה בפוקט 🏖️</h2>
+            <p>פוקט היא אחד האיים היפים ביותר בתאילנד. היא ידועה בחופים הלבנים שלה, המים הצלולים והנוף המרהיב. תיירים רבים מגיעים לפוקט כדי ליהנות מהשמש, לשחות בים ולצלול. באי יש גם ג'ונגלים ירוקים ומקדשים בודהיסטים מעניינים. אחד האטרקציות המפורסמות בפוקט היא <span class="highlight">פיל הענק הלבן</span>, פסל ענק שנמצא על גבעה ונראה ממרחקים.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Karon_viewpoint_overlook.jpg/640px-Karon_viewpoint_overlook.jpg" alt="נוף של פוקט">
+            <p>שאלה: מה מיוחד בפיל הענק הלבן בפוקט?</p>
+            <input type="text" id="answer1">
+            <button onclick="checkAnswer(1)">בדוק תשובה</button>
+            <button onclick="nextTask()">המשך</button>
+        </div>
+
+        <div id="task2" class="task">
+            <h2>מתמטיקה: כדורגל בחוף 🏀⚽</h2>
+            <p>אני ואני וחבריו משחקים כדורגל בחוף. הם החליטו לשחק משחק מיוחד עם כדורי כדורגל וכדורסל.</p>
+            <ul>
+                <li>יש להם 5 כדורי כדורגל</li>
+                <li>יש להם 3 כדורי כדורסל</li>
+                <li>כל כדור כדורגל שווה 2 נקודות</li>
+                <li>כל כדור כדורסל שווה 3 נקודות</li>
+            </ul>
+            <p>כמה נקודות יש בסך הכל?</p>
+            <input type="number" id="answer2">
+            <button onclick="checkAnswer(2)">בדוק תשובה</button>
+            <button onclick="nextTask()">המשך</button>
+        </div>
+
+        <div id="task3" class="task">
+            <h2>אנגלית: מילים בחוף 🏖️</h2>
+            <p>בוא נלמד כמה מילים באנגלית הקשורות לחוף! התאם את המילה העברית למילה האנגלית המתאימה:</p>
+            <table>
+                <tr>
+                    <td>1. חול</td>
+                    <td>A. Sun</td>
+                </tr>
+                <tr>
+                    <td>2. ים</td>
+                    <td>B. Sand</td>
+                </tr>
+                <tr>
+                    <td>3. שמש</td>
+                    <td>C. Sea</td>
+                </tr>
+                <tr>
+                    <td>4. גלים</td>
+                    <td>D. Waves</td>
+                </tr>
+            </table>
+            <p>כתוב את התשובות בפורמט: 1-X, 2-X, 3-X, 4-X</p>
+            <input type="text" id="answer3">
+            <button onclick="checkAnswer(3)">בדוק תשובה</button>
+            <button onclick="nextTask()">סיים שיעור</button>
+        </div>
+
+        <div id="summary" style="display:none;">
+            <h2>סיכום השיעור</h2>
+            <p>כל הכבוד, אני! סיימת את השיעור. הנה סיכום של הביצועים שלך:</p>
+            <ul id="summaryList"></ul>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <h2 id="popupTitle"></h2>
+        <p id="popupContent"></p>
+        <button onclick="closePopup()">סגור</button>
+    </div>
+
+    <script>
+        let currentTask = 1;
+        let totalTasks = 3;
+        let timeLeft = 40 * 60; // 40 minutes in seconds
+        let timer;
+        let answers = {
+            1: "הוא פסל ענק שנראה ממרחקים",
+            2: 19,
+            3: "1-B, 2-C, 3-A, 4-D"
+        };
+        let results = {};
+
+        function startTimer() {
+            timer = setInterval(function() {
+                timeLeft--;
+                let minutes = Math.floor(timeLeft / 60);
+                let seconds = timeLeft % 60;
+                document.getElementById('timer').innerHTML = `זמן נותר: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    showSummary();
+                }
+            }, 1000);
+        }
+
+        function checkAnswer(taskNumber) {
+            let userAnswer = document.getElementById(`answer${taskNumber}`).value.trim();
+            let correctAnswer = answers[taskNumber];
+            let isCorrect = false;
+
+            if (taskNumber === 2) {
+                isCorrect = parseInt(userAnswer) === correctAnswer;
+            } else {
+                isCorrect = userAnswer.toLowerCase() === correctAnswer.toLowerCase();
+            }
+
+            results[taskNumber] = isCorrect;
+
+            showPopup(isCorrect ? "כל הכבוד!" : "לא בדיוק...", isCorrect ? "תשובה נכונה! 🎉" : `התשובה הנכונה היא: ${correctAnswer}`);
+            updateProgress();
+        }
+
+        function nextTask() {
+            if (currentTask < totalTasks) {
+                document.getElementById(`task${currentTask}`).classList.remove('active');
+                currentTask++;
+                document.getElementById(`task${currentTask}`).classList.add('active', 'fade-in');
+            } else {
+                showSummary();
+            }
+            updateProgress();
+        }
+
+        function updateProgress() {
+            let progress = (currentTask - 1) / totalTasks * 100;
+            document.getElementById('progress').style.width = `${progress}%`;
+        }
+
+        function showPopup(title, content) {
+            document.getElementById('popupTitle').textContent = title;
+            document.getElementById('popupContent').textContent = content;
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        function showSummary() {
+            clearInterval(timer);
+            for (let i = 1; i <= totalTasks; i++) {
+                document.getElementById(`task${i}`).style.display = 'none';
+            }
+            let summaryList = document.getElementById('summaryList');
+            for (let i = 1; i <= totalTasks; i++) {
+                let li = document.createElement('li');
+                li.textContent = `משימה ${i}: ${results[i] ? 'נכון ✅' : 'לא נכון ❌'}`;
+                summaryList.appendChild(li);
+            }
+            document.getElementById('summary').style.display = 'block';
+        }
+
+        startTimer();
+    </script>
+</body>
+</html>
