@@ -1,0 +1,283 @@
+Certainly! I'll create a new lesson for שיקו, taking into account the previous lesson and ensuring variety. Here's the complete HTML document for the new lesson:
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>שיעור לשיקו בקנקון</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #4a90e2;
+            text-align: center;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #e0e0e0;
+            padding: 3px;
+            border-radius: 3px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+        }
+        .progress {
+            width: 0;
+            height: 20px;
+            background-color: #4CAF50;
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+        .task {
+            background-color: #e6f3ff;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        .highlight {
+            background-color: #ffff99;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #357ab8;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+        #timer {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>שיעור לשיקו בקנקון 🏄‍♂️🌴</h1>
+        <div id="timer">40:00</div>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        
+        <div id="task1" class="task">
+            <h2>קריאה: גלישת גלים בקנקון 🏄‍♂️</h2>
+            <p>קנקון היא אחת המקומות הטובים ביותר לגלישת גלים במקסיקו. <span class="highlight">חופי קנקון</span> מציעים גלים מושלמים לגולשים מתחילים ומתקדמים. בחודשי החורף, כאשר הרוחות מזרחיות, הגלים גדולים יותר ומושכים גולשים מכל העולם. <span class="highlight">חוף פלאיה דלפינס</span> הוא אחד המקומות האהובים על גולשים, עם גלים קבועים וחול לבן.</p>
+            <img src="https://i.imgur.com/TY8kHZ6.jpg" alt="גלישת גלים בקנקון">
+            <p>שאלה: איזה חוף מוזכר בקטע כמקום אהוב על גולשים?</p>
+            <input type="text" id="answer1">
+            <button onclick="checkAnswer(1)">בדוק תשובה</button>
+            <button onclick="nextTask()">המשך</button>
+        </div>
+
+        <div id="task2" class="task">
+            <h2>מתמטיקה: חישוב מהירות גלישה 🏄‍♂️💨</h2>
+            <p>שיקו גלש מרחק של 120 מטרים ב-40 שניות. חשב את מהירות הגלישה שלו במטרים לשנייה.</p>
+            <input type="number" id="answer2" step="0.1">
+            <button onclick="checkAnswer(2)">בדוק תשובה</button>
+            <button onclick="nextTask()">המשך</button>
+        </div>
+
+        <div id="task3" class="task">
+            <h2>אנגלית: מילים הקשורות לגלישה 🌊</h2>
+            <p>התאם את המילים באנגלית למשמעותן בעברית:</p>
+            <ol>
+                <li>Surfboard - <input type="text" id="answer3a"></li>
+                <li>Wave - <input type="text" id="answer3b"></li>
+                <li>Beach - <input type="text" id="answer3c"></li>
+            </ol>
+            <button onclick="checkAnswer(3)">בדוק תשובות</button>
+            <button onclick="nextTask()">המשך</button>
+        </div>
+
+        <div id="task4" class="task">
+            <h2>חינוך פיננסי: תקציב לציוד גלישה 💰🏄‍♂️</h2>
+            <p>שיקו רוצה לקנות ציוד גלישה חדש. הוא חוסך 50 פזו מקסיקני בשבוע. גלשן עולה 2000 פזו מקסיקני.</p>
+            <p>כמה שבועות יצטרך שיקו לחסוך כדי לקנות את הגלשן?</p>
+            <input type="number" id="answer4">
+            <button onclick="checkAnswer(4)">בדוק תשובה</button>
+            <button onclick="nextTask()">סיים שיעור</button>
+        </div>
+
+        <div id="summary" style="display: none;">
+            <h2>סיכום השיעור</h2>
+            <ul id="summaryList"></ul>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <p id="popupMessage"></p>
+        <button onclick="closePopup()">סגור</button>
+    </div>
+
+    <script>
+        let currentTask = 1;
+        const totalTasks = 4;
+        let timer;
+        const answers = {
+            1: "חוף פלאיה דלפינס",
+            2: 3,
+            3: {a: "גלשן", b: "גל", c: "חוף"},
+            4: 40
+        };
+
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            let countdown = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    clearInterval(countdown);
+                    display.textContent = "הזמן נגמר!";
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            let fortyMinutes = 40 * 60,
+                display = document.querySelector('#timer');
+            startTimer(fortyMinutes, display);
+            showTask(currentTask);
+        };
+
+        function showTask(taskNumber) {
+            document.getElementById(`task${taskNumber}`).style.display = 'block';
+            updateProgress();
+        }
+
+        function nextTask() {
+            document.getElementById(`task${currentTask}`).style.display = 'none';
+            currentTask++;
+            if (currentTask <= totalTasks) {
+                showTask(currentTask);
+            } else {
+                showSummary();
+            }
+        }
+
+        function updateProgress() {
+            const progress = (currentTask - 1) / totalTasks * 100;
+            document.getElementById('progress').style.width = `${progress}%`;
+        }
+
+        function checkAnswer(taskNumber) {
+            let isCorrect = false;
+            let message = '';
+
+            if (taskNumber === 1) {
+                const userAnswer = document.getElementById('answer1').value.trim();
+                isCorrect = userAnswer === answers[1];
+                message = isCorrect ? 'כל הכבוד! התשובה נכונה.' : `לא בדיוק. התשובה הנכונה היא: ${answers[1]}`;
+            } else if (taskNumber === 2) {
+                const userAnswer = parseFloat(document.getElementById('answer2').value);
+                isCorrect = Math.abs(userAnswer - answers[2]) < 0.1;
+                message = isCorrect ? 'נכון מאוד! המהירות היא 3 מטרים לשנייה.' : 'לא בדיוק. נסה לחלק את המרחק בזמן.';
+            } else if (taskNumber === 3) {
+                const userAnswerA = document.getElementById('answer3a').value.trim();
+                const userAnswerB = document.getElementById('answer3b').value.trim();
+                const userAnswerC = document.getElementById('answer3c').value.trim();
+                isCorrect = userAnswerA === answers[3].a && userAnswerB === answers[3].b && userAnswerC === answers[3].c;
+                message = isCorrect ? 'מצוין! כל התשובות נכונות.' : `כמעט. התשובות הנכונות הן: Surfboard - גלשן, Wave - גל, Beach - חוף`;
+            } else if (taskNumber === 4) {
+                const userAnswer = parseInt(document.getElementById('answer4').value);
+                isCorrect = userAnswer === answers[4];
+                message = isCorrect ? 'נכון מאוד! שיקו יצטרך לחסוך 40 שבועות.' : 'לא בדיוק. נסה לחלק את מחיר הגלשן בסכום החיסכון השבועי.';
+            }
+
+            showPopup(message);
+            updateSummary(taskNumber, isCorrect);
+        }
+
+        function showPopup(message) {
+            document.getElementById('popupMessage').innerText = message;
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        let summaryData = {};
+
+        function updateSummary(taskNumber, isCorrect) {
+            summaryData[taskNumber] = isCorrect;
+        }
+
+        function showSummary() {
+            const summaryList = document.getElementById('summaryList');
+            summaryList.innerHTML = '';
+            for (let i = 1; i <= totalTasks; i++) {
+                const li = document.createElement('li');
+                li.textContent = `משימה ${i}: ${summaryData[i] ? 'בוצעה בהצלחה' : 'לא בוצעה בהצלחה'}`;
+                summaryList.appendChild(li);
+            }
+            document.getElementById('summary').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
