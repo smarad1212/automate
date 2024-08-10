@@ -1,0 +1,295 @@
+Here's a new lesson for גבי, tailored to her interests and location. The lesson is in Hebrew and designed for an 8-year-old, focusing on her hobby of baking (אפייה) and her location in פאי. This lesson is different from the previous one to maintain variety and engagement.
+
+```html
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>שיעור לגבי בפאי</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 800px;
+            width: 100%;
+        }
+        h1 {
+            color: #4b0082;
+            text-align: center;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .progress {
+            width: 0%;
+            height: 20px;
+            background-color: #4CAF50;
+            border-radius: 10px;
+            transition: width 0.5s ease-in-out;
+        }
+        .task {
+            display: none;
+            margin-bottom: 20px;
+            background-color: #e6e6fa;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        button {
+            background-color: #4b0082;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            touch-action: manipulation;
+        }
+        .highlight {
+            background-color: #ffff00;
+            font-weight: bold;
+        }
+        #timer {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>שיעור לגבי בפאי 🏙️</h1>
+        <div id="timer">40:00</div>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        
+        <div id="task1" class="task">
+            <h2>קריאה: מתכון לעוגת גזר 🥕🍰</h2>
+            <p>
+            גבי היקרה, היום נלמד על <span class="highlight">מתכון לעוגת גזר</span> טעימה! הנה המצרכים:
+            <br>- 2 כוסות קמח
+            <br>- 2 כפיות אבקת אפייה
+            <br>- 1 כפית קינמון
+            <br>- 3/4 כוס שמן
+            <br>- 1 כוס סוכר
+            <br>- 3 ביצים
+            <br>- 2 כוסות גזר מגורד
+            <br>
+            <br>אופן ההכנה:
+            <br>1. מערבבים את החומרים היבשים
+            <br>2. מוסיפים את החומרים הרטובים ומערבבים
+            <br>3. מוסיפים את הגזר המגורד
+            <br>4. אופים בתנור בחום של 180 מעלות למשך 40 דקות
+            </p>
+            <button onclick="nextTask()">המשך</button>
+        </div>
+
+        <div id="task2" class="task">
+            <h2>חשבון: כמויות במתכון 🧮</h2>
+            <p>עכשיו נתרגל חשבון עם המתכון שלנו:</p>
+            <p>1. אם נרצה להכין כמות כפולה מהמתכון, כמה כוסות קמח נצטרך?</p>
+            <input type="number" id="flour-answer">
+            <p>2. אם יש לנו 6 ביצים, לכמה מתכונים זה יספיק?</p>
+            <input type="number" id="eggs-answer">
+            <button onclick="checkMathAnswers()">בדוק תשובות</button>
+            <button onclick="nextTask()">המשך</button>
+        </div>
+
+        <div id="task3" class="task">
+            <h2>אנגלית: מילים באפייה 🍪🇬🇧</h2>
+            <p>בואי נלמד כמה מילים באנגלית הקשורות לאפייה:</p>
+            <p>1. קמח באנגלית: <input type="text" id="flour-english"></p>
+            <p>2. סוכר באנגלית: <input type="text" id="sugar-english"></p>
+            <p>3. לאפות באנגלית: <input type="text" id="bake-english"></p>
+            <button onclick="checkEnglishAnswers()">בדוק תשובות</button>
+            <button onclick="nextTask()">המשך</button>
+        </div>
+
+        <div id="task4" class="task">
+            <h2>חינוך פיננסי: ניהול תקציב לאפייה 💰</h2>
+            <p>נניח שיש לך 50 ₪ לקנות מצרכים לאפייה. עלות המצרכים:</p>
+            <ul>
+                <li>קמח: 8 ₪</li>
+                <li>סוכר: 6 ₪</li>
+                <li>ביצים: 12 ₪</li>
+                <li>שמן: 10 ₪</li>
+                <li>גזר: 5 ₪</li>
+            </ul>
+            <p>כמה כסף יישאר לך אחרי קניית כל המצרכים?</p>
+            <input type="number" id="budget-answer">
+            <button onclick="checkBudgetAnswer()">בדוק תשובה</button>
+            <button onclick="finishLesson()">סיים שיעור</button>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <h2>כל הכבוד!</h2>
+        <p id="popup-content"></p>
+        <button onclick="closePopup()">סגור</button>
+    </div>
+
+    <script>
+        let currentTask = 1;
+        const totalTasks = 4;
+        let timer;
+        const answers = {
+            task2: { flour: 4, eggs: 2 },
+            task3: { flour: 'flour', sugar: 'sugar', bake: 'bake' },
+            task4: { budget: 9 }
+        };
+        const taskResults = {};
+
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            let countdown = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    clearInterval(countdown);
+                    display.textContent = "הזמן נגמר!";
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            let fortyMinutes = 40 * 60,
+                display = document.querySelector('#timer');
+            startTimer(fortyMinutes, display);
+            document.getElementById('task1').style.display = 'block';
+        };
+
+        function nextTask() {
+            document.getElementById(`task${currentTask}`).style.display = 'none';
+            currentTask++;
+            if (currentTask <= totalTasks) {
+                document.getElementById(`task${currentTask}`).style.display = 'block';
+                updateProgress();
+            }
+        }
+
+        function updateProgress() {
+            const progress = (currentTask - 1) / totalTasks * 100;
+            document.getElementById('progress').style.width = `${progress}%`;
+        }
+
+        function showPopup(message) {
+            document.getElementById('popup-content').innerHTML = message;
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        function checkMathAnswers() {
+            const flourAnswer = document.getElementById('flour-answer').value;
+            const eggsAnswer = document.getElementById('eggs-answer').value;
+            let message = '';
+            if (flourAnswer == answers.task2.flour && eggsAnswer == answers.task2.eggs) {
+                message = 'כל הכבוד! ענית נכון על שתי השאלות.';
+                taskResults.task2 = true;
+            } else {
+                message = `טעות. התשובות הנכונות הן: ${answers.task2.flour} כוסות קמח ו-${answers.task2.eggs} מתכונים.`;
+                taskResults.task2 = false;
+            }
+            showPopup(message);
+        }
+
+        function checkEnglishAnswers() {
+            const flourEnglish = document.getElementById('flour-english').value.toLowerCase();
+            const sugarEnglish = document.getElementById('sugar-english').value.toLowerCase();
+            const bakeEnglish = document.getElementById('bake-english').value.toLowerCase();
+            let message = '';
+            if (flourEnglish === answers.task3.flour && sugarEnglish === answers.task3.sugar && bakeEnglish === answers.task3.bake) {
+                message = 'מצוין! כל התשובות נכונות.';
+                taskResults.task3 = true;
+            } else {
+                message = `יש טעויות. התשובות הנכונות הן: קמח - ${answers.task3.flour}, סוכר - ${answers.task3.sugar}, לאפות - ${answers.task3.bake}.`;
+                taskResults.task3 = false;
+            }
+            showPopup(message);
+        }
+
+        function checkBudgetAnswer() {
+            const budgetAnswer = document.getElementById('budget-answer').value;
+            let message = '';
+            if (budgetAnswer == answers.task4.budget) {
+                message = 'נכון מאוד! נשארו לך 9 ₪.';
+                taskResults.task4 = true;
+            } else {
+                message = `לא נכון. התשובה הנכונה היא ${answers.task4.budget} ₪.`;
+                taskResults.task4 = false;
+            }
+            showPopup(message);
+        }
+
+        function finishLesson() {
+            let summary = '<h3>סיכום השיעור:</h3>';
+            summary += '<ul>';
+            summary += `<li>משימה 1: קריאת המתכון - הושלמה</li>`;
+            summary += `<li>משימה 2: חשבון - ${taskResults.task2 ? 'נכון' : 'לא נכון'}</li>`;
+            summary += `<li>משימה 3: אנגלית - ${taskResults.task3 ? 'נכון' : 'לא נכון'}</li>`;
+            summary += `<li>משימה 4: חינוך פיננסי - ${taskResults.task4 ? 'נכון' : 'לא נכון'}</li>`;
+            summary += '</ul>';
+            summary += '<p>כל הכבוד על השלמת השיעור!</p>';
+            showPopup(summary);
+        }
+    </script>
+</body>
+</html>
+```
