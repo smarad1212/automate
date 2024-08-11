@@ -1,0 +1,262 @@
+Certainly! I'll create a new lesson for ריטה, taking into account her previous lesson and ensuring variety. Here's the complete HTML document for the new lesson:
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>שיעור לריטה בפתח תקווה</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #4a4a4a;
+            text-align: center;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .progress {
+            width: 0%;
+            height: 100%;
+            background-color: #4CAF50;
+            border-radius: 10px;
+            transition: width 0.5s ease-in-out;
+        }
+        .task {
+            background-color: #e6f3ff;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: none;
+        }
+        .task h2 {
+            color: #2196F3;
+            margin-top: 0;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .highlight {
+            background-color: #ffff99;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        #timer {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .fadeIn {
+            animation: fadeIn 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>שיעור לריטה בפתח תקווה 🏙️</h1>
+        <div id="timer">40:00</div>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        
+        <div id="task1" class="task">
+            <h2>קריאה: עולם הגיימינג 🎮</h2>
+            <p>
+                <span class="highlight">משחקי וידאו</span> הפכו לחלק חשוב מהתרבות שלנו. אחד המשחקים הפופולריים ביותר הוא <span class="highlight">פורטנייט</span>, משחק יריות והישרדות מקוון. במשחק זה, 100 שחקנים נלחמים זה בזה עד שנשאר רק אחד. השחקנים יכולים לבנות מבנים, לאסוף נשקים ולשתף פעולה עם חברים. <span class="highlight">פורטנייט</span> ידוע בעדכונים התכופים שלו, הכוללים דמויות ואירועים חדשים.
+            </p>
+            <p>עכשיו, עני על השאלות הבאות:</p>
+            <ol>
+                <li>כמה שחקנים משתתפים במשחק פורטנייט? <input type="number" id="answer1"></li>
+                <li>מה מיוחד בפורטנייט לעומת משחקים אחרים? <input type="text" id="answer2"></li>
+            </ol>
+            <button onclick="checkAnswers(1)">בדוק תשובות</button>
+            <button onclick="nextTask()">המשך</button>
+        </div>
+
+        <div id="task2" class="task">
+            <h2>מתמטיקה: חישובי זמן במשחק 🕒</h2>
+            <p>נניח שריטה משחקת <span class="highlight">פורטנייט</span> למשך שעה וחצי ביום. כמה דקות היא משחקת בשבוע?</p>
+            <p>צעדים לפתרון:</p>
+            <ol>
+                <li>כמה דקות יש בשעה וחצי? <input type="number" id="step1"></li>
+                <li>כמה ימים יש בשבוע? <input type="number" id="step2"></li>
+                <li>מה התוצאה הסופית? <input type="number" id="step3"></li>
+            </ol>
+            <button onclick="checkAnswers(2)">בדוק תשובות</button>
+            <button onclick="nextTask()">המשך</button>
+        </div>
+
+        <div id="task3" class="task">
+            <h2>אנגלית: מילים מעולם המשחקים 🇬🇧</h2>
+            <p>התאימי את המילים באנגלית לתרגומן בעברית:</p>
+            <div id="matching-game">
+                <div id="english-words">
+                    1. Game<br>
+                    2. Player<br>
+                    3. Victory<br>
+                    4. Battle<br>
+                    5. Team
+                </div>
+                <div id="hebrew-words">
+                    <input type="text" id="match1" placeholder="משחק">
+                    <input type="text" id="match2" placeholder="שחקן">
+                    <input type="text" id="match3" placeholder="ניצחון">
+                    <input type="text" id="match4" placeholder="קרב">
+                    <input type="text" id="match5" placeholder="קבוצה">
+                </div>
+            </div>
+            <button onclick="checkAnswers(3)">בדוק תשובות</button>
+            <button onclick="nextTask()">סיים שיעור</button>
+        </div>
+
+        <div id="summary" style="display:none;">
+            <h2>סיכום השיעור</h2>
+            <p>כל הכבוד, ריטה! סיימת את השיעור. הנה סיכום הביצועים שלך:</p>
+            <ul id="summaryList"></ul>
+        </div>
+    </div>
+
+    <script>
+        let currentTask = 1;
+        let totalTasks = 3;
+        let taskResults = {};
+
+        function nextTask() {
+            document.getElementById(`task${currentTask}`).style.display = 'none';
+            currentTask++;
+            if (currentTask <= totalTasks) {
+                document.getElementById(`task${currentTask}`).style.display = 'block';
+            } else {
+                showSummary();
+            }
+            updateProgress();
+        }
+
+        function updateProgress() {
+            let progress = (currentTask - 1) / totalTasks * 100;
+            document.getElementById('progress').style.width = `${progress}%`;
+        }
+
+        function checkAnswers(taskNum) {
+            let correct = 0;
+            let total = 0;
+            switch(taskNum) {
+                case 1:
+                    total = 2;
+                    if (document.getElementById('answer1').value == '100') correct++;
+                    if (document.getElementById('answer2').value.toLowerCase().includes('בנייה') || 
+                        document.getElementById('answer2').value.toLowerCase().includes('עדכונים')) correct++;
+                    break;
+                case 2:
+                    total = 3;
+                    if (document.getElementById('step1').value == '90') correct++;
+                    if (document.getElementById('step2').value == '7') correct++;
+                    if (document.getElementById('step3').value == '630') correct++;
+                    break;
+                case 3:
+                    total = 5;
+                    if (document.getElementById('match1').value.toLowerCase() == 'game') correct++;
+                    if (document.getElementById('match2').value.toLowerCase() == 'player') correct++;
+                    if (document.getElementById('match3').value.toLowerCase() == 'victory') correct++;
+                    if (document.getElementById('match4').value.toLowerCase() == 'battle') correct++;
+                    if (document.getElementById('match5').value.toLowerCase() == 'team') correct++;
+                    break;
+            }
+            taskResults[taskNum] = {correct, total};
+            alert(`קיבלת ${correct} מתוך ${total} נכונות!`);
+        }
+
+        function showSummary() {
+            document.getElementById(`task${totalTasks}`).style.display = 'none';
+            let summaryHTML = '';
+            for (let i = 1; i <= totalTasks; i++) {
+                if (taskResults[i]) {
+                    summaryHTML += `<li>משימה ${i}: ${taskResults[i].correct} מתוך ${taskResults[i].total} נכונות</li>`;
+                } else {
+                    summaryHTML += `<li>משימה ${i}: לא הושלמה</li>`;
+                }
+            }
+            document.getElementById('summaryList').innerHTML = summaryHTML;
+            document.getElementById('summary').style.display = 'block';
+        }
+
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = 0;
+                    alert("זמן השיעור הסתיים!");
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            var fortyMinutes = 40 * 60,
+                display = document.querySelector('#timer');
+            startTimer(fortyMinutes, display);
+            document.getElementById('task1').style.display = 'block';
+        };
+    </script>
+</body>
+</html>
