@@ -1,0 +1,241 @@
+Certainly! I'll create a new lesson for אחמל, taking into account the information you've provided and ensuring it's different from the previous lesson. Here's the complete HTML document for the new lesson:
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>שיעור לאחמל בפאי תאילנד</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: right;
+        }
+        h1 {
+            color: #4b0082;
+            text-align: center;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #ddd;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .progress {
+            width: 0;
+            height: 100%;
+            background-color: #4CAF50;
+            border-radius: 10px;
+            transition: width 0.5s;
+        }
+        .task {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: none;
+            width: 90%;
+            max-width: 600px;
+        }
+        .highlight {
+            background-color: #ffff99;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            touch-action: manipulation;
+        }
+        #timer {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>שיעור לאחמל בפאי תאילנד 🇹🇭</h1>
+    <div id="timer">40:00</div>
+    <div class="progress-bar">
+        <div class="progress" id="progress"></div>
+    </div>
+
+    <div id="task1" class="task">
+        <h2>קריאה: מאכלים מסורתיים בתאילנד 🍜</h2>
+        <p>תאילנד ידועה במטבח העשיר והטעים שלה. אחד המאכלים המפורסמים ביותר הוא <span class="highlight">פאד תאי</span>, אטריות מטוגנות עם ירקות, ביצה ובוטנים. עוד מאכל פופולרי הוא <span class="highlight">תום יאם גונג</span>, מרק חמוץ-חריף עם שרימפס. לקינוח, תוכלו ליהנות מ<span class="highlight">מנגו עם אורז דביק</span>, קינוח מתוק ורענן.</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Phat_Thai_kung_Chang_Khien_street_stall.jpg/640px-Phat_Thai_kung_Chang_Khien_street_stall.jpg" alt="פאד תאי">
+        <button onclick="nextTask()">הבא</button>
+    </div>
+
+    <div id="task2" class="task">
+        <h2>מתמטיקה: חישוב כמויות למתכון 🧮</h2>
+        <p>נכין פאד תאי ל-4 אנשים! עזרו לחשב את הכמויות:</p>
+        <p>אם למנה אחת צריך 100 גרם אטריות, כמה גרם צריך ל-4 מנות?</p>
+        <input type="number" id="noodles" placeholder="הכניסו את התשובה">
+        <button onclick="checkAnswer('noodles', 400)">בדוק תשובה</button>
+        <p>אם למנה אחת צריך 2 ביצים, כמה ביצים צריך ל-4 מנות?</p>
+        <input type="number" id="eggs" placeholder="הכניסו את התשובה">
+        <button onclick="checkAnswer('eggs', 8)">בדוק תשובה</button>
+        <button onclick="nextTask()">הבא</button>
+    </div>
+
+    <div id="task3" class="task">
+        <h2>עברית: מילים נרדפות 📚</h2>
+        <p>מצאו מילה נרדפת (מילה עם אותה משמעות) לכל אחת מהמילים הבאות:</p>
+        <p>1. טעים: <input type="text" id="tasty" placeholder="הכניסו מילה נרדפת"></p>
+        <p>2. מפורסם: <input type="text" id="famous" placeholder="הכניסו מילה נרדפת"></p>
+        <p>3. עשיר: <input type="text" id="rich" placeholder="הכניסו מילה נרדפת"></p>
+        <button onclick="checkSynonyms()">בדוק תשובות</button>
+        <button onclick="nextTask()">הבא</button>
+    </div>
+
+    <div id="task4" class="task">
+        <h2>חינוך פיננסי: תקציב לארוחה 💰</h2>
+        <p>אתם רוצים להכין ארוחה תאילנדית למשפחה. יש לכם תקציב של 100 שקלים. עזרו לתכנן את הקניות:</p>
+        <p>אטריות אורז: 15 ₪</p>
+        <p>ירקות: 25 ₪</p>
+        <p>רוטב סויה: 10 ₪</p>
+        <p>ביצים: 12 ₪</p>
+        <p>בוטנים: 8 ₪</p>
+        <p>מנגו: 20 ₪</p>
+        <p>אורז דביק: 18 ₪</p>
+        <p>כמה כסף נשאר לכם אחרי הקנייה?</p>
+        <input type="number" id="budget" placeholder="הכניסו את הסכום שנשאר">
+        <button onclick="checkAnswer('budget', 12)">בדוק תשובה</button>
+        <button onclick="finishLesson()">סיים שיעור</button>
+    </div>
+
+    <div id="summary" class="task" style="display:none;">
+        <h2>סיכום השיעור</h2>
+        <p>כל הכבוד, אחמל! סיימת את השיעור. הנה סיכום של הביצועים שלך:</p>
+        <ul id="summaryList"></ul>
+        <button onclick="location.reload()">התחל שיעור חדש</button>
+    </div>
+
+    <script>
+        let currentTask = 1;
+        const totalTasks = 4;
+        let answers = {};
+
+        function showTask(taskNumber) {
+            for (let i = 1; i <= totalTasks; i++) {
+                document.getElementById(`task${i}`).style.display = 'none';
+            }
+            document.getElementById(`task${taskNumber}`).style.display = 'block';
+            updateProgress();
+        }
+
+        function nextTask() {
+            currentTask++;
+            if (currentTask <= totalTasks) {
+                showTask(currentTask);
+            } else {
+                finishLesson();
+            }
+        }
+
+        function updateProgress() {
+            const progress = (currentTask - 1) / totalTasks * 100;
+            document.getElementById('progress').style.width = `${progress}%`;
+        }
+
+        function checkAnswer(id, correctAnswer) {
+            const userAnswer = document.getElementById(id).value;
+            answers[id] = {
+                userAnswer: userAnswer,
+                correctAnswer: correctAnswer,
+                correct: parseInt(userAnswer) === correctAnswer
+            };
+            alert(answers[id].correct ? "כל הכבוד! התשובה נכונה." : "אופס, לא בדיוק. נסה שוב!");
+        }
+
+        function checkSynonyms() {
+            const synonyms = {
+                tasty: ['ערב לחיך', 'מעולה', 'משובח', 'ערב'],
+                famous: ['מוכר', 'ידוע', 'נודע', 'מפורסם'],
+                rich: ['אמיד', 'עשיר', 'אמיד', 'בעל אמצעים']
+            };
+            for (let word in synonyms) {
+                const userAnswer = document.getElementById(word).value.trim().toLowerCase();
+                answers[word] = {
+                    userAnswer: userAnswer,
+                    correctAnswer: synonyms[word].join(', '),
+                    correct: synonyms[word].includes(userAnswer)
+                };
+            }
+            alert("תשובותיך נשמרו!");
+        }
+
+        function finishLesson() {
+            document.getElementById(`task${currentTask}`).style.display = 'none';
+            const summary = document.getElementById('summary');
+            const summaryList = document.getElementById('summaryList');
+            summaryList.innerHTML = '';
+            for (let id in answers) {
+                const li = document.createElement('li');
+                li.textContent = `${id}: ${answers[id].correct ? 'נכון' : 'לא נכון'}. התשובה שלך: ${answers[id].userAnswer}. התשובה הנכונה: ${answers[id].correctAnswer}`;
+                summaryList.appendChild(li);
+            }
+            summary.style.display = 'block';
+        }
+
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = 0;
+                    finishLesson();
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            showTask(1);
+            let fortyMinutes = 40 * 60,
+                display = document.querySelector('#timer');
+            startTimer(fortyMinutes, display);
+        };
+    </script>
+</body>
+</html>
