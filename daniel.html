@@ -1,0 +1,269 @@
+Certainly! I'll create a new lesson for דניאל, taking into account the information you provided and ensuring it's different from the previous lesson. Here's the complete HTML document for the new lesson:
+
+```html
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>שיעור לדניאל בפאי, תאילנד</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #4a4a4a;
+            text-align: center;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .progress {
+            width: 0;
+            height: 20px;
+            background-color: #4CAF50;
+            border-radius: 5px;
+            transition: width 0.5s ease-in-out;
+        }
+        .task {
+            background-color: #e6f3ff;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: none;
+        }
+        .highlight {
+            background-color: #ffff99;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            touch-action: manipulation;
+        }
+        .timer {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>שיעור לדניאל בפאי, תאילנד 🇹🇭</h1>
+        <div class="timer" id="timer">40:00</div>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        
+        <div class="task" id="task1">
+            <h2>1. קריאה: מסלולי טיול בפאי 🥾</h2>
+            <p>פאי היא עיירה קטנה ומקסימה בצפון תאילנד, המוקפת בנופים מרהיבים ומסלולי טיול מגוונים. אחד המסלולים הפופולריים ביותר הוא <span class="highlight">מפל פאם אוק</span>, הנמצא כ-8 ק"מ מהעיר. המסלול כולל הליכה בג'ונגל ירוק ועבות, חציית גשרי במבוק, ומסתיים במפל מרשים בגובה 200 מטר. מסלול נוסף מומלץ הוא <span class="highlight">קניון פאי</span>, המציע נוף מדברי ייחודי עם מצוקים אדומים וסלעים מרשימים. לחובבי האתגר, ישנו מסלול טיפוס לפסגת <span class="highlight">הר דוי סוטהפ</span>, המציע תצפית פנורמית על האזור כולו.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Pai_Canyon%2C_Thailand_%2841999816581%29.jpg/640px-Pai_Canyon%2C_Thailand_%2841999816581%29.jpg" alt="קניון פאי">
+            <p>שאלה: איזה מסלול טיול נשמע לך הכי מעניין ולמה?</p>
+            <input type="text" id="answer1" placeholder="הקלד את תשובתך כאן">
+            <button onclick="nextTask()">הבא</button>
+        </div>
+
+        <div class="task" id="task2">
+            <h2>2. מתמטיקה: חישוב מרחקים וזמנים 🧮</h2>
+            <p>נניח שאתה רוצה לטייל בכל שלושת המסלולים שהוזכרו בקטע הקריאה.</p>
+            <ul>
+                <li>המרחק למפל פאם אוק הוא 8 ק"מ והטיול אורך 3 שעות.</li>
+                <li>הטיול בקניון פאי אורך שעתיים וחצי.</li>
+                <li>הטיפוס להר דוי סוטהפ אורך 5 שעות והמרחק הוא 12 ק"מ.</li>
+            </ul>
+            <p>שאלה 1: מה המרחק הכולל שתעבור בכל הטיולים יחד?</p>
+            <input type="number" id="answer2a" placeholder="הקלד את התשובה במספרים">
+            <p>שאלה 2: כמה זמן בסך הכל יקחו כל הטיולים יחד? (בשעות)</p>
+            <input type="number" id="answer2b" placeholder="הקלד את התשובה במספרים">
+            <button onclick="checkAnswer2()">בדוק תשובה</button>
+            <button onclick="nextTask()">הבא</button>
+        </div>
+
+        <div class="task" id="task3">
+            <h2>3. אנגלית: מילים קשורות לטיולים 🗺️</h2>
+            <p>התאם את המילים באנגלית לתרגומן בעברית:</p>
+            <div id="matchingGame">
+                <div id="englishWords">
+                    1. Hike<br>
+                    2. Trail<br>
+                    3. Waterfall<br>
+                    4. Mountain<br>
+                    5. Canyon
+                </div>
+                <div id="hebrewWords">
+                    <input type="text" id="match1" placeholder="הקלד את המספר המתאים">קניון<br>
+                    <input type="text" id="match2" placeholder="הקלד את המספר המתאים">הר<br>
+                    <input type="text" id="match3" placeholder="הקלד את המספר המתאים">מפל<br>
+                    <input type="text" id="match4" placeholder="הקלד את המספר המתאים">שביל<br>
+                    <input type="text" id="match5" placeholder="הקלד את המספר המתאים">טיול רגלי
+                </div>
+            </div>
+            <button onclick="checkAnswer3()">בדוק תשובה</button>
+            <button onclick="nextTask()">הבא</button>
+        </div>
+
+        <div class="task" id="task4">
+            <h2>4. חינוך פיננסי: תכנון תקציב לטיול 💰</h2>
+            <p>נניח שאתה מתכנן טיול של יום שלם בפאי. הנה כמה מהעלויות:</p>
+            <ul>
+                <li>השכרת אופניים: 200 באט</li>
+                <li>ארוחת צהריים: 150 באט</li>
+                <li>כניסה למפל פאם אוק: 100 באט</li>
+                <li>שתייה ונשנושים: 100 באט</li>
+            </ul>
+            <p>שאלה 1: כמה באט תצטרך בסך הכל ליום הטיול?</p>
+            <input type="number" id="answer4a" placeholder="הקלד את התשובה במספרים">
+            <p>שאלה 2: אם יש לך 1000 באט, כמה כסף יישאר לך אחרי יום הטיול?</p>
+            <input type="number" id="answer4b" placeholder="הקלד את התשובה במספרים">
+            <button onclick="checkAnswer4()">בדוק תשובה</button>
+            <button onclick="finishLesson()">סיים שיעור</button>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <h2>סיכום השיעור</h2>
+        <p id="summary"></p>
+        <button onclick="closePopup()">סגור</button>
+    </div>
+
+    <script>
+        let currentTask = 1;
+        let totalTasks = 4;
+        let answers = {};
+
+        function updateProgress() {
+            let progress = (currentTask - 1) / totalTasks * 100;
+            document.getElementById('progress').style.width = progress + '%';
+        }
+
+        function nextTask() {
+            document.getElementById('task' + currentTask).style.display = 'none';
+            currentTask++;
+            if (currentTask <= totalTasks) {
+                document.getElementById('task' + currentTask).style.display = 'block';
+                updateProgress();
+            }
+        }
+
+        function checkAnswer2() {
+            let answer2a = document.getElementById('answer2a').value;
+            let answer2b = document.getElementById('answer2b').value;
+            answers['task2'] = {
+                correct: (answer2a == '20' && answer2b == '10.5'),
+                given: `מרחק: ${answer2a} ק"מ, זמן: ${answer2b} שעות`,
+                correct_answer: 'מרחק: 20 ק"מ, זמן: 10.5 שעות'
+            };
+            alert(answers['task2'].correct ? 'נכון!' : 'לא נכון. נסה שוב!');
+        }
+
+        function checkAnswer3() {
+            let match1 = document.getElementById('match1').value;
+            let match2 = document.getElementById('match2').value;
+            let match3 = document.getElementById('match3').value;
+            let match4 = document.getElementById('match4').value;
+            let match5 = document.getElementById('match5').value;
+            answers['task3'] = {
+                correct: (match1 == '5' && match2 == '4' && match3 == '3' && match4 == '2' && match5 == '1'),
+                given: `1-${match5}, 2-${match4}, 3-${match3}, 4-${match2}, 5-${match1}`,
+                correct_answer: '1-טיול רגלי, 2-שביל, 3-מפל, 4-הר, 5-קניון'
+            };
+            alert(answers['task3'].correct ? 'נכון!' : 'לא נכון. נסה שוב!');
+        }
+
+        function checkAnswer4() {
+            let answer4a = document.getElementById('answer4a').value;
+            let answer4b = document.getElementById('answer4b').value;
+            answers['task4'] = {
+                correct: (answer4a == '550' && answer4b == '450'),
+                given: `סה"כ עלות: ${answer4a} באט, נשאר: ${answer4b} באט`,
+                correct_answer: 'סה"כ עלות: 550 באט, נשאר: 450 באט'
+            };
+            alert(answers['task4'].correct ? 'נכון!' : 'לא נכון. נסה שוב!');
+        }
+
+        function finishLesson() {
+            let summary = 'סיכום התשובות:<br>';
+            summary += 'משימה 1: ' + (document.getElementById('answer1').value ? 'הושלמה' : 'לא הושלמה') + '<br>';
+            for (let i = 2; i <= 4; i++) {
+                if (answers['task'+i]) {
+                    summary += `משימה ${i}: ${answers['task'+i].correct ? 'נכון' : 'לא נכון'}<br>`;
+                    summary += `תשובה שניתנה: ${answers['task'+i].given}<br>`;
+                    if (!answers['task'+i].correct) {
+                        summary += `תשובה נכונה: ${answers['task'+i].correct_answer}<br>`;
+                    }
+                } else {
+                    summary += `משימה ${i}: לא נענתה<br>`;
+                }
+            }
+            document.getElementById('summary').innerHTML = summary;
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('
