@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koh Phangan Adventure: A Cross-Curricular Lesson Plan</title>
+  <style>
+    /* CSS styles here */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .step {
+      margin-bottom: 30px;
+    }
+    .hidden {
+      display: none;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    .progress-bar {
+      width: 100%;
+      height: 20px;
+      background-color: #f0f0f0;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .progress {
+      width: 0;
+      height: 100%;
+      background-color: #4CAF50;
+      border-radius: 10px;
+      transition: width 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Koh Phangan Adventure: A Lesson for <span id="student-name"></span></h1>
+    <p>Current Location: <span id="location"></span></p>
+    
+    <div class="progress-bar">
+      <div class="progress" id="progress"></div>
+    </div>
+    
+    <div id="step1" class="step">
+      <h2>Step 1: Introduction</h2>
+      <img src="bottle-beach-view.jpg" alt="Bottle Beach View">
+      <p>Fun facts about Koh Phangan...</p>
+      <!-- Click-and-drag matching game -->
+      <div id="matching-game"></div>
+      <button id="next1">Next</button>
+    </div>
+    
+    <div id="step2" class="step hidden">
+      <h2>Step 2: Hebrew Reading</h2>
+      <img src="thai-animals.jpg" alt="Thai Animals">
+      <p>Read the story and fill in the blanks:</p>
+      <!-- Fill-in-the-blank questions -->
+      <div id="reading-questions"></div>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/6J3HIsunQGI?start=135" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <p>What were the top 3 activities the vlogger recommended?</p>
+      <button id="next2">Next</button>
+    </div>
+    
+    <!-- ... More steps ... -->
+    
+    <div id="step7" class="step hidden">
+      <h2>Step 7: Reflection</h2>
+      <p>Summarize what you've learned about Koh Phangan:</p>
+      <!-- Open-ended questions -->
+      <div id="reflection-questions"></div>
+      <p>Upload your own beach photo or drawing:</p>
+      <input type="file" id="photo-upload">
+      <img id="collage" src="collage.jpg" alt="Koh Phangan Collage">
+      <p>Congratulations, you're now a Koh Phangan Expert!</p>
+      <!-- Additional resources based on interest -->
+      <div id="additional-resources"></div>
+    </div>
+  </
