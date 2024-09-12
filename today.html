@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Lesson Plan for Rani - Chiang Mai Adventure</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .lesson {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 5px;
+        }
+        .progress {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .progress-bar {
+            width: 0;
+            height: 20px;
+            background-color: #4CAF50;
+            border-radius: 5px;
+            transition: width 0.5s ease-in-out;
+        }
+        .timer {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        input[type="text"], button {
+            padding: 5px 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Personalized Lesson Plan for Rani - Chiang Mai Adventure</h1>
+    <p>Location: Chiang Mai | Day: Tuesday | Age: 7 | Interests: Soccer | Language: Hebrew</p>
+    
+    <div class="progress">
+        <div class="progress-bar"></div>
+    </div>
+
+    <div class="timer">00:00</div>
+    
+    <div class="lesson">
+        <h2>Introduction (10 minutes)</h2>
+        <p>Discuss the day's plan and get Rani excited about learning about Chiang Mai and its culture while incorporating his interests and Hebrew language skills.</p>
+        <p>What are you most excited to learn about today, Rani?</p>
+        <input type="text" id="intro-input">
+        <button onclick="updateProgress(10)">Next</button>
+    </div>
+
+    <div class="lesson">
+        <h2>Reading Passage (15 minutes)</h2>
+        <p>Read a short story about a young boy visiting Chiang Mai and experiencing the local culture, such as trying Thai food, visiting temples, and interacting with elephants. Encourage Rani to follow along and ask questions.</p>
+        <p>What was your favorite part of the story?</p>
+        <input type="text" id="reading-input">
+        <button onclick="updateProgress(25)">Next</button>
+    </div>
+    
+    <div class="lesson">
+        <h2>Hebrew and English Activity (20 minutes)</h2>
+        <p>Review the Hebrew soccer vocabulary from the previous lesson and introduce new words related to Chiang Mai attractions, such as:</p>
+        <ul>
+            <li>פִּיל (pil) - elephant</li>
+            <li>מִקְדָּשׁ (mikdash) - temple</li>
+            <li>שׁוּק (shuk) - market</li>
+        </ul>
+        <p>Play a memory game where Rani matches the Hebrew words with their English translations.</p>
+        <p>How many word pairs did you match correctly?</p>
+        <input type="text" id="hebrew-input">
+        <button onclick="updateProgress(45)">Next</button>
+    </div>
+    
+    <div class="lesson">
+        <h2>Math Activity (20 minutes)</h2>
+        <p>Using the elephant feeding concept from the previous lesson, create word problems that incorporate addition and subtraction. For example:</
