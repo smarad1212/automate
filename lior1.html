@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אתר עם AI Nav</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: fuchsia;
+            font-family: Arial, sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: fuchsia;
+            font-family: Arial, sans-serif;
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            margin-bottom: 1.5rem;
+        }
+
+        co-pilot {
+            display: block;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* התאמות למסכים בינוניים */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+        }
+
+        /* התאמות למסכים קטנים */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+        }
+
+        /* התאמות למסכים גדולים מאוד */
+        @media (min-width: 1200px) {
+            .container {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>בדיקת קר-חכם</h1>
+        <p>לחץ על החלונית למטה</p>
+        <co-pilot 
+            platform-id="bfee6fbc-1fb9-4a94-86a6-aa05a548346c" 
+            user-id="188b06ee-8d2d-4960-9ff5-e7385f6de640" 
+            chatbot-id="eddf598c-6616-4f86-bcd9-3355f811cafe" 
+            is-local="false">
+            <a href="https://www.chatsimple.ai/?utm_source=widget&utm_medium=referral">AI Nav</a>
+        </co-pilot> 
+        <script src="https://cdn.chatsimple.ai/ai-loader.js" defer></script>
+    </div>
+</body>
+</html>
