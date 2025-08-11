@@ -1,241 +1,491 @@
-Certainly! I'll create a new lesson for אחמל, taking into account the information you've provided and ensuring it's different from the previous lesson. Here's the complete HTML document for the new lesson:
-
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>שיעור לאחמל בפאי תאילנד</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medijungle - Grand Opening Menu</title>
     <style>
+        /* Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        /* Basic Styles */
+        :root {
+            --primary-color: #2c5c3d; /* Jungle Green */
+            --secondary-color: #f3a64d; /* Sandy Orange */
+            --text-color: #333333;
+            --bg-color: #fdfdfa; /* Off-white */
+            --border-color: #eeeeee;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f8ff;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
             padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: right;
         }
-        h1 {
-            color: #4b0082;
+
+        /* Header */
+        .header {
             text-align: center;
+            margin-bottom: 40px;
         }
-        .progress-bar {
-            width: 100%;
-            height: 20px;
-            background-color: #ddd;
-            border-radius: 10px;
-            margin-bottom: 20px;
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 5px;
         }
-        .progress {
-            width: 0;
-            height: 100%;
-            background-color: #4CAF50;
-            border-radius: 10px;
-            transition: width 0.5s;
+        .header .sub-heading {
+            font-size: 1.1em;
+            color: #777;
+            margin-top: 0;
         }
-        .task {
-            background-color: white;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            display: none;
-            width: 90%;
-            max-width: 600px;
+
+        /* Menu Section */
+        .menu-section {
+            margin-bottom: 40px;
         }
-        .highlight {
-            background-color: #ffff99;
-            padding: 2px 4px;
-            border-radius: 4px;
-        }
-        button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        input[type="text"], input[type="number"] {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            box-sizing: border-box;
-            border: 2px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-            touch-action: manipulation;
-        }
-        #timer {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
+        .menu-section > h2 {
+            font-size: 2em;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
             margin-bottom: 10px;
+        }
+        .menu-section .section-timing {
+            font-style: italic;
+            color: #666;
+            margin-top: -10px;
+            margin-bottom: 25px;
+        }
+        
+        /* Sub-category for Drinks */
+        .sub-category {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        /* Menu Item */
+        .menu-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 25px;
+        }
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+        
+        .item-image {
+            width: 100px;
+            height: 100px;
+            flex-shrink: 0;
+            margin-right: 20px;
+        }
+        .item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid var(--border-color);
+        }
+
+        .item-details {
+            flex-grow: 1;
+        }
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        .item-header h3 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+        .item-price {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--primary-color);
+            white-space: nowrap;
+            margin-left: 15px;
+        }
+        .item-description {
+            margin: 5px 0 0 0;
+            color: #555;
+            font-size: 0.95em;
+        }
+        .item-options {
+            margin-top: 10px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        .item-addons {
+            margin-top: 10px;
+            font-size: 0.9em;
+            background-color: #e8f5e9;
+            padding: 8px;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-    <h1>שיעור לאחמל בפאי תאילנד 🇹🇭</h1>
-    <div id="timer">40:00</div>
-    <div class="progress-bar">
-        <div class="progress" id="progress"></div>
+
+    <div class="container">
+        <!-- Restaurant Header -->
+        <header class="header">
+            <h1>Medijungle</h1>
+            <p class="sub-heading">Grand Opening Menu</p>
+            <p class="sub-heading">(Open Daily: 9am - 6pm)</p>
+        </header>
+
+        <!-- GOOD MORNING Section -->
+        <section class="menu-section">
+            <h2>GOOD MORNING</h2>
+            <p class="section-timing">(Served 9am - 12pm)</p>
+            
+            <div class="menu-item">
+                <div class="item-image">
+                    <!-- TODO: Replace with your image: images/jungle-muesli.jpg -->
+                    <img src="https://via.placeholder.com/100x100.png?text=Muesli" alt="Jungle Muesli">
+                </div>
+                <div class="item-details">
+                    <div class="item-header">
+                        <h3>Jungle Muesli</h3>
+                        <span class="item-price">180 THB</span>
+                    </div>
+                    <p class="item-description">A perfect start. Our homemade granola with crunchy nuts and seeds, served with creamy yogurt, a mix of fresh tropical fruits, and a drizzle of local wild honey.</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-image">
+                    <!-- TODO: Replace with your image: images/morning-plate.jpg -->
+                    <img src="https://via.placeholder.com/100x100.png?text=Breakfast" alt="The Morning Plate">
+                </div>
+                <div class="item-details">
+                    <div class="item-header">
+                        <h3>The Morning Plate</h3>
+                        <span class="item-price">220 THB</span>
+                    </div>
+                    <p class="item-description">Your classic Israeli breakfast in the jungle. Two eggs cooked your way, a salty slice of feta cheese, fresh chopped Israeli salad, a swirl of tahini, and a warm, fluffy pita straight from our oven.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ALL DAY Section -->
+        <section class="menu-section">
+            <h2>ALL DAY</h2>
+            <p class="section-timing">(Served 9am - 6pm)</p>
+            
+            <h4 class="sub-category">MEZZE // Small Plates & The Star</h4>
+
+            <div class="menu-item">
+                <div class="item-image">
+                    <!-- TODO: Replace with your image: images/pita.jpg -->
+                    <img src="https://via.placeholder.com/100x100.png?text=Pita" alt="House-Made Pita">
+                </div>
+                <div class="item-details">
+                    <div class="item-header">
+                        <h3>House-Made Pita (2 pcs)</h3>
+                        <span class="item-price">80 THB</span>
+                    </div>
+                    <p class="item-description">Our pride and joy. Warm, soft, and perfect for dipping. Served simply with quality olive oil and a sprinkle of za'atar.</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-image">
+                    <!-- TODO: Replace with your image: images/falafel.jpg -->
+                    <img src="https://via.placeholder.com/100x100.png?text=Falafel" alt="Falafel">
+                </div>
+                <div class="item-details">
+                    <div class="item-header">
+                        <h3>Falafel (5 pcs)</h3>
+                        <span class="item-price">140 THB</span>
+                    </div>
+                    <p class="item-description">The real deal. Crispy on the outside, bright green and herby on the inside. Served with a side of our creamy tahini sauce.</p>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-image">
+                    <!-- TODO: Replace with your image: images/eggplant.jpg -->
+                    <img src="https://via.placeholder.com/100x100.png?text=Eggplant" alt="Charred Eggplant">
+                </div>
+                <div class="item-details">
+                    <div class="item-header">
+                        <h3>Charred Eggplant</h3>
+                        <span class="item-price">150 THB</span>
+                    </div>
+                    <p class="item-description">An entire eggplant roasted over an open flame until smoky and soft, topped with tahini, fresh parsley, and a squeeze of lemon.</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-image">
+                    <!-- TODO: Replace with your image: images/tomato-salad.jpg -->
+                    <img src="https://via.placeholder.com/100x100.png?text=Salad" alt="Spicy Cherry Tomato Salad">
+                </div>
+                <div class="item-details">
+                    <div class="item-header">
+                        <h3>Spicy Cherry Tomato Salad</h3>
+                        <span class="item-price">140 THB</span>
+                    </div>
+                    <p class="item-description">A small, intense bowl of fresh cherry tomatoes tossed with chili, garlic, coriander, and olive oil. A perfect burst of flavor.</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-image">
+                    <!-- TODO: Replace with your image: images/fries.jpg -->
+                    <img src="https://via.placeholder.com/100x100.png?text=Fries" alt="Jungle Fries">
+                </div>
+                <div class="item-details">
+                    <div class="item-header">
+                        <h3>Jungle Fries</h3>
+                        <span class="item-price">120 THB</span>
+                    </div>
+                    <p class="item-description">Not your average fries. Hand-cut from fresh potatoes and tossed in our secret salt mix of paprika and jungle herbs.</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-image">
+                    <!-- TODO: Replace with your image: images/cauliflower.jpg -->
+                    <img src="https://via.placeholder.com/100x100.png?text=Cauliflower" alt="The Hero Cauliflower">
+                </div>
+                <div class="item-details">
+                    <div class="item-header">
+                        <h3>The Hero Cauliflower</h3>
+                        <span class="item-price"></span>
+                    </div>
+                    <p class="item-description">Our Instagram star. A whole cauliflower, fried until golden and crispy, served on a bed of tahini and topped with fresh herbs and pomegranate seeds.</p>
+                    <div class="item-options">
+                        Half Cauliflower (For 1-2 people): 160 THB<br>
+                        Whole Cauliflower (To Share): 280 THB
+                    </div>
+                </div>
+            </div>
+            
+            <h4 class="sub-category">THE HUMMUS BAR</h4>
+            
+            <div class="menu-item">
+                <div class="item-image">
+                    <!-- TODO: Replace with your image: images/classic-hummus.jpg -->
+                    <img src="https://via.placeholder.com/100x100.png?text=Hummus" alt="The Classic Hummus">
+                </div>
+                <div class="item-details">
+                    <div class="item-header">
+                        <h3>The Classic Hummus</h3>
+                        <span class="item-price">180 THB</span>
+                    </div>
+                    <p class="item-description">Our signature, ultra-smooth hummus made fresh every day, topped with warm whole chickpeas, paprika, and a pool of good olive oil. (All served with 1 warm pita)</p>
+                    <div class="item-addons">
+                        <strong>Level Up:</strong> Add a Hard-Boiled Egg (+30), Add Fried Eggplant (+60), Add Sautéed Forest Mushrooms (+60)
+                    </div>
+                </div>
+            </div>
+            
+            <h4 class="sub-category">IN OUR PITA</h4>
+
+            <div class="menu-item">
+                <div class="item-image">
+                    <!-- TODO: Replace with your image: images/falafel-pita.jpg -->
+                    <img src="https://via.placeholder.com/100x100.png?text=Falafel+Pita" alt="Falafel Pita">
+                </div>
+                <div class="item-details">
+                    <div class="item-header">
+                        <h3>Falafel Pita</h3>
+                        <span class="item-price">180 THB</span>
+                    </div>
+                    <p class="item-description">The perfect handheld lunch. Stuffed with hummus, 3 falafel balls, fresh salad, and a generous drizzle of tahini.</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-image">
+                    <!-- TODO: Replace with your image: images/sabich-pita.jpg -->
+                    <img src="https://via.placeholder.com/100x100.png?text=Sabich+Pita" alt="Sabich Pita">
+                </div>
+                <div class="item-details">
+                    <div class="item-header">
+                        <h3>Sabich Pita</h3>
+                        <span class="item-price">190 THB</span>
+                    </div>
+                    <p class="item-description">A taste of Tel Aviv's streets. Stuffed with hummus, fried eggplant, a hard-boiled egg, fresh salad, and a touch of sweet and tangy amba.</p>
+                </div>
+            </div>
+            
+            <h4 class="sub-category">FROM THE GARDEN // Big, Healthy Bowls</h4>
+            
+            <div class="menu-item">
+                <div class="item-image">
+                    <!-- TODO: Replace with your image: images/falafel-bowl.jpg -->
+                    <img src="https://via.placeholder.com/100x100.png?text=Feast+Bowl" alt="Falafel Feast Bowl">
+                </div>
+                <div class="item-details">
+                    <div class="item-header">
+                        <h3>Falafel Feast Bowl</h3>
+                        <span class="item-price">290 THB</span>
+                    </div>
+                    <p class="item-description">A complete meal. A generous bowl of finely chopped Arabic salad, topped with 4 falafel balls, a hard-boiled egg, and a drizzle of tahini. Served with a warm house-made pita on the side.</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-image">
+                    <!-- TODO: Replace with your image: images/power-bowl.jpg -->
+                    <img src="https://via.placeholder.com/100x100.png?text=Power+Bowl" alt="Medijungle Power Bowl">
+                </div>
+                <div class="item-details">
+                    <div class="item-header">
+                        <h3>Medijungle Power Bowl</h3>
+                        <span class="item-price">250 THB</span>
+                    </div>
+                    <p class="item-description">The ultimate healthy fuel. Quinoa, lentils, beetroot, mixed greens, feta cheese, and crunchy seeds, all brought together with our signature lemon-tahini dressing. A beautiful bowl.</p>
+                </div>
+            </div>
+            
+        </section>
+        
+        <!-- JUNGLE EXPERIENCE Section -->
+        <section class="menu-section">
+            <h2>THE JUNGLE EXPERIENCE</h2>
+            
+            <div class="menu-item">
+                <div class="item-image">
+                    <!-- TODO: Replace with your image: images/experience-one.jpg -->
+                    <img src="https://via.placeholder.com/100x100.png?text=For+One" alt="Experience For One">
+                </div>
+                <div class="item-details">
+                    <div class="item-header">
+                        <h3>For One</h3>
+                        <span class="item-price">290 THB</span>
+                    </div>
+                    <p class="item-description">The perfect solo tasting plate. Classic Hummus, 2 Falafel, a scoop of Arabic Salad, Charred Eggplant, and 1 warm Pita.</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-image">
+                    <!-- TODO: Replace with your image: images/experience-two.jpg -->
+                    <img src="https://via.placeholder.com/100x100.png?text=For+Two" alt="Experience For Two">
+                </div>
+                <div class="item-details">
+                    <div class="item-header">
+                        <h3>For Two</h3>
+                        <span class="item-price">520 THB</span>
+                    </div>
+                    <p class="item-description">A beautiful platter to share. A large bowl of Classic Hummus, 5 Falafel, Arabic Salad, Charred Eggplant, Fries, and 2 warm Pitas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- KIDS Section -->
+        <section class="menu-section">
+            <h2>FOR THE LITTLE ONES</h2>
+            
+            <div class="menu-item">
+                <div class="item-image">
+                    <!-- TODO: Replace with your image: images/monkey-pita.jpg -->
+                    <img src="https://via.placeholder.com/100x100.png?text=Kids+Pita" alt="The Monkey's Pita">
+                </div>
+                <div class="item-details">
+                    <div class="item-header">
+                        <h3>The Monkey's Pita</h3>
+                        <span class="item-price">90 THB</span>
+                    </div>
+                    <p class="item-description">A warm pita bread spread with creamy chocolate. Simple, sweet, and always a winner.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DESSERTS Section -->
+        <section class="menu-section">
+            <h2>DESSERTS & SWEETS</h2>
+            
+            <div class="menu-item">
+                <div class="item-image">
+                    <!-- TODO: Replace with your image: images/malabi.jpg -->
+                    <img src="https://via.placeholder.com/100x100.png?text=Malabi" alt="The Famous Malabi">
+                </div>
+                <div class="item-details">
+                    <div class="item-header">
+                        <h3>The Famous Malabi</h3>
+                        <span class="item-price">120 THB</span>
+                    </div>
+                    <p class="item-description">A beautifully delicate and refreshing milk pudding, scented with rose water and topped with coconut and crushed peanuts.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="item-image">
+                    <!-- TODO: Replace with your image: images/daily-bake.jpg -->
+                    <img src="https://via.placeholder.com/100x100.png?text=Daily+Bake" alt="Your Wife's Daily Bake">
+                </div>
+                <div class="item-details">
+                    <div class="item-header">
+                        <h3>Your Wife's Daily Bake</h3>
+                        <span class="item-price">Varies</span>
+                    </div>
+                    <p class="item-description">Ask our staff what beautiful cake or pastry came out of the oven this morning! Made with love, here at Medijungle.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- DRINKS Section -->
+        <section class="menu-section">
+            <h2>DRINKS</h2>
+            
+            <h4 class="sub-category">COFFEE (Hot or Iced)</h4>
+
+            <div class="menu-item">
+                <div class="item-image"><img src="https://via.placeholder.com/100x100.png?text=Coffee" alt="Coffee"></div>
+                <div class="item-details">
+                    <div class="item-header"><h3>Espresso</h3><span class="item-price">70</span></div>
+                    <div class="item-header"><h3>Americano</h3><span class="item-price">80</span></div>
+                    <div class="item-header"><h3>Latte / Cappuccino</h3><span class="item-price">90</span></div>
+                    <div class="item-header"><h3>Turkish Coffee</h3><span class="item-price">90</span></div>
+                </div>
+            </div>
+            
+            <h4 class="sub-category">COLD DRINKS</h4>
+
+            <div class="menu-item">
+                 <div class="item-image"><img src="https://via.placeholder.com/100x100.png?text=Juice" alt="Cold Drinks"></div>
+                 <div class="item-details">
+                    <div class="item-header"><h3>Fresh Fruit Juice</h3><span class="item-price">80</span></div>
+                    <p class="item-description">(Pineapple / Watermelon)</p>
+                    <div class="item-header" style="margin-top:10px;"><h3>Jungle Shake</h3><span class="item-price">120</span></div>
+                    <p class="item-description">(Mixed Tropical Fruits)</p>
+                    <div class="item-header" style="margin-top:10px;"><h3>Soda</h3><span class="item-price">40</span></div>
+                    <p class="item-description">(Coke, Sprite, Soda Water)</p>
+                    <div class="item-header" style="margin-top:10px;"><h3>Fresh Iced Tea</h3><span class="item-price">70</span></div>
+                </div>
+            </div>
+            
+            <h4 class="sub-category">ALCOHOL</h4>
+            <div class="menu-item">
+                 <div class="item-image"><img src="https://via.placeholder.com/100x100.png?text=Alcohol" alt="Alcohol"></div>
+                 <div class="item-details">
+                    <div class="item-header"><h3>Local Beer (Chang / Leo)</h3><span class="item-price">90</span></div>
+                    <div class="item-header" style="margin-top:10px;"><h3>Frozen Pineapple Margarita</h3><span class="item-price">220</span></div>
+                    <div class="item-header" style="margin-top:10px;"><h3>Local Pineapple Wine (Bottle)</h3><span class="item-price">450</span></div>
+                </div>
+            </div>
+            
+        </section>
+
     </div>
 
-    <div id="task1" class="task">
-        <h2>קריאה: מאכלים מסורתיים בתאילנד 🍜</h2>
-        <p>תאילנד ידועה במטבח העשיר והטעים שלה. אחד המאכלים המפורסמים ביותר הוא <span class="highlight">פאד תאי</span>, אטריות מטוגנות עם ירקות, ביצה ובוטנים. עוד מאכל פופולרי הוא <span class="highlight">תום יאם גונג</span>, מרק חמוץ-חריף עם שרימפס. לקינוח, תוכלו ליהנות מ<span class="highlight">מנגו עם אורז דביק</span>, קינוח מתוק ורענן.</p>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Phat_Thai_kung_Chang_Khien_street_stall.jpg/640px-Phat_Thai_kung_Chang_Khien_street_stall.jpg" alt="פאד תאי">
-        <button onclick="nextTask()">הבא</button>
-    </div>
-
-    <div id="task2" class="task">
-        <h2>מתמטיקה: חישוב כמויות למתכון 🧮</h2>
-        <p>נכין פאד תאי ל-4 אנשים! עזרו לחשב את הכמויות:</p>
-        <p>אם למנה אחת צריך 100 גרם אטריות, כמה גרם צריך ל-4 מנות?</p>
-        <input type="number" id="noodles" placeholder="הכניסו את התשובה">
-        <button onclick="checkAnswer('noodles', 400)">בדוק תשובה</button>
-        <p>אם למנה אחת צריך 2 ביצים, כמה ביצים צריך ל-4 מנות?</p>
-        <input type="number" id="eggs" placeholder="הכניסו את התשובה">
-        <button onclick="checkAnswer('eggs', 8)">בדוק תשובה</button>
-        <button onclick="nextTask()">הבא</button>
-    </div>
-
-    <div id="task3" class="task">
-        <h2>עברית: מילים נרדפות 📚</h2>
-        <p>מצאו מילה נרדפת (מילה עם אותה משמעות) לכל אחת מהמילים הבאות:</p>
-        <p>1. טעים: <input type="text" id="tasty" placeholder="הכניסו מילה נרדפת"></p>
-        <p>2. מפורסם: <input type="text" id="famous" placeholder="הכניסו מילה נרדפת"></p>
-        <p>3. עשיר: <input type="text" id="rich" placeholder="הכניסו מילה נרדפת"></p>
-        <button onclick="checkSynonyms()">בדוק תשובות</button>
-        <button onclick="nextTask()">הבא</button>
-    </div>
-
-    <div id="task4" class="task">
-        <h2>חינוך פיננסי: תקציב לארוחה 💰</h2>
-        <p>אתם רוצים להכין ארוחה תאילנדית למשפחה. יש לכם תקציב של 100 שקלים. עזרו לתכנן את הקניות:</p>
-        <p>אטריות אורז: 15 ₪</p>
-        <p>ירקות: 25 ₪</p>
-        <p>רוטב סויה: 10 ₪</p>
-        <p>ביצים: 12 ₪</p>
-        <p>בוטנים: 8 ₪</p>
-        <p>מנגו: 20 ₪</p>
-        <p>אורז דביק: 18 ₪</p>
-        <p>כמה כסף נשאר לכם אחרי הקנייה?</p>
-        <input type="number" id="budget" placeholder="הכניסו את הסכום שנשאר">
-        <button onclick="checkAnswer('budget', 12)">בדוק תשובה</button>
-        <button onclick="finishLesson()">סיים שיעור</button>
-    </div>
-
-    <div id="summary" class="task" style="display:none;">
-        <h2>סיכום השיעור</h2>
-        <p>כל הכבוד, אחמל! סיימת את השיעור. הנה סיכום של הביצועים שלך:</p>
-        <ul id="summaryList"></ul>
-        <button onclick="location.reload()">התחל שיעור חדש</button>
-    </div>
-
-    <script>
-        let currentTask = 1;
-        const totalTasks = 4;
-        let answers = {};
-
-        function showTask(taskNumber) {
-            for (let i = 1; i <= totalTasks; i++) {
-                document.getElementById(`task${i}`).style.display = 'none';
-            }
-            document.getElementById(`task${taskNumber}`).style.display = 'block';
-            updateProgress();
-        }
-
-        function nextTask() {
-            currentTask++;
-            if (currentTask <= totalTasks) {
-                showTask(currentTask);
-            } else {
-                finishLesson();
-            }
-        }
-
-        function updateProgress() {
-            const progress = (currentTask - 1) / totalTasks * 100;
-            document.getElementById('progress').style.width = `${progress}%`;
-        }
-
-        function checkAnswer(id, correctAnswer) {
-            const userAnswer = document.getElementById(id).value;
-            answers[id] = {
-                userAnswer: userAnswer,
-                correctAnswer: correctAnswer,
-                correct: parseInt(userAnswer) === correctAnswer
-            };
-            alert(answers[id].correct ? "כל הכבוד! התשובה נכונה." : "אופס, לא בדיוק. נסה שוב!");
-        }
-
-        function checkSynonyms() {
-            const synonyms = {
-                tasty: ['ערב לחיך', 'מעולה', 'משובח', 'ערב'],
-                famous: ['מוכר', 'ידוע', 'נודע', 'מפורסם'],
-                rich: ['אמיד', 'עשיר', 'אמיד', 'בעל אמצעים']
-            };
-            for (let word in synonyms) {
-                const userAnswer = document.getElementById(word).value.trim().toLowerCase();
-                answers[word] = {
-                    userAnswer: userAnswer,
-                    correctAnswer: synonyms[word].join(', '),
-                    correct: synonyms[word].includes(userAnswer)
-                };
-            }
-            alert("תשובותיך נשמרו!");
-        }
-
-        function finishLesson() {
-            document.getElementById(`task${currentTask}`).style.display = 'none';
-            const summary = document.getElementById('summary');
-            const summaryList = document.getElementById('summaryList');
-            summaryList.innerHTML = '';
-            for (let id in answers) {
-                const li = document.createElement('li');
-                li.textContent = `${id}: ${answers[id].correct ? 'נכון' : 'לא נכון'}. התשובה שלך: ${answers[id].userAnswer}. התשובה הנכונה: ${answers[id].correctAnswer}`;
-                summaryList.appendChild(li);
-            }
-            summary.style.display = 'block';
-        }
-
-        function startTimer(duration, display) {
-            let timer = duration, minutes, seconds;
-            setInterval(function () {
-                minutes = parseInt(timer / 60, 10);
-                seconds = parseInt(timer % 60, 10);
-
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
-
-                display.textContent = minutes + ":" + seconds;
-
-                if (--timer < 0) {
-                    timer = 0;
-                    finishLesson();
-                }
-            }, 1000);
-        }
-
-        window.onload = function () {
-            showTask(1);
-            let fortyMinutes = 40 * 60,
-                display = document.querySelector('#timer');
-            startTimer(fortyMinutes, display);
-        };
-    </script>
 </body>
 </html>
